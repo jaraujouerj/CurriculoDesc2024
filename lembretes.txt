@@ -1,0 +1,5 @@
+1 - A civil adotou álgebra linear com 60 horas. Adotar o mesmo?
+2 - Na ementa de cálculo I (civil) está escrito "Regra de L`Hospital", o correto é "Regra de L`Hôpital"
+3 - Algoritmos 60 ou 75 horas? Diferenciado para computação?
+4 - Na proposta da civil, cálculo 2 ensina equações diferenciais e calc3 Integral. Na nossa proposta antiga temos calc2 integrais e substituimos Calc3 por uma disciplinade do IME Equações Diferenciais Ordinárias. 
+5 - Eletrônica I e II juntas?
