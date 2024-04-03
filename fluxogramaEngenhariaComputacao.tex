@@ -1,0 +1,298 @@
+\documentclass[a4paper, landscape]{article}
+\usepackage{prerex}
+\usepackage{multicol}
+%\usepackage{showframe}
+\usepackage[utf8]{inputenc} % codificacao de caracteres
+\usepackage{geometry}
+\usepackage[portuguese]{babel}
+\usepackage{gensymb}
+\usepackage{lmodern}
+\usepackage{tikz}
+\usetikzlibrary{calc}
+\usepackage{ifthen}
+\usepackage{disciplinasDB}
+\tikzset{
+    %Define standard arrow tip
+    >=stealth,
+    %Define style for boxes
+    box/.style={
+           rectangle,
+           draw=black,
+           text width=7em,
+           minimum height=5em,
+           text centered,
+           inner sep=1mm]},
+    % Define arrow style
+    pil/.style={
+           ->,
+           thick,
+           shorten <=3pt,
+           shorten >=3pt,},
+}
+\usetikzlibrary{positioning,shapes,shadows,arrows}
+
+% Define estilos de caixas de acordo com a origem da disciplina
+\tikzstyle{basico}=[box, fill=yellow]
+\tikzstyle{desc}=[box, fill=orange]
+\tikzstyle{profissional}=[box, fill=green]
+\tikzstyle{eletiva}=[box, fill=orange!50!white, dashed]
+\tikzstyle{info}=[box, fill=yellow]
+
+%contador de creditos totais do curso
+\newcounter{cred} 
+\setcounter{cred}{0}
+
+%contador de horas totais do curso
+\newcounter{thoras}
+\setcounter{thoras}{0}
+
+%parâmetros de cada disciplina
+%{basico || profissional || desc || eletiva} 	#1
+%{Período} de 1 a 10 							#2
+%{Linha no fluxograma} de 1 a 6. 				#3
+%{Código da disciplina} 						#4
+%{Nome da Disciplina} 							#5
+%{Carga Horária} 								#6
+%{Número de Créditos} 							#7
+%{nome abreviado para referência} 				#8
+\newcommand{\disciplina}[8] {
+  \addtocounter{cred}{#7}
+  \addtocounter{thoras}{#6}
+  \node at ($ (#2*2.8cm-7cm,14.6-#3*2.3) $) (Item)  [#1] (#8) 
+        {
+            \textbf{#4}\\
+            \textbf{#5}\\
+            \textbf{#6} \hfill #7
+        };}
+
+\geometry{margin=0.5cm,bottom=0.5cm} 
+
+\thispagestyle{empty}
+\begin{document}
+\noindent
+{\Large \textbf{Curso: Engenharia}}\\
+{\Large \textbf{Habilitação: Computação}}  (Versão de \today)
+
+\begin{tikzpicture}
+  \foreach \x in {1,...,10} {\node at (\x*2.8-7,13.5) {\x\degree Período};}
+
+  \footnotesize
+  \fontfamily{lms}\fontseries{l}\selectfont
+  %parâmetros de cada disciplina, pode ser posto numa única linha
+  %\disciplina
+  %{basico || profissional || desc || eletiva}
+  %{Período} de 1 a 10
+  %{Linha no fluxograma} de 1 a 8.
+  %{Código da disciplina}
+  %{Nome da Disciplina}
+  %{Carga Horária}
+  %{Número de Créditos}
+  %{nome abreviado para referência} 
+
+  %Básico
+  \disciplina{basico}{2}{5}{\AlgLinCod}	{\AlgLinSName}	{\AlgLinCH}	{\AlgLinCred}	{AlgLin}
+  \disciplina{basico}{3}{2}{\AnaVetCod}	{\AnaVetSName}	{\AnaVetCH}	{\AnaVetCred}	{AnaVet}
+  \disciplina{basico}{1}{3}{\CalcICod}	{\CalcISName}	{\CalcICH}	{\CalcICred}	{CalcI}
+  \disciplina{basico}{2}{3}{\CalcIICod}	{\CalcIISName}	{\CalcIICH}	{\CalcIICred}	{CalcII}
+  \disciplina{basico}{3}{3}{\CalcIIICod}	{\CalcIIISName}	{\CalcIIICH}{\CalcIIICred}	{CalcIII}
+  \disciplina{basico}{1}{6}{\DesBasCod}	{\DesBasSName}	{\DesBasCH}	{\DesBasCred}	{DesBas}
+  \disciplina{basico}{2}{6}{\FisICod}		{\FisISName}	{\FisICH}	{\FisICred}		{FisI}
+  \disciplina{basico}{2}{7}{\FisEICod}		{\FisEISName}	{\FisEICH}	{\FisEICred}		{FisEI}
+  \disciplina{basico}{3}{6}{\FisIICod}	{\FisIISName}	{\FisIICH}	{\FisIICred}	{FisII}
+  \disciplina{basico}{3}{7}{\FisEIICod}	{\FisEIISName}	{\FisEIICH}	{\FisEIICred}	{FisEII}
+  \disciplina{basico}{4}{6}{\FisIIICod}	{\FisIIISName}	{\FisIIICH}	{\FisIIICred}	{FisIII}
+  \disciplina{basico}{4}{7}{\FisEIIICod}	{\FisEIIISName}	{\FisEIIICH}	{\FisEIIICred}	{FisEIII}
+  \disciplina{basico}{5}{6}{\FisIVCod}	{\FisIVSName}	{\FisIVCH}	{\FisIVCred}	{FisIV}
+  \disciplina{basico}{5}{7}{\FisEIVCod}	{\FisEIVSName}	{\FisEIVCH}	{\FisEIVCred}	{FisEIV}
+  \disciplina{basico}{1}{2}{\GeoAnaCod}	{\GeoAnaSName}	{\GeoAnaCH}	{\GeoAnaCred}	{GeoAna}
+  \disciplina{basico}{3}{5}{\MecTecCod}	{\MecTecSName}	{\MecTecCH}	{\MecTecCred}	{MecTec}
+  \disciplina{basico}{3}{4}{\ProbEstCod}	{\ProbEstSName}	{\ProbEstCH}{\ProbEstCred}	{ProbEst}
+  \disciplina{basico}{1}{4}{\QuiTCod}		{\QuiTSName}	{\QuiTCH}	{\QuiTCred}		{QuiT}
+  \disciplina{basico}{1}{5}{\QuiECod}		{\QuiESName}	{\QuiECH}	{\QuiECred}		{QuiE}
+
+  %disciplinas profissional
+  \disciplina{profissional}{10}{5}{\AdmCod}	{\AdmSName}		{\AdmCH}	{\AdmCred}		{Adm}
+  \disciplina{profissional}{7}{6}	{\AnaFisCod}{\AnaFisSName}	{\AnaFisCH}	{\AnaFisCred}	{AnaFis}
+  \disciplina{profissional}{5}{4}	{\CEVCod}	{\CEVSName}		{\CEVCH}	{\CEVCred}		{CEV}
+  \disciplina{profissional}{6}{5}{\CEVICod}	{\CEVISName}	{\CEVICH}	{\CEVICred}		{CEVI}
+  \disciplina{profissional}{8}{6}{\CServMecCod}{\CServMecSName}{\CServMecCH}{\CServMecCred}{ServoMec}
+  \disciplina{profissional}{5}{5}{\EletICod}	{\EletISName}{\EletICH}{\EletICred}{EletI}
+  \disciplina{profissional}{6}{6}{\EletIIACod}	{\EletIIASName}{\EletIIACH}{\EletIIACred}{EletII}
+  \disciplina{profissional}{4}{2}{\FenTranCod}{\FenTranSName}{\FenTranCH}{\FenTranCred}{FenTran}
+  \disciplina{profissional}{9}{5}{\IntEcoCod}{\IntEcoSName}{\IntEcoCH}{\IntEcoCred}{IntEco}
+  \disciplina{profissional}{2}{4}	{\IntAmbCod}	{\IntAmbSName}{\IntAmbCH}{\IntAmbCred}{IntAmb}
+  \disciplina{profissional}{5}{3}	{\MatEleCod}	{\MatEleSName}{\MatEleCH}{\MatEleCred}{MatEle}
+  \disciplina{profissional}{4}{3} {\ModMatCod}	{\ModMatSName}{\ModMatCH}{\ModMatCred}{ModMat}
+  \disciplina{profissional}{4}{4} {\MetQuantCod}	{\MetQuantSName}{\MetQuantCH}{\MetQuantCred}{PO}
+  \disciplina{profissional}{7}{5}	{\PrincTelecCod}	{\PrincTelecSName}{\PrincTelecCH}{\PrincTelecCred}{PrincTelec}
+  \disciplina{profissional}{4}{5}	{\ResMatCod}	{\ResMatSName}{\ResMatCH}{\ResMatCred}{ResMat}
+  \disciplina{profissional}{8}{4}	{\SegHigCod}	{\SegHigSName}{\SegHigCH}{\SegHigCred}{SegHig}
+
+
+  %Disciplinas Desc
+  \disciplina{desc}{1}{1} {\AlgCompCod}	{\AlgCompSName}{\AlgCompCH}{\AlgCompCred}{AlgComp}
+  \disciplina{desc}{6}{2} {\AnAlgCod}	{\AnAlgSName}{\AnAlgCH}{\AnAlgCred}{AnAlg}
+  \disciplina{desc}{6}{3} {\ArqCompCod}	{\ArqCompSName}{\ArqCompCH}{\ArqCompCred}{ArqComp}
+  \disciplina{desc}{10}{2}{\ControlCod}	{\ControlSName}{\ControlCH}{\ControlCred}{Control}
+  \disciplina{desc}{2}{2} {\EngComputCod}    {\EngComputSName}{\EngComputCH}{\EngComputCred}{CalcNum}
+  \disciplina{desc}{7}{3} {\EngCompSocCod}	{\EngCompSocSName}{\EngCompSocCH}{\EngCompSocCred}{ETS}
+  \disciplina{desc}{6}{1} {\EngSistACod}	{\EngSistASName}{\EngSistACH}{\EngSistACred}{EngSistA}
+  \disciplina{desc}{7}{1} {\ProjBDCod}	{\ProjBDSName}{\ProjBDCH}{\ProjBDCred}{EngSistB}
+  \disciplina{desc}{9}{3} {\EstSupCod}	{\EstSupSName}{\EstSupCH}{\EstSupCred}{EstSup}
+  \disciplina{desc}{2}{1} {\EstrInfCod}	{\EstrInfSName}{\EstrInfCH}{\EstrInfCred}{EstrInf}
+  \disciplina{desc}{5}{2} {\FundCompCod}	{\FundCompSName}{\FundCompCH}{\FundCompCred}{FundComp}
+  \disciplina{desc}{6}{4} {\ICCod}	{\ICSName}{\ICCH}{\ICCred}{IC}
+  \disciplina{desc}{3}{1} {\LabProgACod}	{\LabProgASName}{\LabProgACH}{\LabProgACred}{LabProgI}
+  \disciplina{desc}{4}{1} {\LabProgBCod}	{\LabProgBSName}{\LabProgBCH}{\LabProgBCred}{LabProgII}
+  \disciplina{desc}{5}{1} {\LogProgCod}	{\LogProgSName}{\LogProgCH}{\LogProgCred}{LogProg}
+  \disciplina{desc}{7}{4}	{\MineraDadosCod}	{\MineraDadosSName}{\MineraDadosCH}{\MineraDadosCred}{MineraDados}
+  \disciplina{desc}{8}{5} {\ProcImagCod}	{\ProcImagSName}{\ProcImagCH}{\ProcImagCred}{ProcImag}
+  \disciplina{desc}{9}{2} {\CompParalCod}	{\CompParalSName}{\CompParalCH}{\CompParalCred}{ProgPara}
+  \disciplina{desc}{9}{1} {\ProjACod}	{\ProjASName}{\ProjACH}{\ProjACred}{ProjA}
+  \disciplina{desc}{10}{1}{\ProjBCod}	{\ProjBSName}{\ProjBCH}{\ProjBCred}{ProjB}
+  \disciplina{desc}{8}{1} {\ProjSOCod}	{\ProjSOSName}{\ProjSOCH}{\ProjSOCred}{SO}
+  \disciplina{desc}{8}{2} {\SistEmbCod}	{\SistEmbSName}{\SistEmbCH}{\SistEmbCred}{SistEmb}
+  \disciplina{desc}{8}{3} {\TelepCod}	{\TelepSName}{\TelepCH}{\TelepCred}{Telep}
+  \disciplina{desc}{7}{2} {\TeoCompCod}	{\TeoCompSName}{\TeoCompCH}{\TeoCompCred}{Comp}
+
+  %eletivas
+  \disciplina{eletiva}{9}{4} {\EletACod}	{Eletiva Restrita}{\EletACH}{\EletACred}{EA}
+  \disciplina{eletiva}{10}{3}{\EletACod}	{Eletiva Restrita}{\EletACH}{\EletACred}{EB}
+  \disciplina{eletiva}{10}{4}{\EletACod}	{Eletiva Restrita}{\EletACH}{\EletACred}{EC}
+
+  %ligação com pre-requititos
+  \newcommand{\prereq}[3][black] { % \prereq[cor]{disciplina}{pre}
+    \draw [->, thick, #1](#2.east)--(#3.west);} % Uma linha direta para o próximo bloco
+
+  \newcommand{\pre}[8][black] {
+    \draw [->, thick, #1]
+    ($(#2.east) + (0 mm,#4mm) $) -| % #4 distância do centro de saída do bloco prérequisito
+    \ifnum#6=0
+      ($ (#3.west)+(#5mm,-#7mm)$) --
+      ($(#3.west)-(0,#7mm)$);
+      \else
+      ($(#2.east) + (#5mm,#6mm) $) -| % #5 até onde vai a linha horizontal #6 até onde vai a linha vertical
+      ($(#3.west) - (#7mm,#8mm)$) -- ($(#3.west) - (0,#8mm)$);
+    \fi
+  }
+
+  %Período 1
+  \prereq			  {AlgComp}	{EstrInf}
+  \pre	[purple]{AlgComp}	{CalcNum} {-3}{-5}{0}{-3}{0}
+  \pre	[red]   {AlgComp}	{AnAlg}   {-1}{3}{-13}{4}{0}
+  \pre	[blue]  {AlgComp}	{FundComp}{-2}{2}{-14}{2}{0}
+  \pre	[blue]	{CalcI}		{CalcNum}{1}{-2}{0}{-1}{0}
+  \prereq				{CalcI}		{CalcII}
+
+  % Período 2
+  \prereq				{EstrInf}	{LabProgI}
+  \pre	[teal]	{EstrInf}	{EngSistB}  {-1}{3}{-10}{3}{2}
+  \prereq				{CalcII}	{CalcIII}
+  \prereq				{FisI}		{FisII}
+  \prereq				{FisEI}		{FisEII}
+  \pre	[blue]  {FisI}		{MecTec}    {1}{-3}{0}{-1}{0}
+  \pre	[blue]	{CalcII}	{ProbEst}   {-1}{-2}{0}{-3}{0}
+  \pre	[red]		{CalcII}	{AnaVet}    {1}{-2}{0}{-1}{0}
+  \pre	[purple]{CalcII}	{MecTec}    {-2}{-3}{0}{-3}{0}
+  \pre  [blue]	{FisII}		{FenTran}   {1}{-2}{0}{2}{0}
+  \pre			    {AlgLin}	{PO}        {2}{1}{14}{3}{0}
+  \pre	[red]	  {AlgLin}	{ProcImag}  {-1}{1}{-10}{3}{2}
+
+
+  % %Período 3
+  \prereq				{LabProgI}	{LabProgII}
+  \prereq				{FisII}		{FisIII}
+  \prereq				{FisEII}		{FisEIII}
+  \prereq				{AnaVet}	{FenTran}
+  \prereq				{MecTec}	{ResMat}
+  \pre [red]		{AnaVet}	{ModMat}    {-3}{-3}{0}{-3}{0}
+  \prereq			  {CalcIII}	{ModMat}
+  \pre [red]		{ProbEst}	{ProcImag}  {-1}{1}{-13}{4}{-1}
+  \pre  [blue]	{LabProgI}{IC}        {-1}{3}{-12}{3}{0}
+
+  % Período 4
+  \prereq				{FisIII}	{FisIV}
+  \pre [red]	  {FisIII}	{MatEle}  {3}{-4}{0}{-1}{0}
+  \pre [blue]	  {FisIII}	{EletI}   {1}{-2}{0}{-1}{0}
+  \pre [teal] 	{FisIII}	{CEV}     {2}{-3}{0}{-1}{0}
+  \pre [purple]	{LabProgII}{AnAlg}  {-2}{2}{-8}{2}{-2}
+  \pre			    {ModMat}	{CEVI}    {-2}{3}{-35}{3}{-2}
+
+  % Período 5
+  \pre			    {EletI}		{EletII}  {-1}{-2}{0}{-4}{0}
+  \pre[purple]	{FundComp}{ArqComp} {-3}{-4}{0}{-3}{0}
+  \pre[blue]	  {CEV}		  {CEVI}    {-1}{-2}{0}{-4}{0}
+  \pre[purple]	{CEV}		  {EletII}  {-3}{-4}{0}{0}{0}
+  \prereq				{FisEIII}		{FisEIV}
+
+  % Período 6
+  \prereq		    {AnAlg}		{Comp}
+  \prereq		    {EngSistA}{EngSistB}
+  \prereq				{CEVI}		{PrincTelec}
+  \pre[blue]		{ArqComp}	{SO}{2}{2}{14}{4}{0}
+  \pre[red]		  {ArqComp}	{Telep}{-2}{2}{-12}{4}{0}
+  \pre				  {ArqComp}	{SistEmb}{0}{4}{12}{2}{0}
+  \prereq	      {IC}		  {MineraDados}
+  \pre [red]		{AnaFis}	{Control}{2}{2}{10}{3}{2}
+  \pre			    {CEVI}	  {AnaFis} {-3}{-4}{0}{-3}{0}
+
+  % Período 7
+  \prereq				{AnaFis}	{ServoMec}
+  \pre			    {PrincTelec}{Telep} {3}{-3}{0}{4}{0}
+
+  % Período 8
+  \pre				{SO}		{ProgPara}{-3}{-4}{0}{-3}{0}
+  \pre	[blue]		{SO}		{Control}{-1}{3}{-13}{4}{0}
+
+  % Período 9
+  \prereq				{ProjA}		{ProjB}
+
+  % pre de créditos
+  \newcommand{\trava}[2] {
+    \node [below left=0mm and -20mm of #1,text width=40pt, font=\scriptsize] (#2) {#2};
+    \draw [->, thick]
+    ($(#2.west)  $)  -| ($ (#1.west) -(2mm,4mm)$) -- ($(#1.west) -(0,4mm)  $);}
+
+  \trava {SegHig}{90 cred}
+  \trava {ETS}{94 cred}
+  \trava {EA}{170 cred}
+  \trava {EB}{170 cred}
+  \trava {EC}{170 cred}
+  \trava {EstSup}{170 cred}
+  \trava {ProjA}{170 cred}
+  \trava {ProcImag}{94 cred}
+
+\end{tikzpicture}
+
+\vspace{1mm}
+\setlength\parindent{0pt}
+
+\begin{multicols}{5}
+  \vfill\null
+  \columnbreak
+
+  \begin{tikzpicture}
+    \node at (10cm,1mm) (legenda)
+    {\textbf{Código para as Disciplinas:}};
+    \node  [below right= 1.5mm and -48mm of legenda,fill=yellow, draw=black,
+      label=right:Básico da Engenharia.](basico) {};
+    \node [below  of=basico,node distance=5mm,fill=green, draw=black, label=right:Profissional Comum.] (prof) {};
+    \node [below of=prof,node distance=5mm,fill=orange, draw=black, label=right:Profissional Específico.] (especifico){};
+    \node [below of=especifico,node distance=5mm,fill=orange!50!white, draw=gray, draw=black, label=right:Eletivas] {};
+  \end{tikzpicture}
+
+  \columnbreak
+  Os números situados na parte inferior direita e esquerda representam os créditos e carga horária, respectivamente, conferidos à disciplina.
+
+  \columnbreak
+  O Curso de Engenharia será integralizado em um mínimo de 10 e um máximo de 18 períodos compreendendo: Parte Comum e Ciclo Profissional.
+
+  \columnbreak
+  \textbf{Total de Créditos:} \the\value{cred}\\
+  \addtocounter{cred}{-9}
+  (\the\value{cred} em disciplinas obrigatórias e 9 em disciplinas eletivas restritas)\\
+  Total de horas do curso: \the\value{thoras}
+\end{multicols}
+
+
+\end{document}
