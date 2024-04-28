@@ -160,10 +160,10 @@
   \disciplina{desc}{5}{1} {\LogProgCod}	{\LogProgSName}{\LogProgCH}{\LogProgCred}{LogProg} % Lógica de Programação
   \disciplina{desc}{7}{4}	{\MineraDadosCod}	{\MineraDadosSName}{\MineraDadosCH}{\MineraDadosCred}{MineraDados} % Mineração de Dados
   \disciplina{desc}{8}{5} {\ProcImagCod}	{\ProcImagSName}{\ProcImagCH}{\ProcImagCred}{ProcImag} % Processamento de Imagens
-  \disciplina{desc}{9}{2} {\CompParalCod}	{\CompParalSName}{\CompParalCH}{\CompParalCred}{ProgPara} % Programação Paralela
+  \disciplina{desc}{8}{1} {\CompParalCod}	{\CompParalSName}{\CompParalCH}{\CompParalCred}{ProgPara} % Programação Paralela
   \disciplina{desc}{9}{1} {\ProjACod}	{\ProjASName}{\ProjACH}{\ProjACred}{ProjA} % Projeto A
   \disciplina{desc}{10}{1}{\ProjBCod}	{\ProjBSName}{\ProjBCH}{\ProjBCred}{ProjB} % Projeto B
-  \disciplina{desc}{8}{1} {\ProjSOCod}	{\ProjSOSName}{\ProjSOCH}{\ProjSOCred}{SO} % Sistemas Operacionais
+  \disciplina{desc}{7}{6} {\ProjSOCod}	{\ProjSOSName}{\ProjSOCH}{\ProjSOCred}{SO} % Sistemas Operacionais
   \disciplina{desc}{8}{2} {\SistEmbCod}	{\SistEmbSName}{\SistEmbCH}{\SistEmbCred}{SistEmb} % Sistemas Embarcados
   \disciplina{desc}{8}{3} {\TelepCod}	{\TelepSName}{\TelepCH}{\TelepCred}{Telep} % Teleprocessamento
   \disciplina{desc}{7}{2} {\TeoCompCod}	{\TeoCompSName}{\TeoCompCH}{\TeoCompCred}{Comp} % Teoria da Compiladores
@@ -189,76 +189,76 @@
     \fi
   }
 
-  %Período 1
-  \prereq			  {AlgComp}	{EstrInf}
-  \pre	[purple]{AlgComp}	{CalcNum} {-3}{-5}{0}{-3}{0}
-  \pre	[red]   {AlgComp}	{AnAlg}   {-1}{3}{-13}{4}{0}
-  \pre	[blue]  {AlgComp}	{FundComp}{-2}{2}{-14}{2}{0}
-  \pre	[blue]	{CalcI}		{CalcNum}{1}{-2}{0}{-1}{0}
-  \prereq				{CalcI}		{CalcII}
+  % %Período 1
+  % \prereq			  {AlgComp}	{EstrInf}
+  % \pre	[purple]{AlgComp}	{CalcNum} {-3}{-5}{0}{-3}{0}
+  % \pre	[red]   {AlgComp}	{AnAlg}   {-1}{3}{-13}{4}{0}
+  % \pre	[blue]  {AlgComp}	{FundComp}{-2}{2}{-14}{2}{0}
+  % \pre	[blue]	{CalcI}		{CalcNum}{1}{-2}{0}{-1}{0}
+  % \prereq				{CalcI}		{CalcII}
 
-  % Período 2
-  \prereq				{EstrInf}	{LabProgI}
-  \pre	[teal]	{EstrInf}	{EngSistB}  {-1}{3}{-10}{3}{2}
-  \prereq				{CalcII}	{CalcIII}
-  \prereq				{FisI}		{FisII}
-  \prereq				{FisEI}		{FisEII}
-  \pre	[blue]  {FisI}		{MecTec}    {1}{-3}{0}{-1}{0}
-  \pre	[blue]	{CalcII}	{ProbEst}   {-1}{-2}{0}{-3}{0}
-  \pre	[red]		{CalcII}	{AnaVet}    {1}{-2}{0}{-1}{0}
-  \pre	[purple]{CalcII}	{MecTec}    {-2}{-3}{0}{-3}{0}
-  \pre  [blue]	{FisII}		{FenTran}   {1}{-2}{0}{2}{0}
-  \pre			    {AlgLin}	{PO}        {2}{1}{14}{3}{0}
-  \pre	[red]	  {AlgLin}	{ProcImag}  {-1}{1}{-10}{3}{2}
+  % % Período 2
+  % \prereq				{EstrInf}	{LabProgI}
+  % \pre	[teal]	{EstrInf}	{EngSistB}  {-1}{3}{-10}{3}{2}
+  % \prereq				{CalcII}	{CalcIII}
+  % \prereq				{FisI}		{FisII}
+  % \prereq				{FisEI}		{FisEII}
+  % \pre	[blue]  {FisI}		{MecTec}    {1}{-3}{0}{-1}{0}
+  % \pre	[blue]	{CalcII}	{ProbEst}   {-1}{-2}{0}{-3}{0}
+  % \pre	[red]		{CalcII}	{AnaVet}    {1}{-2}{0}{-1}{0}
+  % \pre	[purple]{CalcII}	{MecTec}    {-2}{-3}{0}{-3}{0}
+  % \pre  [blue]	{FisII}		{FenTran}   {1}{-2}{0}{2}{0}
+  % \pre			    {AlgLin}	{PO}        {2}{1}{14}{3}{0}
+  % \pre	[red]	  {AlgLin}	{ProcImag}  {-1}{1}{-10}{3}{2}
 
 
-  % %Período 3
-  \prereq				{LabProgI}	{LabProgII}
-  \prereq				{FisII}		{FisIII}
-  \prereq				{FisEII}		{FisEIII}
-  \prereq				{AnaVet}	{FenTran}
-  \prereq				{MecTec}	{ResMat}
-  \pre [red]		{AnaVet}	{ModMat}    {-3}{-3}{0}{-3}{0}
-  \prereq			  {CalcIII}	{ModMat}
-  \pre [red]		{ProbEst}	{ProcImag}  {-1}{1}{-13}{4}{-1}
-  \pre  [blue]	{LabProgI}{IC}        {-1}{3}{-12}{3}{0}
+  % % %Período 3
+  % \prereq				{LabProgI}	{LabProgII}
+  % \prereq				{FisII}		{FisIII}
+  % \prereq				{FisEII}		{FisEIII}
+  % \prereq				{AnaVet}	{FenTran}
+  % \prereq				{MecTec}	{ResMat}
+  % \pre [red]		{AnaVet}	{ModMat}    {-3}{-3}{0}{-3}{0}
+  % \prereq			  {CalcIII}	{ModMat}
+  % \pre [red]		{ProbEst}	{ProcImag}  {-1}{1}{-13}{4}{-1}
+  % \pre  [blue]	{LabProgI}{IC}        {-1}{3}{-12}{3}{0}
 
-  % Período 4
-  \prereq				{FisIII}	{FisIV}
-  \pre [red]	  {FisIII}	{MatEle}  {3}{-4}{0}{-1}{0}
-  \pre [blue]	  {FisIII}	{EletI}   {1}{-2}{0}{-1}{0}
-  \pre [teal] 	{FisIII}	{CEV}     {2}{-3}{0}{-1}{0}
-  \pre [black]	{LabProgII}{AnAlg}  {-2}{2}{-8}{2}{-2}
-  \pre			    {ModMat}	{CEVI}    {-2}{3}{-35}{3}{-2}
+  % % Período 4
+  % \prereq				{FisIII}	{FisIV}
+  % \pre [red]	  {FisIII}	{MatEle}  {3}{-4}{0}{-1}{0}
+  % \pre [blue]	  {FisIII}	{EletI}   {1}{-2}{0}{-1}{0}
+  % \pre [teal] 	{FisIII}	{CEV}     {2}{-3}{0}{-1}{0}
+  % \pre [black]	{LabProgII}{AnAlg}  {-2}{2}{-8}{2}{-2}
+  % \pre			    {ModMat}	{CEVI}    {-2}{3}{-35}{3}{-2}
 
-  % Período 5
-  \pre			    {EletI}		{EletII}  {-1}{-2}{0}{-4}{0}
-  \pre[purple]	{FundComp}{ArqComp} {-3}{-4}{0}{-3}{0}
-  \pre[blue]	  {CEV}		  {CEVI}    {-1}{-2}{0}{-4}{0}
-  \pre[purple]	{CEV}		  {EletII}  {-3}{-4}{0}{0}{0}
-  \prereq				{FisEIII}		{FisEIV}
+  % % Período 5
+  % \pre			    {EletI}		{EletII}  {-1}{-2}{0}{-4}{0}
+  % \pre[purple]	{FundComp}{ArqComp} {-3}{-4}{0}{-3}{0}
+  % \pre[blue]	  {CEV}		  {CEVI}    {-1}{-2}{0}{-4}{0}
+  % \pre[purple]	{CEV}		  {EletII}  {-3}{-4}{0}{0}{0}
+  % \prereq				{FisEIII}		{FisEIV}
 
-  % Período 6
-  \prereq[red]  {AnAlg}		{Comp}
-  \prereq		    {EngSistA}{EngSistB}
-  \prereq				{CEVI}		{PrincTelec}
-  \pre[blue]		{ArqComp}	{SO}{2}{2}{14}{4}{0}
-  \pre[red]		  {ArqComp}	{Telep}{-2}{2}{-12}{4}{0}
-  \pre				  {ArqComp}	{SistEmb}{0}{4}{12}{2}{0}
-  \prereq[blue] {IC}		  {MineraDados}
-  %\pre [red]		{AnaFis}	{Control}{2}{2}{10}{3}{2}
-  %\pre			    {CEVI}	  {AnaFis} {-3}{-4}{0}{-3}{0}
+  % % Período 6
+  % \prereq[red]  {AnAlg}		{Comp}
+  % \prereq		    {EngSistA}{EngSistB}
+  % \prereq				{CEVI}		{PrincTelec}
+  % \pre[blue]		{ArqComp}	{SO}{2}{2}{14}{4}{0}
+  % \pre[red]		  {ArqComp}	{Telep}{-2}{2}{-12}{4}{0}
+  % \pre				  {ArqComp}	{SistEmb}{0}{4}{12}{2}{0}
+  % \prereq[blue] {IC}		  {MineraDados}
+  % %\pre [red]		{AnaFis}	{Control}{2}{2}{10}{3}{2}
+  % %\pre			    {CEVI}	  {AnaFis} {-3}{-4}{0}{-3}{0}
 
-  % Período 7
-  %\prereq				{AnaFis}	{ServoMec}
-  \pre			    {PrincTelec}{Telep} {3}{-3}{0}{4}{0}
+  % % Período 7
+  % %\prereq				{AnaFis}	{ServoMec}
+  % \pre			    {PrincTelec}{Telep} {3}{-3}{0}{4}{0}
 
-  % Período 8
-  \pre				{SO}		{ProgPara}{-3}{-4}{0}{-3}{0}
-  \pre	[blue]		{SO}		{Control}{-1}{3}{-13}{4}{0}
+  % % Período 8
+  % \pre				{SO}		{ProgPara}{-3}{-4}{0}{-3}{0}
+  % \pre	[blue]		{SO}		{Control}{-1}{3}{-13}{4}{0}
 
-  % Período 9
-  \prereq				{ProjA}		{ProjB}
+  % % Período 9
+  % \prereq				{ProjA}		{ProjB}
 
   % pre de créditos
   \newcommand{\trava}[2] {
