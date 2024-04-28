@@ -8,6 +8,7 @@
 \usepackage{gensymb}
 \usepackage{lmodern}
 \usepackage{tikz}
+\usepackage{xcolor}
 \usetikzlibrary{calc}
 \usepackage{ifthen}
 \usepackage{disciplinasDB}
@@ -31,11 +32,23 @@
 }
 \usetikzlibrary{positioning,shapes,shadows,arrows}
 
+\colorlet{cbasico}{yellow}
+\colorlet{cdesc}{orange}
+\colorlet{celetronica}{green}
+\colorlet{celetrica}{blue!20!white}
+\colorlet{cmecanica}{gray!20!white}
+\colorlet{cambiental}{olive!20!white}
+\colorlet{cindustrial}{violet!40!white}
+\colorlet{celetiva}{orange!50!white}
 % Define estilos de caixas de acordo com a origem da disciplina
-\tikzstyle{basico}=[box, fill=yellow]
-\tikzstyle{desc}=[box, fill=orange]
-\tikzstyle{profissional}=[box, fill=green]
-\tikzstyle{eletiva}=[box, fill=orange!50!white, dashed]
+\tikzstyle{basico}=[box, fill=cbasico]
+\tikzstyle{desc}=[box, fill=cdesc]
+\tikzstyle{eletronica}=[box, fill=celetronica]
+\tikzstyle{eletrica}=[box, fill=celetrica]
+\tikzstyle{mecanica}=[box, fill=cmecanica]
+\tikzstyle{ambiental}=[box, fill=cambiental]
+\tikzstyle{industrial}=[box, fill=cindustrial]
+\tikzstyle{eletiva}=[box, fill=celetiva, dashed]
 \tikzstyle{info}=[box, fill=yellow]
 
 %contador de creditos totais do curso
@@ -47,7 +60,7 @@
 \setcounter{thoras}{0}
 
 %parâmetros de cada disciplina
-%{basico || profissional || desc || eletiva} 	#1
+%{basico || eletronica || desc || eletiva} 	#1
 %{Período} de 1 a 10 							#2
 %{Linha no fluxograma} de 1 a 6. 				#3
 %{Código da disciplina} 						#4
@@ -80,7 +93,7 @@
   \fontfamily{lms}\fontseries{l}\selectfont
   %parâmetros de cada disciplina, pode ser posto numa única linha
   %\disciplina
-  %{basico || profissional || desc || eletiva}
+  %{basico || eletronica || desc || eletiva}
   %{Período} de 1 a 10
   %{Linha no fluxograma} de 1 a 8.
   %{Código da disciplina}
@@ -90,70 +103,70 @@
   %{nome abreviado para referência} 
 
   %Básico
-  \disciplina{basico}{2}{5}{\AlgLinCod}	{\AlgLinSName}	{\AlgLinCH}	{\AlgLinCred}	{AlgLin}
-  \disciplina{basico}{3}{2}{\AnaVetCod}	{\AnaVetSName}	{\AnaVetCH}	{\AnaVetCred}	{AnaVet}
-  \disciplina{basico}{1}{3}{\CalcICod}	{\CalcISName}	{\CalcICH}	{\CalcICred}	{CalcI}
-  \disciplina{basico}{2}{3}{\CalcIICod}	{\CalcIISName}	{\CalcIICH}	{\CalcIICred}	{CalcII}
-  \disciplina{basico}{3}{3}{\CalcIIICod}	{\CalcIIISName}	{\CalcIIICH}{\CalcIIICred}	{CalcIII}
-  \disciplina{basico}{1}{6}{\DesBasCod}	{\DesBasSName}	{\DesBasCH}	{\DesBasCred}	{DesBas}
-  \disciplina{basico}{2}{6}{\FisICod}		{\FisISName}	{\FisICH}	{\FisICred}		{FisI}
-  \disciplina{basico}{2}{7}{\FisEICod}		{\FisEISName}	{\FisEICH}	{\FisEICred}		{FisEI}
-  \disciplina{basico}{3}{6}{\FisIICod}	{\FisIISName}	{\FisIICH}	{\FisIICred}	{FisII}
-  \disciplina{basico}{3}{7}{\FisEIICod}	{\FisEIISName}	{\FisEIICH}	{\FisEIICred}	{FisEII}
-  \disciplina{basico}{4}{6}{\FisIIICod}	{\FisIIISName}	{\FisIIICH}	{\FisIIICred}	{FisIII}
-  \disciplina{basico}{4}{7}{\FisEIIICod}	{\FisEIIISName}	{\FisEIIICH}	{\FisEIIICred}	{FisEIII}
-  \disciplina{basico}{5}{6}{\FisIVCod}	{\FisIVSName}	{\FisIVCH}	{\FisIVCred}	{FisIV}
-  \disciplina{basico}{5}{7}{\FisEIVCod}	{\FisEIVSName}	{\FisEIVCH}	{\FisEIVCred}	{FisEIV}
-  \disciplina{basico}{1}{2}{\GeoAnaCod}	{\GeoAnaSName}	{\GeoAnaCH}	{\GeoAnaCred}	{GeoAna}
-  \disciplina{basico}{3}{5}{\MecTecCod}	{\MecTecSName}	{\MecTecCH}	{\MecTecCred}	{MecTec}
-  \disciplina{basico}{3}{4}{\ProbEstCod}	{\ProbEstSName}	{\ProbEstCH}{\ProbEstCred}	{ProbEst}
-  \disciplina{basico}{1}{4}{\QuiTCod}		{\QuiTSName}	{\QuiTCH}	{\QuiTCred}		{QuiT}
-  \disciplina{basico}{1}{5}{\QuiECod}		{\QuiESName}	{\QuiECH}	{\QuiECred}		{QuiE}
+  \disciplina{basico}{2}{5}{\AlgLinCod}	{\AlgLinSName}	{\AlgLinCH}	{\AlgLinCred}	{AlgLin} % Álgebra Linear
+  \disciplina{basico}{3}{2}{\AnaVetCod}	{\AnaVetSName}	{\AnaVetCH}	{\AnaVetCred}	{AnaVet} % Análise Vetorial
+  \disciplina{basico}{1}{3}{\CalcICod}	{\CalcISName}	{\CalcICH}	{\CalcICred}	{CalcI} % Cálculo I
+  \disciplina{basico}{2}{3}{\CalcIICod}	{\CalcIISName}	{\CalcIICH}	{\CalcIICred}	{CalcII} % Cálculo II
+  \disciplina{basico}{3}{3}{\CalcIIICod}	{\CalcIIISName}	{\CalcIIICH}{\CalcIIICred}	{CalcIII} % Cálculo III
+  \disciplina{basico}{1}{6}{\DesBasCod}	{\DesBasSName}	{\DesBasCH}	{\DesBasCred}	{DesBas} % Desenho Básico
+  \disciplina{basico}{2}{6}{\FisICod}		{\FisISName}	{\FisICH}	{\FisICred}		{FisI} % Física I
+  \disciplina{basico}{2}{7}{\FisEICod}		{\FisEISName}	{\FisEICH}	{\FisEICred}		{FisEI} % Física Experimental I
+  \disciplina{basico}{3}{6}{\FisIICod}	{\FisIISName}	{\FisIICH}	{\FisIICred}	{FisII} % Física II
+  \disciplina{basico}{3}{7}{\FisEIICod}	{\FisEIISName}	{\FisEIICH}	{\FisEIICred}	{FisEII} % Física Experimental II
+  \disciplina{basico}{4}{6}{\FisIIICod}	{\FisIIISName}	{\FisIIICH}	{\FisIIICred}	{FisIII} % Física III
+  \disciplina{basico}{4}{7}{\FisEIIICod}	{\FisEIIISName}	{\FisEIIICH}	{\FisEIIICred}	{FisEIII} % Física Experimental III
+  \disciplina{basico}{5}{6}{\FisIVCod}	{\FisIVSName}	{\FisIVCH}	{\FisIVCred}	{FisIV} % Física IV
+  \disciplina{basico}{5}{7}{\FisEIVCod}	{\FisEIVSName}	{\FisEIVCH}	{\FisEIVCred}	{FisEIV} % Física Experimental IV
+  \disciplina{basico}{1}{2}{\GeoAnaCod}	{\GeoAnaSName}	{\GeoAnaCH}	{\GeoAnaCred}	{GeoAna} % Geometria Analítica
+  \disciplina{mecanica}{3}{5}{\MecTecCod}	{\MecTecSName}	{\MecTecCH}	{\MecTecCred}	{MecTec} % Mecânica Técnica
+  \disciplina{basico}{3}{4}{\ProbEstCod}	{\ProbEstSName}	{\ProbEstCH}{\ProbEstCred}	{ProbEst} % Probabilidade e Estatística
+  \disciplina{basico}{1}{4}{\QuiTCod}		{\QuiTSName}	{\QuiTCH}	{\QuiTCred}		{QuiT} % Química Teorica
+  \disciplina{basico}{1}{5}{\QuiECod}		{\QuiESName}	{\QuiECH}	{\QuiECred}		{QuiE} % Química Experimental
 
-  %disciplinas profissional
-  \disciplina{profissional}{10}{5}{\AdmCod}	{\AdmSName}		{\AdmCH}	{\AdmCred}		{Adm}
-  \disciplina{profissional}{7}{6}	{\AnaFisCod}{\AnaFisSName}	{\AnaFisCH}	{\AnaFisCred}	{AnaFis}
-  \disciplina{profissional}{5}{4}	{\CEVCod}	{\CEVSName}		{\CEVCH}	{\CEVCred}		{CEV}
-  \disciplina{profissional}{6}{5}{\CEVICod}	{\CEVISName}	{\CEVICH}	{\CEVICred}		{CEVI}
-  \disciplina{profissional}{8}{6}{\CServMecCod}{\CServMecSName}{\CServMecCH}{\CServMecCred}{ServoMec}
-  \disciplina{profissional}{5}{5}{\EletICod}	{\EletISName}{\EletICH}{\EletICred}{EletI}
-  \disciplina{profissional}{6}{6}{\EletIIACod}	{\EletIIASName}{\EletIIACH}{\EletIIACred}{EletII}
-  \disciplina{profissional}{4}{2}{\FenTranCod}{\FenTranSName}{\FenTranCH}{\FenTranCred}{FenTran}
-  \disciplina{profissional}{9}{5}{\IntEcoCod}{\IntEcoSName}{\IntEcoCH}{\IntEcoCred}{IntEco}
-  \disciplina{profissional}{2}{4}	{\IntAmbCod}	{\IntAmbSName}{\IntAmbCH}{\IntAmbCred}{IntAmb}
-  \disciplina{profissional}{5}{3}	{\MatEleCod}	{\MatEleSName}{\MatEleCH}{\MatEleCred}{MatEle}
-  \disciplina{profissional}{4}{3} {\ModMatCod}	{\ModMatSName}{\ModMatCH}{\ModMatCred}{ModMat}
-  \disciplina{profissional}{4}{4} {\MetQuantCod}	{\MetQuantSName}{\MetQuantCH}{\MetQuantCred}{PO}
-  \disciplina{profissional}{7}{5}	{\PrincTelecCod}	{\PrincTelecSName}{\PrincTelecCH}{\PrincTelecCred}{PrincTelec}
-  \disciplina{profissional}{4}{5}	{\ResMatCod}	{\ResMatSName}{\ResMatCH}{\ResMatCred}{ResMat}
-  \disciplina{profissional}{8}{4}	{\SegHigCod}	{\SegHigSName}{\SegHigCH}{\SegHigCred}{SegHig}
+  %disciplinas de outros departamentos da engenharia
+  \disciplina{eletronica}{10}{5}{\AdmCod}	{\AdmSName}		{\AdmCH}	{\AdmCred}		{Adm} % Administração
+  \disciplina{eletrica}{7}{6}	{\AnaFisCod}{\AnaFisSName}	{\AnaFisCH}	{\AnaFisCred}	{AnaFis} % Análise de Sistemas Físicos
+  \disciplina{eletrica}{5}{4}	{\CEVCod}	{\CEVSName}		{\CEVCH}	{\CEVCred}		{CEV} % Circuitos Elétricos
+  \disciplina{eletrica}{6}{5}{\CEVICod}	{\CEVISName}	{\CEVICH}	{\CEVICred}		{CEVI} % Circuitos Elétricos VI
+  \disciplina{eletronica}{8}{6}{\CServMecCod}{\CServMecSName}{\CServMecCH}{\CServMecCred}{ServoMec} % Controle de Servomecanismos
+  \disciplina{eletronica}{5}{5}{\EletICod}	{\EletISName}{\EletICH}{\EletICred}{EletI} % Eletrônica I
+  \disciplina{eletronica}{6}{6}{\EletIIACod}	{\EletIIASName}{\EletIIACH}{\EletIIACred}{EletII} % Eletrônica II
+  \disciplina{mecanica}{4}{2}{\FenTranCod}{\FenTranSName}{\FenTranCH}{\FenTranCred}{FenTran} % Fenômenos de Transporte
+  \disciplina{eletronica}{9}{5}{\IntEcoCod}{\IntEcoSName}{\IntEcoCH}{\IntEcoCred}{IntEco} % Introdução à Economia
+  \disciplina{ambiental}{2}{4}	{\IntAmbCod}	{\IntAmbSName}{\IntAmbCH}{\IntAmbCred}{IntAmb} % Introdução à Engenharia Ambiental
+  \disciplina{eletrica}{5}{3}	{\MatEleCod}	{\MatEleSName}{\MatEleCH}{\MatEleCred}{MatEle} % Materiais Elétricos
+  \disciplina{eletronica}{4}{3} {\ModMatCod}	{\ModMatSName}{\ModMatCH}{\ModMatCred}{ModMat} % Modelos Matemáticos
+  \disciplina{industrial}{4}{4} {\MetQuantCod}	{\MetQuantSName}{\MetQuantCH}{\MetQuantCred}{PO} % Métodos Quantitativos
+  \disciplina{eletronica}{7}{5}	{\PrincTelecCod}	{\PrincTelecSName}{\PrincTelecCH}{\PrincTelecCred}{PrincTelec} % Princípios de Telecomunicações
+  \disciplina{mecanica}{4}{5}	{\ResMatCod}	{\ResMatSName}{\ResMatCH}{\ResMatCred}{ResMat} % Resistência dos Materiais
+  \disciplina{industrial}{8}{4}	{\SegHigCod}	{\SegHigSName}{\SegHigCH}{\SegHigCred}{SegHig} % Engenharia do Trabalho
 
 
   %Disciplinas Desc
-  \disciplina{desc}{1}{1} {\AlgCompCod}	{\AlgCompSName}{\AlgCompCH}{\AlgCompCred}{AlgComp}
-  \disciplina{desc}{6}{2} {\AnAlgCod}	{\AnAlgSName}{\AnAlgCH}{\AnAlgCred}{AnAlg}
-  \disciplina{desc}{6}{3} {\ArqCompCod}	{\ArqCompSName}{\ArqCompCH}{\ArqCompCred}{ArqComp}
-  \disciplina{desc}{10}{2}{\ControlCod}	{\ControlSName}{\ControlCH}{\ControlCred}{Control}
-  \disciplina{desc}{2}{2} {\EngComputCod}    {\EngComputSName}{\EngComputCH}{\EngComputCred}{CalcNum}
-  \disciplina{desc}{7}{3} {\EngCompSocCod}	{\EngCompSocSName}{\EngCompSocCH}{\EngCompSocCred}{ETS}
-  \disciplina{desc}{6}{1} {\EngSistACod}	{\EngSistASName}{\EngSistACH}{\EngSistACred}{EngSistA}
-  \disciplina{desc}{7}{1} {\ProjBDCod}	{\ProjBDSName}{\ProjBDCH}{\ProjBDCred}{EngSistB}
-  \disciplina{desc}{9}{3} {\EstSupCod}	{\EstSupSName}{\EstSupCH}{\EstSupCred}{EstSup}
-  \disciplina{desc}{2}{1} {\EstrInfCod}	{\EstrInfSName}{\EstrInfCH}{\EstrInfCred}{EstrInf}
-  \disciplina{desc}{5}{2} {\FundCompCod}	{\FundCompSName}{\FundCompCH}{\FundCompCred}{FundComp}
-  \disciplina{desc}{6}{4} {\ICCod}	{\ICSName}{\ICCH}{\ICCred}{IC}
-  \disciplina{desc}{3}{1} {\LabProgACod}	{\LabProgASName}{\LabProgACH}{\LabProgACred}{LabProgI}
-  \disciplina{desc}{4}{1} {\LabProgBCod}	{\LabProgBSName}{\LabProgBCH}{\LabProgBCred}{LabProgII}
-  \disciplina{desc}{5}{1} {\LogProgCod}	{\LogProgSName}{\LogProgCH}{\LogProgCred}{LogProg}
-  \disciplina{desc}{7}{4}	{\MineraDadosCod}	{\MineraDadosSName}{\MineraDadosCH}{\MineraDadosCred}{MineraDados}
-  \disciplina{desc}{8}{5} {\ProcImagCod}	{\ProcImagSName}{\ProcImagCH}{\ProcImagCred}{ProcImag}
-  \disciplina{desc}{9}{2} {\CompParalCod}	{\CompParalSName}{\CompParalCH}{\CompParalCred}{ProgPara}
-  \disciplina{desc}{9}{1} {\ProjACod}	{\ProjASName}{\ProjACH}{\ProjACred}{ProjA}
-  \disciplina{desc}{10}{1}{\ProjBCod}	{\ProjBSName}{\ProjBCH}{\ProjBCred}{ProjB}
-  \disciplina{desc}{8}{1} {\ProjSOCod}	{\ProjSOSName}{\ProjSOCH}{\ProjSOCred}{SO}
-  \disciplina{desc}{8}{2} {\SistEmbCod}	{\SistEmbSName}{\SistEmbCH}{\SistEmbCred}{SistEmb}
-  \disciplina{desc}{8}{3} {\TelepCod}	{\TelepSName}{\TelepCH}{\TelepCred}{Telep}
-  \disciplina{desc}{7}{2} {\TeoCompCod}	{\TeoCompSName}{\TeoCompCH}{\TeoCompCred}{Comp}
+  \disciplina{desc}{1}{1} {\AlgCompCod}	{\AlgCompSName}{\AlgCompCH}{\AlgCompCred}{AlgComp} % Algoritmos Computacionais
+  \disciplina{desc}{6}{2} {\AnAlgCod}	{\AnAlgSName}{\AnAlgCH}{\AnAlgCred}{AnAlg} % Análise de Algoritmos
+  \disciplina{desc}{6}{3} {\ArqCompCod}	{\ArqCompSName}{\ArqCompCH}{\ArqCompCred}{ArqComp} % Arquitetura de Computadores
+  \disciplina{desc}{10}{2}{\ControlCod}	{\ControlSName}{\ControlCH}{\ControlCred}{Control} % Controle
+  \disciplina{desc}{2}{2} {\EngComputCod}    {\EngComputSName}{\EngComputCH}{\EngComputCred}{CalcNum} % Engenharia de Computação
+  \disciplina{desc}{7}{3} {\EngCompSocCod}	{\EngCompSocSName}{\EngCompSocCH}{\EngCompSocCred}{ETS} % Engenharia e Sociedade
+  \disciplina{desc}{6}{1} {\EngSistACod}	{\EngSistASName}{\EngSistACH}{\EngSistACred}{EngSistA} % Engenharia de Sistemas A
+  \disciplina{desc}{7}{1} {\ProjBDCod}	{\ProjBDSName}{\ProjBDCH}{\ProjBDCred}{EngSistB} % Engenharia de Sistemas B
+  \disciplina{desc}{9}{3} {\EstSupCod}	{\EstSupSName}{\EstSupCH}{\EstSupCred}{EstSup} % Estágio Supervisionado
+  \disciplina{desc}{2}{1} {\EstrInfCod}	{\EstrInfSName}{\EstrInfCH}{\EstrInfCred}{EstrInf} % Estruturas de Informação
+  \disciplina{desc}{5}{2} {\FundCompCod}	{\FundCompSName}{\FundCompCH}{\FundCompCred}{FundComp} % Fundamentos de Computadores
+  \disciplina{desc}{6}{4} {\ICCod}	{\ICSName}{\ICCH}{\ICCred}{IC} % Inteligência Computacional
+  \disciplina{desc}{3}{1} {\LabProgACod}	{\LabProgASName}{\LabProgACH}{\LabProgACred}{LabProgI} % Laboratório de Programação I
+  \disciplina{desc}{4}{1} {\LabProgBCod}	{\LabProgBSName}{\LabProgBCH}{\LabProgBCred}{LabProgII} % Laboratório de Programação II
+  \disciplina{desc}{5}{1} {\LogProgCod}	{\LogProgSName}{\LogProgCH}{\LogProgCred}{LogProg} % Lógica de Programação
+  \disciplina{desc}{7}{4}	{\MineraDadosCod}	{\MineraDadosSName}{\MineraDadosCH}{\MineraDadosCred}{MineraDados} % Mineração de Dados
+  \disciplina{desc}{8}{5} {\ProcImagCod}	{\ProcImagSName}{\ProcImagCH}{\ProcImagCred}{ProcImag} % Processamento de Imagens
+  \disciplina{desc}{9}{2} {\CompParalCod}	{\CompParalSName}{\CompParalCH}{\CompParalCred}{ProgPara} % Programação Paralela
+  \disciplina{desc}{9}{1} {\ProjACod}	{\ProjASName}{\ProjACH}{\ProjACred}{ProjA} % Projeto A
+  \disciplina{desc}{10}{1}{\ProjBCod}	{\ProjBSName}{\ProjBCH}{\ProjBCred}{ProjB} % Projeto B
+  \disciplina{desc}{8}{1} {\ProjSOCod}	{\ProjSOSName}{\ProjSOCH}{\ProjSOCred}{SO} % Sistemas Operacionais
+  \disciplina{desc}{8}{2} {\SistEmbCod}	{\SistEmbSName}{\SistEmbCH}{\SistEmbCred}{SistEmb} % Sistemas Embarcados
+  \disciplina{desc}{8}{3} {\TelepCod}	{\TelepSName}{\TelepCH}{\TelepCred}{Telep} % Teleprocessamento
+  \disciplina{desc}{7}{2} {\TeoCompCod}	{\TeoCompSName}{\TeoCompCH}{\TeoCompCred}{Comp} % Teoria da Compiladores
 
   %eletivas
   \disciplina{eletiva}{9}{4} {\EletACod}	{Eletiva Restrita}{\EletACH}{\EletACred}{EA}
@@ -262,36 +275,47 @@
   \trava {ProjA}{170 cred}
   \trava {ProcImag}{94 cred}
 
-\end{tikzpicture}
+  \node at (20cm,14mm) (legenda)
+  {\textbf{Código para as Disciplinas}};
+  \node  [below right= 1.5mm and -36mm of legenda,fill=cbasico, draw=black,
+    label=right:Básico.](basico) {};
+  \node [below  of=basico,node distance=5mm,fill=cmecanica, draw=black, label=right:Mecânica.] (mecan) {};
+  \node [below  of=mecan,node distance=5mm,fill=cambiental, draw=black, label=right:Ambiental.] (ambient) {};
+  \node [below  of=ambient,node distance=5mm,fill=cindustrial, draw=black, label=right:Industrial.] (indust) {};
+  \node [below  of=indust,node distance=5mm,fill=celetrica, draw=black, label=right:Elétrica.] (eletri) {};
+  \node [below  of=eletri,node distance=5mm,fill=celetronica, draw=black, label=right:Eletrônica.] (prof) {};
+  \node [below of=prof,node distance=5mm,fill=cdesc, draw=black, label=right:Computacão.] (especifico){};
+  \node [below of=especifico,node distance=5mm,fill=celetiva, draw=gray, draw=black, label=right:Eletivas] {};
 
-\vspace{1mm}
+\end{tikzpicture}
+\multiply\value{thoras} by 5
+\divide\value{thoras} by 6
+\newcounter{hextensao} 
+\setcounter{hextensao}{\the\value{thoras}}
+\divide\value{hextensao} by 9
+\addtocounter{thoras}{\the\value{hextensao}}
+
+\vspace{-4mm}
 \setlength\parindent{0pt}
 
-\begin{multicols}{5}
-  \vfill\null
-  \columnbreak
-
-  \begin{tikzpicture}
-    \node at (10cm,1mm) (legenda)
-    {\textbf{Código para as Disciplinas:}};
-    \node  [below right= 1.5mm and -48mm of legenda,fill=yellow, draw=black,
-      label=right:Básico da Engenharia.](basico) {};
-    \node [below  of=basico,node distance=5mm,fill=green, draw=black, label=right:Profissional Comum.] (prof) {};
-    \node [below of=prof,node distance=5mm,fill=orange, draw=black, label=right:Profissional Específico.] (especifico){};
-    \node [below of=especifico,node distance=5mm,fill=orange!50!white, draw=gray, draw=black, label=right:Eletivas] {};
-  \end{tikzpicture}
-
-  \columnbreak
+\begin{multicols}{4}
+  \vfill
   Os números situados na parte inferior direita e esquerda representam os créditos e carga horária, respectivamente, conferidos à disciplina.
 
+  
   \columnbreak
-  O Curso de Engenharia será integralizado em um mínimo de 10 e um máximo de 18 períodos compreendendo: Parte Comum e Ciclo Profissional.
+  O Curso de Engenharia será integralizado em um mínimo de 10 e um máximo de 18 períodos.
 
   \columnbreak
   \textbf{Total de Créditos:} \the\value{cred}\\
   \addtocounter{cred}{-9}
-  (\the\value{cred} em disciplinas obrigatórias e 9 em disciplinas eletivas restritas)\\
-  Total de horas do curso: \the\value{thoras}
+  (\the\value{cred} em disciplinas obrigatórias e\\ 9 em disciplinas eletivas restritas)
+
+  \columnbreak
+  Total de horas do curso: \the\value{thoras}\\
+  Total de horas de extensão: \the\value{hextensao}
+
+  
 \end{multicols}
 
 
