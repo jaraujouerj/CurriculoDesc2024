@@ -4,6 +4,7 @@
 \usepackage[top=1in,left=1.5in,bottom=1in,right=2.5cm]{geometry}
 \usepackage[absolute]{textpos}
 \usepackage[table]{xcolor}
+\usepackage{xspace}
 \usepackage{tikz}
 \usetikzlibrary{calc}
 \usepackage{scrextend}
@@ -86,6 +87,20 @@
 \setlength\cftparskip{-2pt}
 \setlength\cftbeforechapskip{0pt}
 \setlength{\headheight}{15pt}
+\newcounter{thobrigatorias}  
+\setcounter{thobrigatorias}{3225}
+\newcommand{\hobrigatorias}{\the\value{thobrigatorias}\xspace}
+\newcounter{thextensao}
+\setcounter{thextensao}{359}
+\newcounter{thtotal}
+\setcounter{thtotal}{\the\value{thobrigatorias}+\the\value{thextensao}}
+\newcommand{\vagas}{50\xspace}
+\newcommand{\desc}{Departamento de Engenharia de Sistemas e Computação\xspace}
+\newcommand{\totalhoras}{\the\value{thtotal}\xspace}
+\newcommand{\ndisciplinas}{55\xspace}
+\newcommand{\nobrigatorias}{52\xspace}
+\newcommand{\neletivas}{3\xspace}
+\newcommand{\hextensao}{\the\value{thextensao}\xspace}
 \begin{document}
 \author {Departamento de Engenharia de Sistemas e Computação}
 
