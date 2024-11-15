@@ -2,26 +2,27 @@
 %	Latex para ementa tipo dep da uerj
 %----------------------------------------------------------------------------------------
 %apagar .aux e executar biber ementalatex para obter bibliografia atualizada
-\documentclass{ementa} % Use A4 paper with a 12pt font size 
+\documentclass{ementa} 
 
 \begin{document}
 
-\ndisciplina 		{\ArqComp} 
-\credteorica		{3} %
-\credlab			{2} %
-\nomeprofessor		{Luiza de Macedo Mourelle}
-\matriculaprofessor	{7058-1}
-\chta 				{\ArqCompCH h}%carga horária total aluno
-\preum				{Fundamentos de Computadores} %
-\codpreum			{FEN 06-XXXXX} %
-\objetivos			{Ao final do período, o aluno deverá ter assimilado as 
-						características lógicas e físicas da arquitetura de 
-						computadores digitais.}
-\ementa				{Microarquitetura, hierarquia de memória, avaliação de desempenho, 
-						taxonomia de flynn, conceitos de entrada e saída, paralelismo a nível de instrução, 
-						paralelismo a nível de dados, paralelismo a nível de thread, redes de interconexão, 
-						arquiteturas avançadas.}
-\eletivadefinida { Eng. Elétrica/Eletrônica e Eng. Elétrica/Telecomunicações}
+\ndisciplina 		{\ArqComp} % Escreva o nome da disciplina
+\nomeprofessor	    {Luiza de Macedo Mourelle} % Coloque o nome do professor
+\matriculaprofessor {7058-1} % Coloque a matricula do professor
+\objetivos	        {Ao final do período, o aluno deverá ter assimilado as características lógicas e físicas da arquitetura de computadores digitais.} % Objetivos da disciplina
+\ementa	            {Níveis de abstração. Microarquitetura. Hierarquia de memória. Conceitos de entrada e saída. Avaliação de desempenho. Paralelismo. Classificação das máquinas paralelas. Arquiteturas avançadas.} % Ementa da disciplina
+\preum		        {\FundComp} % Pré-requisito 1
+\codpreum	        {\FundCompCod} % Código do pré-requisito 1
+\semipresencial    % a disciplina é semi-presencial
 
-\formementa{ArqComp}
+\disciplinaisolada		% Descomente se a disciplina puder ser oferecida como disciplina isolada
+
+% Cada crédito corresponde a 15 horas aula
+\credteorica	{3} % Créditos de Teoria
+\credlab		{2} % Descomente e escreva o número de Créditos de Laboratório
+
+\chta 			{\ArqCompCH} %carga horária total aluno
+
+
+\formementa{ArqComp} % deixe vazio
 \end{document}
