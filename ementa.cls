@@ -279,12 +279,12 @@
 \newcounter{chtotalsemanal}
 \newcounter{chtotal}
 
-\ifx\ialteracao\undefined
-  \newcommand{\icriacao}{x}
-  \newcommand{\ialteracao}{}
-\else
-  \newcommand{\icriacao}{}
-\fi
+%\ifx\ialteracao\undefined
+%  \newcommand{\icriacao}{x}
+%  \newcommand{\ialteracao}{}
+%\else
+%  \newcommand{\icriacao}{}
+%\fi
 
 \ifx \idepartamento \undefined
 \newcommand \idepartamento {Engenharia de Sistemas e Computação}
