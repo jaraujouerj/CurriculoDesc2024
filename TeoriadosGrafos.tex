@@ -1,0 +1,52 @@
+%----------------------------------------------------------------------------------------
+%	Latex para ementa tipo dep da uerj
+%----------------------------------------------------------------------------------------
+%apagar .aux e executar biber ementalatex para obter bibliografia atualizada
+\documentclass{ementa} % Use A4 paper with a 12pt font size 
+
+\begin{document}
+
+\nomeprofessor{\simone}
+\matriculaprofessor{\matsimone}
+
+\ndisciplina {\Grafos}
+
+\chta		{\GrafosCH h}%carga horária total aluno
+\codigo	{\GrafosCod}%Código da disciplina 
+
+\disciplinaisolada
+\semipresencial
+\objetivos	{
+  Proporcionar conhecimentos teóricos e práticos envolvendo a Teoria dos Grafos e suas Aplicações, tornando o aluno apto a aplicar e resolver problemas reais modelados por meio dos grafos.
+}
+
+\ementa{
+    Noções e definições básicas em Teoria dos grafos. Principais Aplicações; Características em grafos: Subgrafos, isomorfismo, grafos bipartidos, grafos completos e grafos complementar. 
+    
+    Dígrafos ou grafos orientados: Principais definições; arcos, grau de entrada e de saída, poço e sumidouro, grafos direcionados acíclicos (DAGS).
+
+    Representação de grafos: estruturas de dados para representar os grafos; Matriz e Lista de Adjacência e Matriz de Incidência. Busca em grafos: Busca em Largura e Busca em Profundidade. Aplicações da busca em grafos como a ordenação topológica.
+
+    Conexividade em grafos: Principais teoremas de componentes conexos, $k$-conexidade por vértices e arestas; pontes, articulação e cortes, grafos fortemente conexos; Teorema de Menger.
+
+    Caminhos em Grafos: Principais Definições; Principais teoremas em caminhos; grafos eulerianos e hamiltonianos; Problema do caminhos mínimos;Algoritmos de Camínhos mínimos: Dikjstra, Bellman Ford e Floyd-Warshall.
+  
+    Árvores em Grafos: Definição de árvores e florestas; Árvores geradora mínima (AGM); Propriedades dos Cortes em AGM; Algoritmos de AGM; Algoritmo de Kruskal e Algoritmo de Prim.
+
+    Grafos Planares: Teorema de Euler; Teorema de Kuratowski; Teorema das Quatro Cores;  Coloração de Vértices; Número cromático.
+
+    Problemas difíceis em grafos: coloração de vértices, circuitos Hamiltonianos e eulerianos; Problema do caixeiro viajante; Problema da Clique em grafos e do conjunto independente.
+    
+}
+\preum	  {\EstrInf} %
+\predois  {\AnAlg} %
+\codpreum	{\EstrInfCod} %
+\codpredois	{\AnAlgCod} %
+\credteorica	{2} %
+\credlab	    {2} %
+
+
+\formementa{TeoriaGrafos}
+
+
+\end{document}
