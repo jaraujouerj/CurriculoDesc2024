@@ -3,7 +3,7 @@ PPTEX = $(PP:%=%.pdf)
 FLUXOGRAMA_TEX = fluxogramaEngenhariaComputacao.tex
 FLUXOGRAMA_PDF = fluxogramaEngenhariaComputacao.pdf
 DESC = 	AlgoritmosComputacionais 			AnaliseDeAlgoritmos 		ComputacaoParalela 			ArquiteturaDeComputadores \
-		ControleDeProcessosPorComputador 	EngenhariaComputacional 	EngenhariaDeSistemas		EngenhariaDeComputacaoESociedade \
+		ControleDeProcessosPorComputador 	EngenhariaDeSistemas		EngenhariaDeComputacaoESociedade \
 		EstagioSupervisionadoXIA			EstruturasDeInformacao		FundamentosDeComputadores 	InteligenciaComputacional \
 		LaboratorioDeProgramacaoA			LaboratorioDeProgramacaoB 	LogicaEmProgramacao			MineracaoDeDados \
 		ProcessamentoDeImagens				ProjetoDeSistemasOperacionais	ProjetoXIA		 	    ProjetoXIB \
@@ -23,7 +23,7 @@ $(FLUXOGRAMA_PDF): $(FLUXOGRAMA_TEX)
 
 .PHONY: all clean
 
-$(DESCPDF): %.pdf: %.tex
+$(DESCPDF): %.pdf: %.tex bibliografia.bib
 	latexmk -pdf -pdflatex="lualatex -interaction=nonstopmode" -use-make $<
 
 $(DISC_EXT_PDF): %.pdf: %.tex
