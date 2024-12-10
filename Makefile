@@ -1,37 +1,34 @@
-PP = ProjetoPedagogico.pdf
-PPTEX = $(PP:%=%.pdf)
-FLUXOGRAMA_TEX = fluxogramaEngenhariaComputacao.tex
-FLUXOGRAMA_PDF = fluxogramaEngenhariaComputacao.pdf
-DESC = 	AlgoritmosComputacionais 			AnaliseDeAlgoritmos 		ComputacaoParalela 			ArquiteturaDeComputadores \
-		ControleDeProcessosPorComputador 	EngenhariaDeSistemas		EngenhariaDeComputacaoESociedade \
-		EstagioSupervisionadoXIA			EstruturasDeInformacao		FundamentosDeComputadores 	InteligenciaComputacional \
-		LaboratorioDeProgramacaoA			LaboratorioDeProgramacaoB 	LogicaEmProgramacao			MineracaoDeDados \
-		ProcessamentoDeImagens				ProjetoDeSistemasOperacionais	ProjetoXIA		 	    ProjetoXIB \
-		ProjetoEAdministracaoDeBancoDeDados SistemasEmbutidos			TeleprocessamentoERedes		TeoriaDeCompiladores \
-		Eletiva1_ReconhecimentoDePadroes	Eletiva2_RedesDeInterconexao Eletiva3_Geomatica			Eletiva4_ComputacaoDeAltoDesempenho \
-		Eletiva5_ProgramacaoParaDispositivosMoveis Eletiva6_Padroes
-DESCPDF = $(DESC:%=%.pdf)
+# Nome do arquivo principal
+MAIN = ProjetoPedagogico.tex
+OUTPUT = ProjetoPedagogico.pdf
+FLUXO = fluxogramaEngenhariaComputacao.tex
+FLUXOPDF = fluxogramaEngenhariaComputacao.pdf
+CAPITULOS = $(wildcard cap-*.tex) anexos.tex
 
-DISC_EXT = CircuitosEletricosI CircuitosEletricosII AnaliseDeSistemasFisicos EngenhariaDoTrabalhoI MateriaisEletricosEMagneticos \
-			MetodosQuantitativos
-DISC_EXT_PDF = $(DISC_EXT:%=%.pdf)
+# Diretório das ementas
+EMENTAS_DIR = ementas
 
-all: $(PP) $(FLUXOGRAMA_PDF) $(DESCPDF) $(DISC_EXT_PDF)
+# Regra padrão
+all: ementas $(FLUXOPDF) $(OUTPUT)
 
-$(FLUXOGRAMA_PDF): $(FLUXOGRAMA_TEX)
-	latexmk -pdf -pdflatex="lualatex -interaction=nonstopmode" -use-make $<
+fluxograma: $(FLUXOPDF)
 
-.PHONY: all clean
+# Regra para compilar o fluxograma
+$(FLUXOPDF): $(FLUXO)
+	lualatex $(FLUXO)
 
-$(DESCPDF): %.pdf: %.tex bibliografia.bib
-	latexmk -pdf -pdflatex="lualatex -interaction=nonstopmode" -use-make $<
+# Regra para executar o Makefile no diretório "ementas"
+ementas:
+	cd $(EMENTAS_DIR) && $(MAKE)
 
-$(DISC_EXT_PDF): %.pdf: %.tex
-	latexmk -pdf -pdflatex="lualatex -interaction=nonstopmode" -use-make $<
+# Regra para compilar o arquivo principal
+$(OUTPUT): $(MAIN) $(CAPITULOS)
+	pdflatex $(MAIN)
+	biber $(basename $(MAIN))
+	pdflatex $(MAIN)
+	pdflatex $(MAIN)
 
-$(PP): $(TEX_FILE) $(DESCPDF)
-	latexmk -pdf -pdflatex="lualatex -interaction=nonstopmode" -use-make $(TEX_FILE)
-
+# Limpeza
 clean:
-	latexmk -C
-	rm -f $(PP) $(DESCPDF) *.aux *.bbl *.blg *.fls *.log *.out *.fdb_latexmk *.synctex.gz *.toc *.lof *.lot *.lol *.run.xml *.bcf *.nav *.snm *.vrb
+	cd $(EMENTAS_DIR) && $(MAKE) clean
+	rm -f $(basename $(MAIN)).aux $(basename $(MAIN)).log $(basename $(MAIN)).bbl $(basename $(MAIN)).blg $(basename $(MAIN)).out 

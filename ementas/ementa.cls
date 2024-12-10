@@ -2,8 +2,7 @@
 
 \ProvidesClass{ementa}[2024/03/09 Ementa Engenharia UERJ]
 \LoadClass[12pt,a4paper]{article}
-\makeatletter
-\def\input@path{{../}{.}\makeatother
+
 % Pacotes necessários
 \RequirePackage{calc} %serve para fazer certas contas simples
 \RequirePackage[left=2.48cm,right=1.7cm,top=1.35cm,marginparwidth=3.4cm]{geometry} % Adjust page margins
