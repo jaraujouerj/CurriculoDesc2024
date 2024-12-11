@@ -1,8 +1,18 @@
 \NeedsTeXFormat{LaTeX2e}
 
 \ProvidesClass{ementa}[2024/03/09 Ementa Engenharia UERJ]
-\LoadClass[12pt,a4paper]{article}
+% Adiciona o diretório pai ao caminho de busca
+\makeatletter
+\def\input@path{{../}}
+\makeatother
+% Carrega pacotes do diretório pai
+\RequirePackage{disciplinasDB}
+% Restaura o comportamento padrão
+\makeatletter
+\def\input@path{{}}
+\makeatother
 
+\LoadClass[12pt,a4paper]{article}
 % Pacotes necessários
 \RequirePackage{calc} %serve para fazer certas contas simples
 \RequirePackage[left=2.48cm,right=1.7cm,top=1.35cm,marginparwidth=3.4cm]{geometry} % Adjust page margins
@@ -15,7 +25,7 @@
 \RequirePackage[defernumbers=true, backend=biber, sorting=none]{biblatex} %bibliografia
 \RequirePackage{tikz}
 \usetikzlibrary{positioning,shapes,shadows,arrows,calc,matrix}
-\RequirePackage{disciplinasDB}
+
 \RequirePackage{microtype} % Slightly tweak font spacing for aesthetics
 \usepackage[sfdefault,lf]{carlito}
 \renewcommand{\familydefault}{\sfdefault} % Define Carlito como a fonte padrão
@@ -50,11 +60,11 @@
 \fancyheadoffset[L]{-4mm}
 \fancyheadoffset[R]{-2mm}
 \lhead{
-\raisebox{-0.26\height}{\includegraphics[height=20.4mm,keepaspectratio]{imagens/logo_uerj_cor.png}}}
+\raisebox{-0.26\height}{\includegraphics[height=20.4mm,keepaspectratio]{../imagens/logo_uerj_cor.png}}}
 \chead{\raisebox{2.2mm} {\large{UNIVERSIDADE DO ESTADO DO RIO DE JANEIRO}}\\
 	
 	\large{FORMULÁRIO DE IDENTIFICAÇÃO DE DISCIPLINA}}
-\rhead{\raisebox{0.09\height}{\includegraphics[height=13mm,keepaspectratio]{imagens/pr1}}}
+\rhead{\raisebox{0.09\height}{\includegraphics[height=13mm,keepaspectratio]{../imagens/pr1}}}
 
 % Definiçṍes
 % Define o departamento
