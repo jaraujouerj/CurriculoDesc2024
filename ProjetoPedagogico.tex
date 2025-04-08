@@ -74,7 +74,9 @@
 \usepackage{graphicx}        % standard LaTeX graphics tool
                              % when including figure files
 \usepackage{multicol}        % used for the two-column index
+\usepackage{multirow} 
 \usepackage[bottom]{footmisc}% places footnotes at page bottom
+\usepackage{placeins}
 
 % etc.
 % see the list of further useful packages
@@ -103,7 +105,7 @@
 \newcommand{\neletivas}{3\xspace}
 \newcommand{\hextensao}{\the\value{thextensao}\xspace}
 \begin{document}
-\author {Departamento de Engenharia de Sistemas e Computação}
+%\author {Departamento de Engenharia de Sistemas e Computação}
 
 \begin{textblock*}{3cm}[0.5,0.5](4cm,4cm)
 	\includegraphics[width=3cm]{imagens/logo_uerj_cor.jpg}
@@ -129,7 +131,6 @@
 
 \mainmatter%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \pagestyle{fancy}
-\include{cap-semonus}
 \include{cap-Introducao}
 \include{cap-dados_UA}
 \include{cap-identificacao_curso}

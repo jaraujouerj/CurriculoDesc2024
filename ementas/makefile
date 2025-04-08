@@ -10,6 +10,6 @@ all: $(PDFFILES)
 	pdflatex $<
 
 clean:
-	rm -f *.aux *.bbl *.blg *.log *.out *.toc *.pdf
+	rm -f *.aux *.bbl *.blg *.log *.out *.toc *.pdf  *.xml *.bcf *.run.xml *.fdb_latexmk *.fls *.synctex.gz
 
 .PHONY: all clean
