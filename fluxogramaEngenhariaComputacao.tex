@@ -168,6 +168,7 @@
   \disciplina{desc}{8}{3} {\SistEmbCod}	{\SistEmbSName}{\SistEmbCH}{\SistEmbCred}{SistEmb} % Sistemas Embutidos
   \disciplina{desc}{7}{4} {\TelepCod}	{\TelepSName}{\TelepCH}{\TelepCred}{Telep} % Redes
   \disciplina{desc}{7}{2} {\TeoCompCod}	{\TeoCompSName}{\TeoCompCH}{\TeoCompCred}{Comp} % Teoria da Compiladores
+  \disciplina{desc}{3}{2} {\ExtCod}	{\ExtSName}{\ExtCH}{\ExtCred}{Ext} % Projetos de Extensão
 
   %eletivas
   \disciplina{eletiva}{9}{2} {\EletACod}	{Eletiva Restrita}{\EletACH}{\EletACred}{EA}
@@ -192,7 +193,7 @@
 
   %Período 1
   \prereq			  {AlgComp}	{EstrInf}
-  \pre  [olive] {AlgComp}	{CalcNum}   {-4}{-3}{0}{-3}{0}
+  \pre  [olive] {AlgComp}	{CalcNum}   {-4}{-4}{0}{-3}{0}
   \pre	[red]   {AlgComp}	{AnAlg}     {-1}{5}{-8}{4}{0}
   \pre	[blue]  {AlgComp}	{FundComp}  {-2}{4}{-15}{2}{-4}
   \pre          {LogProg} {AnAlg}     {2}{-3}{0}{2}{0}
@@ -202,41 +203,41 @@
   \pre	[blue]	{AlgLin}  {ProcImag}  {5}{1}{10}{2}{-2}
 
   % Período 2
-  \pre          {EstrInf}	{LabProgI}  {1}{2}{8}{2}{-3}
-  \pre  [blue]  {EstrInf}	{Grafos}    {2}{1}{9}{2}{-3}
+  \pre          {EstrInf}	{LabProgI}  {2}{3}{8}{2}{-3}
+  \pre  [blue]  {EstrInf}	{Grafos}    {4}{1}{9}{2}{-3}
   \pre  [teal] 	{EstrInf}	{LabProgII} {-3}{1}{-13}{4}{-4}
   \prereq				{CalcII}	{CalcIII}
   \prereq				{FisI}		{FisII}
   \prereq				{FisEI}		{FisEII}
 
   %\pre	[blue]  {FisI}		{MecTec}    {1}{-3}{0}{-1}{0}
-%\pre  [blue]	{FisII}		{FenTran}   {1}{-2}{0}{2}{0}
+  %\pre  [blue]	{FisII}		{FenTran}   {1}{-2}{0}{2}{0}
   \pre  [blue]   {CalcIII}	{ModMat}   {-1}{1}{-13}{3}{-1}
   %\pre			    {AlgLin}	{PO}        {-2}{2}{-12}{2}{0}
-  \pre  [olive]  {LogProg} {LabProgI}  {1}{-5}{0}{-1}{0}
-  \prereq          {LogProg} {LabProgII} 
+  \pre  [olive]  {LogProg} {LabProgI}  {0}{5}{15}{4}{0}
+  \pre          {LogProg} {LabProgII} {-2}{3}{-10}{3}{0}
 
 
   % %Período 3
-  \pre[red]     {AnAlg}		{Comp}       {-2}{4}{-13}{2}{0}
-  \pre	[blue]  {AnAlg}	  {Grafos}     {-1}{5}{-8}{2}{3}
+  \pre[red]     {AnAlg}		{Comp}       {-4}{4}{-13}{2}{0}
+  \pre	[blue]  {AnAlg}	  {Grafos}     {-2}{5}{-8}{2}{3}
   \prereq				{FisII}		{FisIII}
-  \prereq				{FisEII}  {FisEIII} 
+  \prereq				{FisEII}  {FisEIII}
   %\prereq				{MecTec}	{ResMat}
-  \prereq [red]	{ProbEst}	{ProcImag}  
+  \prereq [red]	{ProbEst}	{ProcImag}
   \pre  	      {LabProgI}{IC}        {-1}{3}{-10}{3}{0}
   \pre[teal]   	{LabProgI}{ICII}        {-3}{2}{-12}{5}{-2}
 
   % % Período 4
-  \pre[blue]    {LabProgII}{EngSistA} {3}{1}{-9}{4}{-2}
+  \pre[blue]    {LabProgII}{EngSistA} {3}{1}{-9}{5}{-2}
   \pre				{FisIII}	{FisIV} {-3}{-4}{0}{0}{-4}
   \pre [red]	  {FisIII}	{MatEle}  {3}{-2}{0}{4}{0}
   \pre	      {FundIComp} {FundComp}{5}{-4}{0}{3}{0}
-  \prereq [teal] 	{FisIII}	{CEV}   
-  \pre [red]		{ModMat}	{CEVI}    {0}{-5}{0}{-2}{0}
-  \pre	  {CEV}	{EletI}    {-1}{-4}{0}{0}{-4}
-  \prereq[blue]	  {CEV}		  {CEVI}   
-  
+  \prereq [teal] 	{FisIII}	{CEV}
+  \pre [red]		{ModMat}	{CEVI}    {0}{-5}{0}{-4}{0}
+  \pre	  {CEV}	{EletI}    {-3}{-4}{0}{0}{-4}
+  \prereq[blue]	  {CEV}		  {CEVI}
+
 
   % Período 5
   \pre[purple]	{FundComp}{ArqComp} {-3}{-3}{0}{-3}{2}
@@ -244,7 +245,7 @@
 
   % Período 6
   \prereq		    {EngSistA}{EngSistB}
-  \pre[blue]		{ArqComp}	{SO}{-3}{-4}{0}{-3}{2}
+  \pre[blue]		{ArqComp}	{SO}{-3}{-3}{0}{-3}{1}
   \prereq[red]		  {ArqComp}	{Telep}
   \pre				  {ArqComp}	{SistEmb}{3}{3}{10}{4}{0}
   \prereq[teal]  {IC}		  {MineraDados}
@@ -256,7 +257,7 @@
   \pre   {EngSistB}{EngSistC}{3}{-2}{0}{-1}{0}
 
   % % Período 8
- 
+
   \pre	[blue]		{SO}		{Control}{-1}{-4}{0}{-1}{0}
 
   % % Período 9
@@ -290,11 +291,12 @@
   \node [below of=prof,node distance=5mm,fill=celetiva, draw=gray, draw=black, label=right:Eletivas] {};
 
 \end{tikzpicture}
-\newcounter{haula} 
+\newcounter{haula}
+\addtocounter{thoras}{-30}
 \setcounter{haula}{\the\value{thoras}}
 %\multiply\value{thoras} by 5
 %\divide\value{thoras} by 6
-\newcounter{hextensao} 
+\newcounter{hextensao}
 \setcounter{hextensao}{\the\value{thoras}}
 \divide\value{hextensao} by 9
 \addtocounter{thoras}{\the\value{hextensao}}
@@ -307,22 +309,24 @@
   \vfill
   Os números situados na parte inferior direita e esquerda representam os créditos e carga horária, respectivamente, conferidos à disciplina.
 
-  
+
   \columnbreak
   O Curso de Engenharia será integralizado em um mínimo de 10 e um máximo de 18 períodos.
 
   \columnbreak
   \textbf{Total de Créditos:} \the\value{cred}\\
-   \the\value{tdisciplinas} disciplinas\\
-  \addtocounter{cred}{-12}
-  (\the\value{cred} créditos em disciplinas obrigatórias e\\ 12 créditos em disciplinas eletivas restritas)
+  \the\value{tdisciplinas} disciplinas\\
+  \addtocounter{cred}{-14}
+  (\the\value{cred} créditos em disciplinas obrigatórias\\ 2 créditos em disciplina de extensão e\\ 12 créditos em disciplinas eletivas restritas)
 
   \columnbreak
   %Total de horas-aula do curso: \the\value{haula}\\
+  \addtocounter{thoras}{1} % Arredonda para cima
+  Total de horas do curso: \the\value{thoras}\\
   Total de horas do curso (sem ext.): \the\value{haula}\\
   Total de horas de extensão: \the\value{hextensao}
 
-  
+
 \end{multicols}
 
 
