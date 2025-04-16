@@ -128,14 +128,15 @@
 
   %disciplinas de outros departamentos da engenharia
   \disciplina{industrial}{10}{4}{\AdmCod}	{\AdmSName}		{\AdmCH}	{\AdmCred}		{Adm} % Administração
-  \disciplina{eletrica}{5}{5}	{\CEVCod}	{\CEVSName}		{\CEVCH}	{\CEVCred}		{CEV} % Circuitos em corrente Conínua
-  \disciplina{eletrica}{6}{5}{\CEVICod}	{\CEVISName}	{\CEVICH}	{\CEVICred}		{CEVI} % Circuitos em Corrente Alternada
+  \disciplina{eletrica}{5}{5}	{\CCCCod}	{\CCCSName}		{\CCCCH}	{\CCCCred}		{CCC} % Circuitos em corrente Conínua
+  \disciplina{eletrica}{6}{5}{\CCACod}	{\CCASName}	{\CCACH}	{\CCACred}		{CCA} % Circuitos em Corrente Alternada
   \disciplina{eletronica}{6}{6}{\EletICod}	{\EletISName}{\EletICH}{\EletICred}{EletI} % Eletrônica I
   \disciplina{industrial}{8}{1}{\EmpreCod}{\EmpreSName}{\EmpreCH}{\EmpreCred}{Empre} % Empreendedorismo
   \disciplina{industrial}{7}{6}{\IntEcoCod}{\IntEcoSName}{\IntEcoCH}{\IntEcoCred}{IntEco} % Introdução à Economia
   \disciplina{ambiental}{1}{5}	{\IntAmbCod}	{\IntAmbSName}{\IntAmbCH}{\IntAmbCred}{IntAmb} % Introdução à Engenharia Ambiental
   \disciplina{eletrica}{5}{4}	{\MatEleCod}	{\MatEleSName}{\MatEleCH}{\MatEleCred}{MatEle} % Materiais Elétricos
   \disciplina{eletrica}{5}{3} {\ModMatCod}	{\ModMatSName}{\ModMatCH}{\ModMatCred}{ModMat} % Modelos Matemáticos
+  \disciplina{eletrica}{4}{4} {\LogCircDigCod}	{\LogCircDigSName}{\LogCircDigCH}{\LogCircDigCred}{LogCircDig} % Lógica e Circuitos Digitais
 
 
   %Disciplinas Desc
@@ -150,7 +151,6 @@
   \disciplina{desc}{7}{3} {\ProjBDCod}	{\ProjBDSName}{\ProjBDCH}{\ProjBDCred}{EngSistB} % Engenharia de Sistemas B
   \disciplina{desc}{9}{3} {\EstSupCod}	{\EstSupSName}{\EstSupCH}{\EstSupCred}{EstSup} % Estágio Supervisionado
   \disciplina{desc}{2}{1} {\EstrInfCod}	{\EstrInfSName}{\EstrInfCH}{\EstrInfCred}{EstrInf} % Estruturas de Informação
-  \disciplina{eletrica}{4}{4} {\FundICompCod}	{\FundICompSName}{\FundICompCH}{\FundICompCred}{FundIComp} % Técnicas Digitais
   \disciplina{desc}{5}{2} {\FundCompCod}	{\FundCompSName}{\FundCompCH}{\FundCompCred}{FundComp} % Fundamentos de Computadores
   \disciplina{desc}{6}{1} {\ICCod}	{\ICSName}{\ICCH}{\ICCred}{IC} % Inteligência Computacional I
   \disciplina{desc}{6}{2} {\ICIICod}	{\ICIISName}{\ICIICH}{\ICIICred}{ICII} % Inteligência Computacional II
@@ -232,11 +232,11 @@
   \pre[blue]    {LabProgII}{EngSistA} {3}{1}{-9}{5}{-2}
   \pre				{FisIII}	{FisIV} {-3}{-4}{0}{0}{-4}
   \pre [red]	  {FisIII}	{MatEle}  {3}{-2}{0}{4}{0}
-  \pre	      {FundIComp} {FundComp}{5}{-4}{0}{3}{0}
-  \prereq [teal] 	{FisIII}	{CEV}
-  \pre [red]		{ModMat}	{CEVI}    {0}{-5}{0}{-4}{0}
-  \pre	  {CEV}	{EletI}    {-3}{-4}{0}{0}{-4}
-  \prereq[blue]	  {CEV}		  {CEVI}
+  \pre	      {LogCircDig} {FundComp}{5}{-4}{0}{3}{0}
+  \prereq [teal] 	{FisIII}	{CCC}
+  \pre [red]		{ModMat}	{CCA}    {0}{-5}{0}{-4}{0}
+  \pre	  {CCC}	{EletI}    {-3}{-4}{0}{0}{-4}
+  \prereq[blue]	  {CCC}		  {CCA}
 
 
   % Período 5
@@ -249,7 +249,7 @@
   \prereq[red]		  {ArqComp}	{Telep}
   \pre				  {ArqComp}	{SistEmb}{3}{3}{10}{4}{0}
   \prereq[teal]  {IC}		  {MineraDados}
-  \pre[black]    {CEVI}{Instala} {3}{1}{10}{4}{-2}
+  \pre[black]    {CCA}{Instala} {3}{1}{10}{4}{-2}
 
   % % Período 7
   \prereq				{SO}		{ProgPara}
