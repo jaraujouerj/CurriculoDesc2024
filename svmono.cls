@@ -1606,31 +1606,31 @@
    \gdef\@thanks{}\gdef\@author{}\gdef\@title{}\let\thanks\relax}
 
 \def\@maketitle{\newpage
-\null
-\vskip 10em                 % Vertical space above title.
-\begingroup
-\def\and{\unskip, }
-\parindent=\z@
-\pretolerance=10000
-\rightskip=\z@ \@plus 3cm
-   {\LARGE                   % each author set in \LARGE
-      \lineskip .5em
-      \@author
-      \par}%
-\vskip 2cm                % Vertical space after author.
-   {\Huge \@title \par}%     % Title set in \Huge size.
-\vskip 1cm                % Vertical space after title.
-\if!\@subtitle!\else
-{\LARGE\ignorespaces\@subtitle \par}
-\vskip 1cm                % Vertical space after subtitle.
-\fi
-\if!\@date!\else
-{\large \@date}%          % Date set in \large size.
-\par
-\vskip 1.5em               % Vertical space after date.
-\fi
-\vfill
-{%\Large Departamento de Engenharia de Sistemas e Computa\c{c}\~{a}o\par}
+   \null
+   \vskip 10em                 % Vertical space above title.
+   \begingroup
+   \def\and{\unskip, }
+   \parindent=\z@
+   \pretolerance=10000
+   \rightskip=\z@ \@plus 3cm
+      {\LARGE                   % each author set in \LARGE
+         \lineskip .5em
+         \@author
+         \par}%
+   \vskip 2cm                % Vertical space after author.
+      {\Huge \@title \par}%     % Title set in \Huge size.
+   \vskip 1cm                % Vertical space after title.
+   \if!\@subtitle!\else
+   {\LARGE\ignorespaces\@subtitle \par}
+   \vskip 1cm                % Vertical space after subtitle.
+   \fi
+   \if!\@date!\else
+   {\large \@date}%          % Date set in \large size.
+   \par
+   \vskip 1.5em               % Vertical space after date.
+   \fi
+   \vfill
+   %{\Large Departamento de Engenharia de Sistemas e Computa\c{c}\~{a}o\par}
    %\vskip 5\p@
    %\large
    %  Berlin\enspace Heidelberg\enspace New\kern0.1em York\\
