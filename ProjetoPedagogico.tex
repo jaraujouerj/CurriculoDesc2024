@@ -1,5 +1,5 @@
  %!TEX program = lualatex
-\documentclass[envcountsame,envcountchap,openany]{svmono}
+\documentclass[ondeside,envcountsame,envcountchap,openany]{svmono}
 
 % Pacotes de formatação e layout
 \usepackage[top=1in,left=1.5in,bottom=1in,right=2.5cm]{geometry}
@@ -44,18 +44,26 @@
 	colorlinks,
 	citecolor=blue,
 	filecolor=magenta,
-	linkcolor=black, %era red
+	linkcolor=black, % era red
 	urlcolor=cyan
 }
 
 % Configuração de cabeçalhos e rodapés
 \pagestyle{fancy}
-\lhead{}
-\chead{}
-\renewcommand{\headrule}{}
-\rhead{{\footnotesize \thepage}}
+\fancyhf{} % limpa cabeçalho e rodapé
+\fancyhead[R]{\footnotesize  \thepage} % número de página no topo à direita
+\renewcommand{\headrule}{} 
+%\rhead{{\footnotesize \thepage}}
 \fancyfoot{}
 \addtolength{\headwidth}{0.3\marginparwidth}
+\setlength{\headheight}{15pt}
+
+% Redefinimos o estilo plain, usado no sumário
+\fancypagestyle{plain}{
+  \fancyhf{}
+  \fancyhead[R]{\footnotesize \thepage}
+  \renewcommand{\headrulewidth}{0pt}
+}
 
 % Configuração de índices e listas
 \makeindex             % para gerar índice
@@ -65,10 +73,6 @@
 \renewcommand{\appendixpagename}{Anexos}
 
 % Definição de comandos personalizados
-
-% Nomes das Disciplinas
-\usepackage{disciplinasDB}
-
 % Definição de ordinal masculino e feminino
 \usepackage{etoolbox} % para garantir compatibilidade em várias situações
 
@@ -112,26 +116,35 @@
 \parindent0pt
 \setlength{\parskip}{0.8\baselineskip}
 
-\normalsize 
-\setlength{\headheight}{15pt}
+% Nomes das Disciplinas
+\usepackage{disciplinasDB}
+
+% Definição de Contadores
+% total de horas obrigatórias
 \newcounter{thobrigatorias}  
 \setcounter{thobrigatorias}{3210}
-\newcommand{\hobrigatorias}{\the\value{thobrigatorias}\xspace}
+\newcommand{\hobrigatorias}{\the\value{thobrigatorias}\xspace} 
+% total de horas de extensão
 \newcounter{thextensao}
 \setcounter{thextensao}{357}
 \newcounter{thtotal}
 \setcounter{thtotal}{\the\value{thobrigatorias}}
 \addtocounter{thtotal}{\the\value{thextensao}}
-\newcommand{\vagas}{50\xspace}
-\newcommand{\desc}{Departamento de Engenharia de Sistemas e Computação\xspace}
 \newcommand{\totalhoras}{\the\value{thtotal}\xspace}
 \newcommand{\ndisciplinas}{55\xspace}
 \newcommand{\nobrigatorias}{52\xspace}
 \newcommand{\neletivas}{3\xspace}
 \newcommand{\hextensao}{\the\value{thextensao}\xspace}
+
+\normalsize %define o tamanho da fonte como normal
+
+\newcommand{\vagas}{50\xspace}
+\newcommand{\desc}{Departamento de Engenharia de Sistemas e Computação\xspace}
+
 \begin{document}
 %\author {Departamento de Engenharia de Sistemas e Computação}
 
+% cabeçalho da capa
 \begin{textblock*}{3cm}[0.5,0.5](4cm,4cm)
 	\includegraphics[width=3cm]{imagens/logo_uerj_cor.jpg}
 \end{textblock*}
@@ -144,18 +157,26 @@
 
 \title{Projeto Pedagógico do Curso de Engenharia de Computação}
 \subtitle{2025}
-\date{}
+\date{} % sem data
 \maketitle
-\pagestyle{empty}
+%\pagestyle{empty}
 \vfill
-\pagestyle{fancy}
+%\pagestyle{fancy}
+%\pagestyle{tocstyle}
+%\pagenumbering{roman}
+%\tableofcontents
+%\listoftables
+
+% Sumário com estilo isolado
 \pagenumbering{roman}
 \tableofcontents
 \listoftables
+\clearpage
 
 \frontmatter%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \mainmatter%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\clearpage
 \pagestyle{fancy}
 \include{cap-Introducao}
 \include{cap-dados_UA}
