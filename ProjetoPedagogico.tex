@@ -1,5 +1,4 @@
- %!TEX program = lualatex
-\documentclass[ondeside,envcountsame,envcountchap,openany]{svmono}
+\documentclass[oneside,envcountsame,envcountchap,openany]{svmono}
 
 % Pacotes de formatação e layout
 \usepackage[top=1in,left=1.5in,bottom=1in,right=2.5cm]{geometry}
@@ -15,6 +14,8 @@
 \setlength\cftbeforechapskip{0pt}
 \usepackage[titletoc,toc,page]{appendix} % para anexos
 \usepackage{scrextend}		 % para adicionar margens
+\usepackage{quoting}		% para citações
+\quotingsetup{leftmargin=2em, rightmargin=2em, font=itshape}
 
 % Pacotes de tabelas e cores
 \usepackage[table]{xcolor}  % para tabelas coloridas
@@ -44,7 +45,7 @@
 	colorlinks,
 	citecolor=blue,
 	filecolor=magenta,
-	linkcolor=black, % era red
+	linkcolor=black, % Changed from red to black for better readability
 	urlcolor=cyan
 }
 
@@ -53,7 +54,6 @@
 \fancyhf{} % limpa cabeçalho e rodapé
 \fancyhead[R]{\footnotesize  \thepage} % número de página no topo à direita
 \renewcommand{\headrule}{} 
-%\rhead{{\footnotesize \thepage}}
 \fancyfoot{}
 \addtolength{\headwidth}{0.3\marginparwidth}
 \setlength{\headheight}{15pt}
@@ -118,7 +118,7 @@
 
 % Nomes das Disciplinas
 \usepackage{disciplinasDB}
-
+\usepackage{./disciplinasDB} % Ensure the file disciplinasDB.sty is in the same directory as this .tex file
 % Definição de Contadores
 % total de horas obrigatórias
 \newcounter{thobrigatorias}  
@@ -159,13 +159,7 @@
 \subtitle{2025}
 \date{} % sem data
 \maketitle
-%\pagestyle{empty}
 \vfill
-%\pagestyle{fancy}
-%\pagestyle{tocstyle}
-%\pagenumbering{roman}
-%\tableofcontents
-%\listoftables
 
 % Sumário com estilo isolado
 \pagenumbering{roman}
@@ -178,21 +172,33 @@
 \mainmatter%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \clearpage
 \pagestyle{fancy}
+% Capítulo: Introdução
 \include{cap-Introducao}
+
+% Capítulo: Dados da Unidade Acadêmica
 \include{cap-dados_UA}
+
+% Capítulo: Identificação do Curso
 \include{cap-identificacao_curso}
+
+% Capítulo: Organização Didático-Pedagógica
 \include{cap-organizacao-didatico-pedagogica}
+
+% Capítulo: Conformidade com Normas e Diretrizes
 \include{cap-conformidade}
-\include{cap-perfil_docente}
-% (Removed the commented-out \include command for clarity)
+
+
+
+% Capítulo: Infraestrutura do Curso
 \include{cap-infraestrutura}
 
 
 \backmatter%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \appendix
+% Acrescenta uma página de títiulo para o apêndice
 \appendixpage
-\addappheadtotoc
 \include{anexos}
-
+% Acrescenta os apêndices ao sumário
+\addappheadtotoc
 \end{document}
