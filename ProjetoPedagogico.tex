@@ -53,6 +53,7 @@
 \pagestyle{fancy}
 \fancyhf{} % limpa cabeçalho e rodapé
 \fancyhead[R]{\footnotesize  \thepage} % número de página no topo à direita
+\fancyhead[L]{\footnotesize \nouppercase{\leftmark}} % nome do capítulo no topo à esquerda
 \renewcommand{\headrule}{} 
 \fancyfoot{}
 \addtolength{\headwidth}{0.3\marginparwidth}
@@ -135,10 +136,10 @@
 \newcommand{\nobrigatorias}{52\xspace}
 \newcommand{\neletivas}{3\xspace}
 \newcommand{\hextensao}{\the\value{thextensao}\xspace}
+\newcommand{\vagas}{50\xspace}
 
 \normalsize %define o tamanho da fonte como normal
 
-\newcommand{\vagas}{50\xspace}
 \newcommand{\desc}{Departamento de Engenharia de Sistemas e Computação\xspace}
 
 \begin{document}
@@ -146,13 +147,13 @@
 
 % cabeçalho da capa
 \begin{textblock*}{3cm}[0.5,0.5](4cm,4cm)
-	\includegraphics[width=3cm]{imagens/logo_uerj_cor.jpg}
+    \includegraphics[width=3cm]{imagens/logo_uerj_cor.jpg}
 \end{textblock*}
 \begin{textblock*}{12cm}(6cm,3cm)   % 6.375=8.5 - 1.5 - 0.625
-	Universidade do Estado do Rio de Janeiro\\
-	Sub-Reitoria de Graduação \\
-	Faculdade de Engenharia\\
-	Departamento de Engenharia de Sistemas e Computação
+    Universidade do Estado do Rio de Janeiro\\
+    Sub-Reitoria de Graduação \\
+    Faculdade de Engenharia\\
+    Departamento de Engenharia de Sistemas e Computação
 \end{textblock*}
 
 \title{Projeto Pedagógico do Curso de Engenharia de Computação}
@@ -186,8 +187,6 @@
 
 % Capítulo: Conformidade com Normas e Diretrizes
 \include{cap-conformidade}
-
-
 
 % Capítulo: Infraestrutura do Curso
 \include{cap-infraestrutura}
