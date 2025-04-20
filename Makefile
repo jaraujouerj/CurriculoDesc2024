@@ -11,7 +11,7 @@ EMENTAS_DIR = ementas
 # Regra padrão
 all: ementas $(FLUXOPDF) $(OUTPUT)
 
-fluxograma: $(FLUXOPDF)
+fluxo: $(FLUXOPDF)
 
 # Regra para compilar o fluxograma
 $(FLUXOPDF): $(FLUXO)
@@ -31,4 +31,7 @@ $(OUTPUT): $(MAIN) $(CAPITULOS)
 # Limpeza
 clean:
 	cd $(EMENTAS_DIR) && $(MAKE) clean
-	rm -f $(basename $(MAIN)).aux $(basename $(MAIN)).log $(basename $(MAIN)).bbl $(basename $(MAIN)).blg $(basename $(MAIN)).out 
+	rm -f $(basename $(MAIN)).aux $(basename $(MAIN)).log $(basename $(MAIN)).bbl $(basename $(MAIN)).blg $(basename $(MAIN)).out \
+		  $(basename $(MAIN)).toc $(basename $(MAIN)).lof $(basename $(MAIN)).lot $(basename $(MAIN)).fls $(basename $(MAIN)).fdb_latexmk \
+		  $(basename $(MAIN)).synctex.gz $(basename $(MAIN)).nav $(basename $(MAIN)).snm $(basename $(MAIN)).vrb
+# rm -f $(FLUXOPDF)
