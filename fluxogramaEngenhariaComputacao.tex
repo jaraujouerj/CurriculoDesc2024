@@ -36,7 +36,6 @@
 \colorlet{cdesc}{orange}
 \colorlet{celetronica}{green}
 \colorlet{celetrica}{blue!20!white}
-\colorlet{cmecanica}{gray!20!white}
 \colorlet{cambiental}{olive!20!white}
 \colorlet{cindustrial}{violet!40!white}
 \colorlet{celetiva}{orange!50!white}
@@ -46,7 +45,6 @@
 \tikzstyle{desc}=[box, fill=cdesc]
 \tikzstyle{eletronica}=[box, fill=celetronica]
 \tikzstyle{eletrica}=[box, fill=celetrica]
-\tikzstyle{mecanica}=[box, fill=cmecanica]
 \tikzstyle{ambiental}=[box, fill=cambiental]
 \tikzstyle{industrial}=[box, fill=cindustrial]
 \tikzstyle{eletiva}=[box, fill=celetiva, dashed]
@@ -58,9 +56,11 @@
 \setcounter{cred}{0}
 
 %contador de horas totais do curso
-\newcounter{thoras}
+\newcounter{thoras} 
 \setcounter{thoras}{0} 
-\newcounter{tdisciplinas}
+
+%contador de disciplinas totais do curso
+\newcounter{tdisciplinas} 
 \setcounter{tdisciplinas}{0}
 
 %parâmetros de cada disciplina
@@ -72,17 +72,18 @@
 %{Carga Horária} 								#6
 %{Número de Créditos} 							#7
 %{nome abreviado para referência} 				#8
-\newcommand{\disciplina}[8] {
-  \addtocounter{cred}{#7}
+\newcommand{\disciplina}[7] {
+  \addtocounter{cred}{#6}
+  \def\horasdisc{\inteval{15 * #6}}%  Usando xfp (LaTeX moderno)
   \ifthenelse{\equal{#1}{extensao}}
     {} % Se for extensao, não faz nada com thoras
-    {\addtocounter{thoras}{#6}} % Caso contrário, soma a carga horária
+    {\addtocounter{thoras}{\horasdisc}} % Caso contrário, soma a carga horária
   \addtocounter{tdisciplinas}{1}
-  \node at ($ (#2*2.8cm-7cm,14.6-#3*2.3) $) (Item)  [#1] (#8) 
+  \node at ($ (#2*2.8cm-7cm,14.6-#3*2.3) $) (Item)  [#1] (#7) 
         {
             \textbf{#4}\\
             \textbf{#5}\\
-            \textbf{#6} \hfill #7
+            \textbf{\horasdisc} \hfill #6
         };}
 
 \geometry{margin=0.5cm,bottom=0.5cm} 
@@ -115,69 +116,69 @@
   %{nome abreviado para referência} 
 
   %Básico
-  \disciplina{basico}{1}{3}{\AlgLinCod}	{\AlgLinSName}	{\AlgLinCH}	{\AlgLinCred}	{AlgLin} % Álgebra Linear
-  \disciplina{basico}{1}{4}{\CalcICod}	{\CalcISName}	{\CalcICH}	{\CalcICred}	{CalcI} % Cálculo I
-  \disciplina{basico}{2}{4}{\CalcIICod}	{\CalcIISName}	{\CalcIICH}	{\CalcIICred}	{CalcII} % Cálculo II
-  \disciplina{basico}{3}{4}{\CalcIIICod}	{\CalcIIISName}	{\CalcIIICH}{\CalcIIICred}	{CalcIII} % Cálculo III
-  \disciplina{basico}{2}{3} {\CalcNumCod}    {\CalcNumSName}{\CalcNumCH}{\CalcNumCred}{CalcNum} % Cálculo Numérico
-  \disciplina{basico}{2}{5}{\FisICod}		{\FisISName}	{\FisICH}	{\FisICred}		{FisI} % Física I
-  \disciplina{basico}{2}{6}{\FisEICod}		{\FisEISName}	{\FisEICH}	{\FisEICred}		{FisEI} % Física Experimental I
-  \disciplina{basico}{3}{5}{\FisIICod}	{\FisIISName}	{\FisIICH}	{\FisIICred}	{FisII} % Física II
-  \disciplina{basico}{3}{6}{\FisEIICod}	{\FisEIISName}	{\FisEIICH}	{\FisEIICred}	{FisEII} % Física Experimental II
-  \disciplina{basico}{4}{5}{\FisIIICod}	{\FisIIISName}	{\FisIIICH}	{\FisIIICred}	{FisIII} % Física III
-  \disciplina{basico}{4}{6}{\FisEIIICod}	{\FisEIIISName}	{\FisEIIICH}	{\FisEIIICred}	{FisEIII} % Física Experimental III
-  \disciplina{basico}{5}{6}{\FisIVCod}	{\FisIVSName}	{\FisIVCH}	{\FisIVCred}	{FisIV} % Física IV
-  \disciplina{basico}{5}{7}{\FisEIVCod}	{\FisEIVSName}	{\FisEIVCH}	{\FisEIVCred}	{FisEIV} % Física Experimental IV
-  \disciplina{basico}{3}{3}{\ProbEstCod}	{\ProbEstSName}	{\ProbEstCH}{\ProbEstCred}	{ProbEst} % Probabilidade e Estatística
+  \disciplina{basico}{1}{3}{\AlgLinCod} {\AlgLinSName}  {\AlgLinCred} {AlgLin} % Álgebra Linear
+  \disciplina{basico}{1}{4}{\CalcICod}	{\CalcISName}	  {\CalcICred}  {CalcI} % Cálculo I
+  \disciplina{basico}{2}{4}{\CalcIICod}	{\CalcIISName}	{\CalcIICred} {CalcII} % Cálculo II
+  \disciplina{basico}{3}{4}{\CalcIIICod}{\CalcIIISName}	{\CalcIIICred}{CalcIII} % Cálculo III
+  \disciplina{basico}{2}{3}{\CalcNumCod}{\CalcNumSName} {\CalcNumCred}{CalcNum} % Cálculo Numérico
+  \disciplina{basico}{2}{5}{\FisICod}		{\FisISName}		{\FisICred}   {FisI} % Física I
+  \disciplina{basico}{2}{6}{\FisEICod}	{\FisEISName}	  {\FisEICred}  {FisEI} % Física Experimental I
+  \disciplina{basico}{3}{5}{\FisIICod}	{\FisIISName}		{\FisIICred}	{FisII} % Física II
+  \disciplina{basico}{3}{6}{\FisEIICod}	{\FisEIISName}	{\FisEIICred}	{FisEII} % Física Experimental II
+  \disciplina{basico}{4}{5}{\FisIIICod}	{\FisIIISName}	{\FisIIICred}	{FisIII} % Física III
+  \disciplina{basico}{4}{6}{\FisEIIICod}{\FisEIIISName}	{\FisEIIICred}{FisEIII} % Física Experimental III
+  \disciplina{basico}{5}{6}{\FisIVCod}	{\FisIVSName}		{\FisIVCred}	{FisIV} % Física IV
+  \disciplina{basico}{5}{7}{\FisEIVCod}	{\FisEIVSName}	{\FisEIVCred}	{FisEIV} % Física Experimental IV
+  \disciplina{basico}{3}{3}{\ProbEstCod}{\ProbEstSName}	{\ProbEstCred}{ProbEst} % Probabilidade e Estatística
 
   %disciplinas de outros departamentos da engenharia
-  \disciplina{industrial}{10}{4}{\AdmCod}	{\AdmSName}		{\AdmCH}	{\AdmCred}		{Adm} % Administração
-  \disciplina{eletrica}{5}{5}	{\CCCCod}	{\CCCSName}		{\CCCCH}	{\CCCCred}		{CCC} % Circuitos em corrente Conínua
-  \disciplina{eletrica}{6}{5}{\CCACod}	{\CCASName}	{\CCACH}	{\CCACred}		{CCA} % Circuitos em Corrente Alternada
-  \disciplina{eletronica}{6}{6}{\EletICod}	{\EletISName}{\EletICH}{\EletICred}{EletI} % Eletrônica I
-  \disciplina{industrial}{8}{1}{\EmpreCod}{\EmpreSName}{\EmpreCH}{\EmpreCred}{Empre} % Empreendedorismo
-  \disciplina{industrial}{7}{6}{\MacroEcoCod}{\MacroEcoSName}{\MacroEcoCH}{\MacroEcoCred}{MacroEco} % Macro economia aplicada à Engenharia
-  \disciplina{ambiental}{1}{5}	{\IntAmbCod}	{\IntAmbSName}{\IntAmbCH}{\IntAmbCred}{IntAmb} % Introdução à Engenharia Ambiental
-  \disciplina{eletrica}{5}{4}	{\MatEleCod}	{\MatEleSName}{\MatEleCH}{\MatEleCred}{MatEle} % Materiais Elétricos
-  \disciplina{eletrica}{5}{3} {\SinaisESistCod}	{\SinaisESistSName}{\SinaisESistCH}{\SinaisESistCred}{SinaisESist} % Modelos Matemáticos
-  \disciplina{eletrica}{4}{4} {\LogCircDigCod}	{\LogCircDigSName}{\LogCircDigCH}{\LogCircDigCred}{LogCircDig} % Lógica e Circuitos Digitais
+  \disciplina{industrial}{10}{4}{\AdmCod}	    {\AdmSName}	      {\AdmCred}		{Adm} % Administração
+  \disciplina{eletrica}{5}{5}	{\CCCCod}	      {\CCCSName}		    {\CCCCred}		{CCC} % Circuitos em corrente Conínua
+  \disciplina{eletrica}{6}{5}{\CCACod}	      {\CCASName}		    {\CCACred}		{CCA} % Circuitos em Corrente Alternada
+  \disciplina{eletronica}{6}{6}{\EletICod}    {\EletISName}     {\EletICred}  {EletI} % Eletrônica I
+  \disciplina{industrial}{8}{1}{\EmpreCod}    {\EmpreSName}     {\EmpreCred}  {Empre} % Empreendedorismo
+  \disciplina{industrial}{7}{6}{\MacroEcoCod} {\MacroEcoSName}  {\MacroEcoCred}{MacroEco} % Macro economia aplicada à Engenharia
+  \disciplina{ambiental}{1}{5}	{\IntAmbCod}	{\IntAmbSName}    {\IntAmbCred} {IntAmb} % Introdução à Engenharia Ambiental
+  \disciplina{eletrica}{5}{4}	{\MatEleCod}	  {\MatEleSName}    {\MatEleCred} {MatEle} % Materiais Elétricos
+  \disciplina{eletrica}{5}{3} {\SinaisESistCod}{\SinaisESistSName}{\SinaisESistCred}{SinaisESist} % Modelos Matemáticos
+  \disciplina{eletrica}{4}{4} {\LogCircDigCod}{\LogCircDigSName}{\LogCircDigCred}{LogCircDig} % Lógica e Circuitos Digitais
 
 
   %Disciplinas Desc
-  \disciplina{desc}{1}{1} {\AlgCompCod}	{\AlgCompSName}{\AlgCompCH}{\AlgCompCred}{AlgComp} % Algoritmos Computacionais
-  \disciplina{desc}{3}{1} {\AnAlgCod}	{\AnAlgSName}{\AnAlgCH}{\AnAlgCred}{AnAlg} % Análise de Algoritmos
-  \disciplina{desc}{5}{1} {\GrafosCod}	{\GrafosSName}{\GrafosCH}{\GrafosCred}{Grafos} % Teoria de Grafos e Aplicações
-  \disciplina{desc}{6}{4} {\ArqCompCod}	{\ArqCompSName}{\ArqCompCH}{\ArqCompCred}{ArqComp} % Arquitetura de Computadores
-  \disciplina{desc}{8}{6}{\ControlCod}	{\ControlSName}{\ControlCH}{\ControlCred}{Control} % Controle
-  \disciplina{desc}{1}{2} {\EngCompSocCod}	{\EngCompSocSName}{\EngCompSocCH}{\EngCompSocCred}{ETS} % Engenharia e Sociedade
-  \disciplina{desc}{6}{3} {\EngSistACod}	{\EngSistASName}{\EngSistACH}{\EngSistACred}{EngSistA} % Engenharia de Sistemas A
-  \disciplina{desc}{8}{2} {\AnaProjSistCod}	{\AnaProjSistSName}{\AnaProjSistCH}{\AnaProjSistCred}{AnaProjSist} % Sistemas de Informação
-  \disciplina{desc}{7}{3} {\ProjBDCod}	{\ProjBDSName}{\ProjBDCH}{\ProjBDCred}{EngSistB} % Engenharia de Sistemas B
-  \disciplina{extensao}{9}{3} {\EstSupCod}	{\EstSupSName}{\EstSupCH}{\EstSupCred}{EstSup} % Estágio Supervisionado
-  \disciplina{desc}{2}{1} {\EstrInfCod}	{\EstrInfSName}{\EstrInfCH}{\EstrInfCred}{EstrInf} % Estruturas de Informação
-  \disciplina{desc}{5}{2} {\FundCompCod}	{\FundCompSName}{\FundCompCH}{\FundCompCred}{FundComp} % Fundamentos de Computadores
-  \disciplina{desc}{6}{1} {\ICCod}	{\ICSName}{\ICCH}{\ICCred}{IC} % Inteligência Computacional I
-  \disciplina{desc}{6}{2} {\ICIICod}	{\ICIISName}{\ICIICH}{\ICIICred}{ICII} % Inteligência Computacional II
-  \disciplina{desc}{9}{4} {\InstalaCod}	{\InstalaSName}{\InstalaCH}{\InstalaCred}{Instala} % Instalações Ambiente Computacional I
-  \disciplina{desc}{4}{1} {\LabProgACod}	{\LabProgASName}{\LabProgACH}{\LabProgACred}{LabProgI} % Laboratório de Programação I
-  \disciplina{desc}{4}{2} {\LabProgPOOCod}	{\LabProgPOOSName}{\LabProgPOOCH}{\LabProgPOOCred}{LabProgII} % Laboratório de Programação II
-  \disciplina{desc}{2}{2} {\LogProgCod}	{\LogProgSName}{\LogProgCH}{\LogProgCred}{LogProg} % Lógica de Programação
-  \disciplina{desc}{7}{1}	{\MineraDadosCod}	{\MineraDadosSName}{\MineraDadosCH}{\MineraDadosCred}{MineraDados} % Mineração de Dados
-  \disciplina{desc}{4}{3} {\ProcImagCod}	{\ProcImagSName}{\ProcImagCH}{\ProcImagCred}{ProcImag} % Processamento de Imagens
-  \disciplina{desc}{8}{5} {\CompParalCod}	{\CompParalSName}{\CompParalCH}{\CompParalCred}{ProgPara} % Programação Paralela
-  \disciplina{desc}{9}{1} {\ProjACod}	{\ProjASName}{\ProjACH}{\ProjACred}{ProjA} % Projeto A
-  \disciplina{desc}{10}{1}{\ProjBCod}	{\ProjBSName}{\ProjBCH}{\ProjBCred}{ProjB} % Projeto B
-  \disciplina{desc}{8}{4} {\SredesCod}	{\SredesSName}{\SredesCH}{\SredesCred}{Sredes} % Segurança em Redes de Computadores
-  \disciplina{desc}{7}{5} {\ProjSOCod}	{\ProjSOSName}{\ProjSOCH}{\ProjSOCred}{SO} % Sistemas Operacionais
-  \disciplina{desc}{8}{3} {\SistEmbCod}	{\SistEmbSName}{\SistEmbCH}{\SistEmbCred}{SistEmb} % Sistemas Embutidos
-  \disciplina{desc}{7}{4} {\TelepCod}	{\TelepSName}{\TelepCH}{\TelepCred}{Telep} % Redes
-  \disciplina{desc}{7}{2} {\TeoCompCod}	{\TeoCompSName}{\TeoCompCH}{\TeoCompCred}{Comp} % Teoria da Compiladores
-  \disciplina{extensao}{3}{2} {\ExtCod}	{\ExtSName}{\ExtCH}{\ExtCred}{Ext} % Projetos de Extensão
+  \disciplina{desc}{1}{1} {\AlgCompCod}	{\AlgCompSName}{\AlgCompCred}{AlgComp} % Algoritmos Computacionais
+  \disciplina{desc}{3}{1} {\AnAlgCod}	{\AnAlgSName}{\AnAlgCred}{AnAlg} % Análise de Algoritmos
+  \disciplina{desc}{5}{1} {\GrafosCod}	{\GrafosSName}{\GrafosCred}{Grafos} % Teoria de Grafos e Aplicações
+  \disciplina{desc}{6}{4} {\ArqCompCod}	{\ArqCompSName}{\ArqCompCred}{ArqComp} % Arquitetura de Computadores
+  \disciplina{desc}{8}{6}{\ControlCod}	{\ControlSName}{\ControlCred}{Control} % Controle
+  \disciplina{desc}{1}{2} {\EngCompSocCod}	{\EngCompSocSName}{\EngCompSocCred}{ETS} % Engenharia e Sociedade
+  \disciplina{desc}{6}{3} {\EngSistACod}	{\EngSistASName}{\EngSistACred}{EngSistA} % Engenharia de Sistemas A
+  \disciplina{desc}{8}{2} {\AnaProjSistCod}	{\AnaProjSistSName}{\AnaProjSistCred}{AnaProjSist} % Sistemas de Informação
+  \disciplina{desc}{7}{3} {\ProjBDCod}	{\ProjBDSName}{\ProjBDCred}{EngSistB} % Engenharia de Sistemas B
+  \disciplina{extensao}{9}{3} {\EstSupCod}	{\EstSupSName}{\EstSupCred}{EstSup} % Estágio Supervisionado
+  \disciplina{desc}{2}{1} {\EstrInfCod}	{\EstrInfSName}{\EstrInfCred}{EstrInf} % Estruturas de Informação
+  \disciplina{desc}{5}{2} {\FundCompCod}	{\FundCompSName}{\FundCompCred}{FundComp} % Fundamentos de Computadores
+  \disciplina{desc}{6}{1} {\ICCod}	{\ICSName}{\ICCred}{IC} % Inteligência Computacional I
+  \disciplina{desc}{6}{2} {\ICIICod}	{\ICIISName}{\ICIICred}{ICII} % Inteligência Computacional II
+  \disciplina{desc}{9}{4} {\InstalaCod}	{\InstalaSName}{\InstalaCred}{Instala} % Instalações Ambiente Computacional I
+  \disciplina{desc}{4}{1} {\LabProgACod}	{\LabProgASName}{\LabProgACred}{LabProgI} % Laboratório de Programação I
+  \disciplina{desc}{4}{2} {\LabProgPOOCod}	{\LabProgPOOSName}{\LabProgPOOCred}{LabProgII} % Laboratório de Programação II
+  \disciplina{desc}{2}{2} {\LogProgCod}	{\LogProgSName}{\LogProgCred}{LogProg} % Lógica de Programação
+  \disciplina{desc}{7}{1}	{\MineraDadosCod}	{\MineraDadosSName}{\MineraDadosCred}{MineraDados} % Mineração de Dados
+  \disciplina{desc}{4}{3} {\ProcImagCod}	{\ProcImagSName}{\ProcImagCred}{ProcImag} % Processamento de Imagens
+  \disciplina{desc}{8}{5} {\CompParalCod}	{\CompParalSName}{\CompParalCred}{ProgPara} % Programação Paralela
+  \disciplina{desc}{9}{1} {\ProjACod}	{\ProjASName}{\ProjACred}{ProjA} % Projeto A
+  \disciplina{desc}{10}{1}{\ProjBCod}	{\ProjBSName}{\ProjBCred}{ProjB} % Projeto B
+  \disciplina{desc}{8}{4} {\SredesCod}	{\SredesSName}{\SredesCred}{Sredes} % Segurança em Redes de Computadores
+  \disciplina{desc}{7}{5} {\ProjSOCod}	{\ProjSOSName}{\ProjSOCred}{SO} % Sistemas Operacionais
+  \disciplina{desc}{8}{3} {\SistEmbCod}	{\SistEmbSName}{\SistEmbCred}{SistEmb} % Sistemas Embutidos
+  \disciplina{desc}{7}{4} {\TelepCod}	{\TelepSName}{\TelepCred}{Telep} % Redes
+  \disciplina{desc}{7}{2} {\TeoCompCod}	{\TeoCompSName}{\TeoCompCred}{Comp} % Teoria da Compiladores
+  \disciplina{extensao}{3}{2} {\ExtCod}	{\ExtSName}{\ExtCred}{Ext} % Projetos de Extensão
 
   %eletivas
-  \disciplina{eletiva}{9}{2} {\EletACod}	{Eletiva Restrita}{\EletACH}{\EletACred}{EA}
-  \disciplina{eletiva}{10}{2}{\EletACod}	{Eletiva Restrita}{\EletACH}{\EletACred}{EB}
-  \disciplina{eletiva}{10}{3}{\EletACod}	{Eletiva Restrita}{\EletACH}{\EletACred}{EC}
+  \disciplina{eletiva}{9}{2} {\EletACod}	{Eletiva Restrita}{\EletACred}{EA}
+  \disciplina{eletiva}{10}{2}{\EletACod}	{Eletiva Restrita}{\EletACred}{EB}
+  \disciplina{eletiva}{10}{3}{\EletACod}	{Eletiva Restrita}{\EletACred}{EC}
 
   %ligação com pre-requititos
   \newcommand{\prereq}[3][black] { % \prereq[cor]{disciplina}{pre}
@@ -330,5 +331,17 @@
 
 \end{multicols}
 
-
+% Exporta o valor para um arquivo externo
+\newwrite\exportfile
+\immediate\openout\exportfile=dados.tex
+\immediate\write\exportfile{%
+  \% ====================================^^J%
+  \% ARQUIVO GERADO AUTOMATICAMENTE^^J%
+  \% Valores calculados em fluxograma.tex^^J%
+  \% ====================================^^J%
+  \noexpand\setcounter{thoras}{\the\value{thoras}}^^J%
+  \noexpand\setcounter{cred}{\the\value{cred}}^^J%
+  \noexpand\setcounter{hextensao}{\the\value{hextensao}}%
+}
+\immediate\closeout\exportfile
 \end{document}
