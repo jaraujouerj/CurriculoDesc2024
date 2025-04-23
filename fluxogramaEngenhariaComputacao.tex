@@ -355,18 +355,15 @@
 % Exporta o valor para um arquivo externo
 \newwrite\exportfile
 \immediate\openout\exportfile=dados.tex
+
 \immediate\write\exportfile{%
-  \% ====================================^^J%
-  \% ARQUIVO GERADO AUTOMATICAMENTE^^J%
-  \% Valores calculados em fluxograma.tex^^J%
-  \% ====================================^^J%
-  \noexpand\newcommand{totalHorasCurso}{\the\value{thoras}}^^J%
-  \noexpand\newcommand{totalCredCurso}{\the\value{cred}}^^J%
-  \noexpand\newcommand{horasExtensao}{\the\value{hExtensao}}^^J%
-  \noexpand\newcommand{totalHorasSemExtensao}{\the\value{horasSemExtensao}}^^J%
-  \noexpand\newcommand{horasDiscExtensao}{\the\value{horasDiscExtensao}}^^J%
-  \noexpand\newcommand{totalCredDiscExtensao}{\the\value{credExtensao}}^^J%
-  \noexpand\newcommand{totalHorasACE}{\the\value{horasACE}}^^J%
+  \unexpanded{\newcommand{\totalHorasCurso}{\the\value{thoras}}}^^J%
+  \unexpanded{\newcommand{\totalCredCurso}{\the\value{cred}}}^^J%
+  \unexpanded{\newcommand{\horasExtensao}{\the\value{hExtensao}}}^^J%
+  \unexpanded{\newcommand{\totalHorasSemExtensao}{\the\value{horasSemExtensao}}}^^J%
+  \unexpanded{\newcommand{\horasDiscExtensao}{\the\value{horasDiscExtensao}}}^^J%
+  \unexpanded{\newcommand{\totalCredDiscExtensao}{\the\value{credExtensao}}}^^J%
+  \unexpanded{\newcommand{\totalHorasACE}{\the\value{horasACE}}}^^J%
 }
 \immediate\closeout\exportfile
 \end{document}

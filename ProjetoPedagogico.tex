@@ -120,7 +120,6 @@
 % Nomes das Disciplinas
 \usepackage{./disciplinasDB} % Ensure the file disciplinasDB.sty is in the same directory as this .tex file
 
-% Definição de Contadores
 % total de horas obrigatórias
 \newcounter{thobrigatorias}  
 \setcounter{thobrigatorias}{3210}
@@ -141,10 +140,13 @@
 
 \newcommand{\desc}{Departamento de Engenharia de Sistemas e Computação\xspace}
 
+% ********************** Início do documento ***********************************
 \begin{document}
 %\author {Departamento de Engenharia de Sistemas e Computação}
+% Definição de créditos, horas, etc....
+\input{./dados.tex} % Arquivo com os dados do curso
 
-% cabeçalho da capa
+% ======== CAPA ================
 \begin{textblock*}{3cm}[0.5,0.5](4cm,4cm)
   \includegraphics[width=3cm]{imagens/logo_uerj_cor.jpg}
 \end{textblock*}
@@ -163,9 +165,7 @@
 \thispagestyle{empty} % Remove número da página
 \newpage
 
-% Página com nomes institucionais (sem número)
-
-
+% ======= Página com nomes institucionais (sem número)
 {\textbf{Reitora}} \\
 Gulnar Azevedo e Silva
 
@@ -187,7 +187,7 @@ João Araujo Ribeiro
 
 \newpage
 
-% Sumário com estilo isolado
+% ============= Sumário com estilo isolado
 \pagenumbering{roman}
 \tableofcontents
 \listoftables
@@ -196,6 +196,8 @@ João Araujo Ribeiro
 \frontmatter%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \mainmatter%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% ======== Capítulos ================
 \clearpage
 \pagestyle{fancy}
 % Capítulo: Introdução
@@ -222,6 +224,7 @@ João Araujo Ribeiro
 
 \backmatter%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+% ======== Apêndices ================
 \appendix
 % Acrescenta uma página de títiulo para o apêndice
 \appendixpage
