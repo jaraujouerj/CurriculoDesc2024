@@ -40,6 +40,7 @@
 \colorlet{cambiental}{olive!20!white}
 \colorlet{cindustrial}{violet!40!white}
 \colorlet{celetiva}{orange!50!white}
+\colorlet{cextensao}{orange!20!white}
 % Define estilos de caixas de acordo com a origem da disciplina
 \tikzstyle{basico}=[box, fill=cbasico]
 \tikzstyle{desc}=[box, fill=cdesc]
@@ -49,6 +50,7 @@
 \tikzstyle{ambiental}=[box, fill=cambiental]
 \tikzstyle{industrial}=[box, fill=cindustrial]
 \tikzstyle{eletiva}=[box, fill=celetiva, dashed]
+\tikzstyle{extensao}=[box, fill=cextensao, dashed]
 \tikzstyle{info}=[box, fill=yellow]
 
 %contador de creditos totais do curso
@@ -62,7 +64,7 @@
 \setcounter{tdisciplinas}{0}
 
 %parâmetros de cada disciplina
-%{basico || eletronica || desc || eletiva} 	#1
+%{basico || eletronica || desc || eletiva || extensao} 	#1
 %{Período} de 1 a 10 							#2
 %{Linha no fluxograma} de 1 a 6. 				#3
 %{Código da disciplina} 						#4
@@ -72,7 +74,9 @@
 %{nome abreviado para referência} 				#8
 \newcommand{\disciplina}[8] {
   \addtocounter{cred}{#7}
-  \addtocounter{thoras}{#6}
+  \ifthenelse{\equal{#1}{extensao}}
+    {} % Se for extensao, não faz nada com thoras
+    {\addtocounter{thoras}{#6}} % Caso contrário, soma a carga horária
   \addtocounter{tdisciplinas}{1}
   \node at ($ (#2*2.8cm-7cm,14.6-#3*2.3) $) (Item)  [#1] (#8) 
         {
@@ -149,7 +153,7 @@
   \disciplina{desc}{6}{3} {\EngSistACod}	{\EngSistASName}{\EngSistACH}{\EngSistACred}{EngSistA} % Engenharia de Sistemas A
   \disciplina{desc}{8}{2} {\AnaProjSistCod}	{\AnaProjSistSName}{\AnaProjSistCH}{\AnaProjSistCred}{AnaProjSist} % Sistemas de Informação
   \disciplina{desc}{7}{3} {\ProjBDCod}	{\ProjBDSName}{\ProjBDCH}{\ProjBDCred}{EngSistB} % Engenharia de Sistemas B
-  \disciplina{desc}{9}{3} {\EstSupCod}	{\EstSupSName}{\EstSupCH}{\EstSupCred}{EstSup} % Estágio Supervisionado
+  \disciplina{extensao}{9}{3} {\EstSupCod}	{\EstSupSName}{\EstSupCH}{\EstSupCred}{EstSup} % Estágio Supervisionado
   \disciplina{desc}{2}{1} {\EstrInfCod}	{\EstrInfSName}{\EstrInfCH}{\EstrInfCred}{EstrInf} % Estruturas de Informação
   \disciplina{desc}{5}{2} {\FundCompCod}	{\FundCompSName}{\FundCompCH}{\FundCompCred}{FundComp} % Fundamentos de Computadores
   \disciplina{desc}{6}{1} {\ICCod}	{\ICSName}{\ICCH}{\ICCred}{IC} % Inteligência Computacional I
@@ -168,7 +172,7 @@
   \disciplina{desc}{8}{3} {\SistEmbCod}	{\SistEmbSName}{\SistEmbCH}{\SistEmbCred}{SistEmb} % Sistemas Embutidos
   \disciplina{desc}{7}{4} {\TelepCod}	{\TelepSName}{\TelepCH}{\TelepCred}{Telep} % Redes
   \disciplina{desc}{7}{2} {\TeoCompCod}	{\TeoCompSName}{\TeoCompCH}{\TeoCompCred}{Comp} % Teoria da Compiladores
-  \disciplina{desc}{3}{2} {\ExtCod}	{\ExtSName}{\ExtCH}{\ExtCred}{Ext} % Projetos de Extensão
+  \disciplina{extensao}{3}{2} {\ExtCod}	{\ExtSName}{\ExtCH}{\ExtCred}{Ext} % Projetos de Extensão
 
   %eletivas
   \disciplina{eletiva}{9}{2} {\EletACod}	{Eletiva Restrita}{\EletACH}{\EletACred}{EA}
@@ -281,25 +285,23 @@
   {\textbf{Código para as Disciplinas}};
   \node  [below right= 1.5mm and -36mm of legenda,fill=cbasico, draw=black,
     label=right:Básico.](basico) {};
-  \node [right  of=basico,node distance=22mm,fill=cmecanica, draw=black, label=right:Mecânica] (mecan) {};
-  \node [below  of=basico,node distance=5mm,fill=cambiental, draw=black, label=right:Ambiental] (ambient) {};
-  \node [below  of=mecan,node distance=5mm,fill=cindustrial, draw=black, label=right:Industrial] (indust) {};
-  \node [below  of=ambient,node distance=5mm,fill=celetrica, draw=black, label=right:Elétrica] (eletri) {};
-  \node [below  of=indust,node distance=5mm,fill=celetronica, draw=black, label=right:Eletrônica] (prof) {};
+  \node [right  of=basico,node distance=22mm,fill=cextensao, draw=black, label=right:Extensão] (extensao) { };
+  \node [below  of=basico,node distance=5mm,fill=cambiental, draw=black, label=right:Ambiental] (ambient) { };
+  \node [below  of=extensao,node distance=5mm,fill=cindustrial, draw=black, label=right:Industrial] (indust) { };
+  \node [below  of=ambient,node distance=5mm,fill=celetrica, draw=black, label=right:Elétrica] (eletri) { };
+  \node [below  of=indust,node distance=5mm,fill=celetronica, draw=black, label=right:Eletrônica] (prof) { };
   \node [below of=eletri,node distance=5mm,fill=cdesc, draw=black, label=right:Computacão] (especifico){};
   \node [below of=prof,node distance=5mm,fill=celetiva, draw=gray, draw=black, label=right:Eletivas] {};
 
 \end{tikzpicture}
 \newcounter{haula}
-\addtocounter{thoras}{-30}
 \setcounter{haula}{\the\value{thoras}}
-%\multiply\value{thoras} by 5
-%\divide\value{thoras} by 6
 \newcounter{hextensao}
 \setcounter{hextensao}{\the\value{thoras}}
 \divide\value{hextensao} by 9
 \addtocounter{thoras}{\the\value{hextensao}}
-\addtocounter{hextensao}{1} % Arredonda para cima
+%\addtocounter{hextensao}{1} % Arredonda para cima
+% Ao final do arquivo, após todos os cálculos:
 
 \vspace{-4mm}
 \setlength\parindent{0pt}
@@ -310,17 +312,17 @@
 
 
   \columnbreak
-  O Curso de Engenharia será integralizado em um mínimo de 10 e um máximo de 18 períodos.
+  O Curso de Engenharia de Computação será integralizado em um mínimo de 10 e um máximo de 18 períodos.
 
   \columnbreak
   \textbf{Total de Créditos:} \the\value{cred}\\
   \the\value{tdisciplinas} disciplinas\\
   \addtocounter{cred}{-14}
-  (\the\value{cred} créditos em disciplinas obrigatórias\\ 2 créditos em disciplina de extensão e\\ 12 créditos em disciplinas eletivas restritas)
+  (\the\value{cred} créditos em disciplinas obrigatórias\\ 13 créditos em disciplina de extensão e\\ 12 créditos em disciplinas eletivas restritas)
 
   \columnbreak
   %Total de horas-aula do curso: \the\value{haula}\\
-  \addtocounter{thoras}{1} % Arredonda para cima
+  %\addtocounter{thoras}{1} % Arredonda para cima
   Total de horas do curso: \the\value{thoras}\\
   Total de horas do curso (sem ext.): \the\value{haula}\\
   Total de horas de extensão: \the\value{hextensao}

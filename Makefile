@@ -14,7 +14,7 @@ all: ementas $(FLUXOPDF) $(OUTPUT)
 fluxo: $(FLUXOPDF)
 
 # Regra para compilar o fluxograma
-$(FLUXOPDF): $(FLUXO)
+$(FLUXOPDF): $(FLUXO) disciplinasDB.sty
 	lualatex $(FLUXO)
 
 # Regra para executar o Makefile no diretório "ementas"
