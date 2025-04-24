@@ -120,22 +120,6 @@
 % Nomes das Disciplinas
 \usepackage{./disciplinasDB} % Ensure the file disciplinasDB.sty is in the same directory as this .tex file
 
-% total de horas obrigatórias
-\newcounter{thobrigatorias}  
-\setcounter{thobrigatorias}{3210}
-\newcommand{\hobrigatorias}{\the\value{thobrigatorias}\xspace} 
-% total de horas de extensão
-\newcounter{thextensao}
-\setcounter{thextensao}{357}
-\newcounter{thtotal}
-\setcounter{thtotal}{\the\value{thobrigatorias}}
-\addtocounter{thtotal}{\the\value{thextensao}}
-\newcommand{\totalhoras}{\the\value{thtotal}\xspace}
-\newcommand{\ndisciplinas}{55\xspace}
-\newcommand{\nobrigatorias}{52\xspace}
-\newcommand{\neletivas}{3\xspace}
-\newcommand{\hextensao}{\the\value{thextensao}\xspace}
-
 \normalsize %define o tamanho da fonte como normal
 
 \newcommand{\desc}{Departamento de Engenharia de Sistemas e Computação\xspace}
@@ -144,7 +128,7 @@
 \begin{document}
 %\author {Departamento de Engenharia de Sistemas e Computação}
 % Definição de créditos, horas, etc....
-\input{./dados.tex} % Arquivo com os dados do curso
+\input{dados.tex} % Arquivo com os dados do curso
 
 % ======== CAPA ================
 \begin{textblock*}{3cm}[0.5,0.5](4cm,4cm)

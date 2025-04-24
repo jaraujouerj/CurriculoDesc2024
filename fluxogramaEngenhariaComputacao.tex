@@ -311,7 +311,9 @@
 \newcounter{horasSemExtensao}
 \setcounter{horasSemExtensao}{\inteval{15 * (\the\value{cred} - \the\value{credExtensao})}}
 
-
+%  horas totais das disciplinas com disciplinas de extensão
+\newcounter{horasTotaisDisciplinas}
+\setcounter{horasTotaisDisciplinas}{\inteval{15 * \the\value{cred}}}
 
 % Calcula horas totais necessárias para extensão
 \newcounter{hExtensao}
@@ -326,6 +328,14 @@
 % conta horas de atividades de extensão
 \newcounter{horasACE}
 \setcounter{horasACE}{\inteval{\the\value{hExtensao} - \the\value{horasDiscExtensao}}}
+
+% disciplinas eletivas
+\newcounter{tEletivas}
+\setcounter{tEletivas}{3} % 3 eletivas de 4 créditos cada
+
+% conta disciplinas obrigatórias
+\newcounter{tDiscObrigatorias}
+\setcounter{tDiscObrigatorias}{\inteval{\the\value{tdisciplinas} - \the\value{tEletivas}}}
 
 \vspace{-4mm}
 \setlength\parindent{0pt}
@@ -353,18 +363,28 @@
 \end{multicols}
 
 % Exporta o valor para um arquivo externo
+% Só funciona com o luatex
 \newwrite\exportfile
 \immediate\openout\exportfile=dados.tex
+% Escreve um comentário no arquivo
+\begingroup
+\catcode`\%=12 % faz o % ser apenas texto
+\immediate\write\exportfile{% NAO EDITE MANUALMENTE}
+\immediate\write\exportfile{% Este arquivo foi gerado automaticamente em \the\year-\the\month-\the\day}
+\endgroup
 
 \immediate\write\exportfile{%
-  \unexpanded{\newcommand{\totalHorasCurso}{\the\value{thoras}}}^^J%
-  \unexpanded{\newcommand{\totalCredCurso}{\the\value{cred}}}^^J%
-  \unexpanded{\newcommand{\horasExtensao}{\the\value{hExtensao}}}^^J%
-  \unexpanded{\newcommand{\totalHorasSemExtensao}{\the\value{horasSemExtensao}}}^^J%
-  \unexpanded{\newcommand{\horasDiscExtensao}{\the\value{horasDiscExtensao}}}^^J%
-  \unexpanded{\newcommand{\totalCredDiscExtensao}{\the\value{credExtensao}}}^^J%
-  \unexpanded{\newcommand{\totalHorasACE}{\the\value{horasACE}}}^^J%
-  \unexpanded{\newcommand{\totalDisciplinas}{\the\value{tdisciplinas}}}^^J%
+  \noexpand\newcommand{\string\totalHorasCurso}{\thethoras\noexpand\xspace}^^J%
+  \noexpand\newcommand{\string\horasTotaisDisciplinas}{\thehorasTotaisDisciplinas\noexpand\xspace}^^J%
+  \noexpand\newcommand{\string\totalCredCurso}{\thecred\noexpand\xspace}^^J%
+  \noexpand\newcommand{\string\horasExtensao}{\thehExtensao\noexpand\xspace}^^J%
+  \noexpand\newcommand{\string\totalHorasSemExtensao}{\thehorasSemExtensao\noexpand\xspace}^^J%
+  \noexpand\newcommand{\string\horasDiscExtensao}{\thehorasDiscExtensao\noexpand\xspace}^^J%
+  \noexpand\newcommand{\string\totalCredDiscExtensao}{\thecredExtensao\noexpand\xspace}^^J%
+  \noexpand\newcommand{\string\totalHorasACE}{\thehorasACE\noexpand\xspace}^^J%
+  \noexpand\newcommand{\string\totalDisciplinas}{\thetdisciplinas\noexpand\xspace}^^J%
+  \noexpand\newcommand{\string\totalEletivas}{\thetEletivas\noexpand\xspace}^^J%
+  \noexpand\newcommand{\string\tDiscObrigatorias}{\thetDiscObrigatorias\noexpand\xspace}^^J%
 }
 \immediate\closeout\exportfile
 \end{document}

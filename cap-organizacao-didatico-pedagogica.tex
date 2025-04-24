@@ -15,7 +15,23 @@ Ciente dessa realidade, a Universidade do Estado do Rio de Janeiro (UERJ), por m
 
 A estrutura curricular do curso de Engenharia de Computação do \desc, da Faculdade de Engenharia da UERJ, orienta-se pelas \textit{Diretrizes Curriculares Nacionais para os cursos de graduação na área da Computação}, estabelecidas pelo Ministério da Educação (Anexo~\ref{cne2016}); pelos \textit{Referenciais de Formação para os cursos de Graduação em Computação}, elaborados pela Sociedade Brasileira de Computação (Anexo~\ref{sbc2017}); e pela regulamentação do exercício profissional do Engenheiro, estabelecida pelo Sistema CONFEA/CREA, atualmente em vigor.
 
-A matriz curricular totaliza \totalhoras{} horas, sendo \hobrigatorias{} horas destinadas a disciplinas regulares e \hextensao{} horas voltadas às atividades de extensão. As \hobrigatorias{} horas de disciplinas estão distribuídas em \ndisciplinas{} disciplinas curriculares, sendo \nobrigatorias{} obrigatórias e \neletivas{} eletivas. A carga horária das disciplinas contempla atividades teóricas, práticas, laboratoriais, de estágio e de extensão, conforme a natureza dos conteúdos abordados.
+A matriz curricular totaliza \totalHorasCurso horas, sendo \horasTotaisDisciplinas horas destinadas a disciplinas (das quais \horasDiscExtensao horas em disciplinas extensionistas) e \totalHorasACE horas voltadas às Atividades Curriculares de Extensão (ACE). As \horasTotaisDisciplinas horas de disciplinas estão distribuídas em \totalDisciplinas disciplinas curriculares, sendo \tDiscObrigatorias obrigatórias e \totalEletivas eletivas. A carga horária das disciplinas contempla atividades teóricas, práticas, laboratoriais, de estágio e de extensão, conforme a natureza dos conteúdos abordados. A tabela \ref{tab:horas} apresenta a distribuição da carga horária do curso.
+
+\begin{table}[h]
+    \centering
+    \caption{Distribuição da carga horária do curso.}
+    \label{tab:horas}
+    \begin{tabular}{lrr}
+        \toprule
+        Tipo                              & Horas                  & \%    \\
+        \midrule
+        Disciplinas regulares (não ext.)  & \totalHorasSemExtensao & 90\%  \\
+        Disciplinas extensionistas        & \horasDiscExtensao     & 5,5\% \\
+        Atividas Curriculares de Extensão & \totalHorasACE         & 4,5\% \\
+        Total                             & \totalHorasCurso       & 100\% \\
+        \bottomrule
+    \end{tabular}
+\end{table}
 
 O currículo inclui, ainda, Estágio Supervisionado e Projeto de Graduação (Trabalho de Conclusão de Curso), componentes que visam à integração e à aplicação dos conhecimentos científicos, tecnológicos e instrumentais adquiridos ao longo da formação. Como atividades acadêmicas complementares de caráter facultativo, os discentes poderão participar de Estágio Interno, Monitoria, Iniciação Científica, Cursos, Eventos, Palestras e Visitas Técnicas, com vistas a ampliar sua compreensão sobre a Engenharia de Computação, o setor produtivo nacional e as possíveis áreas de atuação do egresso.
 
@@ -81,9 +97,9 @@ Os egressos do curso de Engenharia de Computação estarão situados no estado d
 Caberá ao DESC exercer a administração do curso de Engenharia da Computação.
 Como a reformulação do curso propõe sua reestruturação como uma habilitação específica em Engenharia de Computação, a administração do curso deverá ser reestruturada também.
 
-\subsection{Chefia e Vice-Chefia do Departamento}
+\subsection{Chefia e Subchefia do Departamento}
 
-A administração do Departamento de Engenharia de Sistemas e Computação (DESC) é conduzida por um Chefe de Departamento e um Vice-Chefe. Esses cargos são ocupados por docentes efetivos do departamento. A eleição do chefe e vice-chefe se dá por meio do voto dos membros do corpo deliberativo do DESC com um mandato de até dois anos. O corpo deliberativo do DESC é formado por todos os professores efetivos do departamento e é convocado pela chefia, a fim de deliberar sobre as questões pertinentes ao curso, tanto acadêmicas quanto administrativas.
+A administração do Departamento de Engenharia de Sistemas e Computação (DESC) é conduzida por um Chefe de Departamento e um Subchefe. Esses cargos são ocupados por docentes efetivos do departamento. A eleição do chefe e subchefe se dá por meio do voto dos membros do corpo deliberativo do DESC com um mandato de até dois anos. O corpo deliberativo do DESC é formado por todos os professores efetivos do departamento e é convocado pela chefia, a fim de deliberar sobre as questões pertinentes ao curso, tanto acadêmicas quanto administrativas.
 
 A chefia do departamento tem a responsabilidade de coordenar as atividades acadêmicas e administrativas do departamento, incluindo:
 
@@ -96,7 +112,7 @@ A chefia do departamento tem a responsabilidade de coordenar as atividades acad�
 
 \subsection{Conselho Departamental}
 
-O Conselho Departamental da Faculdade de Engenharia é o órgão deliberativo da unidade, presidido pela Direção da Faculdade de Engenharia e composto pelas chefias dos departamentos, representante do técnicos-administrativos e representantes dos alunos. O DESC tem um representante no Conselho Departamental da Faculdade de Engenharia, o representante do DESC no Conselho Departamental é o chefe de departamento ou o seu vice.
+O Conselho Departamental da Faculdade de Engenharia é o órgão deliberativo da unidade, presidido pela Direção da Faculdade de Engenharia e composto pelas chefias dos departamentos, representante do técnicos-administrativos e representantes dos alunos. O DESC tem um representante no Conselho Departamental da Faculdade de Engenharia, o representante do DESC no Conselho Departamental é o chefe de departamento ou o seu subchefe.
 
 
 \subsection{Coordenação de Graduação}
@@ -112,7 +128,7 @@ A Coordenação de Graduação é responsável pelo gerenciamento acadêmico do 
 
 \subsection{Coordenação das Atividades Curriculares de Extensão (CACE)}
 
-A Coordenação das Atividades Curriculares de Extensão (CACE) orienta e verifica o cumprimento das ações de extensão realizadas pelos estudantes e valida a carga horária a ser contabilizada semestralmente. A CACE deve garantir que cada aluno cumpra as 357 horas obrigatórias de extensão.
+A Coordenação das Atividades Curriculares de Extensão (CACE) orienta e verifica o cumprimento das ações de extensão realizadas pelos estudantes e valida a carga horária a ser contabilizada semestralmente. A CACE deve garantir que cada aluno cumpra as horas obrigatórias de extensão.
 
 De acordo com a Deliberação n\textordmasculine~04/2023, as atribuições da CACE incluem:
 
@@ -298,8 +314,9 @@ docente e discente, não sendo necessariamente disponibilizadas todos os semestr
         @ \FisII                & \FisIICH        & \FisIICred            \\ % Física II
         @ \FisEII               & \FisEICH        & \FisEICred            \\ % Física Experimental II
         @ \ProbEst              & \ProbEstCH      & \ProbEstCred          \\ % Probabilidade e Estatística
+        @ \Ext                  & \ExtCH          & \ExtCred              \\ % Laboratório de Programação A
         \hline
-        @ Total                 & sum(b2:b6)      & sum(c2:c6)            \\
+        @ Total                 & sum(b2:b7)      & sum(c2:c7)            \\
         \hline
     \end{spreadtab}
 \end{table}
@@ -730,19 +747,19 @@ Tais iniciativas possuem caráter formativo e buscam alinhar teoria e prática, 
 
 \subsection{Atividades extensionistas}
 
-No currículo do curso de Engenharia de Computação da UERJ, as atividades extensionistas totalizam 357 horas, representando 10,04\% da carga horária total do curso, que é de 3.567 horas, em conformidade com a determinação do CNE.
+No currículo do curso de Engenharia de Computação da UERJ, as atividades extensionistas totalizam \horasExtensao horas, representando 10\% da carga horária total do curso, que é de \totalHorasCurso horas, em conformidade com a determinação do CNE.
 
 Essas horas de extensão estão distribuídas entre duas modalidades: \textbf{Disciplinas integralmente dedicadas à extensão} e \textbf{Atividade Curricular de Extensão}, conforme detalhado a seguir.
 
 \textbf{Disciplinas integralmente dedicadas à extensão}
 
-Propõe-se uma disciplina obrigatória denominada “Introdução a Projetos de Extensão” oferecida pelo Departamento de Engenharia de Sistemas e Computação que contempla 30h de carga horária voltada à extensão. Para facilitar o planejamento e a execução das atividades extensionistas pelos alunos, recomenda-se que a disciplina  extensionista seja realizada no terceiro ou quarto período pelos alunos. Essa recomendação é fundamentada na estrutura curricular, que prevê uma menor carga horária de disciplinas obrigatórias nesses períodos, permitindo a realização das atividades extensionistas sem sobrecarregar os estudantes. Ao mesmo tempo, este primeiro contato com a Extensão possibilita ao estudante planejar como suas atividades extensionistas serão realizadas ao longo do curso.
+Propõe-se uma disciplina obrigatória denominada \textbf{\Ext{ }} oferecida pelo Departamento de Engenharia de Sistemas e Computação que contempla \ExtCH{ } horas de carga horária voltada à extensão. Para facilitar o planejamento e a execução das atividades extensionistas pelos alunos, recomenda-se que a disciplina  extensionista seja realizada no terceiro período pelos alunos. Essa recomendação é fundamentada na estrutura curricular, que prevê uma menor carga horária de disciplinas obrigatórias nesses períodos, permitindo a realização das atividades extensionistas sem sobrecarregar os estudantes. Ao mesmo tempo, este primeiro contato com a Extensão possibilita ao estudante planejar como suas atividades extensionistas serão realizadas ao longo do curso.
 
 A disciplina proposta, contempla a definição de um tema específico pelo docente a cada semestre. Os estudantes matriculados desenvolverão atividades relacionadas ao tema ao longo do período letivo, envolvendo-se em ações como a elaboração de conteúdos, produção de materiais, estratégias de divulgação, suporte acadêmico e práticas didáticas. No âmbito do curso de Engenharia de Computação, exemplos de atividades de extensão incluem o desenvolvimento de um site utilizando plataformas gratuitas para disseminação de informações relacionadas ao tema; a criação de um canal no YouTube voltado à divulgação de tutoriais, aulas e outros conteúdos técnicos; e a realização de oficinas práticas que abordem temas como introdução à programação, segurança digital, e o uso de ferramentas tecnológicas para resolução de problemas sociais. Além disso, outras ações podem incluir a realização de \textit{hackathons} com foco em soluções comunitárias ou a implementação de sistemas de gerenciamento voltados a organizações locais ou escolas, promovendo um impacto direto e positivo na sociedade.
 
 \textbf{Atividade Curricular de Extensão (ACE)}
 
-Para integralizar o curso de graduação em Engenharia de Computação da UERJ, o aluno deve cumprir, no mínimo, 327 horas de Atividade Curricular de Extensão (ACE).
+Para integralizar o curso de graduação em Engenharia de Computação da UERJ, o aluno deve cumprir, no mínimo, \totalHorasACE horas de Atividade Curricular de Extensão (ACE).
 
 Conforme estabelecido na Deliberação n\textordmasculine~04/2023, as ACEs devem ser realizadas ao longo do curso e concluídas antes do término da graduação. Nessas atividades, é imprescindível que o aluno atue de forma ativa e protagonista.
 
