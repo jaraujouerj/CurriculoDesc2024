@@ -333,6 +333,14 @@
 \newcounter{tEletivas}
 \setcounter{tEletivas}{3} % 3 eletivas de 4 créditos cada
 
+% total  horas disciplinas eletivas
+\newcounter{hEletivas}
+\setcounter{hEletivas}{\inteval{60 * \the\value{tEletivas}}}
+
+% total  horas disciplinas obrigatórias, exceto eletivas
+\newcounter{hObrigatorias}
+\setcounter{hObrigatorias}{\inteval{\the\value{horasSemExtensao} - \the\value{hEletivas}}}
+
 % conta disciplinas obrigatórias
 \newcounter{tDiscObrigatorias}
 \setcounter{tDiscObrigatorias}{\inteval{\the\value{tdisciplinas} - \the\value{tEletivas}}}
@@ -376,6 +384,7 @@
 \immediate\write\exportfile{%
   \noexpand\newcommand{\string\totalHorasCurso}{\thethoras\noexpand\xspace}^^J%
   \noexpand\newcommand{\string\horasTotaisDisciplinas}{\thehorasTotaisDisciplinas\noexpand\xspace}^^J%
+  \noexpand\newcommand{\string\hObrigatorias}{\thehObrigatorias\noexpand\xspace}^^J%
   \noexpand\newcommand{\string\totalCredCurso}{\thecred\noexpand\xspace}^^J%
   \noexpand\newcommand{\string\horasExtensao}{\thehExtensao\noexpand\xspace}^^J%
   \noexpand\newcommand{\string\totalHorasSemExtensao}{\thehorasSemExtensao\noexpand\xspace}^^J%
@@ -384,6 +393,7 @@
   \noexpand\newcommand{\string\totalHorasACE}{\thehorasACE\noexpand\xspace}^^J%
   \noexpand\newcommand{\string\totalDisciplinas}{\thetdisciplinas\noexpand\xspace}^^J%
   \noexpand\newcommand{\string\totalEletivas}{\thetEletivas\noexpand\xspace}^^J%
+  \noexpand\newcommand{\string\hEletivas}{\thehEletivas\noexpand\xspace}^^J%
   \noexpand\newcommand{\string\tDiscObrigatorias}{\thetDiscObrigatorias\noexpand\xspace}^^J%
 }
 \immediate\closeout\exportfile
