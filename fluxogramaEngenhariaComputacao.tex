@@ -303,10 +303,12 @@
   \node [below of=prof,node distance=5mm,fill=celetiva, draw=gray, draw=black, label=right:Eletivas] {};
 
 \end{tikzpicture}
+
 \footnotesize
+% Descrição dos números
 \begin{tikzpicture}[remember picture, overlay]
-  \node[anchor=south west, text width=6cm, align=justify]
-  at ([xshift=3cm, yshift=3cm]current page.south west)
+  \node[anchor=south west, text width=9cm, align=justify]
+  at ([xshift=1.4cm, yshift=3.3cm]current page.south west)
   {Os números situados na parte inferior esquerda e direita representam carga horária e créditos, respectivamente, conferidos à disciplina.};
 \end{tikzpicture}
 
@@ -352,52 +354,20 @@
 \newcounter{tDiscObrigatorias}
 \setcounter{tDiscObrigatorias}{\inteval{\the\value{tdisciplinas} - \the\value{tEletivas}}}
 
+% Descriçao geral das horas totais do curso
 \begin{tikzpicture}[remember picture, overlay]
-  \node[anchor=south west, text width=10cm, align=justify]
-  at ([xshift=16cm, yshift=1cm]current page.south west)
+  \node[anchor=south west, text width=12cm, align=justify]
+  at ([xshift=15.5cm, yshift=0.8cm]current page.south west)
   {O currículo do curso de Engenharia de Computação
     compreende um total de \the\value{thoras} horas,  \the\value{cred} créditos, sendo:
     \begin{enumerate}[label=\alph*)] % isso gera a), b), c), etc.
-      \item \the\value{hObrigatorias} horas, equivalentes a {\inteval{\the\value{hObrigatorias} / 15}} créditos em disciplinas obrigatórias, sendo \the\value{horasDiscExtensao} horas, \the\value{totalCredDiscExtensao} créditos, de Disciplinas obrigatórias com carga horária de Extensão;
+      \item \the\value{hObrigatorias} horas, equivalentes a {\inteval{\the\value{hObrigatorias} / 15}} créditos em disciplinas obrigatórias, sendo \the\value{horasDiscExtensao} horas, \the\value{totalCredDiscExtensao} créditos, de disciplinas obrigatórias com carga horária de Extensão;
       \item um mínimo de \the\value{hEletivas} horas, 12 créditos em disciplinas eletivas restritas;
       \item um mínimo de \the\value{horasACE} horas em Atividades Curriculares de Extensão;
     \end{enumerate}
+    O curso estabelece o tempo mínimo de integralização em 10 períodos (5 anos) e máximo em 18 períodos (9 anos).
   };
 \end{tikzpicture}
-
-%O currículo do curso de Engenharia de Elétrica com ênfase em Sistemas Elétricos e de Automação Industrial
-%compreende um total de 4100 horas, 261 créditos, sendo:
-%a) 3795 horas, equivalentes a 253 créditos de Disciplinas Obrigatórias, contendo:
-%%- 165 horas, 11 créditos, de Disciplina de Estágio Obrigatório; e
-%- 225 horas, 15 créditos, de Disciplinas obrigatórias com carga horária de Extensão;
-%b) um mínimo de 60 horas, 04 créditos, de Disciplinas Eletivas Restritas;
-%c) um mínimo de 60 horas, 04 créditos, de Disciplinas Eletivas Definidas;e
-%d) um mínimo de 185 horas de Atividades Curriculares de Extensão.
-%O curso estabelece o tempo mínimo de integralização em 10 períodos (5 anos) e máximo em 18 períodos (9 anos).
-
-\vspace{-10mm}
-\setlength\parindent{0pt}
-
-%\begin{multicols}{4}
-% \vfill
-
-% \columnbreak
-% O Curso de Engenharia de Computação será integralizado em um mínimo de 10 e um máximo de 18 períodos.
-
-% \columnbreak
-% \the\value{tdisciplinas} disciplinas\\
-% % \addtocounter{cred}{-13}
-% \the\value{cred} créditos em disciplinas obrigatórias\\ sendo \the\value{totalCredDiscExtensao} créditos em disciplinas de extensão\\e 12 créditos em disciplinas eletivas restritas
-
-% \columnbreak
-% %Total de horas-aula do curso: \the\value{haula}\\
-% %\addtocounter{thoras}{1} % Arredonda para cima
-% Total de horas do curso: \the\value{thoras}\\
-% Total de horas do curso (sem ext.): \the\value{horasSemExtensao}\\
-% Total de horas de extensão: \the\value{hExtensao}
-
-
-%\end{multicols}
 
 % Exporta o valor para um arquivo externo
 % Só funciona com o luatex
