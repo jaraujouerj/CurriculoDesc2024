@@ -1,6 +1,7 @@
 \documentclass[a4paper, landscape]{article}
 \usepackage{prerex}
 \usepackage{multicol}
+\usepackage{enumitem}
 %\usepackage{showframe}
 \usepackage[utf8]{inputenc} % codificacao de caracteres
 \usepackage{geometry}
@@ -56,8 +57,8 @@
 \setcounter{cred}{0}
 
 %contador de créditos para disciplinas de extensão
-\newcounter{credExtensao} 
-\setcounter{credExtensao}{0} 
+\newcounter{totalCredDiscExtensao} 
+\setcounter{totalCredDiscExtensao}{0} 
 
 %contador de disciplinas totais do curso
 \newcounter{tdisciplinas} 
@@ -75,7 +76,7 @@
   \addtocounter{cred}{#6}
   \def\horasdisc{\inteval{15 * #6}}%  Cada crédito correspponde a 15 horas
   \ifthenelse{\equal{#1}{extensao}}
-    {\addtocounter{credExtensao}{#6}} % Se for extensao, conta também como crédito de extensão
+    {\addtocounter{totalCredDiscExtensao}{#6}} % Se for extensao, conta também como crédito de extensão
     {} % Caso contrário, não faz nada
   \addtocounter{tdisciplinas}{1} % Conta o número de disciplinas
   \node at ($ (#2*2.8cm-7cm,14.6-#3*2.3) $) (Item)  [#1] (#7) 
@@ -85,7 +86,7 @@
             \textbf{\horasdisc} \hfill #6 % Horas e Número de créditos
         };}
 
-\geometry{margin=0.5cm,bottom=0.5cm} 
+\geometry{margin=1cm,top=1.5cm,bottom=1cm} 
 
 \thispagestyle{empty}
 \usepackage{fontspec}
@@ -289,7 +290,7 @@
   \trava {ProjA}{150 cred}
 
 
-  \node at (20cm,14mm) (legenda)
+  \node at (19.5cm,20mm) (legenda)
   {\textbf{Código para as Disciplinas}};
   \node  [below right= 1.5mm and -36mm of legenda,fill=cbasico, draw=black,
     label=right:Básico.](basico) {};
@@ -302,14 +303,20 @@
   \node [below of=prof,node distance=5mm,fill=celetiva, draw=gray, draw=black, label=right:Eletivas] {};
 
 \end{tikzpicture}
+\footnotesize
+\begin{tikzpicture}[remember picture, overlay]
+  \node[anchor=south west, text width=6cm, align=justify]
+  at ([xshift=3cm, yshift=3cm]current page.south west)
+  {Os números situados na parte inferior esquerda e direita representam carga horária e créditos, respectivamente, conferidos à disciplina.};
+\end{tikzpicture}
 
 % calcula as horas de disciplinas de extensão
 \newcounter{horasDiscExtensao}
-\setcounter{horasDiscExtensao}{\inteval{15 * \the\value{credExtensao}}}
+\setcounter{horasDiscExtensao}{\inteval{15 * \the\value{totalCredDiscExtensao}}}
 
 % conta horas totais do curso sem contar extensão
 \newcounter{horasSemExtensao}
-\setcounter{horasSemExtensao}{\inteval{15 * (\the\value{cred} - \the\value{credExtensao})}}
+\setcounter{horasSemExtensao}{\inteval{15 * (\the\value{cred} - \the\value{totalCredDiscExtensao})}}
 
 %  horas totais das disciplinas com disciplinas de extensão
 \newcounter{horasTotaisDisciplinas}
@@ -339,36 +346,58 @@
 
 % total  horas disciplinas obrigatórias, exceto eletivas
 \newcounter{hObrigatorias}
-\setcounter{hObrigatorias}{\inteval{\the\value{horasSemExtensao} - \the\value{hEletivas}}}
+\setcounter{hObrigatorias}{\inteval{\the\value{horasTotaisDisciplinas} - \the\value{hEletivas}}}
 
 % conta disciplinas obrigatórias
 \newcounter{tDiscObrigatorias}
 \setcounter{tDiscObrigatorias}{\inteval{\the\value{tdisciplinas} - \the\value{tEletivas}}}
 
-\vspace{-4mm}
+\begin{tikzpicture}[remember picture, overlay]
+  \node[anchor=south west, text width=10cm, align=justify]
+  at ([xshift=16cm, yshift=1cm]current page.south west)
+  {O currículo do curso de Engenharia de Computação
+    compreende um total de \the\value{thoras} horas,  \the\value{cred} créditos, sendo:
+    \begin{enumerate}[label=\alph*)] % isso gera a), b), c), etc.
+      \item \the\value{hObrigatorias} horas, equivalentes a {\inteval{\the\value{hObrigatorias} / 15}} créditos em disciplinas obrigatórias, sendo \the\value{horasDiscExtensao} horas, \the\value{totalCredDiscExtensao} créditos, de Disciplinas obrigatórias com carga horária de Extensão;
+      \item um mínimo de \the\value{hEletivas} horas, 12 créditos em disciplinas eletivas restritas;
+      \item um mínimo de \the\value{horasACE} horas em Atividades Curriculares de Extensão;
+    \end{enumerate}
+  };
+\end{tikzpicture}
+
+%O currículo do curso de Engenharia de Elétrica com ênfase em Sistemas Elétricos e de Automação Industrial
+%compreende um total de 4100 horas, 261 créditos, sendo:
+%a) 3795 horas, equivalentes a 253 créditos de Disciplinas Obrigatórias, contendo:
+%%- 165 horas, 11 créditos, de Disciplina de Estágio Obrigatório; e
+%- 225 horas, 15 créditos, de Disciplinas obrigatórias com carga horária de Extensão;
+%b) um mínimo de 60 horas, 04 créditos, de Disciplinas Eletivas Restritas;
+%c) um mínimo de 60 horas, 04 créditos, de Disciplinas Eletivas Definidas;e
+%d) um mínimo de 185 horas de Atividades Curriculares de Extensão.
+%O curso estabelece o tempo mínimo de integralização em 10 períodos (5 anos) e máximo em 18 períodos (9 anos).
+
+\vspace{-10mm}
 \setlength\parindent{0pt}
 
-\begin{multicols}{4}
-  \vfill
-  Os números situados na parte inferior esquerda e direita representam carga horária e créditos, respectivamente, conferidos à disciplina.
+%\begin{multicols}{4}
+% \vfill
 
-  \columnbreak
-  O Curso de Engenharia de Computação será integralizado em um mínimo de 10 e um máximo de 18 períodos.
+% \columnbreak
+% O Curso de Engenharia de Computação será integralizado em um mínimo de 10 e um máximo de 18 períodos.
 
-  \columnbreak
-  \the\value{tdisciplinas} disciplinas\\
-  % \addtocounter{cred}{-13}
-  \the\value{cred} créditos em disciplinas obrigatórias\\ sendo \the\value{credExtensao} créditos em disciplinas de extensão\\e 12 créditos em disciplinas eletivas restritas
+% \columnbreak
+% \the\value{tdisciplinas} disciplinas\\
+% % \addtocounter{cred}{-13}
+% \the\value{cred} créditos em disciplinas obrigatórias\\ sendo \the\value{totalCredDiscExtensao} créditos em disciplinas de extensão\\e 12 créditos em disciplinas eletivas restritas
 
-  \columnbreak
-  %Total de horas-aula do curso: \the\value{haula}\\
-  %\addtocounter{thoras}{1} % Arredonda para cima
-  Total de horas do curso: \the\value{thoras}\\
-  Total de horas do curso (sem ext.): \the\value{horasSemExtensao}\\
-  Total de horas de extensão: \the\value{hExtensao}
+% \columnbreak
+% %Total de horas-aula do curso: \the\value{haula}\\
+% %\addtocounter{thoras}{1} % Arredonda para cima
+% Total de horas do curso: \the\value{thoras}\\
+% Total de horas do curso (sem ext.): \the\value{horasSemExtensao}\\
+% Total de horas de extensão: \the\value{hExtensao}
 
 
-\end{multicols}
+%\end{multicols}
 
 % Exporta o valor para um arquivo externo
 % Só funciona com o luatex
@@ -376,24 +405,39 @@
 \immediate\openout\exportfile=dados.tex
 % Escreve um comentário no arquivo
 \begingroup
-\catcode`\%=12 % faz o % ser apenas texto
+% faz o % ser apenas texto
+\catcode`\%=12
 \immediate\write\exportfile{% NAO EDITE MANUALMENTE}
 \immediate\write\exportfile{% Este arquivo foi gerado automaticamente em \the\year-\the\month-\the\day}
+\immediate\write\exportfile{% MACROS CRIADAS}
+\immediate\write\exportfile{% Total de horas do curso: totalHorasCurso}
+\immediate\write\exportfile{% Total de créditos do curso: totalCredCurso}
+\immediate\write\exportfile{% Total de horas de disciplinas (regulares+eletivas+extensao): horasTotaisDisciplinas}
+\immediate\write\exportfile{% Total de horas de disciplinas obrigatórias (regulares+extensao): hObrigatorias}
+\immediate\write\exportfile{% Total de horas de disciplinas eletivas: hEletivas}
+\immediate\write\exportfile{% Total de horas de extensão: horasExtensao}
+\immediate\write\exportfile{% Total de horas de disciplinas de extensão: horasDiscExtensao}
+\immediate\write\exportfile{% Total de créditos disciplinas de extensao: totalCredDiscExtensao}
+\immediate\write\exportfile{% Total de horas de atividades de extensão (sem disciplinas): totalHorasACE}
+\immediate\write\exportfile{% Total de horas sem extensao: totalHorasSemExtensao}
+\immediate\write\exportfile{% Total de disciplinas: totalDisciplinas}
+\immediate\write\exportfile{% Total de disciplinas eletivas: totalEletivas}
+\immediate\write\exportfile{% Total de disciplinas obrigatorias: tDiscObrigatorias}
 \endgroup
 
 \immediate\write\exportfile{%
   \noexpand\newcommand{\string\totalHorasCurso}{\thethoras\noexpand\xspace}^^J%
+  \noexpand\newcommand{\string\totalCredCurso}{\thecred\noexpand\xspace}^^J%
   \noexpand\newcommand{\string\horasTotaisDisciplinas}{\thehorasTotaisDisciplinas\noexpand\xspace}^^J%
   \noexpand\newcommand{\string\hObrigatorias}{\thehObrigatorias\noexpand\xspace}^^J%
-  \noexpand\newcommand{\string\totalCredCurso}{\thecred\noexpand\xspace}^^J%
+  \noexpand\newcommand{\string\hEletivas}{\thehEletivas\noexpand\xspace}^^J%  
   \noexpand\newcommand{\string\horasExtensao}{\thehExtensao\noexpand\xspace}^^J%
-  \noexpand\newcommand{\string\totalHorasSemExtensao}{\thehorasSemExtensao\noexpand\xspace}^^J%
   \noexpand\newcommand{\string\horasDiscExtensao}{\thehorasDiscExtensao\noexpand\xspace}^^J%
-  \noexpand\newcommand{\string\totalCredDiscExtensao}{\thecredExtensao\noexpand\xspace}^^J%
+  \noexpand\newcommand{\string\totalCredDiscExtensao}{\thetotalCredDiscExtensao\noexpand\xspace}^^J%
   \noexpand\newcommand{\string\totalHorasACE}{\thehorasACE\noexpand\xspace}^^J%
+  \noexpand\newcommand{\string\totalHorasSemExtensao}{\thehorasSemExtensao\noexpand\xspace}^^J%   
   \noexpand\newcommand{\string\totalDisciplinas}{\thetdisciplinas\noexpand\xspace}^^J%
-  \noexpand\newcommand{\string\totalEletivas}{\thetEletivas\noexpand\xspace}^^J%
-  \noexpand\newcommand{\string\hEletivas}{\thehEletivas\noexpand\xspace}^^J%
+  \noexpand\newcommand{\string\totalEletivas}{\thetEletivas\noexpand\xspace}^^J%  
   \noexpand\newcommand{\string\tDiscObrigatorias}{\thetDiscObrigatorias\noexpand\xspace}^^J%
 }
 \immediate\closeout\exportfile
