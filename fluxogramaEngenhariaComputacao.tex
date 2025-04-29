@@ -57,8 +57,8 @@
 \setcounter{cred}{0}
 
 %contador de créditos para disciplinas de extensão
-\newcounter{totalCredDiscExtensao} 
-\setcounter{totalCredDiscExtensao}{0} 
+\newcounter{credDiscExtensao} 
+\setcounter{credDiscExtensao}{0} 
 
 %contador de disciplinas totais do curso
 \newcounter{tdisciplinas} 
@@ -76,7 +76,7 @@
   \addtocounter{cred}{#6}
   \def\horasdisc{\inteval{15 * #6}}%  Cada crédito correspponde a 15 horas
   \ifthenelse{\equal{#1}{extensao}}
-    {\addtocounter{totalCredDiscExtensao}{#6}} % Se for extensao, conta também como crédito de extensão
+    {\addtocounter{credDiscExtensao}{#6}} % Se for extensao, conta também como crédito de extensão
     {} % Caso contrário, não faz nada
   \addtocounter{tdisciplinas}{1} % Conta o número de disciplinas
   \node at ($ (#2*2.8cm-7cm,14.6-#3*2.3) $) (Item)  [#1] (#7) 
@@ -312,17 +312,17 @@
   {Os números situados na parte inferior esquerda e direita representam carga horária e créditos, respectivamente, conferidos à disciplina.};
 \end{tikzpicture}
 
+% horas totais das disciplinas (obrigatórias + eletivas + extensão)
+\newcounter{hTotaisDisc}
+\setcounter{hTotaisDisc}{\inteval{15 * \the\value{cred}}}
+
 % calcula as horas de disciplinas de extensão
-\newcounter{horasDiscExtensao}
-\setcounter{horasDiscExtensao}{\inteval{15 * \the\value{totalCredDiscExtensao}}}
+\newcounter{hDiscExtensao}
+\setcounter{hDiscExtensao}{\inteval{15 * \the\value{credDiscExtensao}}}
 
-% conta horas totais do curso sem contar extensão
+% calcula horas totais de disciplinas do curso sem contar disc. de extensão
 \newcounter{horasSemExtensao}
-\setcounter{horasSemExtensao}{\inteval{15 * (\the\value{cred} - \the\value{totalCredDiscExtensao})}}
-
-%  horas totais das disciplinas com disciplinas de extensão
-\newcounter{horasTotaisDisciplinas}
-\setcounter{horasTotaisDisciplinas}{\inteval{15 * \the\value{cred}}}
+\setcounter{horasSemExtensao}{\inteval{15 * (\the\value{cred} - \the\value{credDiscExtensao})}}
 
 % Calcula horas totais necessárias para extensão
 \newcounter{hExtensao}
@@ -336,23 +336,35 @@
 
 % conta horas de atividades de extensão
 \newcounter{horasACE}
-\setcounter{horasACE}{\inteval{\the\value{hExtensao} - \the\value{horasDiscExtensao}}}
+\setcounter{horasACE}{\inteval{\the\value{hExtensao} - \the\value{hDiscExtensao}}}
 
 % disciplinas eletivas
-\newcounter{tEletivas}
-\setcounter{tEletivas}{3} % 3 eletivas de 4 créditos cada
+\newcounter{numEletivas}
+\setcounter{numEletivas}{3} % 3 eletivas de 4 créditos cada
 
-% total  horas disciplinas eletivas
+% total créditos eletivas
+\newcounter{credEletivas}
+\setcounter{credEletivas}{\inteval{4 * \the\value{numEletivas}}}
+
+% total horas disciplinas eletivas
 \newcounter{hEletivas}
-\setcounter{hEletivas}{\inteval{60 * \the\value{tEletivas}}}
+\setcounter{hEletivas}{\inteval{15 * \the\value{credEletivas}}}
 
-% total  horas disciplinas obrigatórias, exceto eletivas
-\newcounter{hObrigatorias}
-\setcounter{hObrigatorias}{\inteval{\the\value{horasTotaisDisciplinas} - \the\value{hEletivas}}}
+% total horas disciplinas obrigatórias, exceto eletivas
+\newcounter{hTotaisDiscObrigComDiscExt}
+\setcounter{hTotaisDiscObrigComDiscExt}{\inteval{\the\value{hTotaisDisc} - \the\value{hEletivas}}}
+
+% total horas de disciplinas obrigatórias, exceto extensão
+\newcounter{hDiscObrigSemExtensao}
+\setcounter{hDiscObrigSemExtensao}{\inteval{\the\value{hTotaisDiscObrigComDiscExt} - \the\value{hDiscExtensao}}}
+
+% total créditos de disciplinas obrigatórias sem extensão
+\newcounter{credObrigSemExtensao}
+\setcounter{credObrigSemExtensao}{\inteval{\the\value{hDiscObrigSemExtensao} / 15}}
 
 % conta disciplinas obrigatórias
-\newcounter{tDiscObrigatorias}
-\setcounter{tDiscObrigatorias}{\inteval{\the\value{tdisciplinas} - \the\value{tEletivas}}}
+\newcounter{nDiscObrigatorias}
+\setcounter{nDiscObrigatorias}{\inteval{\the\value{tdisciplinas} - \the\value{numEletivas}}}
 
 % Descriçao geral das horas totais do curso
 \begin{tikzpicture}[remember picture, overlay]
@@ -361,7 +373,7 @@
   {O currículo do curso de Engenharia de Computação
     compreende um total de \the\value{thoras} horas,  \the\value{cred} créditos, sendo:
     \begin{enumerate}[label=\alph*)] % isso gera a), b), c), etc.
-      \item \the\value{hObrigatorias} horas, equivalentes a {\inteval{\the\value{hObrigatorias} / 15}} créditos em disciplinas obrigatórias, sendo \the\value{horasDiscExtensao} horas, \the\value{totalCredDiscExtensao} créditos, de disciplinas obrigatórias com carga horária de Extensão;
+      \item \the\value{hTotaisDiscObrigComDiscExt} horas, equivalentes a {\inteval{\the\value{hTotaisDiscObrigComDiscExt} / 15}} créditos em disciplinas obrigatórias, sendo \the\value{hDiscExtensao} horas, \the\value{credDiscExtensao} créditos, de disciplinas obrigatórias com carga horária de Extensão;
       \item um mínimo de \the\value{hEletivas} horas, 12 créditos em disciplinas eletivas restritas;
       \item um mínimo de \the\value{horasACE} horas em Atividades Curriculares de Extensão;
     \end{enumerate}
@@ -380,35 +392,41 @@
 \immediate\write\exportfile{% NAO EDITE MANUALMENTE}
 \immediate\write\exportfile{% Este arquivo foi gerado automaticamente em \the\year-\the\month-\the\day}
 \immediate\write\exportfile{% MACROS CRIADAS}
-\immediate\write\exportfile{% Total de horas do curso: totalHorasCurso}
-\immediate\write\exportfile{% Total de créditos do curso: totalCredCurso}
-\immediate\write\exportfile{% Total de horas de disciplinas (regulares+eletivas+extensao): horasTotaisDisciplinas}
-\immediate\write\exportfile{% Total de horas de disciplinas obrigatórias (regulares+extensao): hObrigatorias}
-\immediate\write\exportfile{% Total de horas de disciplinas eletivas: hEletivas}
-\immediate\write\exportfile{% Total de horas de extensão: horasExtensao}
-\immediate\write\exportfile{% Total de horas de disciplinas de extensão: horasDiscExtensao}
-\immediate\write\exportfile{% Total de créditos disciplinas de extensao: totalCredDiscExtensao}
-\immediate\write\exportfile{% Total de horas de atividades de extensão (sem disciplinas): totalHorasACE}
-\immediate\write\exportfile{% Total de horas sem extensao: totalHorasSemExtensao}
-\immediate\write\exportfile{% Total de disciplinas: totalDisciplinas}
-\immediate\write\exportfile{% Total de disciplinas eletivas: totalEletivas}
-\immediate\write\exportfile{% Total de disciplinas obrigatorias: tDiscObrigatorias}
+\immediate\write\exportfile{% 1. tHorasCurso: Total de horas do curso: }
+\immediate\write\exportfile{% 2. hTotaisDisc: Total de horas de disciplinas (regulares+eletivas+extensao): }
+\immediate\write\exportfile{% 3. hTotaisDiscObrigComDiscExt: Total de horas de disciplinas obrigatórias (regulares+extensao)}
+\immediate\write\exportfile{% 4. hDiscObrigSemExtensao: Total de horas de disciplinas obrigatórias sem extensão}
+\immediate\write\exportfile{% 5. tHorasSemExtensao: Total de horas de Disc obrig sem extensao} 
+\immediate\write\exportfile{% 6. hDiscExtensao: Total de horas de disciplinas de extensão}
+\immediate\write\exportfile{% 7. hExtensao: Total de horas de extensão}
+\immediate\write\exportfile{% 8. hACE Total de horas de atividades de extensão (sem disciplinas)}
+\immediate\write\exportfile{% 9. nEletivas: Número de disciplinas eletivas}
+\immediate\write\exportfile{% 10. credEletivas: Total de créditos de disciplinas eletivas}
+\immediate\write\exportfile{% 11. tCredCurso:  Total de créditos do curso}
+\immediate\write\exportfile{% 12. credObrigSemExtensao: Total de créditos de disciplinas obrigatórias sem extensão}
+\immediate\write\exportfile{% 13. hEletivas: Total de horas de disciplinas eletivas}
+\immediate\write\exportfile{% 14. credDiscExtensao: Total de créditos disciplinas de extensao}
+\immediate\write\exportfile{% 15. nDisciplinas: Número total de disciplinas}
+\immediate\write\exportfile{% 16. nDiscObrigatorias: Número de disciplinas obrigatorias}
 \endgroup
 
 \immediate\write\exportfile{%
-  \noexpand\newcommand{\string\totalHorasCurso}{\thethoras\noexpand\xspace}^^J%
-  \noexpand\newcommand{\string\totalCredCurso}{\thecred\noexpand\xspace}^^J%
-  \noexpand\newcommand{\string\horasTotaisDisciplinas}{\thehorasTotaisDisciplinas\noexpand\xspace}^^J%
-  \noexpand\newcommand{\string\hObrigatorias}{\thehObrigatorias\noexpand\xspace}^^J%
-  \noexpand\newcommand{\string\hEletivas}{\thehEletivas\noexpand\xspace}^^J%  
-  \noexpand\newcommand{\string\horasExtensao}{\thehExtensao\noexpand\xspace}^^J%
-  \noexpand\newcommand{\string\horasDiscExtensao}{\thehorasDiscExtensao\noexpand\xspace}^^J%
-  \noexpand\newcommand{\string\totalCredDiscExtensao}{\thetotalCredDiscExtensao\noexpand\xspace}^^J%
-  \noexpand\newcommand{\string\totalHorasACE}{\thehorasACE\noexpand\xspace}^^J%
-  \noexpand\newcommand{\string\totalHorasSemExtensao}{\thehorasSemExtensao\noexpand\xspace}^^J%   
-  \noexpand\newcommand{\string\totalDisciplinas}{\thetdisciplinas\noexpand\xspace}^^J%
-  \noexpand\newcommand{\string\totalEletivas}{\thetEletivas\noexpand\xspace}^^J%  
-  \noexpand\newcommand{\string\tDiscObrigatorias}{\thetDiscObrigatorias\noexpand\xspace}^^J%
+  \noexpand\newcommand{\string\tHorasCurso}{\thethoras\noexpand\xspace}^^J%
+  \noexpand\newcommand{\string\hTotaisDisc}{\thehTotaisDisc\noexpand\xspace}^^J%
+  \noexpand\newcommand{\string\hTotaisDiscObrigComDiscExt}{\thehTotaisDiscObrigComDiscExt\noexpand\xspace}^^J%
+  \noexpand\newcommand{\string\tHorasSemExtensao}{\thehorasSemExtensao\noexpand\xspace}^^J% 
+  \noexpand\newcommand{\string\hDiscObrigSemExtensao}{\thehDiscObrigSemExtensao\noexpand\xspace}^^J%
+  \noexpand\newcommand{\string\hDiscExtensao}{\thehDiscExtensao\noexpand\xspace}^^J%
+  \noexpand\newcommand{\string\hExtensao}{\thehExtensao\noexpand\xspace}^^J%
+  \noexpand\newcommand{\string\hACE}{\thehorasACE\noexpand\xspace}^^J% 
+  \noexpand\newcommand{\string\nEletivas}{\thenumEletivas\noexpand\xspace}^^J% 
+  \noexpand\newcommand{\string\credEletivas}{\thecredEletivas\noexpand\xspace}^^J%  
+  \noexpand\newcommand{\string\hEletivas}{\thehEletivas\noexpand\xspace}^^J% 
+  \noexpand\newcommand{\string\tCredCurso}{\thecred\noexpand\xspace}^^J%  
+  \noexpand\newcommand{\string\credObrigSemExtensao}{\thecredObrigSemExtensao\noexpand\xspace}^^J%
+  \noexpand\newcommand{\string\credDiscExtensao}{\thecredDiscExtensao\noexpand\xspace}^^J%  
+  \noexpand\newcommand{\string\nDisciplinas}{\thetdisciplinas\noexpand\xspace}^^J%
+  \noexpand\newcommand{\string\nDiscObrigatorias}{\thenDiscObrigatorias\noexpand\xspace}^^J%
 }
 \immediate\closeout\exportfile
 \end{document}

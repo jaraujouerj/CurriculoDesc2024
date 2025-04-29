@@ -24,6 +24,9 @@
 \usepackage{spreadtab}	    % para tabelas com cálculos
 \usepackage{booktabs}		% para tabelas com linhas horizontais
 \usepackage{multirow}		 % para tabelas com multiplas linhas
+\usepackage{caption}
+\captionsetup{labelfont=bf, font=small, textfont=small}  % Força o negrito somente no "Tabela x:"
+
 
 % Pacotes de texto e fontes
 \usepackage[T1]{fontenc} 	% para acentuação correta
@@ -111,7 +114,9 @@
 	{\end{addmargin}}
 
 \newenvironment{itquotation}
-{\begin{quotation}\itshape}
+{\begin{quotation}
+  \itshape % itálico
+  }
 {\end{quotation}}	
 % No paragraph indentation
 \parindent0pt
