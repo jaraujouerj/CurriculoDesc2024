@@ -135,14 +135,14 @@
   \disciplina{industrial}{10}{4}{\AdmCod}	    {\AdmSName}	      {\AdmCred}		{Adm} % Administração
   \disciplina{eletrica}{5}{5}	{\CCCCod}	      {\CCCSName}		    {\CCCCred}		{CCC} % Circuitos em corrente Conínua
   \disciplina{eletrica}{6}{5}{\CCACod}	      {\CCASName}		    {\CCACred}		{CCA} % Circuitos em Corrente Alternada
-  \disciplina{eletronica}{6}{6}{\EletICod}    {\EletISName}     {\EletICred}  {EletI} % Eletrônica I
+  %\disciplina{eletronica}{6}{6}{\EletICod}    {\EletISName}     {\EletICred}  {EletI} % Eletrônica I
   \disciplina{industrial}{8}{1}{\EmpreCod}    {\EmpreSName}     {\EmpreCred}  {Empre} % Empreendedorismo
   \disciplina{industrial}{7}{6}{\MacroEcoCod} {\MacroEcoSName}  {\MacroEcoCred}{MacroEco} % Macro economia aplicada à Engenharia
   \disciplina{ambiental}{1}{5}	{\IntAmbCod}	{\IntAmbSName}    {\IntAmbCred} {IntAmb} % Introdução à Engenharia Ambiental
   \disciplina{eletrica}{5}{4}	{\MatEleCod}	  {\MatEleSName}    {\MatEleCred} {MatEle} % Materiais Elétricos
   \disciplina{eletrica}{5}{3} {\SinaisESistCod}{\SinaisESistSName}{\SinaisESistCred}{SeS} % Modelos Matemáticos
   \disciplina{eletrica}{4}{4} {\LogCircDigCod}{\LogCircDigSName}{\LogCircDigCred}{LogCircDig} % Lógica e Circuitos Digitais
-
+  \disciplina{eletronica}{3}{7} {\CircEletICod} {\CircEletISName} {\CircEletICred} {CircEletI} % Circuitos Elétricos I
 
   %Disciplinas Desc
   \disciplina{desc}{1}{1} {\AlgCompCod}	{\AlgCompSName}{\AlgCompCred}{AlgComp}  % Algoritmos Computacionais
@@ -240,6 +240,8 @@
   \prereq [red]	{ProbEst}	{ProcIma}
   \pre  	      {LabProgI}{IC}          {-1}{3}{-10}{3}{0}
   \pre[teal]   	{LabProgI}{ICII}        {-3}{2}{-12}{5}{-2}
+  % extras
+  \prereq [red] {AlgLin}	{CircEletI}
 
   % Período 4
   \pre[blue]    {LabProgII}{EngSistA} {3}{1}{-9}{5}{-2}
@@ -248,7 +250,7 @@
   \pre	      {LogCircDig} {FundComp} {5}{4}{0}{-3}{0}
   \prereq [teal] 	{FisIII}	{CCC}
   \pre [red]		{SeS}	{CCA}   {0}{5}{0}{4}{0}
-  \pre	  {CCC}	{EletI}               {-3}{4}{0}{0}{-4}
+  %\pre	  {CCC}	{EletI}               {-3}{4}{0}{0}{-4}
   \prereq[blue]	  {CCC}		  {CCA}
 
 
@@ -308,7 +310,7 @@
 % Descrição dos números
 \begin{tikzpicture}[remember picture, overlay]
   \node[anchor=south west, text width=9cm, align=justify]
-  at ([xshift=1.4cm, yshift=3.3cm]current page.south west)
+  at ([xshift=1.4cm, yshift=1.3cm]current page.south west)
   {Os números situados na parte inferior esquerda e direita representam carga horária e créditos, respectivamente, conferidos à disciplina.};
 \end{tikzpicture}
 
