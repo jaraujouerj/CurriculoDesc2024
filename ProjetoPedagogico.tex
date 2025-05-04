@@ -102,16 +102,7 @@
 	{\bfseries Art. \arabic{artigo}~--~}%
 	\fi
 	}
-\newcounter{paragrafo}
-\newcommand{\paragrafo}{\refstepcounter{paragrafo} % 
-	\S~\arabic{paragrafo}º~%
-}
 
-\newenvironment{paragrafos}{\setcounter{paragrafo}{0}
-	\setlength{\parindent}{0pt}
-	\begin{addmargin}[4em]{0pt} 
-	}
-	{\end{addmargin}}
 
 \newenvironment{itquotation}
 {\begin{quotation}
