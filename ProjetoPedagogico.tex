@@ -94,16 +94,6 @@
 \DeclareRobustCommand{\ordm}[1]{#1\subsup{o}} % ordinal masculino
 \DeclareRobustCommand{\ordf}[1]{#1\subsup{a}} % ordinal feminino
 
-\newcounter{artigo}
-\newcommand{\artigo}{\refstepcounter{artigo} % 
-	\ifnum\theartigo<10 %
-	{\bfseries Art.~\arabic{artigo}º~--~}%
-	\else
-	{\bfseries Art. \arabic{artigo}~--~}%
-	\fi
-	}
-
-
 \newenvironment{itquotation}
 {\begin{quotation}
   \itshape % itálico
