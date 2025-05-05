@@ -116,17 +116,17 @@
   %{nome abreviado para referência} 
 
   %Básico
-  \disciplina{basico}{1}{3}{\AlgLinCod} {\AlgLinSName}  {\AlgLinCred} {AlgLin}  % Álgebra Linear
+  \disciplina{basico}{1}{5}{\AlgLinCod} {\AlgLinSName}  {\AlgLinCred} {AlgLin}  % Álgebra Linear
   \disciplina{basico}{1}{4}{\CalcICod}	{\CalcISName}	  {\CalcICred}  {CalcI}   % Cálculo I
   \disciplina{basico}{2}{4}{\CalcIICod}	{\CalcIISName}	{\CalcIICred} {CalcII}  % Cálculo II
   \disciplina{basico}{3}{4}{\CalcIIICod}{\CalcIIISName}	{\CalcIIICred}{CalcIII} % Cálculo III
   \disciplina{basico}{2}{3}{\CalcNumCod}{\CalcNumSName} {\CalcNumCred}{CalcNum} % Cálculo Numérico
-  \disciplina{basico}{2}{5}{\FisICod}		{\FisISName}		{\FisICred}   {FisI}    % Física I
-  \disciplina{basico}{2}{6}{\FisEICod}	{\FisEISName}	  {\FisEICred}  {FisEI}   % Física Experimental I
-  \disciplina{basico}{3}{5}{\FisIICod}	{\FisIISName}		{\FisIICred}	{FisII}   % Física II
-  \disciplina{basico}{3}{6}{\FisEIICod}	{\FisEIISName}	{\FisEIICred}	{FisEII}  % Física Experimental II
-  \disciplina{basico}{4}{5}{\FisIIICod}	{\FisIIISName}	{\FisIIICred}	{FisIII}  % Física III
-  \disciplina{basico}{4}{6}{\FisEIIICod}{\FisEIIISName}	{\FisEIIICred}{FisEIII} % Física Experimental III
+  \disciplina{basico}{2}{6}{\FisICod}		{\FisISName}		{\FisICred}   {FisI}    % Física I
+  \disciplina{basico}{2}{7}{\FisEICod}	{\FisEISName}	  {\FisEICred}  {FisEI}   % Física Experimental I
+  \disciplina{basico}{3}{6}{\FisIICod}	{\FisIISName}		{\FisIICred}	{FisII}   % Física II
+  \disciplina{basico}{3}{7}{\FisEIICod}	{\FisEIISName}	{\FisEIICred}	{FisEII}  % Física Experimental II
+  \disciplina{basico}{4}{6}{\FisIIICod}	{\FisIIISName}	{\FisIIICred}	{FisIII}  % Física III
+  \disciplina{basico}{4}{7}{\FisEIIICod}{\FisEIIISName}	{\FisEIIICred}{FisEIII} % Física Experimental III
   \disciplina{basico}{5}{6}{\FisIVCod}	{\FisIVSName}		{\FisIVCred}	{FisIV}   % Física IV
   \disciplina{basico}{5}{7}{\FisEIVCod}	{\FisEIVSName}	{\FisEIVCred}	{FisEIV}  % Física Experimental IV
   \disciplina{basico}{3}{3}{\ProbEstCod}{\ProbEstSName}	{\ProbEstCred}{ProbEst} % Probabilidade e Estatística
@@ -135,14 +135,14 @@
   \disciplina{industrial}{10}{4}{\AdmCod}	    {\AdmSName}	      {\AdmCred}		{Adm} % Administração
   \disciplina{eletrica}{5}{5}	{\CCCCod}	      {\CCCSName}		    {\CCCCred}		{CCC} % Circuitos em corrente Conínua
   \disciplina{eletrica}{6}{5}{\CCACod}	      {\CCASName}		    {\CCACred}		{CCA} % Circuitos em Corrente Alternada
-  \disciplina{eletronica}{6}{6}{\EletICod}    {\EletISName}     {\EletICred}  {EletI} % Eletrônica I
+  %\disciplina{eletronica}{6}{6}{\EletICod}    {\EletISName}     {\EletICred}  {EletI} % Eletrônica I
   \disciplina{industrial}{8}{1}{\EmpreCod}    {\EmpreSName}     {\EmpreCred}  {Empre} % Empreendedorismo
   \disciplina{industrial}{7}{6}{\MacroEcoCod} {\MacroEcoSName}  {\MacroEcoCred}{MacroEco} % Macro economia aplicada à Engenharia
-  \disciplina{ambiental}{1}{5}	{\IntAmbCod}	{\IntAmbSName}    {\IntAmbCred} {IntAmb} % Introdução à Engenharia Ambiental
-  \disciplina{eletrica}{5}{4}	{\MatEleCod}	  {\MatEleSName}    {\MatEleCred} {MatEle} % Materiais Elétricos
-  \disciplina{eletrica}{5}{3} {\SinaisESistCod}{\SinaisESistSName}{\SinaisESistCred}{SeS} % Modelos Matemáticos
-  \disciplina{eletrica}{4}{4} {\LogCircDigCod}{\LogCircDigSName}{\LogCircDigCred}{LogCircDig} % Lógica e Circuitos Digitais
-
+  \disciplina{ambiental}{1}{3}	{\IntAmbCod}	{\IntAmbSName}    {\IntAmbCred} {IntAmb} % Introdução à Engenharia Ambiental
+  \disciplina{eletronica}{6}{6}	{\MatEleCod}	  {\MatEleSName}    {\MatEleCred} {MatEle} % Materiais Elétricos
+  \disciplina{eletronica}{5}{4} {\SinaisESistCod}{\SinaisESistSName}{\SinaisESistCred}{SeS} % Modelos Matemáticos
+  \disciplina{eletronica}{4}{5} {\TecDigCod}{\TecDigSName}{\TecDigCred}{TecDig} % Técnicas Digitais
+  \disciplina{eletronica}{3}{5} {\CircEletICod} {\CircEletISName} {\CircEletICred} {CircEletI} % Circuitos Eletrônicos I
 
   %Disciplinas Desc
   \disciplina{desc}{1}{1} {\AlgCompCod}	{\AlgCompSName}{\AlgCompCred}{AlgComp}  % Algoritmos Computacionais
@@ -209,6 +209,10 @@
     \fi
   }
 
+  \newcommand{\coreq}[2]{
+    \draw [<->, thick, dashed] (#1.south) -- (#2.north);
+  }
+
   %Período 1
   \prereq			  {AlgComp}	{EstrInf}
   \pre  [olive] {AlgComp}	{CalcNum}   {-4}{4}{0}{3}{0}
@@ -218,7 +222,8 @@
   \pre	[blue]	{CalcI}		{CalcNum}   {5}{4}{0}{-3}{0}
   \prereq				{CalcI}		{CalcII}
   \pre	[red]	  {CalcI}	  {ProbEst}   {2}{4}{14}{2}{0}
-  \pre	[blue]	{AlgLin}  {ProcIma}   {5}{1}{9}{3}{-2}
+  \pre	[teal]	{CalcI}	  {FisII}     {-2}{2}{-10}{3}{-4}
+  \pre	[blue]	{AlgLin}  {ProcIma}   {5}{3}{9}{3}{2}
 
   % Período 2
   \pre          {EstrInf}	{LabProgI}  {2}{3}{8}{2}{-3}
@@ -227,9 +232,10 @@
   \prereq				{CalcII}	{CalcIII}
   \prereq				{FisI}		{FisII}
   \prereq				{FisEI}		{FisEII}
-  \pre  [blue]   {CalcIII}	{SeS}   {-1}{1}{13}{3}{-1}
+  \pre  [red]   {CalcII}	{SeS}   {4}{3}{10}{12}{-1}
   \pre  [olive]  {LogProg} {LabProgI}       {0}{5}{15}{4}{0}
   \pre          {LogProg} {LabProgII}       {-2}{3}{-10}{3}{0}
+  \coreq				{FisI}	{FisEI}
 
 
   % %Período 3
@@ -240,21 +246,27 @@
   \prereq [red]	{ProbEst}	{ProcIma}
   \pre  	      {LabProgI}{IC}          {-1}{3}{-10}{3}{0}
   \pre[teal]   	{LabProgI}{ICII}        {-3}{2}{-12}{5}{-2}
-
+  \coreq				{FisII}	{FisEII}
+  % extras
+  \prereq [red] {AlgLin}	{CircEletI}
+  \prereq[red] {CircEletI}	{TecDig}
   % Período 4
   \pre[blue]    {LabProgII}{EngSistA} {3}{1}{-9}{5}{-2}
-  \pre				{FisIII}	{FisIV}       {-3}{4}{0}{0}{-4}
-  \pre [red]	  {FisIII}	{MatEle}    {3}{2}{0}{-4}{0}
-  \pre	      {LogCircDig} {FundComp} {5}{4}{0}{-3}{0}
-  \prereq [teal] 	{FisIII}	{CCC}
+  \prereq				{FisIII}	{FisIV}
+
+  \pre	      {TecDig} {FundComp} {5}{4}{0}{-3}{0}
+  \pre [teal] 	{FisIII}	{CCC} {5}{4}{0}{-3}{0}
   \pre [red]		{SeS}	{CCA}   {0}{5}{0}{4}{0}
-  \pre	  {CCC}	{EletI}               {-3}{4}{0}{0}{-4}
+  %\pre	  {CCC}	{EletI}               {-3}{4}{0}{0}{-4}
   \prereq[blue]	  {CCC}		  {CCA}
+  \coreq				{FisIII}	{FisEIII}
 
 
   % Período 5
   \pre[purple]	{FundComp}{ArqComp} {-3}{3}{0}{3}{2}
-  \pre			{FisEIII}		{FisEIV}    {-3}{4}{0}{0}{-4}
+  \prereq			{FisEIII}		{FisEIV}
+  \coreq				{FisIV}	{FisEIV}
+  \prereq [red]	  {FisIV}	{MatEle}
 
   % Período 6
   \prereq		    {EngSistA}{EngSistB}
@@ -286,7 +298,7 @@
   \trava {EA}{150 cred}
   \trava {EB}{150 cred}
   \trava {EC}{150 cred}
-  \trava {EstSup}{150 cred}
+  \trava {EstSup}{140 cred}
   \trava {ProjA}{150 cred}
 
 
@@ -308,7 +320,7 @@
 % Descrição dos números
 \begin{tikzpicture}[remember picture, overlay]
   \node[anchor=south west, text width=9cm, align=justify]
-  at ([xshift=1.4cm, yshift=3.3cm]current page.south west)
+  at ([xshift=1.4cm, yshift=1.3cm]current page.south west)
   {Os números situados na parte inferior esquerda e direita representam carga horária e créditos, respectivamente, conferidos à disciplina.};
 \end{tikzpicture}
 
@@ -328,6 +340,7 @@
 \newcounter{hExtensao}
 \setcounter{hExtensao}{\the\value{horasSemExtensao}}
 \divide\value{hExtensao} by 9
+\addtocounter{hExtensao}{1}
 
 % calcula horas totais do curso
 \newcounter{thoras}
