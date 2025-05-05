@@ -1,5 +1,13 @@
 \documentclass[oneside,envcountsame,envcountchap,openany]{svmono}
 
+% Pacotes de referências e bibliografia
+\usepackage[backend=biber, style=numeric, url=true, sorting=ynt]{biblatex}
+\DefineBibliographyStrings{portuguese}{
+  urlseen = {Consultado em}
+}
+\addbibresource{referencias.bib}
+
+
 % Pacotes de formatação e layout
 \usepackage[top=1in,left=1.5in,bottom=1in,right=2.5cm]{geometry}
 \usepackage{fancyhdr}
@@ -192,7 +200,8 @@ João Araujo Ribeiro
 % Capítulo: Infraestrutura do Curso
 \include{cap-infraestrutura}
 
-
+\thispagestyle{plain}
+\printbibliography
 \backmatter%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % ======== Apêndices ================
