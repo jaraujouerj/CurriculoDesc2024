@@ -200,8 +200,13 @@ João Araujo Ribeiro
 % Capítulo: Infraestrutura do Curso
 \include{cap-infraestrutura}
 
+\defbibheading{bibintoc}[Referências]{%
+  \chapter*{#1}
+  \addcontentsline{toc}{chapter}{#1}}
+
+\cleardoublepage  % Quebra de página para nova seção
 \thispagestyle{plain}
-\printbibliography
+\printbibliography[heading=bibintoc, title={Referências}]
 \backmatter%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % ======== Apêndices ================
