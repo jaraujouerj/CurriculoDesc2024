@@ -1,6 +1,7 @@
 \ProvidesPackage{disciplinasDB}[2025/04/22 v2.0 da disciplinas do curso de eng. de comp.]
 
 % Nomes das Disciplinas %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Básico comum engenharia
 \newcommand{\AlgLin}{Álgebra Linear}
 \newcommand{\AlgLinSName}{Álgebra Linear}
 \newcommand{\AlgLinCod}{IME 02-01388}
@@ -24,6 +25,12 @@
 \newcommand{\CalcIIICod}{IME 01-09301}
 \newcommand{\CalcIIICH}{60}
 \newcommand{\CalcIIICred}{4}
+
+\newcommand{\CalcNum}{Cálculo Numérico}
+\newcommand{\CalcNumSName}{Cálculo Numérico}
+\newcommand{\CalcNumCod}{IME 06-xxxx}
+\newcommand{\CalcNumCH}{60}
+\newcommand{\CalcNumCred}{4}
 
 \newcommand{\FisI}{Física Teórica I}
 \newcommand{\FisISName}{Física Teórica I}
@@ -79,31 +86,21 @@
 \newcommand{\ProbEstCH}{60}
 \newcommand{\ProbEstCred}{4}
 
-% Básico comum engenharia 
+% Profissional engenharia 
 
+% Ambiental
+\newcommand{\IntAmb}{Introdução à Engenharia Ambiental}
+\newcommand{\IntAmbSName}{Introd. à Eng. Ambiental}
+\newcommand{\IntAmbCod}{FEN 07-xxxxx}
+\newcommand{\IntAmbCH}{60}
+\newcommand{\IntAmbCred}{4}
+
+% Produção - DEIN
 \newcommand{\Adm}{Administração Financeira de Projeto}
 \newcommand{\AdmSName}{Adm. Financ. de Proj.}
 \newcommand{\AdmCod}{FEN 09-xxxxx}
 \newcommand{\AdmCH}{60}
 \newcommand{\AdmCred}{4}
-
-\newcommand{\CCC}{Circuitos em Corrente Contínua}
-\newcommand{\CCCSName}{Circuitos em Corrente Contínua}
-\newcommand{\CCCCod}{FEN 04-xxxx}
-\newcommand{\CCCCH}{75}
-\newcommand{\CCCCred}{5}
-
-\newcommand{\CCA}{Circuitos em Corrente Alternada}
-\newcommand{\CCASName}{Circuitos em Corrente Alternada}
-\newcommand{\CCACod}{FEN 04-xxxx}
-\newcommand{\CCACH}{75}
-\newcommand{\CCACred}{5}
-
-\newcommand{\MacroEco}{Macroeconomia aplicada à Engenharia}
-\newcommand{\MacroEcoSName}{Macroeconomia aplic. à Eng.}
-\newcommand{\MacroEcoCod}{FEN 09-xxxx}
-\newcommand{\MacroEcoCH}{60}
-\newcommand{\MacroEcoCred}{4}
 
 \newcommand{\Empre}{Empreendedorismo na Engenharia}
 \newcommand{\EmpreSName}{Empre. na Engenharia}
@@ -111,11 +108,19 @@
 \newcommand{\EmpreCH}{45}
 \newcommand{\EmpreCred}{3}
 
-\newcommand{\IntAmb}{Introdução à Engenharia Ambiental}
-\newcommand{\IntAmbSName}{Introd. à Eng. Ambiental}
-\newcommand{\IntAmbCod}{FEN 07-xxxxx}
-\newcommand{\IntAmbCH}{60}
-\newcommand{\IntAmbCred}{4}
+\newcommand{\MacroEco}{Macroeconomia aplicada à Engenharia}
+\newcommand{\MacroEcoSName}{Macroeconomia aplic. à Eng.}
+\newcommand{\MacroEcoCod}{FEN 09-xxxx}
+\newcommand{\MacroEcoCH}{60}
+\newcommand{\MacroEcoCred}{4}
+
+% Eletrônica 
+% Circuitos Eletrônicos I
+\newcommand{\CircEletI}{Circuitos Eletrônicos I}
+\newcommand{\CircEletISName}{Circuitos Eletrônicos I}
+\newcommand{\CircEletICod}{FEN 05-xxxx}
+\newcommand{\CircEletICH}{90}
+\newcommand{\CircEletICred}{6}
 
 \newcommand{\MatEle}{Materiais Elétricos e Eletrônicos}
 \newcommand{\MatEleSName}{Mat. Elét. e Eletrônicos}
@@ -129,6 +134,26 @@
 \newcommand{\SinaisESistCH}{60}
 \newcommand{\SinaisESistCred}{4}
 
+\newcommand{\TecDig}{Técnicas Digitais}
+\newcommand{\TecDigSName}{Técnicas Digitais}
+\newcommand{\TecDigCod}{FEN 05-xxxx}
+\newcommand{\TecDigCH}{90}
+\newcommand{\TecDigCred}{6}
+
+% Elétrica
+\newcommand{\CCC}{Circuitos em Corrente Contínua}
+\newcommand{\CCCSName}{Circuitos em Corrente Contínua}
+\newcommand{\CCCCod}{FEN 04-xxxx}
+\newcommand{\CCCCH}{75}
+\newcommand{\CCCCred}{5}
+
+\newcommand{\CCA}{Circuitos em Corrente Alternada}
+\newcommand{\CCASName}{Circuitos em Corrente Alternada}
+\newcommand{\CCACod}{FEN 04-xxxx}
+\newcommand{\CCACH}{75}
+\newcommand{\CCACred}{5}
+
+% DESC
 \newcommand{\AlgComp}{Algoritmos Computacionais I}
 \newcommand{\AlgCompSName}{Algoritmos Computac. I}
 \newcommand{\AlgCompCod}{FEN 06-xxxx}
@@ -141,29 +166,23 @@
 \newcommand{\AnAlgCH}{60}
 \newcommand{\AnAlgCred}{4}
 
-\newcommand{\Grafos}{Teoria dos Grafos e Aplicações}
-\newcommand{\GrafosSName}{Teo. dos Grafos e Aplicações}
-\newcommand{\GrafosCod}{FEN 06-xxxx}
-\newcommand{\GrafosCH}{60}
-\newcommand{\GrafosCred}{4}
-
 \newcommand{\ArqComp}{Arquitetura de Computadores A}
 \newcommand{\ArqCompSName}{Arquitetura de Comp. A}
 \newcommand{\ArqCompCod}{FEN 06-xxxx}
 \newcommand{\ArqCompCH}{75}
 \newcommand{\ArqCompCred}{5}
 
+\newcommand{\Grafos}{Teoria dos Grafos e Aplicações}
+\newcommand{\GrafosSName}{Teo. dos Grafos e Aplicações}
+\newcommand{\GrafosCod}{FEN 06-xxxx}
+\newcommand{\GrafosCH}{60}
+\newcommand{\GrafosCred}{4}
+
 \newcommand{\Control}{Controle de Processos por Computador I}
 \newcommand{\ControlSName}{Controle de Processos por Comp. I}
 \newcommand{\ControlCod}{FEN 06-xxxx}
 \newcommand{\ControlCH}{75}
 \newcommand{\ControlCred}{5}
-
-\newcommand{\CalcNum}{Cálculo Numérico}
-\newcommand{\CalcNumSName}{Cálculo Numérico}
-\newcommand{\CalcNumCod}{IME 06-xxxx}
-\newcommand{\CalcNumCH}{60}
-\newcommand{\CalcNumCred}{4}
 
 \newcommand{\EngCompSoc}{Engenharia de Computação e Sociedade}
 \newcommand{\EngCompSocSName}{Eng, de Comp. e Soc.}
@@ -200,12 +219,6 @@
 \newcommand{\EstrInfCod}{FEN 06-xxxx}
 \newcommand{\EstrInfCH}{75}
 \newcommand{\EstrInfCred}{5}
-
-\newcommand{\LogCircDig}{Lógica e Circuitos Digitais}
-\newcommand{\LogCircDigSName}{Lógica e Circuitos Digitais}
-\newcommand{\LogCircDigCod}{FEN 04-xxxx}
-\newcommand{\LogCircDigCH}{60}
-\newcommand{\LogCircDigCred}{4}
 
 \newcommand{\FundComp}{Fundamentos de Computadores I}
 \newcommand{\FundCompSName}{Fund. de Comput. I}
@@ -309,6 +322,7 @@
 \newcommand{\TeoCompCH}{75}
 \newcommand{\TeoCompCred}{5}
 
+% Eletivas
 \newcommand{\EletA}{Eletiva Restrita}
 \newcommand{\EletASName}{Eletiva Restrita}
 \newcommand{\EletACod}{FEN 06-xxxx}
@@ -446,19 +460,6 @@
 
 \newcommand{\vagas}{50\xspace}
 
-% Eletrônica 
-% Circuitos Eletrônicos I
-\newcommand{\CircEletI}{Circuitos Eletrônicos I}
-\newcommand{\CircEletISName}{Circuitos Eletrônicos I}
-\newcommand{\CircEletICod}{FEN 05-xxxx}
-\newcommand{\CircEletICH}{90}
-\newcommand{\CircEletICred}{6}
 
-% Técnicas Digitais
-\newcommand{\TecDig}{Técnicas Digitais}
-\newcommand{\TecDigSName}{Técnicas Digitais}
-\newcommand{\TecDigCod}{FEN 05-xxxx}
-\newcommand{\TecDigCH}{90}
-\newcommand{\TecDigCred}{6}
 
 
