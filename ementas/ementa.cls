@@ -596,37 +596,37 @@
     \hspace{29.5mm} \textbf{TIPO DE AULA}
      & \hspace{4.5mm} \textbf{CRÉDITO}
      & \hspace{2.5mm}\textbf{CH SEMANAL}
-     & \hspace{4.5mm}\textbf{CH TOTAL}                       \\
+     & \hspace{4.5mm}\textbf{CH TOTAL}                      \\
     \hline
     TEÓRICA
      & \multicolumn{1}{c|}{$\crteorica$}
-     & \multicolumn{1}{c|}{$\crteorica h$ }
-     & \multicolumn{1}{c|}{$\the\value{chteoricatotal}h$}    \\
+     & \multicolumn{1}{c|}{$\crteorica$ }
+     & \multicolumn{1}{c|}{$\the\value{chteoricatotal}$}    \\
     \hline
     PRÁTICA / TRABALHO DE CAMPO / PRÁTICA COMO \mbox{COMPONENTE CURRICULAR}
      & \multicolumn{1}{c|}{$\crpratica$}
-     & \multicolumn{1}{c|}{$\the\value{chpratsemanal}h$}
-     & \multicolumn{1}{c|}{$\the\value{chprattotal}h$}       \\
+     & \multicolumn{1}{c|}{$\the\value{chpratsemanal}$}
+     & \multicolumn{1}{c|}{$\the\value{chprattotal}$}       \\
     \hline
     LABORATÓRIO
      & \multicolumn{1}{c|}{$\crlab$}
-     & \multicolumn{1}{c|}{$\the\value{chlabsemanal}h$}
-     & \multicolumn{1}{c|}{$\the\value{chlabtotal}h$}        \\
+     & \multicolumn{1}{c|}{$\the\value{chlabsemanal}$}
+     & \multicolumn{1}{c|}{$\the\value{chlabtotal}$}        \\
     \hline
     ESTÁGIO
      & \multicolumn{1}{c|}{$\crestagio$}
-     & \multicolumn{1}{c|}{$\the\value{chestagiosemanal}h$}
-     & \multicolumn{1}{c|}{$\the\value{chestagiototal}h$}    \\
+     & \multicolumn{1}{c|}{$\the\value{chestagiosemanal}$}
+     & \multicolumn{1}{c|}{$\the\value{chestagiototal}$}    \\
     \hline
     EXTENSÃO
      & \multicolumn{1}{c|}{$\crextensao$}
-     & \multicolumn{1}{c|}{$\the\value{chextensaosemanal}h$}
-     & \multicolumn{1}{c|}{$\the\value{chextensaototal}h$}   \\
+     & \multicolumn{1}{c|}{$\the\value{chextensaosemanal}$}
+     & \multicolumn{1}{c|}{$\the\value{chextensaototal}$}   \\
     \hline
     \multicolumn{1}{|r|}{\textbf{TOTAL}}
      & \multicolumn{1}{c|}{$\the\value{numcr}$}
-     & \multicolumn{1}{c|}{$\the\value{chtotalsemanal}h$}
-     & \multicolumn{1}{c|}{$\the\value{chtotal}h$ }          \\
+     & \multicolumn{1}{c|}{$\the\value{chtotalsemanal}$}
+     & \multicolumn{1}{c|}{$\the\value{chtotal}$ }          \\
     \hline
   \end{tabular}
   \vspace{1.5mm}
