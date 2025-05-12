@@ -6,6 +6,14 @@
 \usepackage[utf8]{inputenc} % codificacao de caracteres
 \usepackage{geometry}
 \usepackage[portuguese]{babel}
+\let\unit\relax
+\usepackage{siunitx}
+% Configura o siunitx para usar ponto como separador de milhar
+% e aplicar a partir de 4 dígitos.
+\sisetup{
+  group-separator = {.},
+  group-minimum-digits = 4
+}
 \usepackage{gensymb}
 %\usepackage{lmodern}
 \usepackage{tikz}
@@ -423,7 +431,20 @@
 \immediate\write\exportfile{% 16. nDiscObrigatorias: Número de disciplinas obrigatorias}
 \endgroup
 
+% Escreve os comandos necessários e a macro formatada no arquivo dados.tex
+\immediate\write\exportfile{\string\RequirePackage{siunitx}}
+\immediate\write\exportfile{\string\sisetup{
+    group-separator = {\string.},
+    group-minimum-digits = 4
+  }}
+% Escreve as macros no arquivo dados.tex
 \immediate\write\exportfile{%
+<<<<<<< HEAD
+=======
+  \noexpand\newcounter{thorasCursoCounter}^^J% cria contador de total de horas do curso
+  \noexpand\setcounter{thorasCursoCounter}{\thethoras}^^J% atribui o valor do contador de horas do curso
+  \string\newcommand{\string\horasTotaisFormatadas}{\string\num{\the\value{thoras}}}^^J%
+>>>>>>> formataHoras
   \noexpand\newcommand{\string\tHorasCurso}{\thethoras\noexpand\xspace}^^J%
   \noexpand\newcommand{\string\hTotaisDisc}{\thehTotaisDisc\noexpand\xspace}^^J%
   \noexpand\newcommand{\string\hTotaisDiscObrigComDiscExt}{\thehTotaisDiscObrigComDiscExt\noexpand\xspace}^^J%
