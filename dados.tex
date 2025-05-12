@@ -17,8 +17,11 @@
 % 14. credDiscExtensao: Total de créditos disciplinas de extensao
 % 15. nDisciplinas: Número total de disciplinas
 % 16. nDiscObrigatorias: Número de disciplinas obrigatorias
+\RequirePackage{siunitx}
+\sisetup{ group-separator = {.}, group-minimum-digits = 4 }
 \newcounter {thorasCursoCounter}
 \setcounter {thorasCursoCounter}{3501}
+\newcommand{\horasTotaisFormatadas}{\num{3501}}
 \newcommand {\tHorasCurso}{3501\xspace }
 \newcommand {\hTotaisDisc}{3345\xspace }
 \newcommand {\hTotaisDiscObrigComDiscExt}{3225\xspace }
