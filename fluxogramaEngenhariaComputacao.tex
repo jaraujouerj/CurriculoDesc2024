@@ -441,10 +441,12 @@
 \immediate\write\exportfile{%
   \noexpand\newcounter{thorasCursoCounter}^^J% cria contador de total de horas do curso
   \noexpand\setcounter{thorasCursoCounter}{\thethoras}^^J% atribui o valor do contador de horas do curso
-  \string\newcommand{\string\horasTotaisFormatadas}{\string\num{\the\value{thoras}}}^^J%
-  \noexpand\newcommand{\string\tHorasCurso}{\thethoras\noexpand\xspace}^^J%
-  \noexpand\newcommand{\string\hTotaisDisc}{\thehTotaisDisc\noexpand\xspace}^^J%
-  \noexpand\newcommand{\string\hTotaisDiscObrigComDiscExt}{\thehTotaisDiscObrigComDiscExt\noexpand\xspace}^^J%
+  \string\newcommand{\string\tHorasCurso}{\string\num{\the\value{thoras}}\noexpand\xspace}^^J%
+  %\noexpand\newcommand{\string\tHorasCurso}{\thethoras\noexpand\xspace}^^J%
+  \noexpand\newcommand{\string\hTotaisDisc}{\string\num{\the\value{hTotaisDisc}}\noexpand\xspace}^^J%
+  %\noexpand\newcommand{\string\hTotaisDisc}{\thehTotaisDisc\noexpand\xspace}^^J%
+  \noexpand\newcommand{\string\hTotaisDiscObrigComDiscExt}{\string\num{\the\value{hTotaisDiscObrigComDiscExt}}\noexpand\xspace}^^J%
+  %\noexpand\newcommand{\string\hTotaisDiscObrigComDiscExt}{\thehTotaisDiscObrigComDiscExt\noexpand\xspace}^^J%
   \noexpand\newcommand{\string\tHorasSemExtensao}{\thehorasSemExtensao\noexpand\xspace}^^J% 
   \noexpand\newcommand{\string\hDiscObrigSemExtensao}{\thehDiscObrigSemExtensao\noexpand\xspace}^^J%
   \noexpand\newcommand{\string\hDiscExtensao}{\thehDiscExtensao\noexpand\xspace}^^J%
