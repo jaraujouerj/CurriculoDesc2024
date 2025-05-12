@@ -435,14 +435,16 @@
 \immediate\write\exportfile{\string\RequirePackage{siunitx}}
 \immediate\write\exportfile{\string\sisetup{
     group-separator = {\string.},
-    group-minimum-digits = 4
+    group-minimum-digits = 4,
+    output-decimal-marker={,},
   }}
 % Escreve as macros no arquivo dados.tex
 \immediate\write\exportfile{%
   \noexpand\newcounter{thorasCursoCounter}^^J% cria contador de total de horas do curso
   \noexpand\setcounter{thorasCursoCounter}{\thethoras}^^J% atribui o valor do contador de horas do curso
-  \string\newcommand{\string\tHorasCurso}{\string\num{\the\value{thoras}}\noexpand\xspace}^^J%
-  %\noexpand\newcommand{\string\tHorasCurso}{\thethoras\noexpand\xspace}^^J%
+  \noexpand\newcounter{hExtensaoCounter}^^J% cria contador de total de horas de extensao
+  \noexpand\setcounter{hExtensaoCounter}{\thehExtensao}^^J% atribui o valor do contador de horas de extensao
+  \noexpand\newcommand{\string\tHorasCurso}{\thethoras\noexpand\xspace}^^J%
   \noexpand\newcommand{\string\hTotaisDisc}{\string\num{\the\value{hTotaisDisc}}\noexpand\xspace}^^J%
   %\noexpand\newcommand{\string\hTotaisDisc}{\thehTotaisDisc\noexpand\xspace}^^J%
   \noexpand\newcommand{\string\hTotaisDiscObrigComDiscExt}{\string\num{\the\value{hTotaisDiscObrigComDiscExt}}\noexpand\xspace}^^J%

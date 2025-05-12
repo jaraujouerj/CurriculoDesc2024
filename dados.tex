@@ -18,10 +18,12 @@
 % 15. nDisciplinas: Número total de disciplinas
 % 16. nDiscObrigatorias: Número de disciplinas obrigatorias
 \RequirePackage{siunitx}
-\sisetup{ group-separator = {.}, group-minimum-digits = 4 }
+\sisetup{ group-separator = {.}, group-minimum-digits = 4, output-decimal-marker={,}, }
 \newcounter {thorasCursoCounter}
 \setcounter {thorasCursoCounter}{3501}
-\newcommand{\tHorasCurso}{\num{3501}\xspace }
+\newcounter {hExtensaoCounter}
+\setcounter {hExtensaoCounter}{351}
+\newcommand {\tHorasCurso}{3501\xspace }
 \newcommand {\hTotaisDisc}{\num{3345}\xspace }
 \newcommand {\hTotaisDiscObrigComDiscExt}{\num{3225}\xspace }
 \newcommand {\tHorasSemExtensao}{3150\xspace }
