@@ -405,9 +405,8 @@
 \immediate\write\exportfile{% NAO EDITE MANUALMENTE}
 \immediate\write\exportfile{% Este arquivo foi gerado automaticamente em \the\year-\the\month-\the\day}
 \immediate\write\exportfile{% MACROS CRIADAS}
-\immediate\write\exportfile{% 0. thorasCursoCounter: Total de horas do curso.}
-\immediate\write\exportfile{% 1. tHorasCurso: Total de horas do curso.}
-\immediate\write\exportfile{% 2. hTotaisDisc: Total de horas de disciplinas (regulares+eletivas+extensao). }
+\immediate\write\exportfile{% 1. tHorasCurso: Total de horas do curso: }
+\immediate\write\exportfile{% 2. hTotaisDisc: Total de horas de disciplinas (regulares+eletivas+extensao): }
 \immediate\write\exportfile{% 3. hTotaisDiscObrigComDiscExt: Total de horas de disciplinas obrigatórias (regulares+extensao)}
 \immediate\write\exportfile{% 4. hDiscObrigSemExtensao: Total de horas de disciplinas obrigatórias sem extensão}
 \immediate\write\exportfile{% 5. tHorasSemExtensao: Total de horas de Disc obrig sem extensao} 
@@ -425,8 +424,6 @@
 \endgroup
 
 \immediate\write\exportfile{%
-  \noexpand\newcounter{thorasCursoCounter}^^J% cria contador de total de horas do curso
-  \noexpand\setcounter{thorasCursoCounter}{\thethoras}^^J% atribui o valor do contador de horas do curso
   \noexpand\newcommand{\string\tHorasCurso}{\thethoras\noexpand\xspace}^^J%
   \noexpand\newcommand{\string\hTotaisDisc}{\thehTotaisDisc\noexpand\xspace}^^J%
   \noexpand\newcommand{\string\hTotaisDiscObrigComDiscExt}{\thehTotaisDiscObrigComDiscExt\noexpand\xspace}^^J%
