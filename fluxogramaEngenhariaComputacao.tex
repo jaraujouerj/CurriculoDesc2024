@@ -444,7 +444,7 @@
   \noexpand\setcounter{thorasCursoCounter}{\thethoras}^^J% atribui o valor do contador de horas do curso
   \noexpand\newcounter{hExtensaoCounter}^^J% cria contador de total de horas de extensao
   \noexpand\setcounter{hExtensaoCounter}{\thehExtensao}^^J% atribui o valor do contador de horas de extensao
-  \noexpand\newcommand{\string\tHorasCurso}{\thethoras\noexpand\xspace}^^J%
+  \noexpand\newcommand{\string\tHorasCurso}{\string\num{\the\value{thoras}}\noexpand\xspace}^^J%
   \noexpand\newcommand{\string\hTotaisDisc}{\string\num{\the\value{hTotaisDisc}}\noexpand\xspace}^^J%
   %\noexpand\newcommand{\string\hTotaisDisc}{\thehTotaisDisc\noexpand\xspace}^^J%
   \noexpand\newcommand{\string\hTotaisDiscObrigComDiscExt}{\string\num{\the\value{hTotaisDiscObrigComDiscExt}}\noexpand\xspace}^^J%
