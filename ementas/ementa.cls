@@ -92,7 +92,7 @@
 \newcommand \eletivarestrita[1] {%
   \newcommand{\irestrita}{x}%
   \ifx&#1&%
-  \newcommand \icursorestrita {Engenharia de Computação}%
+  \newcommand \icursorestrita {Engenharia de Computação (Versão 1)}%
   \else
   \newcommand \icursorestrita {#1}%
   \fi}
@@ -378,7 +378,7 @@
   \ifx\obrigatoria\undefined
     \newcommand{\obrigatoria}{x}
     \ifx\icurso\undefined
-      \newcommand{\icurso}{\small Engenharia de Computação}
+      \newcommand{\icurso}{\small Engenharia de Computação (Versão 1)}
     \fi
   \else
     \newcommand{\icurso}{}
