@@ -30,9 +30,12 @@
 \usepackage{tabularx}		% para tabelas com largura automática
 \usepackage{longtable}		% para tabelas longas
 \usepackage{spreadtab}	    % para tabelas com cálculos
+\usepackage{array}  % para tabelas com colunas de largura variável
 \usepackage{booktabs}		% para tabelas com linhas horizontais
 \usepackage{multirow}		 % para tabelas com multiplas linhas
 \usepackage{caption}
+% Define uma nova coluna para alinhamento superior e quebra automática
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
 \captionsetup{labelfont=bf, font=small, textfont=small}  % Força o negrito somente no "Tabela x:"
 \renewcommand{\arraystretch}{1.5}
 
@@ -130,13 +133,13 @@
 
 % ======== CAPA ================
 \begin{textblock*}{3cm}[0.5,0.5](4cm,4cm)
-  \includegraphics[width=3cm]{imagens/logo_uerj_cor.jpg}
+    \includegraphics[width=3cm]{imagens/logo_uerj_cor.jpg}
 \end{textblock*}
 \begin{textblock*}{12cm}(6cm,3cm)   % 6.375=8.5 - 1.5 - 0.625
-  Universidade do Estado do Rio de Janeiro\\
-  Sub-Reitoria de Graduação \\
-  Faculdade de Engenharia\\
-  Departamento de Engenharia de Sistemas e Computação
+    Universidade do Estado do Rio de Janeiro\\
+    Sub-Reitoria de Graduação \\
+    Faculdade de Engenharia\\
+    Departamento de Engenharia de Sistemas e Computação
 \end{textblock*}
 
 \title{Projeto Pedagógico do Curso de Engenharia de Computação}
@@ -152,16 +155,16 @@
 Gulnar Azevedo e Silva
 
 
-  {\textbf{Vice-Reitor}} \\
+    {\textbf{Vice-Reitor}} \\
 Bruno Rêgo Deusdará Rodrigues
 
-  {\textbf{Pró-Reitor de Graduação}} \\
+    {\textbf{Pró-Reitor de Graduação}} \\
 Antonio Soares da Silva
 
-  {\textbf{Diretora do Centro de Tecnologia e Ciência}} \\
+    {\textbf{Diretora do Centro de Tecnologia e Ciência}} \\
 Nádia Pimenta Lima
 
-  {\textbf{Diretora da Faculdade de Engenharia}} \\
+    {\textbf{Diretora da Faculdade de Engenharia}} \\
 Maria Eugenia de las Mercedes Mosconi de Gouvêa
 
 {\textbf{Chefe do Departamento de Engenharia de Sistemas e Computação}} \\
@@ -222,8 +225,8 @@ Registramos nossa homenagem ao Professor Orlando Bernardo Filho (in memoriam), r
 \include{cap-infraestrutura}
 
 \defbibheading{bibintoc}[Referências]{%
-  \chapter*{#1}
-  \addcontentsline{toc}{chapter}{#1}}
+    \chapter*{#1}
+    \addcontentsline{toc}{chapter}{#1}}
 
 \cleardoublepage  % Quebra de página para nova seção
 \thispagestyle{plain}
