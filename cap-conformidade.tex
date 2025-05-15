@@ -1,9 +1,13 @@
 \chapter{Conformidade com as Diretrizes Nacionais}
 \thispagestyle{plain}
 
-Este capítulo tem como objetivo apresentar uma análise da relação entre os R\textit{eferenciais de Formação para os Cursos de Graduação em Engenharia de Computação}, propostos pela \textbf{Sociedade Brasileira de Computação (SBC)} em 2017, e a estrutura curricular do curso proposto.
+Este capítulo tem como objetivo apresentar uma análise da relação entre as \textit{Diretrizes Curriculares Nacionais para Cursos de Graduação em Engenharia de Computação} e a estrutura curricular do curso proposto.
 
-A Engenharia de Computação é uma área dinâmica e em constante evolução, exigindo uma formação sólida que contemple tanto os fundamentos teóricos quanto as habilidades práticas necessárias para o desenvolvimento de soluções inovadoras que integrem hardware e software. Os referenciais da SBC surgem como um guia para a elaboração de Projetos Pedagógicos de Curso (PPCs) alinhados com as D\textit{iretrizes Curriculares Nacionais} (DCNs) e com as demandas da sociedade e do mercado de trabalho.
+A Engenharia de Computação é uma área dinâmica e em constante evolução, exigindo uma formação sólida que contemple tanto os fundamentos teóricos quanto as habilidades práticas necessárias para o desenvolvimento de soluções inovadoras que integrem hardware e software. Os referenciais da SBC (Anexo \ref{sbc2017}) surgem como um guia para a elaboração de Projetos Pedagógicos de Curso  alinhados com as D\textit{iretrizes Curriculares Nacionais} (DCNs) e com as demandas da sociedade e do mercado de trabalho.
+
+Primeiramente, é importante notar que os \textit{Referenciais de Formação da SBC} foram elaborados com base nas DCNs, especificamente a \textit{Resolução \ordm{n} 5 de 16 de novembro de 2016} (Anexo \ref{cne2016}), para servir como referência na elaboração de Projetos Pedagógicos para cursos de Bacharelado em Engenharia de Computação. Portanto, há uma forte correlação entre esses dois documentos.
+
+As DCNs permitem que a formação em Engenharia de Computação siga tanto as próprias \textbf{Diretrizes da área da Computação} quanto as Diretrizes gerais para os cursos de Engenharia. Independentemente da linha adotada, espera-se que o projeto pedagógico defina o perfil do egresso, competências e habilidades, conteúdos curriculares, organização curricular, estágio, trabalho de curso (TCC), e atividades complementares. A carga horária mínima para os cursos de bacharelado na área de Computação, incluindo Engenharia de Computação, é de 3.200 horas.
 
 Buscaremos, neste texto, demonstrar como as disciplinas ofertadas no curso dialogam com os eixos de formação, competências e conteúdos preconizados pela SBC, visando a formação de engenheiros de computação qualificados, críticos, criativos e éticos.
 
@@ -11,55 +15,236 @@ Buscaremos, neste texto, demonstrar como as disciplinas ofertadas no curso dialo
 Os Referenciais de \textbf{Formação da SBC para Engenharia de Computação }estão estruturados em cinco eixos principais, cada um com suas competências gerais e derivadas, além de um conjunto de conteúdos essenciais. A seguir, analisaremos cada um desses eixos e como as disciplinas do curso, conforme suas ementas (Anexo \ref{ementas}), contribuem para o desenvolvimento das competências propostas.
 
 \section{Eixo 1: Fundamentos de Sistemas de Computação}
-Este eixo tem como competência geral esperada ``\textit{Lembrar e entender teorias e princípios da computação, matemática e ciências; aplicando estas teorias e princípios para resolver problemas técnicos de sistemas computacionais, incluindo sistemas de aplicação específica}''. Ele abrange uma base sólida em programação, teoria da computação, arquitetura de computadores, sistemas operacionais, matemática e física.
+Este eixo visa desenvolver a competência geral de ``\textit{Lembrar e entender teorias e princípios da computação, matemática e ciências; aplicando estas teorias e princípios para resolver problemas técnicos de sistemas computacionais, incluindo sistemas de aplicação específica}''. Ele abrange uma base sólida em programação, teoria da computação, arquitetura de computadores, sistemas operacionais, matemática e física.
 
-A disciplina \textbf{\AlgComp}~ contribui diretamente para a competência \textbf{C.1.1} (``\textit{Aplicar os conceitos de programação imperativa e dominar o uso de abstrações de controle e dados, analisando o problema em questão para determinar tradeoffs de memória e processamento ao aplicar diferentes estruturas de controle e de dados}''). Sua ementa fornece os alicerces para o desenvolvimento do pensamento lógico e da capacidade de traduzir problemas em soluções algorítmicas. A ênfase em técnicas de estruturação de programas também é fundamental.
+\rowcolors{2}{gray!10}{white}
+\begin{small}
+    \begin{longtable}{p{10cm} L{4.8cm}}
+        \caption{Relação entre as competências do Eixo 1 da SBC e as disciplinas do curso} \label{eixo1}                                                                                                                                                                                                                                                            \\
+        \toprule
+        \textbf{Competência - Conteúdo (SBC)}                                                                                                                                                                                                                                                    & \textbf{Disciplinas}                                             \\
+        \midrule
+        \endfirsthead
 
-A competência \textbf{C.1.2} ("\textit{Dominar noções básicas de teoria da computação, como lógica básica, complexidade de algoritmos, e linguagens formais e autômatos}") é abordada pela disciplina \textbf{\AnAlg}. A ementa desta disciplina é crucial para que o estudante compreenda a eficiência e os limites da computação. A disciplina \textbf{\LogProg}, mencionada como pré-requisito para \textbf{\AnAlg}, também é fundamental para o desenvolvimento da lógica básica exigida.
+        \multicolumn{2}{c}%
+        {{\bfseries \tablename\ \thetable{} -- Continuação da página anterior}}                                                                                                                                                                                                                                                                                     \\
+        \toprule
+        \textbf{Competência - Conteúdo (SBC)}                                                                                                                                                                                                                                                    & \textbf{Disciplinas}                                             \\
+        \midrule
+        \endhead
 
-No que tange à \textbf{C.1.3} ("\textit{Elaborar sistemas considerando o mapeamento de programas para arquiteturas de computadores convencionais: representação de código e de dados, entrada e saída, geração de programas e sua execução. Analisar programas e avaliar o custo de aplicação de diferentes construções}") e \textbf{C.1.4} ("\textit{Criticar e escolher sistemas operacionais para contextos específicos, considerando como funcionam os principais componentes de cada sistema e os requisitos do contexto de aplicação}"), a disciplina \textbf{\ArqComp} desempenha um papel central. Sua ementa permite ao aluno entender a interação entre software e hardware.  Os conceitos de arquitetura são precursores indispensáveis para a compreensão de sistemas operacionais, tema abordado na disciplina \textbf{\ProjSO}, que complementa a competência \textbf{C.1.4}.
+        \midrule \multicolumn{2}{r}{{Continua na próxima página}}                                                                                                                                                                                                                                                                                                   \\
+        \endfoot
 
-A avaliação de desempenho (\textbf{C.1.5}) é um tema transversal, tocado em \textbf{\ArqComp} e aprofundado em \textbf{\AnAlg}, onde se aprende a "\textit{avaliar e comparar a eficiência computacional de algoritmos}".
+        \bottomrule
+        \endlastfoot
 
-O ferramental matemático (\textbf{C.1.6}, \textbf{C.1.7}, \textbf{C.1.8}) é construído por meio de disciplinas como \textbf{\CalcI}, \textbf{\CalcII}, \textbf{\CalcIII} e \textbf{\AlgLin}. A ementa de \textbf{\AlgLin} fornece a base para diversas aplicações em computação, como processamento de imagens e aprendizado de máquina. O Cálculo, por sua vez, é fundamental para a modelagem e análise de sistemas contínuos e discretos. Completa o conjunto a disciplina \ProbEst~ essencial para cumprir integralmente estas competências.
-
-Os conceitos de física (\textbf{C.1.9}) são fundamentais para a Engenharia de Computação. Nesse grupo diversas disciplinas cobrem o conteúdo, promovendo uma forte base teórica e prática: \textbf{\FisI}, \textbf{\FisEI}, \textbf{\FisII}, \textbf{\FisEII}, \textbf{\FisIII}, \textbf{\FisEIII}, \textbf{\FisIV}, \textbf{\FisEIV}, \textbf{\MatEle}. A análise e projeto de circuitos (\textbf{C.1.10}), incluindo eletrônica digital, assim como o conhecimento em circuitos elétricos é crucial e é coberta em disciplinas específicas: \textbf{\CircEle}, \textbf{\TecDig}, \textbf{\CCC~} e \textbf{\CCA}.
-
-A competência integradora \textbf{C.1.11} ("\textit{Aplicar e integrar os conhecimentos teóricos aprendidos nas diferentes disciplinas na resolução de problemas práticos. Criar soluções para novos problemas e analisar os tradeoffs associados a soluções alternativas}") é desenvolvida progressivamente ao longo do curso, mas particularmente nas disciplinas \LabProgA e LabProgB, além de seu uso prático nos Projetos de Extensão, \EstSup e no Trabalho de Conclusão de Curso, conforme preconizado pela SBC.
-
+        C.1.1 - Aplicar os conceitos de programação imperativa e dominar o uso de abstrações de controle e dados, analisando o problema em questão para determinar trade\textit{off}s de memória e processamento ao aplicar diferentes estruturas de controle e de dados.                        & \AlgComp                                                         \\
+        \addlinespace
+        C.1.2 - Dominar noções básicas de teoria da computação, como lógica básica, complexidade de algoritmos, e linguagens formais e autômatos.                                                                                                                                                & \AnAlg, \LogProg, \TeoComp                                       \\
+        \addlinespace
+        C.1.3 - Elaborar sistemas considerando o mapeamento de programas para arquiteturas de computadores convencionais: representação de código e de dados, entrada e saída, geração de programas e sua execução. Analisar programas e avaliar o custo de aplicação de diferentes construções. & \FundComp, \ArqComp                                              \\
+        \addlinespace
+        C.1.4 - Criticar e escolher sistemas operacionais para contextos específicos, considerando como funcionam os principais componentes de cada sistema e os requisitos do contexto de aplicação.                                                                                            & \ProjSO                                                          \\
+        \addlinespace
+        C.1.5 - Avaliar o desempenho de sistemas computacionais usando técnicas teóricas e práticas de forma complementar.                                                                                                                                                                       & \AnAlg, \ArqComp                                                 \\
+        \addlinespace
+        C.1.6 - Dominar o ferramental matemático básico, da Engenharia compreendendo noções de cálculo e mapeá-lo para técnicas de cálculo numérico e métodos de matemática aplicada.                                                                                                            & \CalcI, II, III, \CalcNum                                        \\
+        \addlinespace
+        C.1.7 - Dominar conceitos de probabilidade e estatística e aplicá-los em diferentes contextos, como análise de desempenho ou estudo de capacidade.                                                                                                                                       & \ProbEst                                                         \\
+        \addlinespace
+        C.1.8 - Aplicar conceitos de matemática, como indução, combinatória e teoria de grafos, em diferentes situações e problemas.                                                                                                                                                             & \Grafos                                                          \\
+        \addlinespace
+        C.1.9 - Dominar conceitos básicos da física relacionados a eletricidade e magnetismo e transmissão de ondas.                                                                                                                                                                             & \FisI, II e IV, \FisEI, II e IV, \FisIII~e Experimental, \MatEle \\
+        \addlinespace
+        C.1.10 - Analisar e projetar circuitos eletrônicos simples, entendendo requisitos e \textit{tradeoffs}. Avaliar circuitos digitais usados em sistemas computacionais. Analisar os efeitos de características e estilos de projeto sobre temporização, desempenho e energia.              & \CCC, \CCA, \CircEletI, \TecDig                                  \\
+        \addlinespace
+        C.1.11 - Aplicar e integrar os conhecimentos teóricos aprendidos nas diferentes disciplinas na resolução de problemas práticos. Criar soluções para novos problemas e analisar os tradeoffs associados a soluções alternativas.                                                          & \LabProgA. \LabProgPOO, \Ext, \EstSup, \ProjB                    \\
+    \end{longtable}
+\end{small}
 \section{Eixo 2: Desenvolvimento de Sistemas Computacionais}
-A competência geral deste eixo é "\textit{Criar, implementar e manter soluções computacionais eficientes para diversos tipos de problemas, envolvendo hardware, software e processos, analisando o espaço de projeto considerando restrições e custo-benefício; e criar e integrar componentes de hardware, de software e sua interface}". Este eixo é o cerne da atividade prática do engenheiro de computação.
+A competência geral deste eixo é ``\textit{Criar, implementar e manter soluções computacionais eficientes para diversos tipos de problemas, envolvendo hardware, software e processos, analisando o espaço de projeto considerando restrições e custo-benefício; e criar e integrar componentes de hardware, de software e sua interface}''. Este eixo é o cerne da atividade prática do engenheiro de computação.
 
-A competência \textbf{C.2.1}, que trata de "\textit{Determinar os requisitos de desempenho e confiabilidade, projeto, implementação e teste de componentes eletrônicos e sistemas em hardware}", encontra respaldo em disciplinas como \textbf{\ArqComp}. Embora as ementas fornecidas não detalhem disciplinas específicas sobre projeto de circuitos ou microprocessadores de forma aprofundada, a disciplina Fundamentos de Computadores I, como pré-requisito, certamente introduz os elementos básicos para o entendimento de hardware, que são aprofundados em Arquitetura. A formação completa nesta competência exigiria um aprofundamento em eletrônica analógica, digital e microeletrônica, que são componentes curriculares esperados em um curso de Engenharia de Computação.
+\rowcolors{2}{gray!10}{white}
+\begin{small}
+    \begin{longtable}{p{10cm} L{4.8cm}}
+        \caption{Relação entre as competências do Eixo 2 da SBC e as disciplinas do curso} \label{eixo1}    \\
+        \toprule
+        \textbf{Competência - Conteúdo (SBC)}           & \textbf{Disciplinas}                              \\
+        \midrule
+        \endfirsthead
 
-Para a competência C.2.2 ("Especificar e validar os requisitos, projetar, implementar, verificar, implantar e documentar soluções de software baseadas no conhecimento apropriado de teorias, modelos e técnicas"), disciplinas como Algoritmos Computacionais I, Análise de Algoritmos I, e, de forma central, Análise e Projeto de Sistemas são fundamentais. A ementa de Análise e Projeto de Sistemas, que inclui "Projeto de sistemas: processos, engenharia de requisitos, modelos, princípios do projeto", aborda diretamente as fases iniciais e cruciais do ciclo de vida do desenvolvimento de software. A implementação é praticada desde Algoritmos Computacionais I, e a análise de eficiência em Análise de Algoritmos I. A documentação e verificação são aspectos que devem permear todas as disciplinas de projeto.
+        \multicolumn{2}{c}%
+        {{\bfseries \tablename\ \thetable{} -- Continuação da página anterior}}                             \\
+        \toprule
+        \textbf{Competência - Conteúdo (SBC)}           & \textbf{Disciplinas}                              \\
+        \midrule
+        \endhead
 
-A competência C.2.3 ("Conhecer técnicas, arquiteturas e ferramentas para a seleção e integração otimizada de recursos de hardware e software") é desenvolvida com o suporte de Arquitetura de Computadores A, que permite entender a organização interna dos computadores. A integração otimizada de hardware e software é um tema complexo que também se beneficia do entendimento de sistemas operacionais, compiladores e sistemas embarcados, conteúdos que, embora não explicitamente detalhados nas ementas fornecidas, são essenciais e podem estar contemplados em disciplinas subsequentes ou eletivas.
+        \midrule \multicolumn{2}{r}{{Continua na próxima página}}                                           \\
+        \endfoot
 
-Finalmente, a C.2.4 ("Realizar o projeto de sistemas integrados de hardware e software para diversas áreas da indústria eletro-eletrônica") representa a aplicação integrada dos conhecimentos. Análise e Projeto de Sistemas contribui para a parte de software e integração. A capacidade de projetar sistemas integrados é um dos diferenciais do engenheiro de computação e é consolidada através de projetos práticos, laboratórios e, idealmente, disciplinas que abordem sistemas embarcados, controle e automação, e telecomunicações, conforme as vocações do curso e as demandas regionais.
+        \bottomrule
+        \endlastfoot
 
+        C.2.1 - Determinar os requisitos de desempenho e
+        confiabilidade, projeto, implementação e teste de
+        componentes eletrônicos e sistemas em hardware. & \ArqComp, \TecDig, \CCC, \CCA                     \\
+        \addlinespace
+        C.2.2 - Especificar e validar os requisitos, projetar,
+        Especificar e validar os requisitos, projetar,
+        soluções de software baseadas no conhecimento
+        apropriado de teorias, modelos e técnicas.      & \EstrInf, \EngSistA, \AnaProjSist, \ProjBD        \\
+        \addlinespace
+        C.2.3 - Conhecer técnicas, arquiteturas e
+        ferramentas para a seleção e integração otimizada
+        de recursos de hardware e software. Para
+        construção desta capacidade, são necessários
+        conhecimentos em: sistemas operacionais,
+        sistemas paralelos e distribuídos, programação de
+        periféricos, sistemas em tempo real e sistemas
+        embarcados.                                     & \ArqComp, \ProjSO, \CompParal, \SistEmb, \Control \\
+        \addlinespace
+        C.2.4 - Realizar o projeto de sistemas integrados de
+        hardware e software para diversas áreas da
+        indústria eletro-eletrônica. Esta capacitação
+        envolve o conhecimento de áreas relacionadas a
+        telecomunicações, redes de computadores,
+        tratamento digital de sinais (para aplicações de
+        tratamento de imagens, vídeo e áudio), e projeto de
+        Controle e Automação de processos.              & \AnaProjSist, \SistEmb, \Control, \Telep          \\
+    \end{longtable}
+\end{small}
 
-\section*{Eixo 3: Gerenciamento de Sistemas Computacionai}
+\section*{Eixo 3: Gerenciamento de Sistemas Computacionais}
 
 Este eixo tem como objetivo desenvolver no estudante a capacidade de compreender, planejar e gerenciar projetos, serviços e experimentos de engenharia no contexto da Computação. As competências associadas incluem a elaboração e acompanhamento de projetos de software e hardware, o estudo de viabilidade técnica e econômica, o gerenciamento de recursos e equipes, bem como o entendimento das estruturas organizacionais e da governança corporativa.
+\rowcolors{2}{gray!10}{white}
+\begin{small}
+    \begin{longtable}{p{10cm} L{4.8cm}}
+        \caption{Relação entre as competências do Eixo 3 da SBC e as disciplinas do curso} \label{eixo1} \\
+        \toprule
+        \textbf{Competência - Conteúdo (SBC)}                        & \textbf{Disciplinas}              \\
+        \midrule
+        \endfirsthead
 
-Este eixo visa "Gerenciar projetos, serviços e experimentos de engenharia na área de computação, de forma colaborativa em equipes multidisciplinares e em grupos sociais". A disciplina Administração Financeira de Projeto contribui significativamente para este eixo, especialmente no que tange à viabilidade e ao financiamento de projetos, aspectos cruciais do gerenciamento.
+        \multicolumn{2}{c}%
+        {{\bfseries \tablename\ \thetable{} -- Continuação da página anterior}}                          \\
+        \toprule
+        \textbf{Competência - Conteúdo (SBC)}                        & \textbf{Disciplinas}              \\
+        \midrule
+        \endhead
 
-A competência C.3.1 ("Compreender conceitos relevantes sobre projetos, serviços e experimentos de engenharia na área de computação") e C.3.4 ("Aplicar metodologias de gestão de projetos, serviços e experimentos de engenharia na área de computação") são parcialmente abordadas pela disciplina mencionada. A ementa de Administração Financeira de Projeto ("CONCEITOS BÁSICOS DE MATEMÁTICA FINANCEIRA... INTRODUÇÃO A AVALIAÇÃO DE INVESTIMENTOS... VIABILIDADE DE UM PROJETO... FINANCIAMENTO DE PROJETOS") foca nos aspectos econômico-financeiros da gestão. Para uma cobertura completa das competências de gerenciamento de projetos, incluindo ciclo de vida, escopo, tempo, riscos e qualidade, outras disciplinas ou módulos específicos em gerenciamento de projetos de software e hardware seriam complementares e desejáveis, alinhando-se com os conteúdos de "Ciclo de gerenciamento de projetos" e "Ferramentas para gestão de projetos" listados pela SBC.
+        \midrule \multicolumn{2}{r}{{Continua na próxima página}}                                        \\
+        \endfoot
 
-As competências C.3.2 ("Compreender as estruturas organizacionais e os papéis relacionados ao desenvolvimento de projetos") e C.3.3 ("Identificar normas e documentações técnicas necessárias em projetos") são desenvolvidas não apenas em disciplinas teóricas, mas também através da vivência em projetos práticos ao longo do curso e, fundamentalmente, no estágio supervisionado e no Trabalho de Conclusão de Curso.
+        \bottomrule
+        \endlastfoot
+        C.3.1 - Compreender conceitos relevantes sobre
+        projetos, serviços e experimentos de engenharia na
+        área de computação.                                          & \EngSistA, \AnaProjSist           \\
+        \addlinespace
+        C.3.2 - Compreender as estruturas organizacionais
+        e os papéis relacionados ao desenvolvimento de
+        projetos, serviços e experimentos de Engenharia de
+        Computação.                                                  & \Adm, \MacroEco                   \\
+        \addlinespace
+        C.3.3 - Identificar normas e documentações
+        técnicas necessárias em projetos, serviços e
+        experimentos de Engenharia de Computação.                    & \EstSup, \ProjA, \ProjB           \\
+        \addlinespace
+        C.3.4 - Aplicar metodologias de gestão de projetos,
+        serviços e experimentos de engenharia na área de computação. & \Adm, \Empre                      \\
+    \end{longtable}
+\end{small}
 
-Eixo 4: Inovação e Empreendedorismo
-Com a competência geral de "Criar ferramentas, técnicas e conhecimentos científicos e/ou tecnológicos inovadores na área, empreendendo na área de engenharia de computação, reconhecendo oportunidades e resolvendo problemas de forma a agregar valor à sociedade", este eixo é vital para a formação de um profissional transformador.
+\section*{Eixo  4: Inovação e Empreendedorismo}
+Com a competência geral de ``\textit{Criar ferramentas, técnicas e conhecimentos científicos e/ou tecnológicos inovadores na área, empreendendo na área de engenharia de computação, reconhecendo oportunidades e resolvendo problemas de forma a agregar valor à sociedade}'', este eixo é vital para a formação de um profissional transformador.
 
-A disciplina Administração Financeira de Projeto também se relaciona com este eixo, particularmente com a competência C.4.3 ("Aplicar os fundamentos da economia na análise e no desenvolvimento de projetos de Engenharia de Computação, realizando estudos de viabilidade técnico-econômica") e, indiretamente, com C.4.5 ("Aplicar fundamentos da administração na análise e desenvolvimento de projetos de Engenharia de Computação"). O estudo de viabilidade é um passo essencial no processo de inovação e empreendedorismo.
+\rowcolors{2}{gray!10}{white}
+\begin{small}
+    \begin{longtable}{p{10cm} L{4.8cm}}
+        \caption{Relação entre as competências do Eixo 4 da SBC e as disciplinas do curso} \label{eixo1} \\
+        \toprule
+        \textbf{Competência - Conteúdo (SBC)}              & \textbf{Disciplinas}                        \\
+        \midrule
+        \endfirsthead
 
-As demais competências, como C.4.1 ("Entender a relação entre teoria e prática"), C.4.2 ("Entender processos e questões relativos ao desenvolvimento de produto e sua manufatura"), C.4.4 ("Integrar conceitos de áreas diferentes em um sistema completo para prover uma solução") e C.4.6 ("Empreender e exercer liderança na sua área de atuação profissional"), são fomentadas por meio de metodologias ativas de ensino, projetos integradores, participação em atividades de pesquisa e extensão, e, de forma mais direcionada, por disciplinas eletivas focadas em empreendedorismo, desenvolvimento de novos produtos e gestão da inovação, que complementariam a formação básica oferecida.
+        \multicolumn{2}{c}%
+        {{\bfseries \tablename\ \thetable{} -- Continuação da página anterior}}                          \\
+        \toprule
+        \textbf{Competência - Conteúdo (SBC)}              & \textbf{Disciplinas}                        \\
+        \midrule
+        \endhead
 
-Eixo 5: Desenvolvimento Pessoal e Profissional
-Este eixo busca "Compreender a importância e responsabilidade da prática profissional, agindo de forma ética, sustentável e socialmente responsável, respeitando aspectos legais e normas envolvidas e observando direitos e propriedades intelectuais inerentes à produção e à utilização de sistemas de computação".
+        \midrule \multicolumn{2}{r}{{Continua na próxima página}}                                        \\
+        \endfoot
 
-As ementas fornecidas não especificam disciplinas dedicadas exclusivamente a Ética, Legislação em Informática ou Impactos Sociais e Ambientais da Computação. No entanto, estes são temas transversais de extrema importância e que devem ser abordados ao longo de diversas disciplinas do curso. A SBC preconiza conteúdos como "Legislação Aplicada à Informática", "Ética e Cidadania" e "Engenharia Ambiental / Tecnologia e Meio Ambiente". É fundamental que o PPC do curso contemple esses conteúdos, seja através de disciplinas específicas ou de forma integrada, para assegurar o desenvolvimento das competências C.5.1 ("Conhecer os direitos e propriedades intelectuais"), C.5.2 ("Compreender a importância da conduta ética e cidadã") e C.5.3 ("Compreender o impacto que as soluções de sistemas de computação podem causar na sociedade e no meio ambiente").
+        \bottomrule
+        \endlastfoot
+        C.4.1 - Entender a relação entre teoria e prática. & \Ext, \ProjA                                \\
+        \addlinespace
+        C.4.2 - Entender processos e questões
+        relativos ao desenvolvimento de produto
+        e sua manufatura.                                  & \Empre, \EstSup                             \\
+        \addlinespace
+        C.4.3 - Aplicar os fundamentos da economia na análise e no
+        desenvolvimento de projetos de Engenharia de Computação, realizando
+        estudos de viabilidade técnico-econômica, considerando o contexto
+        social.                                            & \Adm, \Empre, \MacroEco                     \\
+        \addlinespace
+        C.4.4 - Integrar conceitos de áreas
+        diferentes em um sistema completo para
+        prover uma solução.                                & \ProjB, \Ext                                \\
+        \addlinespace
+        C.4.5 - Aplicar
+        fundamentos
+        administração na análise e
+        desenvolvimento de projetos
+        Engenharia de Computação.                          & \Adm                                        \\
+        \addlinespace
+        C.4.6  - Empreender e exercer liderança
+        na sua área de atuação profissional.               & \Empre                                      \\
+    \end{longtable}
+\end{small}
 
-Relação com as Diretrizes Curriculares Nacionais (DCNs)
-Os referenciais da SBC são elaborados em consonância com as Diretrizes Curriculares Nacionais para os cursos da área de Computação. Ao alinhar sua estrutura curricular com os eixos e competências propostos pela SBC, o curso de Engenharia de Computação naturalmente busca atender às competências e habilidades gerais e específicas definidas pelas DCNs. Por exemplo, a ênfase em fundamentos (Eixo 1), desenvolvimento de sistemas (Eixo 2) e gerenciamento (Eixo 3) contribui diretamente para competências das DCNs como "Identificar problemas que tenham solução algorítmica", "Resolver problemas usando ambientes de programação", "Planejar, especificar, projetar, implementar, testar, verificar e validar sistemas de computação", e "Gerenciar projetos e manter sistemas de computação". Similarmente, os eixos de Inovação e Empreendedorismo (Eixo 4) e Desenvolvimento Pessoal e Profissional (Eixo 5) dialogam com as DCNs no que tange a "Tomar decisões e inovar", "Empreender e exercer liderança", e agir com "consciência dos aspectos éticos, legais e dos impactos ambientais".
+\section*{Eixo  5: Desenvolvimento Pessoal e Profissional}
+Este eixo busca ``\textit{Compreender a importância e responsabilidade da prática profissional, agindo de forma ética, sustentável e socialmente responsável, respeitando aspectos legais e normas envolvidas e observando direitos e propriedades intelectuais inerentes à produção e à utilização de sistemas de computação}".
+
+\rowcolors{2}{gray!10}{white}
+\begin{small}
+    \begin{longtable}{p{10cm} L{4.8cm}}
+        \caption{Relação entre as competências do Eixo 5 da SBC e as disciplinas do curso} \label{eixo1} \\
+        \toprule
+        \textbf{Competência - Conteúdo (SBC)} & \textbf{Disciplinas}                                     \\
+        \midrule
+        \endfirsthead
+
+        \multicolumn{2}{c}%
+        {{\bfseries \tablename\ \thetable{} -- Continuação da página anterior}}                          \\
+        \toprule
+        \textbf{Competência - Conteúdo (SBC)} & \textbf{Disciplinas}                                     \\
+        \midrule
+        \endhead
+
+        \midrule \multicolumn{2}{r}{{Continua na próxima página}}                                        \\
+        \endfoot
+
+        \bottomrule
+        \endlastfoot
+        C.5.1 - Conhecer os direitos e propriedades
+        intelectuais inerentes à produção e à
+        utilização de sistemas de computação  & \EngCompSoc                                              \\
+        \addlinespace
+        C.5.2 - Compreender a importância da
+        conduta ética e cidadã no exercício da
+        Engenharia de Computação              & \EngCompSoc, Atividades Curriculares de Extensão         \\
+        \addlinespace
+        C.5.3 - Compreender o impacto que as
+        soluções de sistemas de computação
+        podem causar na sociedade e no meio
+        ambiente.                             & \IntAmb                                                  \\
+    \end{longtable}
+\end{small}
+
+
