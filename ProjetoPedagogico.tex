@@ -18,6 +18,7 @@
 \usepackage{placeins}		 % para forçar o float a ficar na seção
 \usepackage{pdfpages}		 % para incluir pdfs
 \usepackage{tocloft} 		 % para formatar o sumário
+\usepackage{pdflscape}   % para fazer páginas em paisagem
 \setlength\cftparskip{-2pt}
 \setlength\cftbeforechapskip{0pt}
 \usepackage[titletoc,toc,page]{appendix} % para anexos
@@ -29,6 +30,7 @@
 \usepackage[table]{xcolor}  % para tabelas coloridas
 \usepackage{tabularx}		% para tabelas com largura automática
 \usepackage{longtable}		% para tabelas longas
+\usepackage{makecell}     % para tabelas com células mescladas
 \usepackage{spreadtab}	    % para tabelas com cálculos
 \usepackage{array}  % para tabelas com colunas de largura variável
 \usepackage{booktabs}		% para tabelas com linhas horizontais
@@ -133,13 +135,13 @@
 
 % ======== CAPA ================
 \begin{textblock*}{3cm}[0.5,0.5](4cm,4cm)
-    \includegraphics[width=3cm]{imagens/logo_uerj_cor.jpg}
+	\includegraphics[width=3cm]{imagens/logo_uerj_cor.jpg}
 \end{textblock*}
 \begin{textblock*}{12cm}(6cm,3cm)   % 6.375=8.5 - 1.5 - 0.625
-    Universidade do Estado do Rio de Janeiro\\
-    Sub-Reitoria de Graduação \\
-    Faculdade de Engenharia\\
-    Departamento de Engenharia de Sistemas e Computação
+	Universidade do Estado do Rio de Janeiro\\
+	Sub-Reitoria de Graduação \\
+	Faculdade de Engenharia\\
+	Departamento de Engenharia de Sistemas e Computação
 \end{textblock*}
 
 \title{Projeto Pedagógico do Curso de Engenharia de Computação}
@@ -155,16 +157,16 @@
 Gulnar Azevedo e Silva
 
 
-    {\textbf{Vice-Reitor}} \\
+	{\textbf{Vice-Reitor}} \\
 Bruno Rêgo Deusdará Rodrigues
 
-    {\textbf{Pró-Reitor de Graduação}} \\
+	{\textbf{Pró-Reitor de Graduação}} \\
 Antonio Soares da Silva
 
-    {\textbf{Diretora do Centro de Tecnologia e Ciência}} \\
+	{\textbf{Diretora do Centro de Tecnologia e Ciência}} \\
 Nádia Pimenta Lima
 
-    {\textbf{Diretora da Faculdade de Engenharia}} \\
+	{\textbf{Diretora da Faculdade de Engenharia}} \\
 Maria Eugenia de las Mercedes Mosconi de Gouvêa
 
 {\textbf{Chefe do Departamento de Engenharia de Sistemas e Computação}} \\
@@ -225,8 +227,8 @@ Registramos nossa homenagem ao Professor Orlando Bernardo Filho (in memoriam), r
 \include{cap-infraestrutura}
 
 \defbibheading{bibintoc}[Referências]{%
-    \chapter*{#1}
-    \addcontentsline{toc}{chapter}{#1}}
+	\chapter*{#1}
+	\addcontentsline{toc}{chapter}{#1}}
 
 \cleardoublepage  % Quebra de página para nova seção
 \thispagestyle{plain}
