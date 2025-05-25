@@ -147,7 +147,6 @@
   \disciplina{industrial}{7}{6}{\MacroEcoCod} {\MacroEcoSName}  {\MacroEcoCred}{MacroEco} % Macro economia aplicada à Engenharia
   \disciplina{ambiental}{1}{4}	{\IntAmbCod}	{\IntAmbSName}    {\IntAmbCred} {IntAmb} % Introdução à Engenharia Ambiental
   \disciplina{eletronica}{6}{6}	{\MatEleCod}	  {\MatEleSName}    {\MatEleCred} {MatEle} % Materiais Elétricos
-  \disciplina{eletronica}{5}{4} {\SinaisESistCod}{\SinaisESistSName}{\SinaisESistCred}{SeS} % Modelos Matemáticos
   \disciplina{eletronica}{4}{3} {\TecDigCod}{\TecDigSName}{\TecDigCred}{TecDig} % Técnicas Digitais
   \disciplina{eletronica}{3}{3} {\CircEletICod} {\CircEletISName} {\CircEletICred} {CircEletI} % Circuitos Eletrônicos I
 
@@ -238,7 +237,6 @@
   \prereq				{CalcII}	{CalcIII}
   \prereq				{FisI}		{FisII}
   \prereq				{FisEI}		{FisEII}
-  \pre  [red]   {CalcII}	{SeS}   {4}{3}{10}{12}{-1}
   \pre  [olive]  {LogProg} {LabProgI}       {0}{5}{15}{4}{0}
   \pre          {LogProg} {LabProgII}       {-2}{3}{-10}{3}{0}
   \coreq				{FisI}	{FisEI}
@@ -256,7 +254,7 @@
 
   % Período 4
   \pre  	      {LabProgI}  {IC}          {-1}{3}{-10}{3}{0}
-  \pre[teal]   	{LabProgI}  {ICII}        {-4}{2}{-16}{5}{0}
+  \pre[teal]   	{LabProgI}  {ICII}        {-4}{2}{-16}{5}{-2}
   \pre[blue]    {LabProgII} {EngSistA} {3}{3}{-9}{3}{-2}
   \prereq				{FisIII}	  {FisIV}
   \prereq	      {TecDig}    {FundComp}
