@@ -163,13 +163,13 @@
   \disciplina{extensao}{9}{3} {\EstSupCod}	{\EstSupSName}{\EstSupCred}{EstSup} % Estágio Supervisionado
   \disciplina{desc}{2}{1} {\EstrInfCod}	{\EstrInfSName}{\EstrInfCred}{EstrInf}  % Estruturas de Informação
   \disciplina{desc}{5}{3} {\FundCompCod}	{\FundCompSName}{\FundCompCred}{FundComp} % Fundamentos de Computadores
-  \disciplina{desc}{6}{1} {\ICCod}	{\ICSName}{\ICCred}{IC}                     % Inteligência Computacional I
+  \disciplina{desc}{5}{2} {\ICCod}	{\ICSName}{\ICCred}{IC}                     % Inteligência Computacional I
   \disciplina{desc}{6}{2} {\ICIICod}	{\ICIISName}{\ICIICred}{ICII}             % Inteligência Computacional II
   \disciplina{desc}{9}{4} {\InstalaCod}	{\InstalaSName}{\InstalaCred}{Instala}  % Instalações Ambiente Computacional I
   \disciplina{desc}{4}{1} {\LabProgACod}	{\LabProgASName}{\LabProgACred}{LabProgI} % Laboratório de Programação I
   \disciplina{desc}{4}{2} {\LabProgPOOCod}	{\LabProgPOOSName}{\LabProgPOOCred}{LabProgII} % Laboratório de Programação II
   \disciplina{desc}{2}{2} {\LogProgCod}	{\LogProgSName}{\LogProgCred}{LogProg}  % Lógica de Programação
-  \disciplina{desc}{7}{1}	{\MineraDadosCod}	{\MineraDadosSName}{\MineraDadosCred}{MineraDados} % Mineração de Dados
+  \disciplina{desc}{6}{1}	{\MineraDadosCod}	{\MineraDadosSName}{\MineraDadosCred}{MineraDados} % Mineração de Dados
   \disciplina{desc}{4}{4} {\ProcImagCod}	{\ProcImagSName}{\ProcImagCred}{ProcIma} % Processamento de Imagens
   \disciplina{desc}{8}{5} {\CompParalCod}	{\CompParalSName}{\CompParalCred}{ProgPara} % Programação Paralela
   \disciplina{desc}{9}{1} {\ProjACod}	{\ProjASName}{\ProjACred}{ProjA}          % Projeto A
@@ -254,8 +254,8 @@
 
   % Período 4
   \pre  	      {LabProgI}  {IC}          {-1}{3}{-10}{3}{0}
-  \pre[teal]   	{LabProgI}  {ICII}        {-4}{2}{-16}{5}{-2}
-  \pre[blue]    {LabProgII} {EngSistA} {3}{3}{-9}{3}{-2}
+  \pre[teal]   	{LabProgI}  {ICII}        {-4}{2}{-15}{5}{-2}
+  \pre[blue]    {LabProgII} {EngSistA} {3}{2}{-9}{3}{-2}
   \prereq				{FisIII}	  {FisIV}
   \prereq	      {TecDig}    {FundComp}
   \pre [teal] 	{FisIII}	  {CCC} {5}{4}{0}{-3}{0}
@@ -267,12 +267,12 @@
   \prereq			{FisEIII}		{FisEIV}
   \coreq				{FisIV}	{FisEIV}
   \prereq [red]	  {FisIV}	{MatEle}
+  \pre[teal]  {IC}		  {MineraDados} {5}{4}{0}{-3}{0}
 
   % Período 6
   \prereq		    {EngSistA}{EngSistB}
   \pre[blue]		{ArqComp}	{SO}        {-3}{3}{0}{0}{0}
   \pre				  {ArqComp}	{SistEmb}   {3}{3}{10}{4}{0}
-  \prereq[teal]  {IC}		  {MineraDados}
   \pre[black]    {CCA}{Instala}       {3}{1}{10}{4}{0}
 
   % Período 7
