@@ -59,6 +59,13 @@
 \tikzstyle{eletiva}=[box, fill=celetiva, dashed]
 \tikzstyle{extensao}=[box, fill=cextensao, dashed]
 \tikzstyle{info}=[box, fill=yellow]
+% Cores de links adequados para daltônicos
+\colorlet{blue}{blue!80!black}   % Azul escuro 
+\colorlet{red}{red!70!black}    % Vermelho queimado - Eletrônica
+\colorlet{teal}{teal!70!black}   % Verde petróleo - Ambiental
+\colorlet{purple}{purple!70!black} % Roxo escuro - Computação
+\colorlet{cyan}{cyan!60!black} % Laranja escuro - Gestão/Empreendedorismo
+\colorlet{gray}{gray!50!black}   % Cinza médio - Extensão/Eletivas
 
 %contador de creditos totais do curso
 \newcounter{cred} 
@@ -140,7 +147,7 @@
   \disciplina{basico}{3}{4}{\ProbEstCod}{\ProbEstSName}	{\ProbEstCred}{ProbEst} % Probabilidade e Estatística
 
   %disciplinas de outros departamentos da engenharia
-  \disciplina{industrial}{10}{4}{\AdmCod}	    {\AdmSName}	      {\AdmCred}		{Adm} % Administração
+  \disciplina{industrial}{10}{3}{\AdmCod}	    {\AdmSName}	      {\AdmCred}		{Adm} % Administração
   \disciplina{eletrica}{5}{5}	{\CCCCod}	      {\CCCSName}		    {\CCCCred}		{CCC} % Circuitos em corrente Conínua
   \disciplina{eletrica}{6}{5}{\CCACod}	      {\CCASName}		    {\CCACred}		{CCA} % Circuitos em Corrente Alternada
   \disciplina{industrial}{8}{1}{\EmpreCod}    {\EmpreSName}     {\EmpreCred}  {Empre} % Empreendedorismo
@@ -152,34 +159,34 @@
 
   %Disciplinas Desc
   \disciplina{desc}{1}{1} {\AlgCompCod}	{\AlgCompSName}{\AlgCompCred}{AlgComp}  % Algoritmos Computacionais
-  \disciplina{desc}{3}{1} {\AnAlgCod}	{\AnAlgSName}{\AnAlgCred}{AnAlg}          % Análise de Algoritmos
+  \disciplina{desc}{3}{2} {\AnAlgCod}	{\AnAlgSName}{\AnAlgCred}{AnAlg}          % Análise de Algoritmos
   \disciplina{desc}{5}{1} {\GrafosCod}	{\GrafosSName}{\GrafosCred}{Grafos}     % Teoria de Grafos e Aplicações
   \disciplina{desc}{6}{4} {\ArqCompCod}	{\ArqCompSName}{\ArqCompCred}{ArqComp}  % Arquitetura de Computadores
   \disciplina{desc}{8}{6}{\ControlCod}	{\ControlSName}{\ControlCred}{Control}  % Controle
   \disciplina{desc}{1}{2} {\EngCompSocCod}	{\EngCompSocSName}{\EngCompSocCred}{ETS} % Engenharia e Sociedade
   \disciplina{desc}{6}{3} {\EngSistACod}	{\EngSistASName}{\EngSistACred}{EngSistA} % Engenharia de Sistemas A
-  \disciplina{desc}{8}{2} {\AnaProjSistCod}	{\AnaProjSistSName}{\AnaProjSistCred}{AnaProjSist} % Sistemas de Informação
-  \disciplina{desc}{7}{3} {\ProjBDCod}	{\ProjBDSName}{\ProjBDCred}{EngSistB}   % Engenharia de Sistemas B
+  \disciplina{desc}{8}{3} {\AnaProjSistCod}	{\AnaProjSistSName}{\AnaProjSistCred}{AnaProjSist} % Sistemas de Informação
+  \disciplina{desc}{7}{3} {\ProjBDCod}	{\ProjBDSName}{\ProjBDCred}{EngSistB}   % Projeto de BD
   \disciplina{extensao}{9}{3} {\EstSupCod}	{\EstSupSName}{\EstSupCred}{EstSup} % Estágio Supervisionado
   \disciplina{desc}{2}{1} {\EstrInfCod}	{\EstrInfSName}{\EstrInfCred}{EstrInf}  % Estruturas de Informação
   \disciplina{desc}{5}{3} {\FundCompCod}	{\FundCompSName}{\FundCompCred}{FundComp} % Fundamentos de Computadores
   \disciplina{desc}{5}{2} {\ICCod}	{\ICSName}{\ICCred}{IC}                     % Inteligência Computacional I
-  \disciplina{desc}{6}{2} {\ICIICod}	{\ICIISName}{\ICIICred}{ICII}             % Inteligência Computacional II
-  \disciplina{desc}{9}{4} {\InstalaCod}	{\InstalaSName}{\InstalaCred}{Instala}  % Instalações Ambiente Computacional I
+  \disciplina{desc}{6}{1} {\ICIICod}	{\ICIISName}{\ICIICred}{ICII}             % Inteligência Computacional II
+  \disciplina{desc}{7}{5} {\InstalaCod}	{\InstalaSName}{\InstalaCred}{Instala}  % Instalações Ambiente Computacional I
   \disciplina{desc}{4}{1} {\LabProgACod}	{\LabProgASName}{\LabProgACred}{LabProgI} % Laboratório de Programação I
   \disciplina{desc}{4}{2} {\LabProgPOOCod}	{\LabProgPOOSName}{\LabProgPOOCred}{LabProgII} % Laboratório de Programação II
   \disciplina{desc}{2}{2} {\LogProgCod}	{\LogProgSName}{\LogProgCred}{LogProg}  % Lógica de Programação
-  \disciplina{desc}{6}{1}	{\MineraDadosCod}	{\MineraDadosSName}{\MineraDadosCred}{MineraDados} % Mineração de Dados
+  \disciplina{desc}{6}{2}	{\MineraDadosCod}	{\MineraDadosSName}{\MineraDadosCred}{MineraDados} % Mineração de Dados
   \disciplina{desc}{4}{4} {\ProcImagCod}	{\ProcImagSName}{\ProcImagCred}{ProcIma} % Processamento de Imagens
   \disciplina{desc}{8}{5} {\CompParalCod}	{\CompParalSName}{\CompParalCred}{ProgPara} % Programação Paralela
   \disciplina{desc}{9}{1} {\ProjACod}	{\ProjASName}{\ProjACred}{ProjA}          % Projeto A
   \disciplina{desc}{10}{1}{\ProjBCod}	{\ProjBSName}{\ProjBCred}{ProjB}          % Projeto B
-  \disciplina{desc}{8}{4} {\SredesCod}	{\SredesSName}{\SredesCred}{Sredes}     % Segurança em Redes de Computadores
-  \disciplina{desc}{7}{5} {\ProjSOCod}	{\ProjSOSName}{\ProjSOCred}{SO}         % Sistemas Operacionais
-  \disciplina{desc}{8}{3} {\SistEmbCod}	{\SistEmbSName}{\SistEmbCred}{SistEmb}  % Sistemas Embutidos
-  \disciplina{desc}{7}{4} {\TelepCod}	{\TelepSName}{\TelepCred}{Telep}          % Redes
-  \disciplina{desc}{7}{2} {\TeoCompCod}	{\TeoCompSName}{\TeoCompCred}{Comp}     % Teoria da Compiladores
-  \disciplina{extensao}{3}{2} {\ExtCod}	{\ExtSName}{\ExtCred}{Ext}              % Projetos de Extensão
+  \disciplina{desc}{8}{2} {\SredesCod}	{\SredesSName}{\SredesCred}{Sredes}     % Segurança em Redes de Computadores
+  \disciplina{desc}{7}{4} {\ProjSOCod}	{\ProjSOSName}{\ProjSOCred}{SO}         % Sistemas Operacionais
+  \disciplina{desc}{8}{4} {\SistEmbCod}	{\SistEmbSName}{\SistEmbCred}{SistEmb}  % Sistemas Embutidos
+  \disciplina{desc}{7}{2} {\TelepCod}	{\TelepSName}{\TelepCred}{Telep}          % Redes
+  \disciplina{desc}{7}{1} {\TeoCompCod}	{\TeoCompSName}{\TeoCompCred}{Comp}     % Teoria da Compiladores
+  \disciplina{extensao}{3}{1} {\ExtCod}	{\ExtSName}{\ExtCred}{Ext}              % Projetos de Extensão
 
   %eletivas
   \disciplina{eletiva}{9}{2} {\EletACod}	{Eletiva Restrita}{\EletACred}{EA}
@@ -220,66 +227,66 @@
   }
 
   %Período 1
-  \prereq			  {AlgComp}	{EstrInf}
-  \pre	[red]   {AlgComp}	{AnAlg}     {-4}{4}{-9}{4}{0}
-  \pre  [olive] {AlgLin}	{CalcNum}   {-4}{4}{0}{3}{0}
-  \pre          {LogProg} {AnAlg}     {2}{3}{0}{-2}{0}
-  \pre	[blue]	{CalcI}		{CalcNum}   {5}{4}{0}{-3}{0}
-  \prereq				{CalcI}		{CalcII}
-  \pre	[red]	  {CalcI}	  {ProbEst}   {2}{4}{14}{2}{0}
-  \pre	[teal]	{CalcI}	  {FisII}     {-4}{2}{-10}{3}{-4}
-  \pre	[blue]	{AlgLin}  {ProcIma}   {-2}{5}{-10}{3}{-4}
+  \prereq[blue]			  {AlgComp}	{EstrInf}
+  \pre[olive]   {AlgComp}	{AnAlg}     {-4}{4}{-15}{3}{-4}
+  \pre          {AlgLin}	{CalcNum}   {-4}{4}{0}{4}{0}
+  \pre	  	    {AlgLin}  {ProcIma}   {-2}{5}{-10}{3}{-4}
+  \pre	        {CalcI}		{CalcNum}   {5}{4}{0}{-4}{0}
+  \prereq[olive]{CalcI}		{CalcII}
+  \pre[olive]	  {CalcI}	  {ProbEst}   {2}{4}{14}{3}{4}
+  \pre	[blue]	{CalcI}	  {FisII}     {-4}{2}{-10}{3}{-4}
 
   % Período 2
-  \pre          {EstrInf}	{LabProgI}  {2}{3}{8}{2}{-3}
-  \pre  [blue]  {EstrInf}	{Grafos}    {4}{1}{9}{2}{-3}
-  \pre  [teal] 	{EstrInf}	{LabProgII} {-3}{1}{-13}{4}{-4}
-  \prereq				{CalcII}	{CalcIII}
-  \prereq				{FisI}		{FisII}
-  \prereq				{FisEI}		{FisEII}
-  \pre  [olive]  {LogProg} {LabProgI}       {0}{5}{15}{4}{0}
-  \pre          {LogProg} {LabProgII}       {-2}{3}{-10}{3}{0}
-  \coreq				{FisI}	{FisEI}
+  \pre[teal]    {EstrInf}	{LabProgI}  {2}{3}{8}{2}{-4}
+  \pre  [olive] {EstrInf}	{Grafos}    {4}{1}{9}{2}{-4}
+  \pre  [blue] 	{EstrInf}	{LabProgII} {-4}{4}{-10}{3}{-4}
+  \prereq[olive]{CalcII}	{CalcIII}
+  \prereq[blue]	{FisI}		{FisII}
+  \prereq[teal]	{FisEI}		{FisEII}
+  \pre  [cyan]   {LogProg} {LabProgI}       {3}{1}{15}{4}{4}
+  \prereq[olive]{LogProg} {AnAlg}
+  \pre[teal]    {LogProg} {LabProgII}       {-4}{3}{-10}{3}{4}
+  \coreq				{FisI}	  {FisEI}
 
 
   % %Período 3
-  \pre[red]     {AnAlg}		{Comp}       {-4}{4}{-13}{2}{0}
-  \pre	[blue]  {AnAlg}	  {Grafos}     {-2}{5}{-8}{2}{3}
-  \prereq				{FisII}		{FisIII}
-  \prereq				{FisEII}  {FisEIII}
-  \prereq [red]	{ProbEst}	{ProcIma}
-  \coreq				{FisII}	{FisEII}
+  \pre[olive]   {AnAlg}		{Comp}       {0}{2}{9}{3}{4}
+  \pre[olive]   {AnAlg}	  {Grafos}     {4}{1}{11}{2}{4}
+  \prereq[blue]	{FisII}		{FisIII}
+  \prereq[teal]	{FisEII}  {FisEIII}
+  \prereq [olive]	{ProbEst}	{ProcIma}
+  \coreq				{FisII}	  {FisEII}
   \prereq [red] {AlgLin}	{CircEletI}
-  \prereq[red] {CircEletI}	{TecDig}
+  \prereq[red]  {CircEletI}	{TecDig}
 
   % Período 4
-  \pre  	      {LabProgI}  {IC}          {-1}{3}{-10}{3}{0}
-  \pre[teal]   	{LabProgI}  {ICII}        {-4}{2}{-15}{5}{-2}
-  \pre[blue]    {LabProgII} {EngSistA} {3}{2}{-9}{3}{-2}
-  \prereq				{FisIII}	  {FisIV}
-  \prereq	      {TecDig}    {FundComp}
-  \pre [teal] 	{FisIII}	  {CCC} {5}{4}{0}{-3}{0}
+  \pre[teal]	  {LabProgI}  {IC}          {-4}{5}{0}{3}{0}
+  \pre[cyan]   	{LabProgI}  {ICII}        {-1}{3}{-10}{3}{4}
+  \pre[blue]    {LabProgII} {EngSistA} {-4}{2}{-9}{3}{-2}
+  \prereq[teal]	{FisIII}	  {FisIV}
+  \prereq[teal]	{FisEIII}		{FisEIV}
+  \prereq[red]	{TecDig}    {FundComp}
+  \pre[blue] 	  {FisIII}	  {CCC} {5}{4}{0}{-3}{0}
   \prereq[blue]	{CCC}		    {CCA}
   \coreq				{FisIII}	  {FisEIII}
 
   % Período 5
-  \pre[purple]	{FundComp}{ArqComp} {-3}{3}{0}{0}{0}
-  \prereq			{FisEIII}		{FisEIV}
-  \coreq				{FisIV}	{FisEIV}
-  \prereq [red]	  {FisIV}	{MatEle}
-  \pre[teal]  {IC}		  {MineraDados} {5}{4}{0}{-3}{0}
+  \pre[red]	    {FundComp}  {ArqComp} {-3}{3}{0}{0}{0}
+  \coreq				{FisIV}	    {FisEIV}
+  \prereq[teal] {FisIV}	    {MatEle}
+  \prereq[teal]       {IC}		    {MineraDados}
 
   % Período 6
-  \prereq		    {EngSistA}{EngSistB}
-  \pre[blue]		{ArqComp}	{SO}        {-3}{3}{0}{0}{0}
-  \pre				  {ArqComp}	{SistEmb}   {3}{3}{10}{4}{0}
-  \pre[black]    {CCA}{Instala}       {3}{1}{10}{4}{0}
+  \pre[blue]	    {EngSistA}{EngSistB} {0}{4}{0}{0}{0}
+  \prereq[red]		{ArqComp}	{SO}
+  \pre[blue]				  {ArqComp}	{SistEmb}   {3}{3}{10}{4}{0}
+  \prereq[blue]   {CCA}{Instala}
 
   % Período 7
-  \prereq				{SO}		{ProgPara}
-  \pre[blue]		{SO}		{Control}       {-3}{4}{0}{1}{0}
-  \prereq[red]  {Telep} {Sredes}
-  \pre          {EngSistB}{AnaProjSist} {3}{2}{0}{0}{0}
+  \pre[red]				  {SO}		{ProgPara}  {-3}{3}{0}{1}{0}
+  \pre[red]		{SO}		{Control}   {-4}{5}{0}{1}{0}
+  \prereq[olive]  {Telep} {Sredes}
+  \prereq[blue]       {EngSistB}{AnaProjSist}
 
   % % Período 9
   \prereq				{ProjA}		{ProjB}
