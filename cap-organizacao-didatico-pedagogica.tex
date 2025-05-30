@@ -204,13 +204,14 @@ docente e discente, não sendo necessariamente disponibilizadas todos os semestr
         \hline \rowcolor{gray!20}
         @ {\textbf{Disciplina}}            & @ {\textbf{CH}} & @ {\textbf{Créditos}} \\
         \hline
-        @\CCC                              & \CCCCH          & \CCCCred              \\ % Circuitos em Corrente       
+        @ \CCC                             & \CCCCH          & \CCCCred              \\ % Circuitos em Corrente Contínua      
         @ \FisIV                           & \FisIVCH        & \FisIVCred            \\ % Física IV
         @ \FisEIV                          & \FisEIVCH       & \FisEIVCred           \\ % Física Experimental IV
         @ \FundComp                        & \FundCompCH     & \FundCompCred         \\ % Fundamentos de Computadores I  
         @ \Grafos                          & \GrafosCH       & \GrafosCred           \\ % Teoria dos Grafos e Aplicações
+        @ \IC                              & \ICCH           & \ICCred               \\ % Inteligência Computacional I
         \hline
-        @ \rowcolor{gray!20}\textbf{Total} & sum(b2:b6)      & sum(c2:c6)            \\
+        @ \rowcolor{gray!20}\textbf{Total} & sum(b2:b7)      & sum(c2:c7)            \\
         \hline
     \end{spreadtab}
 \end{table}
@@ -227,9 +228,9 @@ docente e discente, não sendo necessariamente disponibilizadas todos os semestr
         @ \ArqComp                         & \ArqCompCH      & \ArqCompCred          \\ % Arquitetura de Computadores A
         @ \CCA                             & \CCACH          & \CCACred              \\ % Circuitos em Corrente Alternada
         @ \EngSistA                        & \EngSistACH     & \EngSistACred         \\ % Engenharia de Sistemas
-        @ \IC                              & \ICCH           & \ICCred               \\ % Inteligência Computacional I
         @ \ICII                            & \ICIICH         & \ICIICred             \\ % Inteligência Computacional II        
         @ \MatEle                          & \MatEleCH       & \MatEleCred           \\ % Materiais Elétricos e Eletrônicos
+        @ \MineraDados                     & \MineraDadosCH  & \MineraDadosCred      \\ % Mineração de Dados
         \hline
         @ \rowcolor{gray!20}\textbf{Total} & sum(b2:b7)      & sum(c2:c7)            \\
         \hline
@@ -245,8 +246,8 @@ docente e discente, não sendo necessariamente disponibilizadas todos os semestr
         \hline
         @ {\textbf{Disciplina}}            & @ {\textbf{CH}} & @ {\textbf{Créditos}} \\
         \hline \rowcolor{gray!20}
+        @ \Instala                         & \InstalaCH      & \InstalaCred          \\ % Instalações de Ambientes Computacionais 
         @ \MacroEco                        & \MacroEcoCH     & \MacroEcoCred         \\ % Macroeconomia 
-        @ \MineraDados                     & \MineraDadosCH  & \MineraDadosCred      \\ % Mineração de Dados
         @ \ProjBD                          & \ProjBDCH       & \ProjBDCred           \\ % Projeto de Banco de Dados
         @ \ProjSO                          & \ProjSOCH       & \ProjSOCred           \\ % Projeto de Sistemas Operacionais
         @ \Telep                           & \TelepCH        & \TelepCred            \\ % Redes de Computadores
@@ -288,11 +289,10 @@ docente e discente, não sendo necessariamente disponibilizadas todos os semestr
         @ {\textbf{Disciplina}}            & @ {\textbf{CH}} & @ {\textbf{Créditos}} \\
         \hline
         @ \EstSup                          & \EstSupCH       & \EstSupCred           \\ % Estágio Supervisionado
-        @ \EletA                           & \EletACH        & \EletACred            \\ % Disciplina Eletiva A 
-        @ \Instala                         & \InstalaCH      & \InstalaCred          \\ % Instalações de Ambientes Computacionais       
+        @ \EletA                           & \EletACH        & \EletACred            \\ % Disciplina Eletiva A       
         @ \ProjA                           & \ProjACH        & \ProjACred            \\ % Metodologia Científica
         \hline
-        @ \rowcolor{gray!20}\textbf{Total} & sum(b2:b5)      & sum(c2:c5)            \\
+        @ \rowcolor{gray!20}\textbf{Total} & sum(b2:b4)      & sum(c2:c4)            \\
         \hline
     \end{spreadtab}
 \end{table}
@@ -422,8 +422,8 @@ Essa transição requer atenção às correspondências curriculares, que estão
         \hline
         \CalcII                 & \CalcIICod      & Cálculo Diferencial e Integral II                                  & IME 01-00854                 \\
         \CalcNum                & \CalcNumCod     & Cálculo Numérico IV                                                & IME 04-04541                 \\
-        \parbox[t]{4cm}{\FisI~e                                                                                                                       \\ \FisEI} & \parbox[t]{2cm}{\FisICod \\ \FisEICod} & Física Teórica e Experimental I & FIS 01-05095 \\
         \EstrInf                & \EstrInfCod     & Estruturas de Informação I                                         & FEN 06-03648                 \\
+        \parbox[t]{4cm}{\FisI~e                                                                                                                       \\ \FisEI} & \parbox[t]{2cm}{\FisICod \\ \FisEICod} & Física Teórica e Experimental I & FIS 01-05095 \\
         \LogProg                & \LogProgCod     & Sem equivalência                                                   & --                           \\
         \hline
         \AnAlg                  & \AnAlgCod       & Análise de Algoritmos                                              & FEN 06-03713                 \\
@@ -441,22 +441,23 @@ Essa transição requer atenção às correspondências curriculares, que estão
         \hline
         \CCC                    & \CCCCod         & Circuitos Elétricos I                                              & FEN 04-00944                 \\
         \FundComp               & \FundCompCod    & Fundamentos de Comp. Digitais I                                    & FEN 06-03787                 \\
-        \Grafos                 & \GrafosCod      & Sem equivalência                                                   & --                           \\
+        \IC                     & \ICCod          & Sem equivalência                                                   & --                           \\
         \parbox[t]{4cm}{\FisIV                                                                                                                        \\ \FisEIV} & \parbox[t]{2cm}{\FisIVCod~e \\ \FisEIVCod} & Física Teórica e Experimental IV & FIS 04-05212 \\
+        \Grafos                 & \GrafosCod      & Sem equivalência                                                   & --                           \\
         \hline
         \ArqComp                & \ArqCompCod     & Arquitetura de Computadores I                                      & FEN 06-04119                 \\
         \CCA                    & \CCACod         & Circuitos Elétricos IV                                             & FEN 04-05222                 \\
         \EngSistA               & \EngSistACod    & Engenharia de Sistemas A                                           & FEN 06-04243                 \\
-        \IC                     & \ICCod          & Sem equivalência                                                   & --                           \\
         \ICII                   & \ICIICod        & Sem equivalência                                                   & --                           \\
         \MatEle                 & \MatEleCod      & Materiais Elétricos e Magnéticos I                                 & FEN 04-05197                 \\
-        \hline
-        \MacroEco               & \MacroEcoCod    & Introdução à Economia III                                          & FCE 02-04657                 \\
         \MineraDados            & \MineraDadosCod & Sem equivalência                                                   & --                           \\
+        \hline
+        \Instala                & \InstalaCod     & Instalações de Ambiente Computacional                              & FEN 06-03860                 \\
+        \MacroEco               & \MacroEcoCod    & Introdução à Economia III                                          & FCE 02-04657                 \\
         \ProjBD                 & \ProjBDCod      & Engenharia de Sistemas B                                           & FEN 06-04314                 \\
+        \ProjSO                 & \ProjSOCod      & Projeto de Sistemas Operacionais                                   & FEN 06-04664                 \\
         \Telep                  & \TelepCod       & Teleproc. e Redes de Computadores                                  & FEN 06-04718                 \\
         \TeoComp                & \TeoCompCod     & Teoria de Compiladores                                             & FEN 06-04516                 \\
-        \ProjSO                 & \ProjSOCod      & Arquitetura de Sistemas Operacionais                               & FEN 06-04664                 \\
         \hline
         \AnaProjSist            & \AnaProjSistCod & Engenharia de Sistemas C                                           & FEN 06-04386                 \\
         \CompParal              & \CompParalCod   & Microcomp. e Microprocessadores                                    & FEN 06-04192                 \\
@@ -466,7 +467,6 @@ Essa transição requer atenção às correspondências curriculares, que estão
         \SistEmb                & \SistEmbCod     & Sem equivalência                                                   & --                           \\
         \hline
         \EstSup                 & \EstSupCod      & Estágio Supervisionado XI-A                                        & FEN 06-05038                 \\
-        \Instala                & \InstalaCod     & Instalações de Ambiente Computacional                              & FEN 06-03860                 \\
         \ProjA                  & \ProjACod       & Projeto de Graduação XI-A                                          & FEN 06-04578                 \\
         \hline
         \Adm                    & \AdmCod         & Administração Aplicada à Engenharia III                            & FAF 03-04439                 \\
