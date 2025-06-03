@@ -76,12 +76,12 @@
     \fi}
 
 % Define o curso
-\newcommand \curso[1] {%
-    \ifx&#1&%
-    \newcommand \icurso {}%
-    \else
-    \newcommand \icurso{#1}%
-    \fi}
+\newcommand{\curso}[1]{%
+\def\icurso{}% Limpa o conteúdo anterior
+\begingroup
+\def\\{\par}% Transforma \\ em quebras de linha
+\edef\x{\endgroup\def\noexpand\icurso{#1}}\x%
+}
 
 % Define que a disciplina é obrigatória no curso
 \newcommand \naoobrigatoria	{
