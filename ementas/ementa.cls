@@ -526,12 +526,12 @@
         \multicolumn{4}{|l|}
         {
             \textbf{DEPARTAMENTO:} {\idepartamento}
-        }\rule[-2ex]{0pt}{8.45mm}                        \\
+        \rule[-2ex]{0pt}{8.45mm} }                       \\
         \hline
         \multicolumn{4}{|l|}
         {
             \textbf{DISCIPLINA:} {\indisciplina}
-        } \rule[-2ex]{0pt}{8.45mm}                       \\
+        \rule[-2ex]{0pt}{8.45mm}}                        \\
         \hline
         \multicolumn{2}{|c|}
         {
