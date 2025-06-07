@@ -354,9 +354,9 @@
 \newcounter{horasACE}
 \setcounter{horasACE}{\inteval{\the\value{hExtensao} - \the\value{hDiscExtensao}}}
 
-% disciplinas eletivas
+% número de disciplinas eletivas
 \newcounter{numEletivas}
-\setcounter{numEletivas}{2} % 3 eletivas de 4 créditos cada
+\setcounter{numEletivas}{2} % eletivas de 4 créditos cada
 
 % total créditos eletivas
 \newcounter{credEletivas}
@@ -377,6 +377,10 @@
 % total créditos de disciplinas obrigatórias sem extensão
 \newcounter{credObrigSemExtensao}
 \setcounter{credObrigSemExtensao}{\inteval{\the\value{hDiscObrigSemExtensao} / 15}}
+
+% total créditos de disciplinas obrigatórias com disciplinas de extensão
+\newcounter{credObrigComDiscExtensao}
+\setcounter{credObrigComDiscExtensao}{\inteval{\the\value{cred} - \the\value{credEletivas}}}
 
 % conta disciplinas obrigatórias
 \newcounter{nDiscObrigatorias}
@@ -409,7 +413,7 @@
 \immediate\write\exportfile{% Este arquivo foi gerado automaticamente em \the\year-\the\month-\the\day}
 \immediate\write\exportfile{% MACROS CRIADAS}
 \immediate\write\exportfile{% 1. tHorasCurso: Total de horas do curso: }
-\immediate\write\exportfile{% 2. hTotaisDisc: Total de horas de disciplinas (regulares+eletivas+extensao): }
+\immediate\write\exportfile{% 2. hTotaisDisc: Total de horas de disciplinas (regulares+eletivas+extensao) }
 \immediate\write\exportfile{% 3. hTotaisDiscObrigComDiscExt: Total de horas de disciplinas obrigatórias (regulares+extensao)}
 \immediate\write\exportfile{% 4. hDiscObrigSemExtensao: Total de horas de disciplinas obrigatórias sem extensão}
 \immediate\write\exportfile{% 5. tHorasSemExtensao: Total de horas de Disc obrig sem extensao} 
@@ -424,6 +428,7 @@
 \immediate\write\exportfile{% 14. credDiscExtensao: Total de créditos disciplinas de extensao}
 \immediate\write\exportfile{% 15. nDisciplinas: Número total de disciplinas}
 \immediate\write\exportfile{% 16. nDiscObrigatorias: Número de disciplinas obrigatorias}
+\immediate\write\exportfile{% 17. credObrigComDiscExtensao: Total de créditos de disciplinas obrigatórias com disc. extensão}
 \endgroup
 
 % Escreve os comandos necessários e a macro formatada no arquivo dados.tex
@@ -439,8 +444,8 @@
   \noexpand\setcounter{thorasCursoCounter}{\thethoras}^^J% atribui o valor do contador de horas do curso
   \noexpand\newcounter{hExtensaoCounter}^^J% cria contador de total de horas de extensao
   \noexpand\setcounter{hExtensaoCounter}{\thehExtensao}^^J% atribui o valor do contador de horas de extensao
-  \noexpand\newcommand{\string\tHorasCurso}{\string\num{\the\value{thoras}}\noexpand\xspace}^^J%
-  \noexpand\newcommand{\string\hTotaisDisc}{\string\num{\the\value{hTotaisDisc}}\noexpand\xspace}^^J%
+  \noexpand\newcommand{\string\tHorasCurso}{\string\num{\the\value{thoras}}\noexpand\xspace}^^J% 1. thorasCurso: Total de horas do curso
+  \noexpand\newcommand{\string\hTotaisDisc}{\string\num{\the\value{hTotaisDisc}}\noexpand\xspace}^^J% 2. hTotaisDisc: Total de horas de disciplinas (regulares+eletivas+extensao)
   %\noexpand\newcommand{\string\hTotaisDisc}{\thehTotaisDisc\noexpand\xspace}^^J%
   \noexpand\newcommand{\string\hTotaisDiscObrigComDiscExt}{\string\num{\the\value{hTotaisDiscObrigComDiscExt}}\noexpand\xspace}^^J%
   %\noexpand\newcommand{\string\hTotaisDiscObrigComDiscExt}{\thehTotaisDiscObrigComDiscExt\noexpand\xspace}^^J%
@@ -457,6 +462,7 @@
   \noexpand\newcommand{\string\credDiscExtensao}{\thecredDiscExtensao\noexpand\xspace}^^J%  
   \noexpand\newcommand{\string\nDisciplinas}{\thetdisciplinas\noexpand\xspace}^^J%
   \noexpand\newcommand{\string\nDiscObrigatorias}{\thenDiscObrigatorias\noexpand\xspace}^^J%
+  \noexpand\newcommand{\string\credObrigComDiscExtensao}{\thecredObrigComDiscExtensao\noexpand\xspace}^^J%
 }
 \immediate\closeout\exportfile
 \end{document}
