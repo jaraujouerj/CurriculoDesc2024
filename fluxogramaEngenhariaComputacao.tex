@@ -330,8 +330,8 @@
     ($(#2.west)  $)  -| ($ (#1.west) -(2mm,4mm)$) -- ($(#1.west) -(0,4mm)  $);}
 
   %\trava {ETS}{94 cred}
-  \trava {EA}{150 cred}
-  \trava {EB}{150 cred}
+  %\trava {EA}{150 cred}
+  %\trava {EB}{150 cred}
   %\trava {EC}{150 cred}
   \trava {EstSup}{140 cred}
   \trava {ProjA}{150 cred}
@@ -381,6 +381,10 @@
 \newcounter{CHPerDez}
 \setcounter{CHPerDez}{\inteval{15 * \the\value{credPerDez}}}
 
+% Horas de Ativides Curriculares Complementares
+\newcounter{hACC}
+\setcounter{hACC}{30}
+
 % horas totais das disciplinas (obrigatórias + eletivas + extensão)
 \newcounter{hTotaisDisc}
 \setcounter{hTotaisDisc}{\inteval{15 * \the\value{cred}}}
@@ -391,7 +395,7 @@
 
 % calcula horas totais de disciplinas do curso sem contar disc. de extensão
 \newcounter{horasSemExtensao}
-\setcounter{horasSemExtensao}{\inteval{15 * (\the\value{cred} - \the\value{credDiscExtensao})}}
+\setcounter{horasSemExtensao}{\inteval{15 * (\the\value{cred} - \the\value{credDiscExtensao}) + \the\value{hACC}}}
 
 % Calcula horas totais necessárias para extensão
 \newcounter{hExtensao}
@@ -450,6 +454,7 @@
       \item \the\value{hTotaisDiscObrigComDiscExt} horas, equivalentes a {\inteval{\the\value{hTotaisDiscObrigComDiscExt} / 15}} créditos em disciplinas obrigatórias, sendo \the\value{hDiscExtensao} horas, \the\value{credDiscExtensao} créditos, de disciplinas obrigatórias com carga horária de Extensão;
       \item um mínimo de \the\value{hEletivas} horas, \the\value{credEletivas} créditos em disciplinas eletivas restritas;
       \item um mínimo de \the\value{horasACE} horas em Atividades Curriculares de Extensão;
+      \item um mínimo de \the\value{hACC} horas em Atividades Curriculares Complementares (ACC).
     \end{enumerate}
     O curso estabelece o tempo mínimo de integralização em 10 períodos (5 anos) e máximo em 18 períodos (9 anos).
   };
@@ -508,6 +513,7 @@
   \noexpand\newcommand{\string\hDiscExtensao}{\thehDiscExtensao\noexpand\xspace}^^J%
   \noexpand\newcommand{\string\hExtensao}{\thehExtensao\noexpand\xspace}^^J%
   \noexpand\newcommand{\string\hACE}{\thehorasACE\noexpand\xspace}^^J% 
+  \noexpand\newcommand{\string\hACC}{\thehACC\noexpand\xspace}^^J% 
   \noexpand\newcommand{\string\nEletivas}{\thenumEletivas\noexpand\xspace}^^J% 
   \noexpand\newcommand{\string\credEletivas}{\thecredEletivas\noexpand\xspace}^^J%  
   \noexpand\newcommand{\string\hEletivas}{\thehEletivas\noexpand\xspace}^^J% 
