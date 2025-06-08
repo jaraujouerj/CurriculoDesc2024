@@ -99,220 +99,170 @@ Os egressos do curso de Engenharia de Computação estarão situados no estado d
 
 O currículo do curso de Engenharia de Computação é constituído por disciplinas obrigatórias e eletivas, estágio supervisionado, trabalho de conclusão de curso e atividades de extensão. O curso é organizado em 10 semestres, podendo o aluno cumprí-lo em um máximo de 18 semestres.
 
-Para uma eficaz orientação pedagógica, é proposto o aconselhamento curricular apresentado nas tabelas \ref{tab1p} a \ref{tab10p}. Os pré-requisitos das disciplinas podem ser observados no fluxograma do curso (Anexo \ref{fluxograma}).
+Para uma eficaz orientação pedagógica, é proposto o plano de periodização apresentado na tabela \ref{tab:desc-periodos-long}. Os pré-requisitos das disciplinas podem ser observados no fluxograma do curso (Anexo \ref{fluxograma}).
 
 O aluno deverá cursar no mínimo duas das disciplinas eletivas restritas oferecidas (ver Tabela \ref{tabeletivas}). Deve ser
 ressaltado que estas disciplinas são oferecidas de acordo com o interesse dos corpos
 docente e discente, não sendo necessariamente disponibilizadas todos os semestres.
 
-\rowcolors{1}{gray!10}{white}
-\setlength{\tabcolsep}{5pt}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \renewcommand{\arraystretch}{1.5}
-\begin{table}[!ht]
-    \centering
-    \caption{1\textordmasculine~Período}
-    \label{tab1p}
-    \begin{spreadtab}{{tabularx}{0.8\textwidth}{ Xcc }}
+\rowcolors{2}{white}{gray!10}
+\begin{small}
+    \begin{longtable}{ >{\raggedright\arraybackslash\hspace{4pt}}p{11cm} c c }
+        \caption{Plano de Periodização das Disciplinas}
+        \label{tab:desc-periodos-long}                                                                                           \\
+        \hline
+        \rowcolor{gray!30}
+        \multicolumn{3}{>{\raggedright\arraybackslash\hspace{4pt}}l}{\textbf{1\textordmasculine~Período}}                        \\
+        \hline
+        \endfirsthead
+
         \hline
         \rowcolor{gray!20}
-        @ {\textbf{Disciplina}}            & @ {\textbf{CH}} & @ {\textbf{Créditos}} \\
+        \textbf{Disciplina}                                                                 & \textbf{CH}    & \textbf{Créditos} \\
         \hline
-        @ \AlgComp                         & \AlgCompCH      & \AlgCompCred          \\ % Algoritmos Computacionais
-        @\AlgLin                           & \AlgLinCH       & \AlgLinCred           \\ % Álgebra Linear
-        @ \CalcI                           & \CalcICH        & \CalcICred            \\ % Cálculo I
-        @ \EngCompSoc                      & \EngCompSocCH   & \EngCompSocCred       \\ % Engenharia e Computação Sociedade        
-        @ \IntAmb                          & \IntAmbCH       & \IntAmbCred           \\ % Introdução à Engenharia Ambiental
-        \hline
-        @ \rowcolor{gray!20}\textbf{Total} & sum(b2:b6)      & sum(c2:c6)            \\
-        \hline
-    \end{spreadtab}
-\end{table}
+        \endhead
 
+        \multicolumn{3}{ r}{\small\itshape Continuação na próxima página}
+        \endfoot
 
-\rowcolors{1}{gray!10}{white}
-\begin{table}[!ht]
-    \centering
-    \caption{2\textordmasculine~Período}
-    \label{tab2p}
-    \begin{spreadtab}{{tabularx}{0.8\textwidth}{Xcc}}
-        \hline
+        \bottomrule
+        \endlastfoot
+        % Período 1
         \rowcolor{gray!20}
-        @ {\textbf{Disciplina}}            & @ {\textbf{CH}} & @ {\textbf{Créditos}} \\
+        \textbf{Disciplina}                                                                 & \textbf{CH}    & \textbf{Créditos} \\
+        \AlgComp                                                                            & \AlgCompCH     & \AlgCompCred      \\
+        \AlgLin                                                                             & \AlgLinCH      & \AlgLinCred       \\
+        \CalcI                                                                              & \CalcICH       & \CalcICred        \\
+        \EngCompSoc                                                                         & \EngCompSocCH  & \EngCompSocCred   \\
+        \IntAmb                                                                             & \IntAmbCH      & \IntAmbCred       \\
         \hline
-        @ \CalcII                          & \CalcIICH       & \CalcIICred           \\ % Cálculo II
-        @ \CalcNum                         & \CalcNumCH      & \CalcNumCred          \\ % Calculo Numérico
-        @ \EstrInf                         & \EstrInfCH      & \EstrInfCred          \\ % Estruturas de Informação
-        @ \FisI                            & \FisICH         & \FisICred             \\ % Física I
-        @ \FisEI                           & \FisEICH        & \FisEICred            \\ % Física Experimental I
-        @ \LogProg                         & \LogProgCH      & \LogProgCred          \\ % Lógica de Programação        
+        \rowcolor{gray!20}\multicolumn{1}{r}{\textbf{Subtotal 1\textordmasculine~Período}}  & \hPerUm        & \credPerUm        \\
+        \hline \hline
+        % Período 2
+        \rowcolor{gray!30}
+        \multicolumn{3}{>{\raggedright\arraybackslash\hspace{4pt}}l}{\textbf{2\textordmasculine~Período}}                        \\
         \hline
-        @ \rowcolor{gray!20}\textbf{Total} & sum(b2:b7)      & sum(c2:c7)            \\
+        \CalcII                                                                             & \CalcIICH      & \CalcIICred       \\
+        \CalcNum                                                                            & \CalcNumCH     & \CalcNumCred      \\
+        \EstrInf                                                                            & \EstrInfCH     & \EstrInfCred      \\
+        \FisI                                                                               & \FisICH        & \FisICred         \\
+        \FisEI                                                                              & \FisEICH       & \FisEICred        \\
+        \LogProg                                                                            & \LogProgCH     & \LogProgCred      \\
         \hline
-    \end{spreadtab}
-\end{table}
+        \rowcolor{gray!20}\multicolumn{1}{r}{\textbf{Subtotal 2\textordmasculine~Período}}  & \hPerDois      & \credPerDois      \\
+        \hline
+        % Período 3
+        \hline
+        \rowcolor{gray!30}
+        \multicolumn{3}{>{\raggedright\arraybackslash\hspace{4pt}}l}{\textbf{3\textordmasculine~Período}}                        \\
+        \hline
+        \AnAlg                                                                              & \AnAlgCH       & \AnAlgCred        \\
+        \CalcIII                                                                            & \CalcIIICH     & \CalcIIICred      \\
+        \CircEletI                                                                          & \CircEletICH   & \CircEletICred    \\
+        \FisII                                                                              & \FisIICH       & \FisIICred        \\
+        \FisEII                                                                             & \FisEICH       & \FisEICred        \\
+        \ProbEst                                                                            & \ProbEstCH     & \ProbEstCred      \\
+        \Ext                                                                                & \ExtCH         & \ExtCred          \\
+        \hline
+        \rowcolor{gray!20}\multicolumn{1}{r}{\textbf{Subtotal 3\textordmasculine~Período}}  & \hPerTres      & \credPerTres      \\
+        \hline
+        % Período 4
+        \hline
+        \rowcolor{gray!30}
+        \multicolumn{3}{>{\raggedright\arraybackslash\hspace{4pt}}l}{\textbf{4\textordmasculine~Período}}                        \\
+        \hline
+        \FisIII                                                                             & \FisIIICH      & \FisIIICred       \\ % Física III
+        \FisEIII                                                                            & \FisEIIICH     & \FisEIIICred      \\ % Física Experimental III
+        \LabProgA                                                                           & \LabProgACH    & \LabProgACred     \\ % Laboratório de Programação A
+        \LabProgPOO                                                                         & \LabProgPOOCH  & \LabProgPOOCred   \\ % Laboratório de Programação OO        
+        \ProcImag                                                                           & \ProcImagCH    & \ProcImagCred     \\ % Processamento de Sinais e Imagens
+        \TecDig                                                                             & \TecDigCH      & \TecDigCred       \\ % Técnicas Digitais I
+        \hline
+        \rowcolor{gray!20}\multicolumn{1}{r}{\textbf{Subtotal 4\textordmasculine~Período}}  & \hPerQuatro    & \credPerQuatro    \\
+        \hline
+        % Período 5
+        \hline \rowcolor{gray!30}
+        \multicolumn{3}{>{\raggedright\arraybackslash\hspace{4pt}}l}{\textbf{5\textordmasculine~Período}}                        \\
+        \hline
+        \CCC                                                                                & \CCCCH         & \CCCCred          \\ % Circuitos em Corrente Contínua      
+        \FisIV                                                                              & \FisIVCH       & \FisIVCred        \\ % Física IV
+        \FisEIV                                                                             & \FisEIVCH      & \FisEIVCred       \\ % Física Experimental IV
+        \FundComp                                                                           & \FundCompCH    & \FundCompCred     \\ % Fundamentos de Computadores I  
+        \Grafos                                                                             & \GrafosCH      & \GrafosCred       \\ % Teoria dos Grafos e Aplicações
+        \IC                                                                                 & \ICCH          & \ICCred           \\ % Inteligência Computacional I
+        \hline
+        \rowcolor{gray!20}\multicolumn{1}{r}{\textbf{Subtotal 5\textordmasculine~Período}}  & \hPerCinco     & \credPerCinco     \\
+        \hline
+        % Período 6
+        \hline \rowcolor{gray!30}
+        \multicolumn{3}{>{\raggedright\arraybackslash\hspace{4pt}}l}{\textbf{6\textordmasculine~Período}}                        \\
+        \hline
+        \ArqComp                                                                            & \ArqCompCH     & \ArqCompCred      \\ % Arquitetura de Computadores A
+        \CCA                                                                                & \CCACH         & \CCACred          \\ % Circuitos em Corrente Alternada
+        \EngSistA                                                                           & \EngSistACH    & \EngSistACred     \\ % Engenharia de Sistemas
+        \ICII                                                                               & \ICIICH        & \ICIICred         \\ % Inteligência Computacional II        
+        \MatEle                                                                             & \MatEleCH      & \MatEleCred       \\ % Materiais Elétricos e Eletrônicos
+        \MineraDados                                                                        & \MineraDadosCH & \MineraDadosCred  \\ % Mineração de Dados
+        \hline
+        \rowcolor{gray!20}\multicolumn{1}{r}{\textbf{Subtotal 6\textordmasculine~Período}}  & \hPerSeis      & \credPerSeis      \\
+        \hline
+        % Período 7
+        \hline \rowcolor{gray!30}
+        \multicolumn{3}{>{\raggedright\arraybackslash\hspace{4pt}}l}{\textbf{7\textordmasculine~Período}}                        \\
+        \hline
+        \Instala                                                                            & \InstalaCH     & \InstalaCred      \\ % Instalações de Ambientes Computacionais 
+        \MacroEco                                                                           & \MacroEcoCH    & \MacroEcoCred     \\ % Macroeconomia 
+        \ProjBD                                                                             & \ProjBDCH      & \ProjBDCred       \\ % Projeto de Banco de Dados
+        \ProjSO                                                                             & \ProjSOCH      & \ProjSOCred       \\ % Projeto de Sistemas Operacionais
+        \Telep                                                                              & \TelepCH       & \TelepCred        \\ % Redes de Computadores
+        \TeoComp                                                                            & \TeoCompCH     & \TeoCompCred      \\ % Teoria da Compiladores
+        \hline
+        \rowcolor{gray!20}\multicolumn{1}{r}{\textbf{Subtotal 7\textordmasculine~Período}}  & \hPerSete      & \credPerSete      \\
+        \hline
+        % Período 8
+        \hline \rowcolor{gray!30}
+        \multicolumn{3}{>{\raggedright\arraybackslash\hspace{4pt}}l}{\textbf{8\textordmasculine~Período}}                        \\
+        \hline
+        \AnaProjSist                                                                        & \AnaProjSistCH & \AnaProjSistCred  \\ % Análise e Projeto de Sistemas
+        \CompParal                                                                          & \CompParalCH   & \CompParalCred    \\ % Computação Paralela
+        \Control                                                                            & \ControlCH     & \ControlCred      \\ % Controle de Processos
+        \Empre                                                                              & \EmpreCH       & \EmpreCred        \\ % Empreendedorismo    
+        \Sredes                                                                             & \SredesCH      & \SredesCred       \\ % Segurança em Redes
+        \SistEmb                                                                            & \SistEmbCH     & \SistEmbCred      \\ % Sistemas Embutidos
+        \hline
+        \rowcolor{gray!20}\multicolumn{1}{r}{\textbf{Subtotal 8\textordmasculine~Período}}  & \hPerOito      & \credPerOito      \\
+        \hline
+        % Período 9
+        \hline \rowcolor{gray!30}
+        \multicolumn{3}{>{\raggedright\arraybackslash\hspace{4pt}}l}{\textbf{9\textordmasculine~Período}}                        \\
+        \hline
+        \EstSup                                                                             & \EstSupCH      & \EstSupCred       \\ % Estágio Supervisionado
+        \EletA                                                                              & \EletACH       & \EletACred        \\ % Disciplina Eletiva A       
+        \ProjA                                                                              & \ProjACH       & \ProjACred        \\ % Metodologia Científica
+        \hline
+        \rowcolor{gray!20}\multicolumn{1}{r}{\textbf{Subtotal 9\textordmasculine~Período}}  & \hPerNove      & \credPerNove      \\
+        \hline
+        % Período 10
+        \hline \rowcolor{gray!30}
+        \multicolumn{3}{>{\raggedright\arraybackslash\hspace{4pt}}l}{\textbf{10\textordmasculine~Período}}                       \\
+        \hline
+        \Adm                                                                                & \AdmCH         & \AdmCred          \\ % Administração
+        \EletB                                                                              & \EletBCH       & \EletBCred        \\ % Disciplina Eletiva B
+        \ProjB                                                                              & \ProjBCH       & \ProjBCred        \\ % Projeto de Graduação XI
+        \hline
+        \rowcolor{gray!20}\multicolumn{1}{r}{\textbf{Subtotal 10\textordmasculine~Período}} & \hPerDez       & \credPerDez       \\
+        \hline
 
-\rowcolors{1}{gray!10}{white}
-\begin{table}[!ht]
-    \centering
-    \caption{3\textordmasculine~Período}
-    \label{tab3p}
-    \begin{spreadtab}{{tabularx}{0.8\textwidth}{Xcc}}
-        \hline \rowcolor{gray!20}
-        @ {\textbf{Disciplina}}            & @ {\textbf{CH}} & @ {\textbf{Créditos}} \\
         \hline
-        @ \AnAlg                           & \AnAlgCH        & \AnAlgCred            \\ % Análise de Algoritmos
-        @ \CalcIII                         & \CalcIIICH      & \CalcIIICred          \\ % Cálculo III
-        @ \CircEletI                       & \CircEletICH    & \CircEletICred        \\ % Circuitos Elétricos I
-        @ \FisII                           & \FisIICH        & \FisIICred            \\ % Física II
-        @ \FisEII                          & \FisEICH        & \FisEICred            \\ % Física Experimental II
-        @ \ProbEst                         & \ProbEstCH      & \ProbEstCred          \\ % Probabilidade e Estatística
-        @ \Ext                             & \ExtCH          & \ExtCred              \\ % Projeto de Extensão
-        \hline
-        @ \rowcolor{gray!20}\textbf{Total} & sum(b2:b8)      & sum(c2:c8)            \\
-        \hline
-    \end{spreadtab}
-\end{table}
+        \rowcolor{gray!20}\textbf{Total Geral}                                              & \hTotaisDisc   & \tCredCurso       \\
+    \end{longtable}
+\end{small}
 
-\rowcolors{1}{gray!10}{white}
-\begin{table}[!ht]
-    \centering
-    \caption{4\textordmasculine~Período}
-    \label{tab4p}
-    \begin{spreadtab}{{tabularx}{0.8\textwidth}{Xcc}}
-        \hline \rowcolor{gray!20}
-        @ {\textbf{Disciplina}}            & @ {\textbf{CH}} & @ {\textbf{Créditos}} \\
-        \hline
-        @ \FisIII                          & \FisIIICH       & \FisIIICred           \\ % Física III
-        @ \FisEIII                         & \FisEIIICH      & \FisEIIICred          \\ % Física Experimental III
-        @ \LabProgA                        & \LabProgACH     & \LabProgACred         \\ % Laboratório de Programação A
-        @ \LabProgPOO                      & \LabProgPOOCH   & \LabProgPOOCred       \\ % Laboratório de Programação OO        
-        @ \ProcImag                        & \ProcImagCH     & \ProcImagCred         \\ % Processamento de Sinais e Imagens
-        @ \TecDig                          & \TecDigCH       & \TecDigCred           \\ % Técnicas Digitais I
-        \hline
-        @ \rowcolor{gray!20}\textbf{Total} & sum(b2:b7)      & sum(c2:c7)            \\
-        \hline
-    \end{spreadtab}
-\end{table}
 
-\rowcolors{1}{gray!10}{white}
-\begin{table}[!ht]
-    \centering
-    \caption{5\textordmasculine~Período}
-    \label{tab5p}
-    \begin{spreadtab}{{tabularx}{0.8\textwidth}{Xcc}}
-        \hline \rowcolor{gray!20}
-        @ {\textbf{Disciplina}}            & @ {\textbf{CH}} & @ {\textbf{Créditos}} \\
-        \hline
-        @ \CCC                             & \CCCCH          & \CCCCred              \\ % Circuitos em Corrente Contínua      
-        @ \FisIV                           & \FisIVCH        & \FisIVCred            \\ % Física IV
-        @ \FisEIV                          & \FisEIVCH       & \FisEIVCred           \\ % Física Experimental IV
-        @ \FundComp                        & \FundCompCH     & \FundCompCred         \\ % Fundamentos de Computadores I  
-        @ \Grafos                          & \GrafosCH       & \GrafosCred           \\ % Teoria dos Grafos e Aplicações
-        @ \IC                              & \ICCH           & \ICCred               \\ % Inteligência Computacional I
-        \hline
-        @ \rowcolor{gray!20}\textbf{Total} & sum(b2:b7)      & sum(c2:c7)            \\
-        \hline
-    \end{spreadtab}
-\end{table}
-
-\rowcolors{1}{gray!10}{white}
-\begin{table}[!ht]
-    \centering
-    \caption{6\textordmasculine~Período}
-    \label{tab6p}
-    \begin{spreadtab}{{tabularx}{0.8\textwidth}{Xcc}}
-        \hline \rowcolor{gray!20}
-        @ {\textbf{Disciplina}}            & @ {\textbf{CH}} & @ {\textbf{Créditos}} \\
-        \hline
-        @ \ArqComp                         & \ArqCompCH      & \ArqCompCred          \\ % Arquitetura de Computadores A
-        @ \CCA                             & \CCACH          & \CCACred              \\ % Circuitos em Corrente Alternada
-        @ \EngSistA                        & \EngSistACH     & \EngSistACred         \\ % Engenharia de Sistemas
-        @ \ICII                            & \ICIICH         & \ICIICred             \\ % Inteligência Computacional II        
-        @ \MatEle                          & \MatEleCH       & \MatEleCred           \\ % Materiais Elétricos e Eletrônicos
-        @ \MineraDados                     & \MineraDadosCH  & \MineraDadosCred      \\ % Mineração de Dados
-        \hline
-        @ \rowcolor{gray!20}\textbf{Total} & sum(b2:b7)      & sum(c2:c7)            \\
-        \hline
-    \end{spreadtab}
-\end{table}
-
-\rowcolors{1}{gray!10}{white}
-\begin{table}[!ht]
-    \centering
-    \caption{7\textordmasculine~Período}
-    \label{tab7p}
-    \begin{spreadtab}{{tabularx}{0.8\textwidth}{Xcc}}
-        \hline
-        @ {\textbf{Disciplina}}            & @ {\textbf{CH}} & @ {\textbf{Créditos}} \\
-        \hline \rowcolor{gray!20}
-        @ \Instala                         & \InstalaCH      & \InstalaCred          \\ % Instalações de Ambientes Computacionais 
-        @ \MacroEco                        & \MacroEcoCH     & \MacroEcoCred         \\ % Macroeconomia 
-        @ \ProjBD                          & \ProjBDCH       & \ProjBDCred           \\ % Projeto de Banco de Dados
-        @ \ProjSO                          & \ProjSOCH       & \ProjSOCred           \\ % Projeto de Sistemas Operacionais
-        @ \Telep                           & \TelepCH        & \TelepCred            \\ % Redes de Computadores
-        @ \TeoComp                         & \TeoCompCH      & \TeoCompCred          \\ % Teoria da Compiladores
-        \hline
-        @ \rowcolor{gray!20}\textbf{Total} & sum(b2:b7)      & sum(c2:c7)            \\
-        \hline
-    \end{spreadtab}
-\end{table}
-
-\rowcolors{1}{gray!10}{white}
-\begin{table}[!ht]
-    \centering
-    \caption{8\textordmasculine~Período}
-    \label{tab8p}
-    \begin{spreadtab}{{tabularx}{0.8\textwidth}{Xcc}}
-        \hline \rowcolor{gray!20}
-        @ {\textbf{Disciplina}}            & @ {\textbf{CH}} & @ {\textbf{Créditos}} \\
-        \hline
-        @ \AnaProjSist                     & \AnaProjSistCH  & \AnaProjSistCred      \\ % Análise e Projeto de Sistemas
-        @ \CompParal                       & \CompParalCH    & \CompParalCred        \\ % Computação Paralela
-        @ \Control                         & \ControlCH      & \ControlCred          \\ % Controle de Processos
-        @ \Empre                           & \EmpreCH        & \EmpreCred            \\ % Empreendedorismo    
-        @ \Sredes                          & \SredesCH       & \SredesCred           \\ % Segurança em Redes
-        @ \SistEmb                         & \SistEmbCH      & \SistEmbCred          \\ % Sistemas Embutidos
-        \hline
-        @ \rowcolor{gray!20}\textbf{Total} & sum(b2:b7)      & sum(c2:c7)            \\
-        \hline
-    \end{spreadtab}
-\end{table}
-
-\rowcolors{1}{gray!10}{white}
-\begin{table}[!ht]
-    \centering
-    \caption{9\textordmasculine~Período}
-    \label{tab9p}
-    \begin{spreadtab}{{tabularx}{0.8\textwidth}{Xcc}}
-        \hline \rowcolor{gray!20}
-        @ {\textbf{Disciplina}}            & @ {\textbf{CH}} & @ {\textbf{Créditos}} \\
-        \hline
-        @ \EstSup                          & \EstSupCH       & \EstSupCred           \\ % Estágio Supervisionado
-        @ \EletA                           & \EletACH        & \EletACred            \\ % Disciplina Eletiva A       
-        @ \ProjA                           & \ProjACH        & \ProjACred            \\ % Metodologia Científica
-        \hline
-        @ \rowcolor{gray!20}\textbf{Total} & sum(b2:b4)      & sum(c2:c4)            \\
-        \hline
-    \end{spreadtab}
-\end{table}
-
-\rowcolors{1}{gray!10}{white}
-\begin{table}[!ht]
-    \centering
-    \caption{10\textordmasculine~Período}
-    \label{tab10p}
-    \begin{spreadtab}{{tabularx}{0.8\textwidth}{Xcc}}
-        \hline \rowcolor{gray!20}
-        @ {\textbf{Disciplina}}             & @ {\textbf{CH}} & @ {\textbf{Créditos}} \\
-        \hline
-        @ \Adm                              & \AdmCH          & \AdmCred              \\ % Administração
-        @ \EletB                            & \EletBCH        & \EletBCred            \\ % Disciplina Eletiva B
-        @ \ProjB                            & \ProjBCH        & \ProjBCred            \\ % Projeto de Graduação XI
-        \hline
-        @ \rowcolor{gray!20}\textbf{Total } & sum(b2:b4)      & sum(c2:c4)            \\
-        \hline
-    \end{spreadtab}
-\end{table}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \FloatBarrier % Evitando que exista texto entre as 10 tabelas.
 \rowcolors{1}{gray!10}{white}
 \begin{table}[!ht]
@@ -341,11 +291,11 @@ docente e discente, não sendo necessariamente disponibilizadas todos os semestr
 
 \section{Estágio Supervisionado}
 
-A disciplina de \textbf{\EstSup} representa a primeira vivência profissional do aluno como futuro Engenheiro de Computação. Por isso, espera-se que as atividades sejam desenvolvidas em um ambiente corporativo ou outro contexto de atuação profissional. O estágio curricular, supervisionado, contribui para a prática extensionista no setor produtivo da sociedade e permite ao estudante enfrentar situações reais do exercício da profissão. Essa caracterização do estágio como prática extensionista e profissional está detalhada na Seção~\ref{sec:estagio-supervisionado-extensionista}.
+A disciplina de \textbf{\EstSup}, com \EstSupCred~créditos e \EstSupCH~horas, representa a primeira vivência profissional do aluno como futuro Engenheiro de Computação. Por isso, espera-se que as atividades sejam desenvolvidas em um ambiente corporativo ou outro contexto de atuação profissional. O estágio curricular, supervisionado, contribui para a prática extensionista no setor produtivo da sociedade e permite ao estudante enfrentar situações reais do exercício da profissão. Essa caracterização do estágio como prática extensionista e profissional está detalhada na Seção~\ref{sec:estagio-supervisionado-extensionista}.
 
 Durante o estágio, o aluno será acompanhado por um supervisor da empresa e contará com o apoio de um professor da disciplina, que poderá orientar o desenvolvimento das atividades e sugerir aprimoramentos.
 
-A matrícula nesta disciplina está condicionada à conclusão de um número mínimo de créditos, conforme especificado na ementa, garantindo que o aluno possua a maturidade necessária para desempenhar bem essa função. Independentemente do local ou do tipo de trabalho, é fundamental que o estágio envolva a aplicação integrada de conhecimentos, habilidades e competências adquiridas ao longo do curso.
+A inscrição nesta disciplina está condicionada à conclusão de um número mínimo de 140 créditos, conforme especificado na ementa, garantindo que o aluno possua a maturidade necessária para desempenhar bem essa função. Independentemente do local ou do tipo de trabalho, é fundamental que o estágio envolva a aplicação integrada de conhecimentos, habilidades e competências adquiridas ao longo do curso.
 
 O estágio deve permitir que o aluno reflita sobre problemas reais, proponha soluções e aprofunde a articulação entre teoria e prática. As atividades podem ser desenvolvidas em qualquer área da Engenharia de Computação, desde que envolvam a identificação e análise de um problema com base científica e tecnológica, a avaliação de soluções possíveis e a proposta de um projeto de engenharia. Também é necessário considerar os aspectos econômicos envolvidos e os impactos sociais e ambientais. Espera-se que o aluno demonstre domínio de avanços científicos e tecnológicos e sensibilidade aos desafios da inovação.
 
@@ -357,7 +307,7 @@ Considerando a importância de reconhecer a experiência profissional como parte
 Para o reconhecimento, será seguido procedimento análogo ao da realização regular do estágio supervisionado, incluindo:
 
 \begin{itemize}
-    \item Cumprimento dos pré-requisitos curriculares exigidos para matrícula no estágio supervisionado;
+    \item Cumprimento dos pré-requisitos curriculares exigidos para inscrição no estágio supervisionado;
     \item Definição de um período de supervisão da atividade profissional, com carga horária igual ou superior a \EstSupCH~ horas;
     \item Apresentação e aprovação de um relatório técnico ao final do período supervisionado, nos mesmos moldes exigidos para o estágio supervisionado tradicional. \end{itemize}
 

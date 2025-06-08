@@ -21,6 +21,7 @@
 \usetikzlibrary{calc}
 \usepackage{ifthen}
 \usepackage{disciplinasDB}
+\usepackage{expl3} % Para usar \inteval
 \tikzset{
     %Define standard arrow tip
     >=stealth,
@@ -87,20 +88,49 @@
 %{Nome da Disciplina} 						#5
 %{Número de Créditos} 						#6
 %{nome abreviado para referência} #7
-\newcommand{\disciplina}[7] {
-  \addtocounter{cred}{#6}
-  \def\horasdisc{\inteval{15 * #6}}%  Cada crédito correspponde a 15 horas
-  \ifthenelse{\equal{#1}{extensao}}
-    {\addtocounter{credDiscExtensao}{#6}} % Se for extensao, conta também como crédito de extensão
-    {} % Caso contrário, não faz nada
-  \addtocounter{tdisciplinas}{1} % Conta o número de disciplinas
-  \node at ($ (#2*2.8cm-7cm,14.6-#3*2.3) $) (Item)  [#1] (#7) 
-        {
-            \textbf{#4}\\ % Código da disciplina
-            \textbf{#5}\\ % Nome da disciplina
-            \textbf{\horasdisc} \hfill #6 % Horas e Número de créditos
-        };}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Cria contadores para cada período
+\newcounter{credPerUm}
+\newcounter{credPerDois}
+\newcounter{credPerTres}
+\newcounter{credPerQuatro}
+\newcounter{credPerCinco}
+\newcounter{credPerSeis}
+\newcounter{credPerSete}
+\newcounter{credPerOito}
+\newcounter{credPerNove}
+\newcounter{credPerDez}
 
+\newcommand{\disciplina}[7]{
+  \addtocounter{cred}{#6}
+  \def\horasdisc{\inteval{15 * #6}}
+  
+  % Adiciona créditos ao período correspondente
+  \ifcase#2\relax
+  \or \addtocounter{credPerUm}{#6} % 1
+  \or \addtocounter{credPerDois}{#6} % 2
+  \or \addtocounter{credPerTres}{#6} % 3
+  \or \addtocounter{credPerQuatro}{#6} % 4
+  \or \addtocounter{credPerCinco}{#6} % 5
+  \or \addtocounter{credPerSeis}{#6} % 6
+  \or \addtocounter{credPerSete}{#6} % 7
+  \or \addtocounter{credPerOito}{#6} % 8
+  \or \addtocounter{credPerNove}{#6} % 9  
+  \or \addtocounter{credPerDez}{#6}
+  \fi
+  
+  \ifthenelse{\equal{#1}{extensao}}
+    {\addtocounter{credDiscExtensao}{#6}}
+    {}
+  \addtocounter{tdisciplinas}{1}
+  \node at ($ (#2*2.8cm-7cm,14.6-#3*2.3) $) (Item) [#1] (#7) 
+  {
+    \textbf{#4}\\ 
+    \textbf{#5}\\ 
+    \textbf{\horasdisc} \hfill #6
+  };
+}
+%%%%%%%%%%%%%%%%%%%%%%%% FIM %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \geometry{margin=1cm,top=1.5cm,bottom=1cm} 
 
 \thispagestyle{empty}
@@ -327,6 +357,28 @@
   {Os números situados na parte inferior esquerda e direita representam carga horária e créditos, respectivamente, conferidos à disciplina.};
 \end{tikzpicture}
 
+% CH de cada período
+\newcounter{CHPerUm}
+\setcounter{CHPerUm}{\inteval{15 * \the\value{credPerUm}}}
+\newcounter{CHPerDois}
+\setcounter{CHPerDois}{\inteval{15 * \the\value{credPerDois}}}
+\newcounter{CHPerTres}
+\setcounter{CHPerTres}{\inteval{15 * \the\value{credPerTres}}}
+\newcounter{CHPerQuatro}
+\setcounter{CHPerQuatro}{\inteval{15 * \the\value{credPerQuatro}}}
+\newcounter{CHPerCinco}
+\setcounter{CHPerCinco}{\inteval{15 * \the\value{credPerCinco}}}
+\newcounter{CHPerSeis}
+\setcounter{CHPerSeis}{\inteval{15 * \the\value{credPerSeis}}}
+\newcounter{CHPerSete}
+\setcounter{CHPerSete}{\inteval{15 * \the\value{credPerSete}}}
+\newcounter{CHPerOito}
+\setcounter{CHPerOito}{\inteval{15 * \the\value{credPerOito}}}
+\newcounter{CHPerNove}
+\setcounter{CHPerNove}{\inteval{15 * \the\value{credPerNove}}}
+\newcounter{CHPerDez}
+\setcounter{CHPerDez}{\inteval{15 * \the\value{credPerDez}}}
+
 % horas totais das disciplinas (obrigatórias + eletivas + extensão)
 \newcounter{hTotaisDisc}
 \setcounter{hTotaisDisc}{\inteval{15 * \the\value{cred}}}
@@ -463,6 +515,26 @@
   \noexpand\newcommand{\string\nDisciplinas}{\thetdisciplinas\noexpand\xspace}^^J%
   \noexpand\newcommand{\string\nDiscObrigatorias}{\thenDiscObrigatorias\noexpand\xspace}^^J%
   \noexpand\newcommand{\string\credObrigComDiscExtensao}{\thecredObrigComDiscExtensao\noexpand\xspace}^^J%
+  \noexpand\newcommand{\string\credPerUm}{\thecredPerUm}^^J%
+  \noexpand\newcommand{\string\credPerDois}{\thecredPerDois}^^J%
+  \noexpand\newcommand{\string\credPerTres}{\thecredPerTres}^^J%
+  \noexpand\newcommand{\string\credPerQuatro}{\thecredPerQuatro\noexpand\xspace}^^J%
+  \noexpand\newcommand{\string\credPerCinco}{\thecredPerCinco\noexpand\xspace}^^J%
+  \noexpand\newcommand{\string\credPerSeis}{\thecredPerSeis\noexpand\xspace}^^J%
+  \noexpand\newcommand{\string\credPerSete}{\thecredPerSete\noexpand\xspace}^^J%
+  \noexpand\newcommand{\string\credPerOito}{\thecredPerOito\noexpand\xspace}^^J%
+  \noexpand\newcommand{\string\credPerNove}{\thecredPerNove\noexpand\xspace}^^J%
+  \noexpand\newcommand{\string\credPerDez}{\thecredPerDez\noexpand\xspace}^^J%
+  \noexpand\newcommand{\string\hPerUm}{\theCHPerUm}^^J%
+  \noexpand\newcommand{\string\hPerDois}{\theCHPerDois\noexpand\xspace}^^J%
+  \noexpand\newcommand{\string\hPerTres}{\theCHPerTres\noexpand\xspace}^^J%
+  \noexpand\newcommand{\string\hPerQuatro}{\theCHPerQuatro\noexpand\xspace}^^J%
+  \noexpand\newcommand{\string\hPerCinco}{\theCHPerCinco\noexpand\xspace}^^J%
+  \noexpand\newcommand{\string\hPerSeis}{\theCHPerSeis\noexpand\xspace}^^J%
+  \noexpand\newcommand{\string\hPerSete}{\theCHPerSete\noexpand\xspace}^^J%
+  \noexpand\newcommand{\string\hPerOito}{\theCHPerOito\noexpand\xspace}^^J%
+  \noexpand\newcommand{\string\hPerNove}{\theCHPerNove\noexpand\xspace}^^J%
+  \noexpand\newcommand{\string\hPerDez}{\theCHPerDez\noexpand\xspace}^^J%
 }
 \immediate\closeout\exportfile
 \end{document}
