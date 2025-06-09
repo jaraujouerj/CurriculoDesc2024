@@ -181,23 +181,34 @@
 % Comando para nome e matrícula do professor
 \newcommand\nomeprofessor[1]{%
     \ifx&#1&%
-    \newcommand\inomeprofessor{}%         % Se vazio, define vazio
-    \newcommand\imatriculaprofessor{}%   % Matrícula também vazia
+        \newcommand\inomeprofessor{}%
+        \newcommand\imatriculaprofessor{}%
+        \newcommand\ifotoprofessor{}%
     \else
-    \newcommand\inomeprofessor{#1}%      % Define o nome do professor
-    % Tenta buscar a matrícula (adicionando "mat" antes do nome)
-    \@ifundefined{mat\expandafter\@gobble\string#1}{%
-        \newcommand\imatriculaprofessor{}% % Se não existir, deixa vazio
-    }{%
-        % Se existir, usa \mat<nome> (ex: \mataraujo)
-        \edef\@tmp{mat\expandafter\@gobble\string#1}%
-        \expandafter\newcommand\expandafter\imatriculaprofessor\expandafter{%
-            \expandafter-\expandafter \space Mat. \csname\@tmp\endcsname
+        \newcommand\inomeprofessor{#1}%
+        \@ifundefined{mat\expandafter\@gobble\string#1}{%
+            \newcommand\imatriculaprofessor{}%
+        }{%
+            \edef\@tmp{mat\expandafter\@gobble\string#1}%
+            \expandafter\newcommand\expandafter\imatriculaprofessor\expandafter{%
+                \expandafter-\expandafter \space Mat. \csname\@tmp\endcsname
+            }%
         }%
-    }%
+        \edef\@imgname{\expandafter\@gobble\string#1}%
+        \IfFileExists{\@imgname.png}{%
+            \expandafter\newcommand\expandafter\ifotoprofessor\expandafter{%
+                \hspace{0.9cm}\includegraphics[width=5.1cm]{\@imgname.png}%
+            }%
+        }{%
+        \IfFileExists{\@imgname.jpg}{%
+            \expandafter\newcommand\expandafter\ifotoprofessor\expandafter{%
+                \hspace{2cm}\includegraphics[width=4.5cm]{\@imgname.jpg}%
+            }%
+        }{%
+            \newcommand\ifotoprofessor{}%
+        }}%
     \fi
 }
-
 \makeatother
 % Define código de disciplinas pré-requisitos 1 e 2
 \makeatletter
@@ -749,6 +760,26 @@
 
 
     % Professor Proponente
+   % \raggedright
+   % \begin{flushright}
+   %     \begin{tabular}{|m{2.9cm}|m{7.88cm}|}
+   %         \hline
+   %         \multicolumn{2}{|c|}
+   %         {
+   %             \textbf{PROFESSOR PROPONENTE}
+   %         }                                                                         \\
+   %         \hline
+   %         \multicolumn{1}{|c|} {\textbf{DATA} }
+   %          & \multicolumn{1}{c|} {\textbf{{\textbf{ASSINATURA/MATRÍCULA/CARIMBO}}}} \\
+   %         {\today}
+   %          & {}                                                                     \\
+   %         {}
+   %          & \multicolumn{1}{c|} { \inomeprofessor\ \imatriculaprofessor}           \\
+   %         \hline
+   %     \end{tabular}
+   % \end{flushright}
+
+    % Professor Proponente Assinado
     \raggedright
     \begin{flushright}
         \begin{tabular}{|m{2.9cm}|m{7.88cm}|}
@@ -761,7 +792,7 @@
             \multicolumn{1}{|c|} {\textbf{DATA} }
              & \multicolumn{1}{c|} {\textbf{{\textbf{ASSINATURA/MATRÍCULA/CARIMBO}}}} \\
             {\today}
-             & {}                                                                     \\
+             & \ifotoprofessor          \\
             {}
              & \multicolumn{1}{c|} { \inomeprofessor\ \imatriculaprofessor}           \\
             \hline
