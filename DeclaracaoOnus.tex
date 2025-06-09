@@ -1,44 +1,80 @@
-\documentclass[oneside,envcountsame,envcountchap,openany]{svmono}
+\documentclass[12pt,a4paper]{article}
+\usepackage{fancyhdr} % Required to customize headers
+\pagestyle{fancy}
+\usepackage[portuguese]{babel}
 \usepackage[utf8]{inputenc}
-\usepackage{tikz}			% para gráficos e desenhos
-\usetikzlibrary{calc}		% para cálculos em gráficos
-\usepackage{fancyhdr}
-\usepackage{makeidx}         % permite geracao de indice
-% Definição de comandos personalizados
-% Definição de ordinal masculino e feminino
-\usepackage{etoolbox} % para garantir compatibilidade em várias situações
-\usepackage{pdfpages}		 % para incluir pdfs
-\usepackage{tocloft} 		 % para formatar o sumário
-% Pacotes de hiperlinks
-\usepackage{hyperref}
-\hypersetup{
-	colorlinks,
-	citecolor=blue,
-	filecolor=magenta,
-	linkcolor=blue,
-	urlcolor=cyan
+\usepackage[T1]{fontenc}
+\usepackage{xcolor} % Pacote para cores
+\usepackage{xspace} % Adiciona suporte para espaçamento inteligente
+\usepackage{graphicx} % Para incluir imagens
+\usepackage[left=2.48cm,right=1.7cm,top=2.35cm,marginparwidth=3.4cm]{geometry}
+%\usepackage{lipsum} % Para gerar texto de exemplo
+%\renewcommand{\headrulewidth}{0pt}
+% Defina o caminho para o logotipo da universidade
+\newcommand{\universitylogo}{imagens/logo_uerj_cor.jpg}
+\fancyheadoffset[L]{2mm}
+\renewcommand{\headrulewidth}{0pt} % Remove a linha horizontal no cabeçalho
+
+% Configurar o cabeçalho apenas para a primeira página
+\fancypagestyle{firstpage}{
+  \fancyhf{} % Limpar os estilos padrão
+
+  % logo e Nome da universidade
+  \lhead{
+    \begin{minipage}{0.15\textwidth}
+      \includegraphics[width=2.5cm]{\universitylogo}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.85\textwidth} % Ajuste o tamanho conforme necessário
+      \raggedright % Alinha o texto à esquerda
+      UNIVERSIDADE DO ESTADO DO RIO DE JANEIRO \\
+      CENTRO DE TECNOLOGIA E CIÊNCIAS \\
+      FACULDADE DE ENGENHARIA \\
+      DEPARTAMENTO DE ENGENHARIA DE SISTEMAS E COMPUTAÇÃO \\
+    \end{minipage}
+  }
 }
 
-\DeclareRobustCommand{\subsup}[1]{%
-  \textsuperscript{%
-    \tikz[baseline=(char.base)]{
-      \node[inner sep=0.5pt, anchor=base] (char) {\textnormal{#1}};
-      \draw[line width=0.3pt, yshift=-0.2ex]
-        ($(char.south west)!0.15!(char.south east)$) --
-        ($(char.south west)!0.85!(char.south east)$);
-    }%
-  }%
-}
-\DeclareRobustCommand{\ordm}[1]{#1\subsup{o}} % ordinal masculino
-% Pacotes de formatação e layout
-\usepackage[top=1in,left=2.5cm,bottom=1in,right=2.5cm]{geometry}
-\title{Documentos Oficiais}
+% Remover cabeçalho das outras páginas
+\pagestyle{plain} % Define o estilo das páginas subsequentes como básico (sem cabeçalho)
+
+\newcommand{\cristiana}{Prof\textsuperscript{a} Cristiana Barbosa Bentes}
+\newcommand{\matcristiana}{matrícula 30729-8}
+\newcommand{\felipe}{Prof. Felipe Cassemiro Ulrichsen\xspace}
+\newcommand{\matfelipe}{matrícula 42354-1}
+\newcommand{\gabriel}{Prof.  Gabriel Cardoso de Carvalho\xspace}
+\newcommand{\matgabriel}{matrícula 42361-6}
+\newcommand{\giomar}{Prof. Giomar Oliver Sequeiros Olivera\xspace}
+\newcommand{\matgiomar}{matrícula 41726-1}
+\newcommand{\joao}{Prof. João Araujo Ribeiro\xspace}
+\newcommand{\matjoao}{matrícula 8055-6}
+\newcommand{\luiza}{Prof\textsuperscript{a} Luiza de Macedo Mourelle\xspace}
+\newcommand{\matluiza}{matrícula 7058-1}
+\newcommand{\margareth}{Prof\textsuperscript{a} Margareth Simões Penello Meirelles\xspace}
+\newcommand{\matmargareth}{matrícula 33784-0}
+\newcommand{\luigi}{Prof. Luigi Maciel Ribeiro\xspace}
+\newcommand{\matluigi}{matrícula 42383-0}
+\newcommand{\rafaela}{Prof\textsuperscript{a} Rafaela Correia Brum\xspace}
+\newcommand{\matrafaela}{42384-8}
+\newcommand{\robert}{Prof. Robert Mota Oliveira\xspace}
+\newcommand{\matrobert}{matrícula 41623-0}
+\newcommand{\simone}{Prof\textsuperscript{a} Simone Ingrid Monteiro Gama\xspace}
+\newcommand{\matsimone}{matrícula 42362-4}
+\newcommand{\thiago}{Prof. Thiago Medeiros Carvalho\xspace}
+\newcommand{\matthiago}{matrícula 42350-9}
+
+
 \begin{document}
-\pagestyle{empty}
-\thispagestyle{empty}
+\headsep = 20pt
+\setlength{\parindent}{0cm} % Remove paragraph indentation
+\setlength{\tabcolsep}{5pt} % Espaço horizontal
+\vspace*{2.0cm}
+
+\thispagestyle{firstpage} % Aplica o cabeçalho na primeira página
 \begin{center}
-      \textbf{DECLARAÇÃO DE NÃO EXISTÊNCIA DE ÔNUS PARA A UNIVERSIDADE}
+  DECLARAÇÃO DE NÃO EXISTÊNCIA DE ÔNUS PARA A UNIVERSIDADE
 \end{center}
+
 A presente proposta de criação do curso de Engenharia de Computação foi desenvolvida considerando apenas o corpo
 docente, quadro administrativo, e infraestrutura física atual do Departamento de Engenharia de Sistemas e Computação.
 
