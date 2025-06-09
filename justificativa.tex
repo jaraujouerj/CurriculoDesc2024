@@ -1,0 +1,93 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage{fancyhdr} % Required to customize headers
+\pagestyle{fancy}
+\usepackage[portuguese]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage{xcolor} % Pacote para cores
+\usepackage{xspace} % Adiciona suporte para espaçamento inteligente
+\usepackage{graphicx} % Para incluir imagens
+\usepackage{pdfpages} % Para incluir arquivos PDF
+\usepackage[left=2.48cm,right=1.7cm,top=2.35cm,marginparwidth=3.4cm]{geometry}
+%\usepackage{lipsum} % Para gerar texto de exemplo
+%\renewcommand{\headrulewidth}{0pt}
+% Defina o caminho para o logotipo da universidade
+\newcommand{\universitylogo}{imagens/logo_uerj_cor.jpg}
+\fancyheadoffset[L]{2mm}
+\renewcommand{\headrulewidth}{0pt} % Remove a linha horizontal no cabeçalho
+% Pacotes de hiperlinks
+\usepackage{hyperref}
+\hypersetup{
+	colorlinks,
+	citecolor=blue,
+	filecolor=magenta,
+	linkcolor=blue,
+	urlcolor=cyan
+}
+
+% Configurar o cabeçalho apenas para a primeira página
+\fancypagestyle{firstpage}{
+  \fancyhf{} % Limpar os estilos padrão
+
+  % logo e Nome da universidade
+  \lhead{
+    \begin{minipage}{0.15\textwidth}
+      \includegraphics[width=2.5cm]{\universitylogo}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.85\textwidth} % Ajuste o tamanho conforme necessário
+      \raggedright % Alinha o texto à esquerda
+      UNIVERSIDADE DO ESTADO DO RIO DE JANEIRO \\
+      CENTRO DE TECNOLOGIA E CIÊNCIAS \\
+      FACULDADE DE ENGENHARIA \\
+      DEPARTAMENTO DE ENGENHARIA DE SISTEMAS E COMPUTAÇÃO \\
+    \end{minipage}
+  }
+}
+% reduzir tamanho das letras nas seções
+\makeatletter
+\renewcommand{\section}{\@startsection{section}{1}{\z@}%
+      {-3.5ex \@plus -1ex \@minus -.2ex}%
+      {2.3ex \@plus.2ex}%
+      {\normalfont\normalsize\bfseries}}
+% Remover cabeçalho das outras páginas
+%\pagestyle{plain} % Define o estilo das páginas subsequentes como básico (sem cabeçalho)
+
+\input{dados.tex} % Arquivo com os dados do curso
+
+\begin{document}
+\thispagestyle{firstpage} % Aplica o cabeçalho na primeira página
+\headsep = 20pt
+%\setlength{\parindent}{0cm} % Remove paragraph indentation
+\setlength{\tabcolsep}{5pt} % Espaço horizontal
+\vspace*{2.0cm}
+
+% Retira cabeçalho das páginas seguintes
+\pagestyle{plain} % Define o estilo das páginas subsequentes como básico (sem cabeçalho)
+
+\begin{center}
+      \textbf{\large Justificativa para a criação do curso de Engenharia de Computação} \\
+\end{center}
+\small
+\section{Modernização do curso de Engenharia Elétrica com ênfase em Sistemas e Computação}
+
+O Departamento de Engenharia de Sistemas e Computação (DESC), desde 1977, desempenha um papel pioneiro na consolidação do ensino de Engenharia de Computação no Brasil, ao instituir, naquele ano, a primeira graduação do país com foco específico na área, por meio da ênfase em Sistemas e Computação no curso de Engenharia Elétrica. Tal ênfase foi formalmente estabelecida pela Resolução n\textordmasculine{} 466/76, de 29 de dezembro de 1976, que conferiu respaldo legal à sua implementação. Em 1994, com a Deliberação n\textordmasculine{} 035/94, o curso passou por uma significativa reformulação, resultando na consolidação de sua proposta pedagógica. Desde então, sua estrutura curricular manteve-se essencialmente estável, mesmo diante das profundas transformações ocorridas no campo da computação e da engenharia. Considerando os avanços científicos, tecnológicos e sociais das últimas décadas, torna-se indispensável a atualização do projeto pedagógico, a fim de garantir a formação de profissionais qualificados, inovadores e alinhados às demandas contemporâneas da sociedade e do mundo do trabalho.
+
+Atualmente, os candidatos aos cursos da Faculdade de Engenharia da UERJ enfrentam uma limitação importante: ao optarem pela Engenharia Elétrica com Ênfase em Sistemas e Computação, recebem o título de Engenheiro com habilitação em Elétrica, ainda que sua formação esteja majoritariamente voltada para o desenvolvimento de software e hardware. Essa designação nem sempre reflete com precisão as competências adquiridas, o que impacta sua adequação às diretrizes do Exame Nacional de Desempenho dos Estudantes (ENADE).
+
+Diante desse contexto, propõe-se a criação do curso de Engenharia de Computação (versão 1) com identidade própria, em substituição ao atual curso de Engenharia Elétrica com Ênfase em Sistemas e Computação e independente da habilitação em Engenharia Elétrica. Essa mudança visa, por um lado, conferir maior coerência entre a estrutura curricular, o perfil do egresso e sua titulação, e, por outro, atualizar o curso frente às necessidades emergentes da área de computação e às expectativas do setor produtivo e da academia. Trata-se, portanto, de uma iniciativa estratégica para consolidar a Engenharia de Computação como uma área de formação distinta dentro da UERJ, reforçando o compromisso da instituição com a excelência acadêmica, a inovação tecnológica e a inserção social de seus egressos.
+
+Destaca-se a redução substancial da carga horária total do curso, que passou de 4.260 horas na versão atual do curso de Engenharia Elétrica com Ênfase em Sistemas e Computação, para \tHorasCurso horas no novo curso de Engenharia de Computação, representando uma diminuição de \inteval{4260 - \thethorasCursoCounter} horas. Essa adequação foi viabilizada pelas novas Diretrizes Curriculares Nacionais específicas para os cursos da área de Computação (Resolução CNE/CES n\textordmasculine{}~5, de 16 de novembro de 2016), que estabelecem um mínimo de 3.200 horas, em contraste com as 3.600 horas exigidas pelas diretrizes gerais das Engenharias. A redução permitiu a eliminação de conteúdos mais relevantes para outras engenharias, porém menos pertinentes à formação em Computação, mantendo a qualidade e a abrangência da formação profissional exigida para o engenheiro de computação.
+
+\section{Demanda Social}
+As demandas sociais e tecnológicas da sociedade brasileira têm se intensificado, especialmente em um cenário global caracterizado pela transformação digital, pela constante inovação tecnológica e pela crescente aplicação de inteligência artificial e aprendizado de máquina na resolução de desafios complexos. Nesse contexto, a formação de profissionais com competências técnicas e humanas no campo da computação torna-se imprescindível para enfrentar os desafios impostos pela modernização e pela globalização.
+
+No Brasil, observa-se uma necessidade crescente de profissionais qualificados para atuar com sistemas informatizados em distintos setores da sociedade. A computação desempenha um papel estratégico em áreas como saúde, educação, administração pública, indústria, segurança, inovação e empreendedorismo. Assim, torna-se fundamental a formação de engenheiros capazes de conceber, desenvolver, implementar e gerenciar soluções computacionais inovadoras, que contribuam de maneira efetiva para o desenvolvimento econômico e social do país.
+
+A iniciativa de criação do curso de Engenharia de Computação visa responder à crescente necessidade por profissionais altamente qualificados, capazes de enfrentar os desafios tecnológicos contemporâneos e de atuar de maneira crítica e criativa diante das demandas do mercado e da sociedade, promovendo soluções que aliem excelência técnica, responsabilidade social e impacto positivo.
+
+\section{Inserção Curricular da Extensão}
+A proposta de criação do curso de Engenharia de Computação já incorpora, desde sua concepção, uma estrutura curricular compatível com as diretrizes estabelecidas pela Resolução CNE/CES n\textordmasculine{} 7, de 18 de dezembro de 2018, que determina que, no mínimo, 10\% da carga horária total dos cursos de graduação sejam destinadas a atividades de extensão universitária. No âmbito da UERJ, essa diretriz foi regulamentada pela Deliberação UERJ n\textordmasculine{} 04/2023, que orienta a inclusão e a organização da extensão nos projetos pedagógicos de curso. Assim, o novo curso de Engenharia de Computação já incorpora uma estrutura curricular que promove a indissociabilidade entre ensino, pesquisa e extensão, reforçando a função social da universidade.
+
+\end{document}
