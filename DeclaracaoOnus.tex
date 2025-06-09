@@ -1,0 +1,51 @@
+\documentclass[oneside,envcountsame,envcountchap,openany]{svmono}
+\usepackage[utf8]{inputenc}
+\usepackage{tikz}			% para gráficos e desenhos
+\usetikzlibrary{calc}		% para cálculos em gráficos
+\usepackage{fancyhdr}
+\usepackage{makeidx}         % permite geracao de indice
+% Definição de comandos personalizados
+% Definição de ordinal masculino e feminino
+\usepackage{etoolbox} % para garantir compatibilidade em várias situações
+\usepackage{pdfpages}		 % para incluir pdfs
+\usepackage{tocloft} 		 % para formatar o sumário
+% Pacotes de hiperlinks
+\usepackage{hyperref}
+\hypersetup{
+	colorlinks,
+	citecolor=blue,
+	filecolor=magenta,
+	linkcolor=blue,
+	urlcolor=cyan
+}
+
+\DeclareRobustCommand{\subsup}[1]{%
+  \textsuperscript{%
+    \tikz[baseline=(char.base)]{
+      \node[inner sep=0.5pt, anchor=base] (char) {\textnormal{#1}};
+      \draw[line width=0.3pt, yshift=-0.2ex]
+        ($(char.south west)!0.15!(char.south east)$) --
+        ($(char.south west)!0.85!(char.south east)$);
+    }%
+  }%
+}
+\DeclareRobustCommand{\ordm}[1]{#1\subsup{o}} % ordinal masculino
+% Pacotes de formatação e layout
+\usepackage[top=1in,left=2.5cm,bottom=1in,right=2.5cm]{geometry}
+\title{Documentos Oficiais}
+\begin{document}
+\pagestyle{empty}
+\thispagestyle{empty}
+\begin{center}
+      \textbf{DECLARAÇÃO DE NÃO EXISTÊNCIA DE ÔNUS PARA A UNIVERSIDADE}
+\end{center}
+A presente proposta de criação do curso de Engenharia de Computação foi desenvolvida considerando apenas o corpo
+docente, quadro administrativo, e infraestrutura física atual do Departamento de Engenharia de Sistemas e Computação.
+
+Desta forma a sua implantação não implicará em nenhum ônus adicional para a universidade,
+não demandando ampliação do quadro docente, quadro administrativo, expansão/reforma de
+espaço físico ou aquisição de equipamentos.
+
+
+
+\end{document}
