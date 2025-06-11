@@ -111,7 +111,7 @@ docente e discente, não sendo necessariamente disponibilizadas todos os semestr
 \renewcommand{\arraystretch}{1.5}
 \rowcolors{2}{white}{gray!10}
 \begin{small}
-    \begin{longtable}{ >{\raggedright\arraybackslash\hspace{4pt}}p{11cm} c c }
+    \begin{longtable}{ >{\raggedright\arraybackslash\hspace{4pt}}p{9cm} c c }
         \caption{Plano de Periodização das Disciplinas}
         \label{tab:desc-periodos-long}                                                                                                      \\
         \hline
@@ -191,8 +191,8 @@ docente e discente, não sendo necessariamente disponibilizadas todos os semestr
         \FisIV                                                                              & \FisIVCH              & \FisIVCred            \\ % Física IV
         \FisEIV                                                                             & \FisEIVCH             & \FisEIVCred           \\ % Física Experimental IV
         \FundComp                                                                           & \FundCompCH           & \FundCompCred         \\ % Fundamentos de Computadores I  
-        \Grafos                                                                             & \GrafosCH             & \GrafosCred           \\ % Teoria dos Grafos e Aplicações
         \IC                                                                                 & \ICCH                 & \ICCred               \\ % Inteligência Computacional I
+        \Grafos                                                                             & \GrafosCH             & \GrafosCred           \\ % Teoria dos Grafos e Aplicações
         \hline
         \rowcolor{gray!20}\multicolumn{1}{r}{\textbf{Subtotal 5\textordmasculine~Período}}  & \hPerCinco            & \credPerCinco         \\
         \hline
@@ -269,14 +269,14 @@ docente e discente, não sendo necessariamente disponibilizadas todos os semestr
     \centering
     \caption{Disciplinas Eletivas Restritas}
     \label{tabeletivas}
-    \begin{spreadtab}{{tabularx}{0.85\textwidth}{Xcc}}
+    \begin{spreadtab}{{tabularx}{0.75\textwidth}{Xcc}}
         \hline \rowcolor{gray!20}
         @ {\textbf{Disciplina}} & @ {\textbf{CH}}  & @ {\textbf{Créditos}} \\
         \hline
-        @ \EletArq              & \EletArqCH       & \EletArqCred          \\ % Arquiteturas Avançadas de Computadores 
         @ \EletReforco          & \EletReforcoCH   & \EletReforcoCred      \\ % Aprendizado por Reforço
         @ \EletVisao            & \EletVisaoCH     & \EletVisaoCred        \\ % Aprendizado Profundo para Visão Computacional
         @ \AprendProfPLN        & \AprendProfPLNCH & \AprendProfPLNCred    \\ % Aprendizado Prof. p/ Proc.de Ling. Natural
+        @ \EletArq              & \EletArqCH       & \EletArqCred          \\ % Arquiteturas Avançadas de Computadores 
         @ \AutomProcRob         & \AutomProcRobCH  & \AutomProcRobCred     \\ % Automação de Processos Robóticos
         @ \EletGeo              & \EletGeoCH       & \EletGeoCred          \\ % Geomática
         @ \EletRedes            & \EletRedesCH     & \EletRedesCred        \\ % Redes de Interconexão			
@@ -337,7 +337,7 @@ Na defesa, serão avaliadas a qualidade técnica e textual do relatório final, 
 
 \section{Atividades Complementares}
 
-As Atividades Complementares constituem um componente curricular obrigatório, conforme estabelecido pelo Artigo~\ordm{9} das Diretrizes Curriculares Nacionais para os cursos de graduação na área da Computação (Anexo~\ref{cne2016}). Seu propósito é ampliar e enriquecer a formação acadêmica dos estudantes, promovendo o desenvolvimento de habilidades, conhecimentos, competências e atitudes que vão além dos conteúdos abordados nas disciplinas regulares do curso.
+As Atividades Complementares constituem um componente curricular obrigatório, conforme estabelecido pelo Artigo~\ordm{9} das \textit{Diretrizes Curriculares Nacionais para os cursos de graduação na área da Computação} (Anexo~\ref{cne2016}). Seu propósito é ampliar e enriquecer a formação acadêmica dos estudantes, promovendo o desenvolvimento de habilidades, conhecimentos, competências e atitudes que vão além dos conteúdos abordados nas disciplinas regulares do curso.
 
 No curso de Engenharia de Computação da UERJ, em conformidade com as referidas diretrizes, as Atividades Complementares devem ser desenvolvidas ao longo da graduação, totalizando uma carga horária mínima de \hACC horas.
 
@@ -371,7 +371,7 @@ Essa transição requer atenção às correspondências curriculares, que estão
 \renewcommand{\arraystretch}{1.5}
 \rowcolors{2}{gray!10}{white}
 \begin{small}
-    \begin{longtable}{p{5.1cm}l|p{5.1cm}l}
+    \begin{longtable}{p{5.8cm}l|p{6.2cm}l}
         \caption{Equivalências no novo currículo.}
         \label{tab:desc-equi-long}                                                                                                                    \\
         \hline
@@ -394,7 +394,7 @@ Essa transição requer atenção às correspondências curriculares, que estão
         \AlgLin                 & \AlgLinCod      & Álgebra Linear III                                                 & IME 02-01388                 \\
         \AlgComp                & \AlgCompCod     & Algoritmos Computacionais                                          & FEN 06-03559                 \\
         \CalcI                  & \CalcICod       & Cálculo Diferencial e Integral I                                   & IME 01-00508                 \\
-        \EngCompSoc             & \EngCompSocCod  & Engenharia na Sociedade I                                          & FEN 02-01064                 \\
+        \EngCompSoc             & \EngCompSocCod  & \parbox[t]{4cm}{Engenharia na Sociedade I e                                                       \\Engenharia na Sociedade II }  & \parbox[t]{2cm}{FEN 02-01064  \\FEN 02-01390}               \\
         \hline
         \CalcII                 & \CalcIICod      & Cálculo Diferencial e Integral II                                  & IME 01-00854                 \\
         \CalcNum                & \CalcNumCod     & Cálculo Numérico IV                                                & IME 04-04541                 \\
@@ -425,19 +425,19 @@ Essa transição requer atenção às correspondências curriculares, que estão
         \CCA                    & \CCACod         & Circuitos Elétricos IV                                             & FEN 04-05222                 \\
         \EngSistA               & \EngSistACod    & Engenharia de Sistemas A                                           & FEN 06-04243                 \\
         \ICII                   & \ICIICod        & Sem equivalência                                                   & --                           \\
-        \MatEle                 & \MatEleCod      & Materiais Elétricos e Magnéticos I                                 & FEN 04-05197                 \\
+        \MatEle                 & \MatEleCod      & Materiais Elétricos e Magnéticos                                   & FEN 04-05197                 \\
         \MineraDados            & \MineraDadosCod & Sem equivalência                                                   & --                           \\
         \hline
         \Instala                & \InstalaCod     & Instalações de Ambiente Computacional                              & FEN 06-03860                 \\
         \MacroEco               & \MacroEcoCod    & Introdução à Economia III                                          & FCE 02-04657                 \\
         \ProjBD                 & \ProjBDCod      & Engenharia de Sistemas B                                           & FEN 06-04314                 \\
         \ProjSO                 & \ProjSOCod      & Projeto de Sistemas Operacionais                                   & FEN 06-04664                 \\
-        \Telep                  & \TelepCod       & Teleproc. e Redes de Computadores                                  & FEN 06-04718                 \\
+        \Telep                  & \TelepCod       & Teleprocessamento e Redes de Computadores                          & FEN 06-04718                 \\
         \TeoComp                & \TeoCompCod     & Teoria de Compiladores                                             & FEN 06-04516                 \\
         \hline
         \AnaProjSist            & \AnaProjSistCod & Engenharia de Sistemas C                                           & FEN 06-04386                 \\
-        \CompParal              & \CompParalCod   & Microcomp. e Microprocessadores                                    & FEN 06-04192                 \\
-        \Control                & \ControlCod     & Controle de Processos por Comp.                                    & FEN 06-05080                 \\
+        \CompParal              & \CompParalCod   & Microcomputadores e Microprocessadores I                           & FEN 06-04192                 \\
+        \Control                & \ControlCod     & Controle de Processos por Computador                               & FEN 06-05080                 \\
         \Empre                  & \EmpreCod       & Sem equivalência                                                   & --                           \\
         \Sredes                 & \SredesCod      & Sem equivalência                                                   & --                           \\
         \SistEmb                & \SistEmbCod     & Sem equivalência                                                   & --                           \\
@@ -461,7 +461,7 @@ As ementas das disciplinas obrigatórias e eletivas são apresentadas no anexo \
 
 A estrutura curricular do curso de Engenharia de Computação integra atividades teóricas e práticas, com foco na aplicação dos conhecimentos adquiridos à solução de problemas em Engenharia de Computação e áreas correlatas, como a Ciência da Computação. As atividades laboratoriais distribuídas ao longo da graduação são enriquecidas pela atuação dos docentes em projetos de pesquisa, desenvolvidos como parte de sua carga horária regular, o que favorece a inserção dos estudantes no ambiente acadêmico-científico.
 
-Essa inserção ocorre principalmente por meio da participação em projetos de Iniciação Científica (IC), com apoio do Programa Institucional de Bolsa de Iniciação Científica da UERJ (PIBIC/UERJ) ou por meio de estágio voluntário. O Trabalho de Conclusão de Curso (TCC) também representa uma via relevante de articulação entre ensino e pesquisa. O envolvimento dos alunos em atividades de pesquisa desde a graduação estimula o pensamento crítico, a autonomia intelectual e o interesse pela investigação científica, criando condições favoráveis à continuidade da formação em programas de pós-graduação.
+Essa inserção ocorre principalmente por meio da participação em projetos de Iniciação Científica (IC), com apoio do Programa Institucional de Bolsa de Iniciação Científica da UERJ (PIBIC/UERJ) ou por meio de estágio voluntário. O Projeto Final de Curso também representa uma via relevante de articulação entre ensino e pesquisa. O envolvimento dos alunos em atividades de pesquisa desde a graduação estimula o pensamento crítico, a autonomia intelectual e o interesse pela investigação científica, criando condições favoráveis à continuidade da formação em programas de pós-graduação.
 
 O corpo docente do curso participa ativamente dos Programas de Pós-Graduação da UERJ, contribuindo com a oferta de disciplinas, orientação de alunos, produção científica e organização de eventos acadêmicos. Esse cenário promove um ambiente de excelência e formação continuada, incentivando os estudantes da graduação a prosseguir seus estudos em nível avançado, ampliando suas competências técnicas e científicas de acordo com as demandas da sociedade e do mercado de trabalho.
 
@@ -471,7 +471,7 @@ O corpo docente do curso participa ativamente dos Programas de Pós-Graduação 
 A extensão universitária é concebida como um processo transformador que integra a universidade à sociedade, promovendo a democratização do conhecimento e contribuindo para a formação acadêmica, cidadã e ética dos estudantes. No curso de Engenharia de Computação da UERJ, as atividades de extensão reforçam o compromisso social da universidade, possibilitando a aplicação dos saberes técnicos em benefício da comunidade, especialmente em contextos de exclusão digital.
 
 \subsection{Regulamentação}
-Conforme a Resolução CNE/CES \ordm{n} 7/2018 (Anexo \ref{rcne2018}), todos os cursos de graduação devem destinar, no mínimo, 10\% da carga horária total às atividades de extensão. Na UERJ, a Deliberação \ordm{n} 04/2023 (Anexo \ref{del4}) regulamenta a curricularização da extensão, permitindo sua realização por meio de:
+Conforme a Resolução CNE/CES \ordm{n} 7/2018 (Anexo \ref{rcne2018}), todos os cursos de graduação devem destinar, no mínimo, 10\% da carga horária total às atividades de extensão. Na UERJ, a Deliberação \ordm{n} 04/2023 (Anexo \ref{del4}) regulamenta a inserção curricular da extensão, permitindo sua realização por meio de:
 
 \begin{itemize}
     \item Disciplinas com carga horária parcialmente dedicada à extensão;
@@ -511,6 +511,8 @@ Em consonância com a referida deliberação e alinhado aos objetivos pedagógic
     \item \textbf{Estágios não obrigatórios caracterizados como ação extensionista}, com validação da carga horária por meio de declaração ou Certificado da instituição responsável;
     \item \textbf{Desenvolvimento conjunto de soluções tecnológicas} visando atender as demandas dos atores da sociedade civil, com validação da carga horária por meio de Declaração ou Certificado da instituição responsável;
     \item \textbf{Participação em eventos}, tanto na organização quanto na realização, com validação da carga horária por meio de Declaração ou Certificado da instituição responsável;
+    \item \textbf{Prestação de serviços} classificados como ação extensionista, com integralização de 100\% da carga horária total da atividade, desde que devidamente comprovada por declaração ou certificado emitido pela instituição responsável, contendo, de forma expressa, a descrição da atividade realizada e a respectiva carga horária.
+    \item \textbf{Oficinas} reconhecidas como ação extensionista, com integralização de 100\% da carga horária total da atividade, mediante apresentação de declaração ou certificado emitido pela instituição promotora, com a descrição detalhada da atividade desenvolvida e a carga horária explicitamente informada.
     \item \textbf{Publicações relacionadas à extensão}, nas seguintes categorias:
           \begin{itemize}
               \item Artigo em revista indexada ou capítulo de livro com ISBN: 15 horas por publicação, validadas com informações catalográficas, ISSN ou ficha catalográfica e primeira página do artigo ou capítulo;
@@ -531,7 +533,7 @@ Após a conclusão da ACE, o estudante deverá encaminhar à CACE do curso de En
 
 \section{Estágio Supervisionado}
 \label{sec:estagio-supervisionado-extensionista}
-As Diretrizes Curriculares Nacionais para os cursos de graduação da área de Computação (Anexo \ref{cne2016}), no Art.~\ordm{7}, \S~\ordm{1}, conferem às Instituições de Ensino Superior autonomia para definir a obrigatoriedade ou não do Estágio Supervisionado, bem como sua regulamentação:
+As \textit{Diretrizes Curriculares Nacionais para os cursos de graduação da área de Computação} (Anexo \ref{cne2016}), no Art.~\ordm{7}, \S~\ordm{1}, conferem às Instituições de Ensino Superior autonomia para definir a obrigatoriedade ou não do Estágio Supervisionado, bem como sua regulamentação:
 
 \begin{itquotation}
     \noindent Art.~\ordm{7}\\
@@ -579,12 +581,11 @@ Assim, a caracterização da disciplina \textbf{\EstSup} como Disciplina de Exte
 
 \section{Administração Acadêmica do Curso}
 
-Caberá ao DESC exercer a administração do curso de Engenharia da Computação.
-Como a reformulação do curso propõe sua reestruturação como uma habilitação específica em Engenharia de Computação, a administração do curso deverá ser reestruturada também.
+A responsabilidade pela condução do curso de Engenharia de Computação caberá ao Departamento de Engenharia de Sistemas e Computação (DESC). Com a criação do curso, impõe-se a necessidade de adequação da estrutura de gestão acadêmica, de modo a assegurar o pleno desenvolvimento das atividades didáticas e administrativas, em consonância com as diretrizes institucionais.
 
 \subsection{Chefia e Subchefia do Departamento}
 
-A administração do Departamento de Engenharia de Sistemas e Computação (DESC) é conduzida por um Chefe de Departamento e um Subchefe. Esses cargos são ocupados por docentes efetivos do departamento. A eleição do chefe e subchefe se dá por meio do voto dos membros do corpo deliberativo do DESC com um mandato de até dois anos. O corpo deliberativo do DESC é formado por todos os professores efetivos do departamento e é convocado pela chefia, a fim de deliberar sobre as questões pertinentes ao curso, tanto acadêmicas quanto administrativas.
+A gestão do Departamento de Engenharia de Sistemas e Computação é exercida por um Chefe e um Subchefe, ambos docentes efetivos do quadro departamental. A escolha para essas funções ocorre por meio de eleição entre os membros do corpo deliberativo do DESC, com mandato de até dois anos. Esse corpo é composto por todos os professores efetivos do departamento e é convocado pela chefia para deliberar sobre assuntos acadêmicos e administrativos relacionados ao curso.
 
 A chefia do departamento tem a responsabilidade de coordenar as atividades acadêmicas e administrativas do departamento, incluindo:
 
@@ -647,7 +648,7 @@ As coordenações de área têm como função:
     \item Promover a integração dos professores da mesma área, e incentivar a pesquisa na área.
 \end{itemize}
 
-As disciplinas do curso de Engenharia de Computação sob resposabilidade do DESC estão divididas em quatro grandes áreas de conhecimento: Algoritmos e Linguagens de Programação; Arquitetura de Sistemas de Computação; Lógica e Semântica de Programas; Sistemas de Informação. Cada área de conhecimento deverá possuir um Professor Coordenador. A Tabela \ref{tab:areas} mostra a distribuição das disciplinas por área de conhecimento.
+As disciplinas do curso de Engenharia de Computação sob responsabilidade do DESC estão divididas em quatro grandes áreas de conhecimento: Algoritmos e Linguagens de Programação; Arquitetura de Sistemas de Computação; Lógica e Semântica de Programas; Sistemas de Informação. Cada área de conhecimento deverá possuir um Professor Coordenador. A Tabela \ref{tab:areas} mostra a distribuição das disciplinas por área de conhecimento.
 
 \rowcolors{1}{gray!10}{white}
 \begin{table}[ht]
