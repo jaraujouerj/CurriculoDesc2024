@@ -341,12 +341,12 @@
   \node  [below right= 1.5mm and -36mm of legenda,fill=cbasico, draw=black,
     label=right:Básico.](basico) {};
   \node [right  of=basico,node distance=22mm,fill=cextensao, draw=black, label=right:Extensão] (extensao) { };
-  \node [below  of=basico,node distance=5mm,fill=cambiental, draw=black, label=right:Ambiental] (ambient) { };
+  %\node [below  of=basico,node distance=5mm,fill=cambiental, draw=black, label=right:Ambiental] (ambient) { };
   \node [below  of=extensao,node distance=5mm,fill=cindustrial, draw=black, label=right:Industrial] (indust) { };
-  \node [below  of=ambient,node distance=5mm,fill=celetrica, draw=black, label=right:Elétrica] (eletri) { };
+  \node [below  of=basico,node distance=5mm,fill=celetrica, draw=black, label=right:Elétrica] (eletri) { };
   \node [below  of=indust,node distance=5mm,fill=celetronica, draw=black, label=right:Eletrônica] (prof) { };
   \node [below of=eletri,node distance=5mm,fill=cdesc, draw=black, label=right:Computacão] (especifico){};
-  \node [below of=prof,node distance=5mm,fill=celetiva, draw=gray, draw=black, label=right:Eletivas] {};
+  \node [below of=especifico,node distance=5mm,fill=celetiva, draw=gray, draw=black, label=right:Eletivas] {};
 
 \end{tikzpicture}
 
@@ -354,8 +354,11 @@
 % Descrição dos números
 \begin{tikzpicture}[remember picture, overlay]
   \node[anchor=south west, text width=9cm, align=justify]
-  at ([xshift=1.4cm, yshift=1.3cm]current page.south west)
+  at ([xshift=1.4cm, yshift=1.8cm]current page.south west)
   {Os números situados na parte inferior esquerda e direita representam carga horária e créditos, respectivamente, conferidos à disciplina.};
+  \node[anchor=south west, text width=9cm, align=justify]
+  at ([xshift=1.4cm, yshift=0.8cm]current page.south west)
+  {\normalsize{\textbf{Deliberação n\textordmasculine~XXX/2025}}};
 \end{tikzpicture}
 
 % CH de cada período
