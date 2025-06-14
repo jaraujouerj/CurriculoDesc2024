@@ -1,0 +1,92 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage{fancyhdr} % Required to customize headers
+\pagestyle{fancy}
+\usepackage[portuguese]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage{xcolor} % Pacote para cores
+\usepackage{xspace} % Adiciona suporte para espaçamento inteligente
+\usepackage{graphicx} % Para incluir imagens
+\usepackage{pdfpages} % Para incluir arquivos PDF
+\usepackage[left=2.48cm,right=1.7cm,top=2.35cm,marginparwidth=3.4cm]{geometry}
+%\usepackage{lipsum} % Para gerar texto de exemplo
+%\renewcommand{\headrulewidth}{0pt}
+% Defina o caminho para o logotipo da universidade
+\newcommand{\universitylogo}{imagens/logo_uerj_cor.jpg}
+\fancyheadoffset[L]{2mm}
+\renewcommand{\headrulewidth}{0pt} % Remove a linha horizontal no cabeçalho
+% Pacotes de hiperlinks
+\usepackage{hyperref}
+\hypersetup{
+	colorlinks,
+	citecolor=blue,
+	filecolor=magenta,
+	linkcolor=blue,
+	urlcolor=cyan
+}
+
+% Configurar o cabeçalho apenas para a primeira página
+\fancypagestyle{firstpage}{
+  \fancyhf{} % Limpar os estilos padrão
+
+  % logo e Nome da universidade
+  \lhead{
+    \begin{minipage}{0.15\textwidth}
+      \includegraphics[width=2.5cm]{\universitylogo}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.85\textwidth} % Ajuste o tamanho conforme necessário
+      \raggedright % Alinha o texto à esquerda
+      UNIVERSIDADE DO ESTADO DO RIO DE JANEIRO \\
+      CENTRO DE TECNOLOGIA E CIÊNCIAS \\
+      FACULDADE DE ENGENHARIA \\
+      DEPARTAMENTO DE ENGENHARIA DE SISTEMAS E COMPUTAÇÃO \\
+    \end{minipage}
+  }
+}
+% reduzir tamanho das letras nas seções
+\makeatletter
+\renewcommand{\section}{\@startsection{section}{1}{\z@}%
+      {-3.5ex \@plus -1ex \@minus -.2ex}%
+      {2.3ex \@plus.2ex}%
+      {\normalfont\normalsize\bfseries}}
+% Remover cabeçalho das outras páginas
+%\pagestyle{plain} % Define o estilo das páginas subsequentes como básico (sem cabeçalho)
+% Nomes das Disciplinas
+\usepackage{./disciplinasDB} % Ensure the file disciplinasDB.sty is in the same directory as this .tex file
+\input{dados.tex} % Arquivo com os dados do curso
+
+\begin{document}
+\thispagestyle{firstpage} % Aplica o cabeçalho na primeira página
+\headsep = 20pt
+%\setlength{\parindent}{0cm} % Remove paragraph indentation
+\setlength{\tabcolsep}{5pt} % Espaço horizontal
+\vspace*{2.0cm}
+
+% Retira cabeçalho das páginas seguintes
+\pagestyle{plain} % Define o estilo das páginas subsequentes como básico (sem cabeçalho)
+
+\begin{center}
+  \textbf{\LARGE Projeto Final de Curso}
+\end{center}
+\vspace*{0.5cm}
+
+A conclusão do curso de Engenharia de Computação se dá por meio das disciplinas \textbf{\ProjA} e \textbf{\ProjB}, que compõem o Projeto Final de Curso. Nessas disciplinas, o aluno desenvolve um projeto aplicado em Engenharia de Computação, com orientação de professores do curso. Professores de outros cursos ou profissionais da área também podem atuar como coorientadores, desde que aprovados pela coordenação do curso.
+
+Para garantir que essa etapa ocorra com a devida maturidade acadêmica, é exigida a conclusão de um número mínimo de 150 créditos, conforme especificado para inscrição na disciplina \textbf{\ProjA}.
+
+Durante o desenvolvimento do projeto, os alunos podem trabalhar individualmente ou em duplas. Com o apoio de seus orientadores, deverão conceber e implementar soluções criativas e viáveis para o tema escolhido, integrando os conhecimentos e competências adquiridos ao longo da graduação.
+
+Essas disciplinas colocam o aluno diante do desafio de conduzir um projeto de maior complexidade ao longo de dois períodos letivos, promovendo a síntese entre teoria e prática. As etapas do Projeto Final de Curso incluem:
+
+\begin{itemize}
+  \item \textbf{\ProjA}: Levantamento de informações, definição do tema, pesquisa bibliográfica e elaboração da fundamentação teórica do projeto, seguindo as normas técnicas vigentes.
+  \item \textbf{\ProjB}: Desenvolvimento prático do projeto por meio de ensaios em bancada, prototipagem e/ou simulação computacional, finalização do relatório e apresentação para uma banca examinadora composta por, no mínimo, dois membros convidados, além do orientador.
+\end{itemize}
+
+Os documentos produzidos devem seguir o formato estabelecido pela biblioteca da UERJ.
+
+Na defesa, serão avaliadas a qualidade técnica e textual do relatório final, a relevância e a consistência dos resultados obtidos, bem como o domínio do tema demonstrado pelo aluno durante a apresentação e arguição.
+
+\end{document}

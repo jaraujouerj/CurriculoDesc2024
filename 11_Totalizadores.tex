@@ -1,0 +1,135 @@
+\documentclass[oneside,envcountsame,envcountchap,openany]{svmono}
+\usepackage{fancyhdr} % Required to customize headers
+\pagestyle{fancy}
+\usepackage[portuguese]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage{xcolor} % Pacote para cores
+\usepackage{xspace} % Adiciona suporte para espaçamento inteligente
+\usepackage{graphicx} % Para incluir imagens
+\usepackage{pdfpages} % Para incluir arquivos PDF
+\usepackage[top=1in,left=2cm,bottom=1in,right=2.5cm]{geometry}
+%\usepackage{lipsum} % Para gerar texto de exemplo
+%\renewcommand{\headrulewidth}{0pt}
+% Defina o caminho para o logotipo da universidade
+\newcommand{\universitylogo}{imagens/logo_uerj_cor.jpg}
+\fancyheadoffset[L]{2mm}
+\renewcommand{\headrulewidth}{0pt} % Remove a linha horizontal no cabeçalho
+% Pacotes de hiperlinks
+\usepackage{hyperref}
+\hypersetup{
+	colorlinks,
+	citecolor=blue,
+	filecolor=magenta,
+	linkcolor=blue,
+	urlcolor=cyan
+}
+\newenvironment{itquotation}
+{\begin{quotation}
+  \itshape % itálico
+  }
+{\end{quotation}}
+
+% Pacotes de tabelas e cores
+\usepackage[table]{xcolor}  % para tabelas coloridas
+\usepackage{tabularx}		% para tabelas com largura automática
+\usepackage{longtable}		% para tabelas longas
+\usepackage{makecell}     % para tabelas com células mescladas
+\usepackage{spreadtab}	    % para tabelas com cálculos
+\usepackage{array}  % para tabelas com colunas de largura variável
+\usepackage{booktabs}		% para tabelas com linhas horizontais
+\usepackage{multirow}		 % para tabelas com multiplas linhas
+\usepackage{caption}
+\usepackage{chngcntr}
+\counterwithout{table}{section}  % ou {chapter}, dependendo da classe
+
+
+% Define uma nova coluna para alinhamento superior e quebra automática
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+\captionsetup{labelfont=bf, font=small, textfont=small}  % Força o negrito somente no "Tabela x:"
+\renewcommand{\arraystretch}{1.5}
+
+% Configurar o cabeçalho apenas para a primeira página
+\fancypagestyle{firstpage}{
+  \fancyhf{} % Limpar os estilos padrão
+
+  % logo e Nome da universidade
+  \lhead{
+    \begin{minipage}{0.15\textwidth}
+      \includegraphics[width=2.5cm]{\universitylogo}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.85\textwidth} % Ajuste o tamanho conforme necessário
+      \raggedright % Alinha o texto à esquerda
+      UNIVERSIDADE DO ESTADO DO RIO DE JANEIRO \\
+      CENTRO DE TECNOLOGIA E CIÊNCIAS \\
+      FACULDADE DE ENGENHARIA \\
+      DEPARTAMENTO DE ENGENHARIA DE SISTEMAS E COMPUTAÇÃO \\
+    \end{minipage}
+  }
+}
+% reduzir tamanho das letras nas seções
+\makeatletter
+\renewcommand{\section}{\@startsection{section}{1}{\z@}%
+      {-3.5ex \@plus -1ex \@minus -.2ex}%
+      {2.3ex \@plus.2ex}%
+      {\normalfont\normalsize\bfseries}}
+% Remover cabeçalho das outras páginas
+%\pagestyle{plain} % Define o estilo das páginas subsequentes como básico (sem cabeçalho)
+% Nomes das Disciplinas
+\usepackage{./disciplinasDB} % Ensure the file disciplinasDB.sty is in the same directory as this .tex file
+\input{dados.tex} % Arquivo com os dados do curso
+
+\begin{document}
+\thispagestyle{firstpage} % Aplica o cabeçalho na primeira página
+\headsep = 20pt
+%\setlength{\parindent}{0cm} % Remove paragraph indentation
+\setlength{\tabcolsep}{5pt} % Espaço horizontal
+\vspace*{2.0cm}
+
+% Retira cabeçalho das páginas seguintes
+\pagestyle{plain} % Define o estilo das páginas subsequentes como básico (sem cabeçalho)
+
+\begin{center}
+  \textbf{\LARGE Estrutura, Titulação e Totalizadores do Curso}
+\end{center}
+\vspace*{0.5cm}
+
+\begin{description}
+  \item [Curso:] Graduação plena em \textbf{Engenharia de Computação}.
+  \item [Modalidade:] presencial.
+  \item [Número de vagas no Vestibular:] \vagas vagas anuais divididas em 2 semestres. 25 vagas para o primeiro semestre e 25 vagas para o segundo semestre. Os ingressantes no primeiro semestre estão associados ao turno Manhã/Tarde e os ingressantes no segundo semestre ao turno Tarde/Noite.
+  \item [Regime acadêmico:] semestral por créditos.
+  \item [Tempo mínimo e máximo de integralização:] 10 semestres (5 anos) e 18 semestres (9 anos).
+  \item [Carga horária total do curso:] \tHorasCurso horas.
+  \item [Total de créditos:] \tCredCurso créditos, sendo \credEletivas créditos correspondentes a disciplinas eletivas restritas.
+  \item [Carga horária de extensão:] \hExtensao horas.
+  \item [Carga horária de atividades complementares:] \hACC horas.
+  \item [Título conferido:] Engenheiro de Computação.
+
+\end{description}
+
+\rowcolors{1}{gray!10}{white}
+\renewcommand{\arraystretch}{1.5}
+\begin{table}[h!]
+  \centering
+  \caption{Distribuição da carga horária do curso de Engenharia de Computação}
+  \label{tab:cargahoraria}
+  \begin{tabularx}{0.8\textwidth}{Xr@{\hspace{0.5em}}r@{\hspace{0.5em}}}
+    \hline
+    \rowcolor{gray!20} \textbf{Componente}         & \textbf{Créditos}     & \textbf{Carga Horária (h)} \\
+    \hline
+    Disciplinas obrigatórias  (exceto de extensão) & \credObrigSemExtensao & \hDiscObrigSemExtensao     \\
+    Disciplinas obrigatórias de extensão           & \credDiscExtensao     & \hDiscExtensao             \\
+    Disciplinas eletivas restritas                 & \credEletivas         & \hEletivas                 \\
+    Atividades Curriculares de Extensão            & --                    & \hACE                      \\
+    Atividades Curriculares Complementares         & --                    & \hACC                      \\
+    \hline \rowcolor{gray!20}
+    \textbf{Total do curso}                        & \textbf{\tCredCurso } & \textbf{\tHorasCurso}      \\
+    \hline
+  \end{tabularx}
+\end{table}
+
+
+\end{document}

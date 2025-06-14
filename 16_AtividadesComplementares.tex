@@ -1,0 +1,119 @@
+\documentclass[oneside,envcountsame,envcountchap,openany]{svmono}
+\usepackage{fancyhdr} % Required to customize headers
+\pagestyle{fancy}
+\usepackage[portuguese]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage{xcolor} % Pacote para cores
+\usepackage{xspace} % Adiciona suporte para espaçamento inteligente
+\usepackage{graphicx} % Para incluir imagens
+\usepackage{pdfpages} % Para incluir arquivos PDF
+\usepackage[top=1in,left=2cm,bottom=1in,right=2.5cm]{geometry}
+%\usepackage{lipsum} % Para gerar texto de exemplo
+%\renewcommand{\headrulewidth}{0pt}
+% Defina o caminho para o logotipo da universidade
+\newcommand{\universitylogo}{imagens/logo_uerj_cor.jpg}
+\fancyheadoffset[L]{2mm}
+\renewcommand{\headrulewidth}{0pt} % Remove a linha horizontal no cabeçalho
+% Pacotes de hiperlinks
+\usepackage{hyperref}
+\hypersetup{
+	colorlinks,
+	citecolor=blue,
+	filecolor=magenta,
+	linkcolor=blue,
+	urlcolor=cyan
+}
+\newenvironment{itquotation}
+{\begin{quotation}
+  \itshape % itálico
+  }
+{\end{quotation}}
+
+% Pacotes de tabelas e cores
+\usepackage[table]{xcolor}  % para tabelas coloridas
+\usepackage{tabularx}		% para tabelas com largura automática
+\usepackage{longtable}		% para tabelas longas
+\usepackage{makecell}     % para tabelas com células mescladas
+\usepackage{spreadtab}	    % para tabelas com cálculos
+\usepackage{array}  % para tabelas com colunas de largura variável
+\usepackage{booktabs}		% para tabelas com linhas horizontais
+\usepackage{multirow}		 % para tabelas com multiplas linhas
+\usepackage{caption}
+% Define uma nova coluna para alinhamento superior e quebra automática
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+\captionsetup{labelfont=bf, font=small, textfont=small}  % Força o negrito somente no "Tabela x:"
+\renewcommand{\arraystretch}{1.5}
+
+% Configurar o cabeçalho apenas para a primeira página
+\fancypagestyle{firstpage}{
+  \fancyhf{} % Limpar os estilos padrão
+
+  % logo e Nome da universidade
+  \lhead{
+    \begin{minipage}{0.15\textwidth}
+      \includegraphics[width=2.5cm]{\universitylogo}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.85\textwidth} % Ajuste o tamanho conforme necessário
+      \raggedright % Alinha o texto à esquerda
+      UNIVERSIDADE DO ESTADO DO RIO DE JANEIRO \\
+      CENTRO DE TECNOLOGIA E CIÊNCIAS \\
+      FACULDADE DE ENGENHARIA \\
+      DEPARTAMENTO DE ENGENHARIA DE SISTEMAS E COMPUTAÇÃO \\
+    \end{minipage}
+  }
+}
+% reduzir tamanho das letras nas seções
+\makeatletter
+\renewcommand{\section}{\@startsection{section}{1}{\z@}%
+      {-3.5ex \@plus -1ex \@minus -.2ex}%
+      {2.3ex \@plus.2ex}%
+      {\normalfont\normalsize\bfseries}}
+% Remover cabeçalho das outras páginas
+%\pagestyle{plain} % Define o estilo das páginas subsequentes como básico (sem cabeçalho)
+% Nomes das Disciplinas
+\usepackage{./disciplinasDB} % Ensure the file disciplinasDB.sty is in the same directory as this .tex file
+\input{dados.tex} % Arquivo com os dados do curso
+
+\begin{document}
+\thispagestyle{firstpage} % Aplica o cabeçalho na primeira página
+\headsep = 20pt
+%\setlength{\parindent}{0cm} % Remove paragraph indentation
+\setlength{\tabcolsep}{5pt} % Espaço horizontal
+\vspace*{2.0cm}
+
+% Retira cabeçalho das páginas seguintes
+\pagestyle{plain} % Define o estilo das páginas subsequentes como básico (sem cabeçalho)
+
+\begin{center}
+  \textbf{\LARGE Atividades Complementares}
+\end{center}
+\vspace*{0.5cm}
+
+As Atividades Complementares constituem um componente curricular obrigatório, conforme estabelecido pelo Artigo~9\textordmasculine{} das \textit{Diretrizes Curriculares Nacionais para os cursos de graduação na área da Computação}\footnote{\url{https://www.in.gov.br/web/dou/-/resolucao-n-5-de-16-de-novembro-de-2016-22073052}}. Seu propósito é ampliar e enriquecer a formação acadêmica dos estudantes, promovendo o desenvolvimento de habilidades, conhecimentos, competências e atitudes que vão além dos conteúdos abordados nas disciplinas regulares do curso.
+
+No curso de Engenharia de Computação da UERJ, em conformidade com as referidas diretrizes, as Atividades Complementares devem ser desenvolvidas ao longo da graduação, totalizando uma carga horária mínima de \hACC horas.
+
+Essas atividades buscam reconhecer e valorizar experiências formativas adquiridas em diferentes contextos, inclusive fora do ambiente acadêmico, desde que avaliadas e aprovadas pela coordenação do curso. Podem ser realizadas tanto na própria universidade quanto em instituições externas, e em diversos ambientes sociais, técnico-científicos ou profissionais.
+
+São exemplos de Atividades Complementares:
+\begin{itemize}
+  \item participação em programas de extensão universitária, desde que as horas não tenham sido computadas como horas de extensão;
+  \item realização de estágios não obrigatórios;
+  \item envolvimento com projetos de iniciação científica ou tecnológica;
+  \item participação em congressos, seminários, simpósios e demais eventos técnico-científicos;
+  \item publicação de artigos ou outros trabalhos acadêmicos;
+  \item atuação como monitor ou tutor em disciplinas;
+  \item cursar disciplinas eletivas em outras áreas do conhecimento;
+  \item participação em órgãos colegiados e comissões institucionais como representante discente;
+  \item envolvimento em empresas juniores, incubadoras, startups ou outras iniciativas de empreendedorismo e inovação;
+  \item experiências profissionais compatíveis com a formação em Engenharia de Computação.
+  \item participação em atividades de formação em gestão e liderança, como cursos e workshops sobre liderança, gestão de equipes e projetos.
+  \item realização de cursos extracurriculares, presenciais ou a distância, relacionados à área de formação;
+\end{itemize}
+
+As Atividades Complementares deverão ser devidamente documentadas e submetidas à apreciação da Coordenação do Curso, que será responsável pelo seu registro, avaliação e validação, conforme normas estabelecidas em regulamento próprio. Atividades utilizadas para contabilização de horas complementares não poderão ser computadas para outros componentes curriculares.
+
+\end{document}

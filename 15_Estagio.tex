@@ -1,0 +1,101 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage{fancyhdr} % Required to customize headers
+\pagestyle{fancy}
+\usepackage[portuguese]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage{xcolor} % Pacote para cores
+\usepackage{xspace} % Adiciona suporte para espaçamento inteligente
+\usepackage{graphicx} % Para incluir imagens
+\usepackage{pdfpages} % Para incluir arquivos PDF
+\usepackage[left=2.48cm,right=1.7cm,top=2.35cm,marginparwidth=3.4cm]{geometry}
+%\usepackage{lipsum} % Para gerar texto de exemplo
+%\renewcommand{\headrulewidth}{0pt}
+% Defina o caminho para o logotipo da universidade
+\newcommand{\universitylogo}{imagens/logo_uerj_cor.jpg}
+\fancyheadoffset[L]{2mm}
+\renewcommand{\headrulewidth}{0pt} % Remove a linha horizontal no cabeçalho
+% Pacotes de hiperlinks
+\usepackage{hyperref}
+\hypersetup{
+	colorlinks,
+	citecolor=blue,
+	filecolor=magenta,
+	linkcolor=blue,
+	urlcolor=cyan
+}
+
+% Configurar o cabeçalho apenas para a primeira página
+\fancypagestyle{firstpage}{
+  \fancyhf{} % Limpar os estilos padrão
+
+  % logo e Nome da universidade
+  \lhead{
+    \begin{minipage}{0.15\textwidth}
+      \includegraphics[width=2.5cm]{\universitylogo}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.85\textwidth} % Ajuste o tamanho conforme necessário
+      \raggedright % Alinha o texto à esquerda
+      UNIVERSIDADE DO ESTADO DO RIO DE JANEIRO \\
+      CENTRO DE TECNOLOGIA E CIÊNCIAS \\
+      FACULDADE DE ENGENHARIA \\
+      DEPARTAMENTO DE ENGENHARIA DE SISTEMAS E COMPUTAÇÃO \\
+    \end{minipage}
+  }
+}
+% reduzir tamanho das letras nas seções
+\makeatletter
+\renewcommand{\section}{\@startsection{section}{1}{\z@}%
+      {-3.5ex \@plus -1ex \@minus -.2ex}%
+      {2.3ex \@plus.2ex}%
+      {\normalfont\normalsize\bfseries}}
+% Remover cabeçalho das outras páginas
+%\pagestyle{plain} % Define o estilo das páginas subsequentes como básico (sem cabeçalho)
+% Nomes das Disciplinas
+\usepackage{./disciplinasDB} % Ensure the file disciplinasDB.sty is in the same directory as this .tex file
+\input{dados.tex} % Arquivo com os dados do curso
+
+\begin{document}
+\thispagestyle{firstpage} % Aplica o cabeçalho na primeira página
+\headsep = 20pt
+%\setlength{\parindent}{0cm} % Remove paragraph indentation
+\setlength{\tabcolsep}{5pt} % Espaço horizontal
+\vspace*{2.0cm}
+
+% Retira cabeçalho das páginas seguintes
+\pagestyle{plain} % Define o estilo das páginas subsequentes como básico (sem cabeçalho)
+
+\begin{center}
+  \textbf{\LARGE Estágio Supervisionado}
+\end{center}
+\vspace*{0.5cm}
+
+A disciplina de \textbf{\EstSup}, com \EstSupCred~créditos e \EstSupCH~horas, representa a primeira vivência profissional do aluno como futuro Engenheiro de Computação. Por isso, espera-se que as atividades sejam desenvolvidas em um ambiente corporativo ou outro contexto de atuação profissional. O estágio curricular, supervisionado, contribui para a prática extensionista no setor produtivo da sociedade e permite ao estudante enfrentar situações reais do exercício da profissão.
+
+Durante o estágio, o aluno será acompanhado por um supervisor da empresa e contará com o apoio de um professor da disciplina, que poderá orientar o desenvolvimento das atividades e sugerir aprimoramentos.
+
+A inscrição nesta disciplina está condicionada à conclusão de um número mínimo de 140 créditos, conforme especificado na ementa, garantindo que o aluno possua a maturidade necessária para desempenhar bem essa função. Independentemente do local ou do tipo de trabalho, é fundamental que o estágio envolva a aplicação integrada de conhecimentos, habilidades e competências adquiridas ao longo do curso.
+
+O estágio deve permitir que o aluno reflita sobre problemas reais, proponha soluções e aprofunde a articulação entre teoria e prática. As atividades podem ser desenvolvidas em qualquer área da Engenharia de Computação, desde que envolvam a identificação e análise de um problema com base científica e tecnológica, a avaliação de soluções possíveis e a proposta de um projeto de engenharia. Também é necessário considerar os aspectos econômicos envolvidos e os impactos sociais e ambientais. Espera-se que o aluno demonstre domínio de avanços científicos e tecnológicos e sensibilidade aos desafios da inovação.
+
+Ao final da disciplina, o aluno deverá elaborar um Relatório Final, no qual descreva detalhadamente as atividades realizadas e a aplicação dos conhecimentos adquiridos no curso. Esse relatório será avaliado em conjunto com uma apresentação oral feita ao professor da disciplina. A avaliação do relatório considerará a clareza da redação, o uso correto da língua portuguesa, a relevância do trabalho e sua contribuição para a formação do aluno. Na apresentação, serão avaliadas a organização das ideias e a capacidade de responder às perguntas do professor.
+
+\section*{Exercício Profissional}
+Considerando a importância de reconhecer a experiência profissional como parte integrante da formação acadêmica, o curso de Engenharia de Computação da UERJ permitirá que alunos com vínculo empregatício formal possam solicitar o reconhecimento de seu exercício profissional como equivalente ao estágio supervisionado obrigatório, desde que a atividade se relacione diretamente com as áreas de formação ou de exercício profissional do Engenheiro de Computação.
+
+Para o reconhecimento, será seguido procedimento análogo ao da realização regular do estágio supervisionado, incluindo:
+
+\begin{itemize}
+  \item Cumprimento dos 140 créditos exigidos para inscrição no estágio supervisionado;
+  \item Definição de um período de supervisão da atividade profissional, com carga horária igual ou superior a \EstSupCH~ horas;
+  \item Apresentação e aprovação de um relatório técnico ao final do período supervisionado, nos mesmos moldes exigidos para o estágio supervisionado tradicional. \end{itemize}
+
+O aluno deverá apresentar, previamente ao início da contagem de horas, documentação comprobatória do vínculo empregatício, como Carteira de Trabalho e Previdência Social (CTPS) assinada, contrato de trabalho ou outro documento oficial equivalente.
+
+
+
+
+\end{document}
+

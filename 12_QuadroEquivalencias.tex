@@ -1,0 +1,174 @@
+\documentclass[oneside,envcountsame,envcountchap,openany]{svmono}
+\usepackage{fancyhdr} % Required to customize headers
+\pagestyle{fancy}
+\usepackage[portuguese]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage{xcolor} % Pacote para cores
+\usepackage{xspace} % Adiciona suporte para espaçamento inteligente
+\usepackage{graphicx} % Para incluir imagens
+\usepackage{pdfpages} % Para incluir arquivos PDF
+\usepackage[top=1in,left=2cm,bottom=1in,right=2.5cm]{geometry}
+%\usepackage{lipsum} % Para gerar texto de exemplo
+%\renewcommand{\headrulewidth}{0pt}
+% Defina o caminho para o logotipo da universidade
+\newcommand{\universitylogo}{imagens/logo_uerj_cor.jpg}
+\fancyheadoffset[L]{2mm}
+\renewcommand{\headrulewidth}{0pt} % Remove a linha horizontal no cabeçalho
+% Pacotes de hiperlinks
+\usepackage{hyperref}
+\hypersetup{
+	colorlinks,
+	citecolor=blue,
+	filecolor=magenta,
+	linkcolor=blue,
+	urlcolor=cyan
+}
+
+% Pacotes de tabelas e cores
+\usepackage[table]{xcolor}  % para tabelas coloridas
+\usepackage{tabularx}		% para tabelas com largura automática
+\usepackage{longtable}		% para tabelas longas
+\usepackage{makecell}     % para tabelas com células mescladas
+\usepackage{spreadtab}	    % para tabelas com cálculos
+\usepackage{array}  % para tabelas com colunas de largura variável
+\usepackage{booktabs}		% para tabelas com linhas horizontais
+\usepackage{multirow}		 % para tabelas com multiplas linhas
+\usepackage{caption}
+% Define uma nova coluna para alinhamento superior e quebra automática
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+\captionsetup{labelfont=bf, font=small, textfont=small}  % Força o negrito somente no "Tabela x:"
+\renewcommand{\arraystretch}{1.5}
+
+% Configurar o cabeçalho apenas para a primeira página
+\fancypagestyle{firstpage}{
+  \fancyhf{} % Limpar os estilos padrão
+
+  % logo e Nome da universidade
+  \lhead{
+    \begin{minipage}{0.15\textwidth}
+      \includegraphics[width=2.5cm]{\universitylogo}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.85\textwidth} % Ajuste o tamanho conforme necessário
+      \raggedright % Alinha o texto à esquerda
+      UNIVERSIDADE DO ESTADO DO RIO DE JANEIRO \\
+      CENTRO DE TECNOLOGIA E CIÊNCIAS \\
+      FACULDADE DE ENGENHARIA \\
+      DEPARTAMENTO DE ENGENHARIA DE SISTEMAS E COMPUTAÇÃO \\
+    \end{minipage}
+  }
+}
+% reduzir tamanho das letras nas seções
+\makeatletter
+\renewcommand{\section}{\@startsection{section}{1}{\z@}%
+      {-3.5ex \@plus -1ex \@minus -.2ex}%
+      {2.3ex \@plus.2ex}%
+      {\normalfont\normalsize\bfseries}}
+% Remover cabeçalho das outras páginas
+%\pagestyle{plain} % Define o estilo das páginas subsequentes como básico (sem cabeçalho)
+% Nomes das Disciplinas
+\usepackage{./disciplinasDB} % Ensure the file disciplinasDB.sty is in the same directory as this .tex file
+\input{dados.tex} % Arquivo com os dados do curso
+
+\begin{document}
+\thispagestyle{firstpage} % Aplica o cabeçalho na primeira página
+\headsep = 20pt
+%\setlength{\parindent}{0cm} % Remove paragraph indentation
+\setlength{\tabcolsep}{5pt} % Espaço horizontal
+\vspace*{2.0cm}
+
+% Retira cabeçalho das páginas seguintes
+\pagestyle{plain} % Define o estilo das páginas subsequentes como básico (sem cabeçalho)
+
+\begin{center}
+  \textbf{\LARGE Quadro de Equivalências}
+\end{center}
+\vspace*{0.5cm}
+A tabela a seguir apresenta o mapeamento das disciplinas da nova estrutura curricular e as do curso de Engenharia Elétrica com Ênfase em Sistemas e Computação, respeitando a ordem dos períodos.
+\renewcommand{\arraystretch}{1.5}
+\rowcolors{2}{gray!10}{white}
+\begin{small}
+  \begin{longtable}{p{5.6cm}l|p{5.6cm}l}
+    %\caption{Equivalências no novo currículo.}
+    \label{tab:desc-equi-long}                                                                                                                    \\
+    \hline
+    \rowcolor{gray!20}
+    \textbf{Currículo Novo} & \textbf{Código} & \textbf{Currículo Antigo}                                          & \textbf{Código}              \\
+    \hline
+    \endfirsthead
+
+    \hline
+    \rowcolor{gray!20}
+    \textbf{Currículo Novo} & \textbf{Código} & \textbf{Currículo Antigo}                                          & \textbf{Código}              \\
+    \hline
+    \endhead
+
+    \multicolumn{4}{r}{\small\itshape Continuação na próxima página}
+    \endfoot
+
+    \bottomrule
+    \endlastfoot
+    \AlgLin                 & \AlgLinCod      & Álgebra Linear III                                                 & IME 02-01388                 \\
+    \AlgComp                & \AlgCompCod     & Introdução ao Processamento de Dados                               & IME 04-00627                 \\
+    \CalcI                  & \CalcICod       & Cálculo Diferencial e Integral I                                   & IME 01-00508                 \\
+    \EngCompSoc             & \EngCompSocCod  & Engenharia na Sociedade I                                          & FEN 02-01064                 \\
+    \hline
+    \CalcII                 & \CalcIICod      & Cálculo Diferencial e Integral II                                  & IME 01-00854                 \\
+    \CalcNum                & \CalcNumCod     & Cálculo Numérico IV                                                & IME 04-04541                 \\
+    \EstrInf                & \EstrInfCod     & Estruturas de Informação I                                         & FEN 06-03648                 \\
+    \parbox[t]{4cm}{\FisI~e                                                                                                                       \\ \FisEI} & \parbox[t]{2cm}{\FisICod \\ \FisEICod} & Física Teórica e Experimental I & FIS 01-05095 \\
+    \LogProg                & \LogProgCod     & Sem equivalência                                                   & --                           \\
+    \hline
+    \AnAlg                  & \AnAlgCod       & Análise de Algoritmos                                              & FEN 06-03713                 \\
+    \CalcIII                & \CalcIIICod     & Cálculo Diferencial e Integral III                                 & IME 01-03646                 \\
+    \CircEletI              & \CircEletICod   & Eletrônica I                                                       & FEN 05-01620                 \\
+    \parbox[t]{4cm}{\FisII~e                                                                                                                      \\ \FisEII} & \parbox[t]{2cm}{\FisIICod \\ \FisEIICod} & Física Teórica e Experimental II & FIS 02-05143 \\
+    \ProbEst                & \ProbEstCod     & Probabilidade e Estatística                                        & IME 05-05316                 \\
+    \Ext                    & \ExtCod         & Sem equivalência                                                   & --                           \\
+    \hline
+    \parbox[t]{4cm}{\FisIII~e                                                                                                                     \\ \FisEIII} & \parbox[t]{2cm}{\FisIIICod \\ \\ \FisEIIICod} & Física Teórica e Experimental III & FIS 03-05185 \\
+    \LabProgA               & \LabProgACod    & Laboratório de Programação I                                       & FEN 06-04049                 \\
+    \LabProgPOO             & \LabProgPOOCod  & Características das Linguagens de Programação I                    & FEN 06-03980                 \\
+    \ProcImag               & \ProcImagCod    & Sem equivalência                                                   & --                           \\
+    \TecDig                 & \TecDigCod      & Técnicas Digitais I                                                & FEN 05-04498                 \\
+    \hline
+    \CCC                    & \CCCCod         & Circuitos Elétricos I                                              & FEN 04-00944                 \\
+    \FundComp               & \FundCompCod    & Fundamentos de Comp. Digitais I                                    & FEN 06-03787                 \\
+    \IC                     & \ICCod          & Sem equivalência                                                   & --                           \\
+    \parbox[t]{4cm}{\FisIV                                                                                                                        \\ \FisEIV} & \parbox[t]{2cm}{\FisIVCod~e \\ \FisEIVCod} & Física Teórica e Experimental IV & FIS 04-05212 \\
+    \Grafos                 & \GrafosCod      & Sem equivalência                                                   & --                           \\
+    \hline
+    \ArqComp                & \ArqCompCod     & Arquitetura de Computadores I                                      & FEN 06-04119                 \\
+    \CCA                    & \CCACod         & Circuitos Elétricos IV                                             & FEN 04-05222                 \\
+    \EngSistA               & \EngSistACod    & Engenharia de Sistemas A                                           & FEN 06-04243                 \\
+    \ICII                   & \ICIICod        & Sem equivalência                                                   & --                           \\
+    \MatEle                 & \MatEleCod      & Materiais Elétricos e Magnéticos                                   & FEN 04-05197                 \\
+    \MineraDados            & \MineraDadosCod & Sem equivalência                                                   & --                           \\
+    \hline
+    \Instala                & \InstalaCod     & Instalações de Ambiente Computacional                              & FEN 06-03860                 \\
+    \MacroEco               & \MacroEcoCod    & Introdução à Economia III                                          & FCE 02-04657                 \\
+    \ProjBD                 & \ProjBDCod      & Engenharia de Sistemas B                                           & FEN 06-04314                 \\
+    \ProjSO                 & \ProjSOCod      & Projeto de Sistemas Operacionais                                   & FEN 06-04664                 \\
+    \Telep                  & \TelepCod       & Teleprocessamento e Redes de Computadores                          & FEN 06-04718                 \\
+    \TeoComp                & \TeoCompCod     & Teoria de Compiladores                                             & FEN 06-04516                 \\
+    \hline
+    \AnaProjSist            & \AnaProjSistCod & Engenharia de Sistemas C                                           & FEN 06-04386                 \\
+    \CompParal              & \CompParalCod   & Microcomputadores e Microprocessadores I                           & FEN 06-04192                 \\
+    \Control                & \ControlCod     & Controle de Processos por Computador                               & FEN 06-05080                 \\
+    \Empre                  & \EmpreCod       & Sem equivalência                                                   & --                           \\
+    \Sredes                 & \SredesCod      & Sem equivalência                                                   & --                           \\
+    \SistEmb                & \SistEmbCod     & Sem equivalência                                                   & --                           \\
+    \hline
+    \EstSup                 & \EstSupCod      & Estágio Supervisionado XI-A                                        & FEN 06-05038                 \\
+    \ProjA                  & \ProjACod       & Projeto de Graduação XI-A                                          & FEN 06-04578                 \\
+    \hline
+    \Adm                    & \AdmCod         & Administração Aplicada à Engenharia III                            & FAF 03-04439                 \\
+    \ProjB                  & \ProjBCod       & Projeto de Graduação XI-B                                          & FEN 06-04635                 \\
+    \hline
+    Eletivas Restritas      & FEN 06-xxxx     & Tópicos Especiais em Engenharia de Sistemas e Computação A, B ou C & \parbox[t]{2cm}{FEN 06-04889 \\ FEN 06-04939 \\ FEN 06-04990} \\
+  \end{longtable}
+\end{small}
+
+\end{document}

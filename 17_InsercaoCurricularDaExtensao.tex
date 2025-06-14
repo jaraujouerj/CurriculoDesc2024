@@ -1,0 +1,212 @@
+\documentclass[oneside,envcountsame,envcountchap,openany]{svmono}
+\usepackage{fancyhdr} % Required to customize headers
+\pagestyle{fancy}
+\usepackage[portuguese]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage{xcolor} % Pacote para cores
+\usepackage{xspace} % Adiciona suporte para espaçamento inteligente
+\usepackage{graphicx} % Para incluir imagens
+\usepackage{pdfpages} % Para incluir arquivos PDF
+\usepackage[top=1in,left=2cm,bottom=1in,right=2.5cm]{geometry}
+%\usepackage{lipsum} % Para gerar texto de exemplo
+%\renewcommand{\headrulewidth}{0pt}
+% Defina o caminho para o logotipo da universidade
+\newcommand{\universitylogo}{imagens/logo_uerj_cor.jpg}
+\fancyheadoffset[L]{2mm}
+\renewcommand{\headrulewidth}{0pt} % Remove a linha horizontal no cabeçalho
+% Pacotes de hiperlinks
+\usepackage{hyperref}
+\hypersetup{
+	colorlinks,
+	citecolor=blue,
+	filecolor=magenta,
+	linkcolor=blue,
+	urlcolor=cyan
+}
+\newenvironment{itquotation}
+{\begin{quotation}
+  \itshape % itálico
+  }
+{\end{quotation}}
+
+% Pacotes de tabelas e cores
+\usepackage[table]{xcolor}  % para tabelas coloridas
+\usepackage{tabularx}		% para tabelas com largura automática
+\usepackage{longtable}		% para tabelas longas
+\usepackage{makecell}     % para tabelas com células mescladas
+\usepackage{spreadtab}	    % para tabelas com cálculos
+\usepackage{array}  % para tabelas com colunas de largura variável
+\usepackage{booktabs}		% para tabelas com linhas horizontais
+\usepackage{multirow}		 % para tabelas com multiplas linhas
+\usepackage{caption}
+% Define uma nova coluna para alinhamento superior e quebra automática
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+\captionsetup{labelfont=bf, font=small, textfont=small}  % Força o negrito somente no "Tabela x:"
+\renewcommand{\arraystretch}{1.5}
+
+% Configurar o cabeçalho apenas para a primeira página
+\fancypagestyle{firstpage}{
+  \fancyhf{} % Limpar os estilos padrão
+
+  % logo e Nome da universidade
+  \lhead{
+    \begin{minipage}{0.15\textwidth}
+      \includegraphics[width=2.5cm]{\universitylogo}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.85\textwidth} % Ajuste o tamanho conforme necessário
+      \raggedright % Alinha o texto à esquerda
+      UNIVERSIDADE DO ESTADO DO RIO DE JANEIRO \\
+      CENTRO DE TECNOLOGIA E CIÊNCIAS \\
+      FACULDADE DE ENGENHARIA \\
+      DEPARTAMENTO DE ENGENHARIA DE SISTEMAS E COMPUTAÇÃO \\
+    \end{minipage}
+  }
+}
+% reduzir tamanho das letras nas seções
+\makeatletter
+\renewcommand{\section}{\@startsection{section}{1}{\z@}%
+      {-3.5ex \@plus -1ex \@minus -.2ex}%
+      {2.3ex \@plus.2ex}%
+      {\normalfont\normalsize\bfseries}}
+% Remover cabeçalho das outras páginas
+%\pagestyle{plain} % Define o estilo das páginas subsequentes como básico (sem cabeçalho)
+% Nomes das Disciplinas
+\usepackage{./disciplinasDB} % Ensure the file disciplinasDB.sty is in the same directory as this .tex file
+\input{dados.tex} % Arquivo com os dados do curso
+
+\begin{document}
+\thispagestyle{firstpage} % Aplica o cabeçalho na primeira página
+\headsep = 20pt
+%\setlength{\parindent}{0cm} % Remove paragraph indentation
+\setlength{\tabcolsep}{5pt} % Espaço horizontal
+\vspace*{2.0cm}
+
+% Retira cabeçalho das páginas seguintes
+\pagestyle{plain} % Define o estilo das páginas subsequentes como básico (sem cabeçalho)
+
+\begin{center}
+  \textbf{\LARGE Inserção Curricular da Extensão}
+\end{center}
+\vspace*{0.5cm}
+
+
+\section*{Filosofia}
+A extensão universitária é concebida como um processo transformador que integra a universidade à sociedade, promovendo a democratização do conhecimento e contribuindo para a formação acadêmica, cidadã e ética dos estudantes. No curso de Engenharia de Computação da UERJ, as atividades de extensão reforçam o compromisso social da universidade, possibilitando a aplicação dos saberes técnicos em benefício da comunidade, especialmente em contextos de exclusão digital.
+
+\section*{Regulamentação}
+Conforme a Resolução CNE/CES n\textordmasculine{} 7/2018\footnote{https://www.in.gov.br/web/dou/-/resolucao-n-7-de-18-de-dezembro-de-2018-55877677}, todos os cursos de graduação devem destinar, no mínimo, 10\% da carga horária total às atividades de extensão. Na UERJ, a Deliberação n\textordmasculine{} 04/2023\footnote{https://www.depext.uerj.br/wp-content/uploads/2023/07/DELIBERACAO-No-04-2023-Deliberacao-Insercao-Curricular-da-Extensao.pdf} regulamenta a inserção curricular da extensão, permitindo sua realização por meio de:
+
+\begin{itemize}
+  \item Disciplinas com carga horária parcialmente dedicada à extensão;
+  \item Disciplinas integralmente dedicadas à extensão;
+  \item Atividade Curricular de Extensão (ACE).
+\end{itemize}
+
+\section*{Inserção no Curso}
+
+No curso de Engenharia de Computação, a extensão é integrada à formação acadêmica de maneira estruturada e interdisciplinar. O objetivo é aproximar os estudantes das demandas da sociedade e estimular o desenvolvimento de competências técnicas, analíticas e críticas.
+
+As ações extensionistas são planejadas para gerar impacto social real, promovendo, além da aplicação prática dos conhecimentos, a reflexão sobre o papel da tecnologia no desenvolvimento social. A extensão é, portanto, concebida como uma oportunidade de formação cidadã, contribuindo para a inserção dos estudantes em projetos que ampliem sua visão acadêmica e social.
+
+\section*{Estrutura das Atividades Extensionistas}
+
+A carga horária de extensão no curso totaliza \hExtensao horas, representando \num{\fpeval{ceil(100 * \thehExtensaoCounter / \thethorasCursoCounter,2)}}\% da carga horária total de \tHorasCurso\ horas, conforme a legislação vigente.
+
+As atividades estão organizadas em duas modalidades:
+
+\textbf{1. Disciplinas Integralmente Dedicada à Extensão:}
+a disciplina obrigatória \textbf{\Ext}, oferecida no terceiro período, com carga horária de \ExtCH{ } horas, tem como objetivo introduzir os estudantes às práticas de extensão universitária, por meio de projetos que envolvem inovação social, divulgação científica e uso da tecnologia para benefício comunitário.
+
+Além disso, a disciplina \textbf{\EstSup}, com carga horária de \EstSupCH~horas, amplia essa formação ao proporcionar experiências práticas em ambientes reais de trabalho, onde o aluno consolida competências técnicas e extensionistas. Assim, o estágio supervisionado se configura como uma oportunidade de impactar positivamente a sociedade enquanto reforça a formação acadêmica (ver item \textbf{Estágio Supervisionado}, neste documento).
+
+
+\textbf{2. Atividades Curriculares de Extensão (ACE):}
+para integralizar o curso de graduação em Engenharia de Computação da UERJ, o aluno deve cumprir, no mínimo, \hACE horas de Atividade Curricular de Extensão (ACE).
+
+Conforme estabelecido na Deliberação n\textordmasculine~04/2023, as ACEs devem ser realizadas ao longo do curso e concluídas antes do término da graduação. Nessas atividades, é imprescindível que o aluno atue de forma ativa e protagonista.
+
+Em consonância com a referida deliberação e alinhado aos objetivos pedagógicos da formação em Engenharia de Computação, as ACEs válidas para a integralização do curso incluem:
+
+
+\begin{itemize}
+  \item \textbf{Participação em programas e projetos de extensão} (como bolsista ou voluntário), coordenados por professores ou técnicos da carreira de nível superior na Universidade do Estado do Rio de Janeiro, com validação da carga horária por meio de Declaração ou Certificado emitido pelo coordenador do projeto;
+  \item \textbf{Ações extensionistas realizadas em programas institucionais das Pró-Reitorias}, com validação da carga horária por meio de Declaração ou Certificado do coordenador do programa;
+  \item \textbf{Estágios não obrigatórios caracterizados como ação extensionista}, com validação da carga horária por meio de declaração ou Certificado da instituição responsável;
+  \item \textbf{Desenvolvimento conjunto de soluções tecnológicas} visando atender as demandas dos atores da sociedade civil, com validação da carga horária por meio de Declaração ou Certificado da instituição responsável;
+  \item \textbf{Participação em eventos}, tanto na organização quanto na realização, com validação da carga horária por meio de Declaração ou Certificado da instituição responsável;
+  \item \textbf{Prestação de serviços} classificados como ação extensionista, com integralização de 100\% da carga horária total da atividade, desde que devidamente comprovada por declaração ou certificado emitido pela instituição responsável, contendo, de forma expressa, a descrição da atividade realizada e a respectiva carga horária.
+  \item \textbf{Oficinas} reconhecidas como ação extensionista, com integralização de 100\% da carga horária total da atividade, mediante apresentação de declaração ou certificado emitido pela instituição promotora, com a descrição detalhada da atividade desenvolvida e a carga horária explicitamente informada.
+  \item \textbf{Publicações relacionadas à extensão}, nas seguintes categorias:
+        \begin{itemize}
+          \item Artigo em revista indexada ou capítulo de livro com ISBN: 15 horas por publicação, validadas com informações catalográficas, ISSN ou ficha catalográfica e primeira página do artigo ou capítulo;
+          \item Livro com ISBN: 30 horas por publicação, validadas com capa, contracapa e ficha catalográfica;
+          \item Resumos e resumos expandidos publicados em anais de eventos: 5 horas por publicação, validadas com informações catalográficas e primeira página do resumo.
+        \end{itemize}
+
+\end{itemize}
+
+Em todas as situações citadas acima, as declarações ou certificados emitidos pelas entidades responsáveis deverão conter a carga horária e a descrição das atividades realizadas pelo aluno. Compete à Coordenação das Atividades Curriculares de Extensão (CACE) do curso de Engenharia de Computação receber, analisar e validar a documentação comprobatória da realização das ACE.
+
+Para que possam ser computadas para a integralização curricular do curso, as atividades devem ser preferencialmente realizadas no âmbito das unidades pertencentes ao Centro de Tecnologia e Ciências (CTC/UERJ). No caso de alunos que tenham cursado Atividades Curriculares de Extensão (ACEs) em outras instituições, a carga horária poderá ser aproveitada mediante análise realizada pela CACE do curso de Engenharia de Computação. Essa análise avaliará a pertinência e a compatibilidade da atividade com os objetivos do curso.
+
+Após a conclusão da ACE, o estudante deverá encaminhar à CACE do curso de Engenharia de Computação a documentação comprobatória contendo a carga horária total, o tipo e o título da atividade. Com base nesta documentação, o responsável pela coordenação deliberará sobre a aprovação ou não da atividade realizada. Detalhes adicionais sobre o processo de homologação podem ser consultados na Deliberação n\textordmasculine~04/2023.
+
+\textbf{Observação:} Em caso de dúvidas, os alunos são orientados a consultar antecipadamente a CACE para verificar a pertinência das atividades planejadas, evitando problemas de interpretação.
+
+
+\section*{Estágio Supervisionado}
+\label{sec:estagio-supervisionado-extensionista}
+As \textit{Diretrizes Curriculares Nacionais para os cursos de graduação da área de Computação}\footnote{https://www.in.gov.br/web/dou/-/resolucao-n-5-de-16-de-novembro-de-2016-22073052}, no Art.~7\textordmasculine{}, \S~1\textordmasculine{}, conferem às Instituições de Ensino Superior autonomia para definir a obrigatoriedade ou não do Estágio Supervisionado, bem como sua regulamentação:
+
+\begin{itquotation}
+  \noindent Art.~7\textordmasculine{}\\
+  \ldots\\
+  \S~1\textordmasculine{}   As Instituições de Educação Superior deverão estabelecer a
+  obrigatoriedade ou não do Estágio Supervisionado para os cursos de bacharelado, bem como a
+  sua regulamentação, especificando formas de operacionalização e de avaliação.
+\end{itquotation}
+
+Neste contexto, propomos que a disciplina \textbf{\EstSup}, com carga horária de \EstSupCH~ horas (\EstSupCred~  créditos), seja integralmente reconhecida como \textbf{Disciplina de Extensão}.
+
+Esta proposta está alinhada às recentes diretrizes nacionais de inserção da extensão na educação superior, encontrando respaldo em modelos já implementados com sucesso, como no Projeto Pedagógico do curso de Engenharia de Computação da Universidade Federal do Rio Grande do Norte (UFRN)\footnote{https://sigaa.ufrn.br/sigaa/verProducao?idProducao=14545298\&\&key=7aa262c47cb09095968f09c56ebb21a8}. No referido curso, o Estágio Curricular Obrigatório (página 42), com carga horária de 160 horas, é integralmente contabilizado como atividade extensionista, justificando-se pelo atendimento aos princípios estabelecidos nos artigos 5\textordmasculine{} e 7\textordmasculine{}  da Resolução CNE/CES n\textordmasculine{}  7/2018, que define as Diretrizes para a Extensão na Educação Superior Brasileira. A resoluçao determina que (grifo nosso):
+
+
+\begin{itquotation}
+  \noindent% Zera o recuo da primeira linha
+  Art. 5\textordmasculine{} Estruturam a concepção e a prática das Diretrizes da Extensão na Educação
+  Superior:\\
+  I - a \underline{interação dialógica da comunidade acadêmica com a sociedade} por meio da
+  troca de conhecimentos, da participação e do contato com as questões complexas
+  contemporâneas presentes no contexto social;\\
+  II - a formação cidadã dos estudantes, marcada e constituída pela \underline{vivência dos seus} \underline{conhecimentos}, que, de modo \underline{interprofissional e interdisciplinar}, seja
+  valorizada e integrada à matriz curricular;\\
+  III - a produção de mudanças na própria instituição superior e nos \underline{demais setores} \underline{da
+    sociedade}, a partir da construção e aplicação de conhecimentos, bem como por outras
+  atividades acadêmicas e sociais;\\
+  IV - a \underline{articulação entre ensino/extensão/pesquisa}, ancorada em processo pedagógico
+  único, interdisciplinar, político educacional, cultural, científico e \underline{tecnológico}.\\
+  \ldots\\
+  Art. 7\textordmasculine{} \underline{São consideradas atividades de extensão as intervenções que envolvam} diretamente \underline{as comunidades externas às instituições de ensino superior} e que estejam vinculadas à \underline{formação do estudante},
+  nos termos desta Resolução, e conforme normas institucionais próprias.
+\end{itquotation}
+
+A UFRN ressalta que o estágio supervisionado, enquanto atividade prática supervisionada, contribui para a prática extensionista ao inserir o estudante em contextos reais de atuação no setor produtivo da sociedade, promovendo a interação transformadora entre universidade e sociedade.
+
+Na UERJ, a Deliberação n\textordmasculine{} 04/2023 oferece respaldo adicional a esta proposta. Em especial, seu Art. 2\textordmasculine{} destaca que a Inserção Curricular da Extensão tem como finalidade reforçar a interação com a sociedade, \textit{visando a impactos positivos nos âmbitos culturais, científicos, artísticos, educacionais, sociais, ambientais e esportivos}, além da \textit{geração de emprego e renda, da inovação, do empreendedorismo} e do atendimento a \textit{demandas coletivas}. Este princípio é plenamente atendido pela inserção do estudante em experiências reais proporcionadas pelo estágio supervisionado, consolidando a extensão como instrumento de transformação e desenvolvimento social.
+
+A disciplina \EstSup, pelas suas características e objetivos, \textbf{atende plenamente aos requisitos para caracterização como disciplina de extensão}, conforme demonstrado a seguir:
+
+\begin{itemize}
+  \item \textbf{Interação Transformadora com a Sociedade:} O estágio proporciona ao estudante a oportunidade de aplicar conhecimentos acadêmicos em ambientes profissionais reais, estabelecendo um canal efetivo de diálogo entre a universidade e a sociedade, com impactos no desenvolvimento tecnológico e social.
+  \item \textbf{Impacto Social e Inovação:} As atividades realizadas no estágio frequentemente resultam em soluções inovadoras, otimização de processos e desenvolvimento de novos produtos ou serviços, gerando benefícios concretos para a sociedade.
+  \item \textbf{Protagonismo Estudantil:} O estudante desempenha papel ativo e protagonista na execução das atividades de estágio, sob supervisão acadêmica e profissional, fortalecendo sua autonomia, responsabilidade e formação cidadã.
+  \item \textbf{Articulação entre Ensino e Pesquisa:} O estágio favorece a consolidação de conhecimentos adquiridos e pode estimular novas linhas de pesquisa, integrando práticas de ensino, pesquisa e extensão.
+  \item \textbf{Adequação às Modalidades de Extensão:} As ações desenvolvidas nos estágios enquadram-se nas modalidades previstas no Art. 8\textordmasculine{}   da Resolução CNE/CES n\textordmasculine{} 7/2018, como \textbf{projetos}, \textbf{prestação de serviços} e, eventualmente, \textbf{cursos ou oficinas}.
+\end{itemize}
+
+Assim, a caracterização da disciplina \textbf{\EstSup} como Disciplina de Extensão atende não apenas às exigências legais e normativas vigentes, mas também valoriza a formação prática dos estudantes, amplia o impacto social do curso e aproxima a universidade das demandas reais da sociedade. Esta prática, já adotada por instituições de referência, fortalece a formação acadêmica e profissional dos futuros engenheiros de computação da UERJ.
+
+\end{document}

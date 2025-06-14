@@ -1,0 +1,99 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage{fancyhdr} % Required to customize headers
+\pagestyle{fancy}
+\usepackage[portuguese]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage{xcolor} % Pacote para cores
+\usepackage{xspace} % Adiciona suporte para espaçamento inteligente
+\usepackage{graphicx} % Para incluir imagens
+\usepackage{pdfpages} % Para incluir arquivos PDF
+\usepackage[left=2.48cm,right=1.7cm,top=2.35cm,marginparwidth=3.4cm]{geometry}
+%\usepackage{lipsum} % Para gerar texto de exemplo
+%\renewcommand{\headrulewidth}{0pt}
+% Defina o caminho para o logotipo da universidade
+\newcommand{\universitylogo}{imagens/logo_uerj_cor.jpg}
+\fancyheadoffset[L]{2mm}
+\renewcommand{\headrulewidth}{0pt} % Remove a linha horizontal no cabeçalho
+% Pacotes de hiperlinks
+\usepackage{hyperref}
+\hypersetup{
+	colorlinks,
+	citecolor=blue,
+	filecolor=magenta,
+	linkcolor=blue,
+	urlcolor=cyan
+}
+
+% Configurar o cabeçalho apenas para a primeira página
+\fancypagestyle{firstpage}{
+  \fancyhf{} % Limpar os estilos padrão
+
+  % logo e Nome da universidade
+  \lhead{
+    \begin{minipage}{0.15\textwidth}
+      \includegraphics[width=2.5cm]{\universitylogo}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.85\textwidth} % Ajuste o tamanho conforme necessário
+      \raggedright % Alinha o texto à esquerda
+      UNIVERSIDADE DO ESTADO DO RIO DE JANEIRO \\
+      CENTRO DE TECNOLOGIA E CIÊNCIAS \\
+      FACULDADE DE ENGENHARIA \\
+      DEPARTAMENTO DE ENGENHARIA DE SISTEMAS E COMPUTAÇÃO \\
+    \end{minipage}
+  }
+}
+% reduzir tamanho das letras nas seções
+\makeatletter
+\renewcommand{\section}{\@startsection{section}{1}{\z@}%
+      {-3.5ex \@plus -1ex \@minus -.2ex}%
+      {2.3ex \@plus.2ex}%
+      {\normalfont\normalsize\bfseries}}
+% Remover cabeçalho das outras páginas
+%\pagestyle{plain} % Define o estilo das páginas subsequentes como básico (sem cabeçalho)
+% Nomes das Disciplinas
+\usepackage{./disciplinasDB} % Ensure the file disciplinasDB.sty is in the same directory as this .tex file
+\input{dados.tex} % Arquivo com os dados do curso
+
+\begin{document}
+\thispagestyle{firstpage} % Aplica o cabeçalho na primeira página
+\headsep = 20pt
+%\setlength{\parindent}{0cm} % Remove paragraph indentation
+\setlength{\tabcolsep}{5pt} % Espaço horizontal
+\vspace*{2.0cm}
+
+% Retira cabeçalho das páginas seguintes
+\pagestyle{plain} % Define o estilo das páginas subsequentes como básico (sem cabeçalho)
+
+\begin{center}
+  \textbf{\LARGE Possibilidade de Opção}
+\end{center}
+\vspace*{0.5cm}
+
+Com o objetivo de efetuar uma rápida substituição das disciplinas antigas pelas novas, o
+aluno de Engenharia Elétrica –- ênfase em Sistemas e Computação, versão 2  terá, em qualquer período, a possibilidade de
+optar pelo novo curso de Engenharia de Computação.
+
+Os coordenadores do Curso divulgarão uma tabela de equivalência de disciplinas para que
+o aluno possa avaliar o impacto de sua escolha na conclusão do curso.
+
+Para viabilizar a opção pelo novo Curso, as disciplinas do currículo anterior continuarão a
+ser oferecidas em seus quadros de horários completos da seguinte forma:
+
+\begin{enumerate}
+  \item Disciplinas equivalentes dos currículos de Engenharia Elétrica –- ênfase em Sistemas
+        e Computação (Versão 2)  e do novo curso de Engenharia de Computação (Versão 1), deverão ser preferencialmente
+        oferecidas no mesmo horário, sempre que possível. As disciplinas equivalentes estão
+        identificadas no Projeto Pedagógico do Curso de Engenharia de Computação (Versão 1);
+  \item Disciplinas sem equivalência continuarão, durante a implantação do novo Curso, a ser
+        oferecidas, de acordo com a disponibilidade do Departamento;
+  \item Os novos horários poderão ser implementados em sua totalidade, caso os alunos
+        regularmente matriculados em seus períodos corretos tenham optado pelo novo Curso;
+  \item As disciplinas do Curso anterior continuarão a ser oferecidas em conformidade com a
+        demanda de alunos que decidirem nele permanecer, respeitando o prazo máximo de
+        integralização destes alunos.
+\end{enumerate}
+
+\end{document}
