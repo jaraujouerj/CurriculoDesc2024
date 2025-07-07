@@ -14,9 +14,9 @@ Diante desse cenário, o Departamento de Engenharia de Sistemas e Computação (
 
 A estrutura curricular do curso de Engenharia de Computação do \desc, da Faculdade de Engenharia da UERJ, orienta-se pelas \textit{Diretrizes Curriculares Nacionais para os cursos de graduação na área da Computação}, estabelecidas pelo Ministério da Educação (Anexo~\ref{cne2016}); pelos \textit{Referenciais de Formação para os cursos de Graduação em Computação}, elaborados pela Sociedade Brasileira de Computação (Anexo~\ref{sbc2017}); e pela regulamentação do exercício profissional do Engenheiro, estabelecida pelo Sistema CONFEA/CREA (Anexo~\ref{confea1993}), atualmente em vigor.
 
-A matriz curricular totaliza \tHorasCurso horas, sendo \hTotaisDiscObrigComDiscExt horas destinadas a disciplinas obrigatórias (das quais \hDiscExtensao horas em disciplinas extensionistas), \hEletivas horas em disciplinas eletivas, \hACE horas voltadas às Atividades Curriculares de Extensão (ACE) e \hACC~horas em Atividades Curriculares Complementares (ACC). As \hTotaisDisc horas de disciplinas estão distribuídas em \nDisciplinas disciplinas curriculares, sendo \nDiscObrigatorias obrigatórias e duas  eletivas. A carga horária das disciplinas contempla atividades teóricas, práticas, laboratoriais, de estágio e de extensão, conforme a natureza dos conteúdos abordados. A tabela \ref{tab:cargahoraria} apresenta a distribuição da carga horária do curso.
+A matriz curricular totaliza \tHorasCurso horas, sendo \hTotaisDiscObrigComDiscExt horas destinadas a disciplinas obrigatórias (das quais \hDiscExtensao horas em disciplinas extensionistas), \hEletivas horas em disciplinas eletivas restritas, \hACE horas voltadas às Atividades Curriculares de Extensão (ACE) e \hACC~horas em Atividades Curriculares Complementares (ACC). As \hTotaisDisc horas de disciplinas estão distribuídas em \nDisciplinas disciplinas curriculares, sendo \nDiscObrigatorias obrigatórias e duas  eletivas. A carga horária das disciplinas contempla atividades teóricas, práticas, laboratoriais, de estágio e de extensão, conforme a natureza dos conteúdos abordados. A tabela \ref{tab:cargahoraria} apresenta a distribuição da carga horária do curso.
 
-Destaca-se a redução substancial da carga horária total do curso, que passou de 4.260 horas na versão anterior -- o curso de Engenharia Elétrica com Ênfase em Sistemas e Computação -- para \tHorasCurso horas no novo curso de Engenharia de Computação, representando uma diminuição de \inteval{4260 - \thethorasCursoCounter} horas. Essa adequação foi viabilizada pelas novas Diretrizes Curriculares Nacionais específicas para os cursos da área de Computação, que estabelecem um mínimo de 3.200 horas, em contraste com as 3.600 horas exigidas pelas diretrizes gerais das Engenharias. A redução permitiu a eliminação de conteúdos mais relevantes para outras engenharias, mas menos pertinentes à formação em Computação, mantendo a qualidade e a abrangência da formação profissional exigida para o engenheiro de computação.
+Destaca-se a redução substancial da carga horária total do curso, que passou de 4.260 horas na versão anterior -- o curso de \cursoatual{} -- para \tHorasCurso horas no novo curso de Engenharia de Computação, representando uma diminuição de \inteval{4260 - \thethorasCursoCounter} horas. Essa adequação foi viabilizada pelas novas Diretrizes Curriculares Nacionais específicas para os cursos da área de Computação, que estabelecem um mínimo de 3.200 horas, em contraste com as 3.600 horas exigidas pelas diretrizes gerais das Engenharias. A redução permitiu a eliminação de conteúdos mais relevantes para outras engenharias, mas menos pertinentes à formação em Computação, mantendo a qualidade e a abrangência da formação profissional exigida para o engenheiro de computação.
 
 \rowcolors{1}{gray!10}{white}
 \renewcommand{\arraystretch}{1.5}
@@ -98,7 +98,7 @@ Os egressos do curso de Engenharia de Computação estarão situados no estado d
 
 \section{Organização do Currículo}
 
-O currículo do curso de Engenharia de Computação é constituído por disciplinas obrigatórias e eletivas, estágio supervisionado, trabalho de conclusão de curso e atividades de extensão e complementares. O curso é organizado em 10 semestres, podendo o aluno cumprí-lo em um máximo de 18 semestres.
+O currículo do curso de Engenharia de Computação é constituído por disciplinas obrigatórias e eletivas restritas, estágio supervisionado, trabalho de conclusão de curso e atividades de extensão e complementares. O curso é organizado em 10 semestres, podendo o aluno cumprí-lo em um máximo de 18 semestres.
 
 Para uma eficaz orientação pedagógica, é proposto o plano de periodização apresentado na tabela \ref{tab:desc-periodos-long}. Os pré-requisitos das disciplinas podem ser observados no fluxograma do curso (Anexo \ref{fluxograma}).
 
@@ -274,8 +274,8 @@ docente e discente, não sendo necessariamente disponibilizadas todos os semestr
         @ {\textbf{Disciplina}} & @ {\textbf{CH}}  & @ {\textbf{Créditos}} \\
         \hline
         @ \EletReforco          & \EletReforcoCH   & \EletReforcoCred      \\ % Aprendizado por Reforço
-        @ \EletVisao            & \EletVisaoCH     & \EletVisaoCred        \\ % Aprendizado Profundo para Visão Computacional
         @ \AprendProfPLN        & \AprendProfPLNCH & \AprendProfPLNCred    \\ % Aprendizado Prof. p/ Proc.de Ling. Natural
+        @ \EletVisao            & \EletVisaoCH     & \EletVisaoCred        \\ % Aprendizado Profundo para Visão Computacional
         @ \EletArq              & \EletArqCH       & \EletArqCred          \\ % Arquiteturas Avançadas de Computadores 
         @ \AutomProcRob         & \AutomProcRobCH  & \AutomProcRobCred     \\ % Automação de Processos Robóticos
         @ \EletGeo              & \EletGeoCH       & \EletGeoCred          \\ % Geomática
@@ -307,7 +307,7 @@ Considerando a importância de reconhecer a experiência profissional como parte
 Para o reconhecimento, será seguido procedimento análogo ao da realização regular do estágio supervisionado, incluindo:
 
 \begin{itemize}
-    \item Cumprimento dos pré-requisitos curriculares exigidos para inscrição no estágio supervisionado;
+    \item Cumprimento dos 140 créditos exigidos exigidos para inscrição no estágio supervisionado;
     \item Definição de um período de supervisão da atividade profissional, com carga horária igual ou superior a \EstSupCH~ horas;
     \item Apresentação e aprovação de um relatório técnico ao final do período supervisionado, nos mesmos moldes exigidos para o estágio supervisionado tradicional. \end{itemize}
 
@@ -345,7 +345,6 @@ Essas atividades buscam reconhecer e valorizar experiências formativas adquirid
 
 São exemplos de Atividades Complementares:
 \begin{itemize}
-    \item participação em programas de extensão universitária, desde que as horas não tenham sido computadas como horas de extensão;
     \item realização de estágios não obrigatórios;
     \item envolvimento com projetos de iniciação científica ou tecnológica;
     \item participação em congressos, seminários, simpósios e demais eventos técnico-científicos;
@@ -364,7 +363,7 @@ As Atividades Complementares deverão ser devidamente documentadas e submetidas 
 
 \section{Equivalência com o Curso Anterior}
 
-O curso de Engenharia de Computação resulta da reformulação do curso de Engenharia Elétrica com Ênfase em Sistemas e Computação. Dessa forma, os estudantes que ingressaram anteriormente no curso de Engenharia Elétrica poderão optar pelo novo currículo, desde que façam a solicitação dentro do prazo estabelecido pela Faculdade de Engenharia e atendam às equivalências previstas entre as disciplinas dos dois currículos.
+O curso de Engenharia de Computação resulta da reformulação do curso de \cursoatual. Dessa forma, os estudantes que ingressaram anteriormente no curso de Engenharia, habilitação Elétrica, poderão optar pelo novo currículo, desde que façam a solicitação dentro do prazo estabelecido pela Faculdade de Engenharia e atendam às equivalências previstas entre as disciplinas dos dois currículos.
 
 Essa transição requer atenção às correspondências curriculares, que estão organizadas na Tabela~\ref{tab:desc-equi-long}. A tabela apresenta o mapeamento das disciplinas do curso anterior para as equivalentes na nova estrutura curricular, respeitando a ordem dos períodos.
 
@@ -373,16 +372,16 @@ Essa transição requer atenção às correspondências curriculares, que estão
 \begin{small}
     \begin{longtable}{p{5.8cm}l|p{6.2cm}l}
         \caption{Equivalências no novo currículo.}
-        \label{tab:desc-equi-long}                                                                                                                    \\
+        \label{tab:desc-equi-long}                                                                                                                      \\
         \hline
         \rowcolor{gray!20}
-        \textbf{Currículo Novo} & \textbf{Código} & \textbf{Currículo Antigo}                                          & \textbf{Código}              \\
+        \textbf{Currículo Novo} & \textbf{Código}   & \textbf{Currículo Antigo}                                          & \textbf{Código}              \\
         \hline
         \endfirsthead
 
         \hline
         \rowcolor{gray!20}
-        \textbf{Currículo Novo} & \textbf{Código} & \textbf{Currículo Antigo}                                          & \textbf{Código}              \\
+        \textbf{Currículo Novo} & \textbf{Código}   & \textbf{Currículo Antigo}                                          & \textbf{Código}              \\
         \hline
         \endhead
 
@@ -391,71 +390,90 @@ Essa transição requer atenção às correspondências curriculares, que estão
 
         \bottomrule
         \endlastfoot
-        \AlgLin                 & \AlgLinCod      & Álgebra Linear III                                                 & IME 02-01388                 \\
-        \AlgComp                & \AlgCompCod     & Algoritmos Computacionais                                          & FEN 06-03559                 \\
-        \CalcI                  & \CalcICod       & Cálculo Diferencial e Integral I                                   & IME 01-00508                 \\
-        \EngCompSoc             & \EngCompSocCod  & \parbox[t]{4cm}{Engenharia na Sociedade I e                                                       \\Engenharia na Sociedade II }  & \parbox[t]{2cm}{FEN 02-01064  \\FEN 02-01390}               \\
+        \AlgLin                 & \AlgLinCod        & Álgebra Linear III                                                 & IME 02-01388                 \\
+        \AlgComp                & \AlgCompCod       & Introdução ao Processamento de Dados                               & IME 04-00627                 \\
+        \CalcI                  & \CalcICod         & Cálculo Diferencial e Integral I                                   & IME 01-00508                 \\
+        \EngCompSoc             & \EngCompSocCod    & Engenharia na Sociedade I                                          & FEN 02-01064                 \\
         \hline
-        \CalcII                 & \CalcIICod      & Cálculo Diferencial e Integral II                                  & IME 01-00854                 \\
-        \CalcNum                & \CalcNumCod     & Cálculo Numérico IV                                                & IME 04-04541                 \\
-        \EstrInf                & \EstrInfCod     & Estruturas de Informação I                                         & FEN 06-03648                 \\
-        \parbox[t]{4cm}{\FisI~e                                                                                                                       \\ \FisEI} & \parbox[t]{2cm}{\FisICod \\ \FisEICod} & Física Teórica e Experimental I & FIS 01-05095 \\
-        \LogProg                & \LogProgCod     & Sem equivalência                                                   & --                           \\
+        \CalcII                 & \CalcIICod        & Cálculo Diferencial e Integral II                                  & IME 01-00854                 \\
+        \CalcNum                & \CalcNumCod       & Cálculo Numérico IV                                                & IME 04-04541                 \\
+        \EstrInf                & \EstrInfCod       & Estruturas de Informação I                                         & FEN 06-03648                 \\
+        \parbox[t]{4cm}{\FisI~e                                                                                                                         \\ \FisEI} & \parbox[t]{2cm}{\FisICod \\ \FisEICod} & Física Teórica e Experimental I & FIS 01-05095 \\
+        \LogProg                & \LogProgCod       & Sem equivalência                                                   & --                           \\
         \hline
-        \AnAlg                  & \AnAlgCod       & Análise de Algoritmos                                              & FEN 06-03713                 \\
-        \CalcIII                & \CalcIIICod     & Cálculo Diferencial e Integral III                                 & IME 01-03646                 \\
-        \CircEletI              & \CircEletICod   & Eletrônica I                                                       & FEN 05-01620                 \\
-        \parbox[t]{4cm}{\FisII~e                                                                                                                      \\ \FisEII} & \parbox[t]{2cm}{\FisIICod \\ \FisEIICod} & Física Teórica e Experimental II & FIS 02-05143 \\
-        \ProbEst                & \ProbEstCod     & Probabilidade e Estatística                                        & IME 05-05316                 \\
-        \Ext                    & \ExtCod         & Sem equivalência                                                   & --                           \\
+        \AnAlg                  & \AnAlgCod         & Análise de Algoritmos                                              & FEN 06-03713                 \\
+        \CalcIII                & \CalcIIICod       & Cálculo Diferencial e Integral III                                 & IME 01-03646                 \\
+        \CircEletI              & \CircEletICod     & Eletrônica I                                                       & FEN 05-01620                 \\
+        \parbox[t]{4cm}{\FisII~e                                                                                                                        \\ \FisEII} & \parbox[t]{2cm}{\FisIICod \\ \FisEIICod} & Física Teórica e Experimental II & FIS 02-05143 \\
+        \ProbEst                & \ProbEstCod       & Probabilidade e Estatística III                                    & IME 05-05316                 \\
+        \Ext                    & \ExtCod           & Sem equivalência                                                   & --                           \\
         \hline
-        \parbox[t]{4cm}{\FisIII~e                                                                                                                     \\ \FisEIII} & \parbox[t]{2cm}{\FisIIICod \\ \\ \FisEIIICod} & Física Teórica e Experimental III & FIS 03-05185 \\
-        \LabProgA               & \LabProgACod    & Laboratório de Programação I                                       & FEN 06-04049                 \\
-        \LabProgPOO             & \LabProgPOOCod  & Características das Linguagens de Programação I                    & FEN 06-03980                 \\
-        \ProcImag               & \ProcImagCod    & Sem equivalência                                                   & --                           \\
-        \TecDig                 & \TecDigCod      & Técnicas Digitais I                                                & FEN 05-04498                 \\
+        \parbox[t]{4cm}{\FisIII~e                                                                                                                       \\ \FisEIII} & \parbox[t]{2cm}{\FisIIICod \\ \\ \FisEIIICod} & Física Teórica e Experimental III & FIS 03-05185 \\
+        \LabProgA               & \LabProgACod      & Laboratório de Programação I                                       & FEN 06-04049                 \\
+        \LabProgPOO             & \LabProgPOOCod    & Características das Linguagens de Programação I                    & FEN 06-03980                 \\
+        \ProcImag               & \ProcImagCod      & Sem equivalência                                                   & --                           \\
+        \TecDig                 & \TecDigCod        & Técnicas Digitais I                                                & FEN 05-04498                 \\
         \hline
-        \CCC                    & \CCCCod         & Circuitos Elétricos I                                              & FEN 04-00944                 \\
-        \FundComp               & \FundCompCod    & Fundamentos de Comp. Digitais I                                    & FEN 06-03787                 \\
-        \IC                     & \ICCod          & Sem equivalência                                                   & --                           \\
-        \parbox[t]{4cm}{\FisIV                                                                                                                        \\ \FisEIV} & \parbox[t]{2cm}{\FisIVCod~e \\ \FisEIVCod} & Física Teórica e Experimental IV & FIS 04-05212 \\
-        \Grafos                 & \GrafosCod      & Sem equivalência                                                   & --                           \\
+        \CCC                    & \CCCCod           & Circuitos Elétricos I                                              & FEN 04-00944                 \\
+        \FundComp               & \FundCompCod      & Fundamentos de Comp. Digitais I                                    & FEN 06-03787                 \\
+        \IC                     & \ICCod            & Sem equivalência                                                   & --                           \\
+        \parbox[t]{4cm}{\FisIV                                                                                                                          \\ \FisEIV} & \parbox[t]{2cm}{\FisIVCod~e \\ \FisEIVCod} & Física Teórica e Experimental IV & FIS 04-05212 \\
+        \Grafos                 & \GrafosCod        & Sem equivalência                                                   & --                           \\
         \hline
-        \ArqComp                & \ArqCompCod     & Arquitetura de Computadores I                                      & FEN 06-04119                 \\
-        \CCA                    & \CCACod         & Circuitos Elétricos IV                                             & FEN 04-05222                 \\
-        \EngSistA               & \EngSistACod    & Engenharia de Sistemas A                                           & FEN 06-04243                 \\
-        \ICII                   & \ICIICod        & Sem equivalência                                                   & --                           \\
-        \MatEle                 & \MatEleCod      & Materiais Elétricos e Magnéticos                                   & FEN 04-05197                 \\
-        \MineraDados            & \MineraDadosCod & Sem equivalência                                                   & --                           \\
+        \ArqComp                & \ArqCompCod       & Arquitetura de Computadores I                                      & FEN 06-04119                 \\
+        \CCA                    & \CCACod           & Circuitos Elétricos IV                                             & FEN 04-05222                 \\
+        \EngSistA               & \EngSistACod      & Engenharia de Sistemas A                                           & FEN 06-04243                 \\
+        \ICII                   & \ICIICod          & Sem equivalência                                                   & --                           \\
+        \MatEle                 & \MatEleCod        & Materiais Elétricos e Magnéticos                                   & FEN 04-05197                 \\
+        \MineraDados            & \MineraDadosCod   & Sem equivalência                                                   & --                           \\
         \hline
-        \Instala                & \InstalaCod     & Instalações de Ambiente Computacional                              & FEN 06-03860                 \\
-        \MacroEco               & \MacroEcoCod    & Introdução à Economia III                                          & FCE 02-04657                 \\
-        \ProjBD                 & \ProjBDCod      & Engenharia de Sistemas B                                           & FEN 06-04314                 \\
-        \ProjSO                 & \ProjSOCod      & Projeto de Sistemas Operacionais                                   & FEN 06-04664                 \\
-        \Telep                  & \TelepCod       & Teleprocessamento e Redes de Computadores                          & FEN 06-04718                 \\
-        \TeoComp                & \TeoCompCod     & Teoria de Compiladores                                             & FEN 06-04516                 \\
+        \Instala                & \InstalaCod       & Instalações de Ambiente Computacional                              & FEN 06-03860                 \\
+        \MacroEco               & \MacroEcoCod      & Introdução à Economia III                                          & FCE 02-04657                 \\
+        \ProjBD                 & \ProjBDCod        & Engenharia de Sistemas B                                           & FEN 06-04314                 \\
+        \ProjSO                 & \ProjSOCod        & Projeto de Sistemas Operacionais                                   & FEN 06-04664                 \\
+        \Telep                  & \TelepCod         & Teleprocessamento e Redes de Computadores                          & FEN 06-04718                 \\
+        \TeoComp                & \TeoCompCod       & Teoria de Compiladores                                             & FEN 06-04516                 \\
         \hline
-        \AnaProjSist            & \AnaProjSistCod & Engenharia de Sistemas C                                           & FEN 06-04386                 \\
-        \CompParal              & \CompParalCod   & Microcomputadores e Microprocessadores I                           & FEN 06-04192                 \\
-        \Control                & \ControlCod     & Controle de Processos por Computador                               & FEN 06-05080                 \\
-        \Empre                  & \EmpreCod       & Sem equivalência                                                   & --                           \\
-        \Sredes                 & \SredesCod      & Sem equivalência                                                   & --                           \\
-        \SistEmb                & \SistEmbCod     & Sem equivalência                                                   & --                           \\
+        \AnaProjSist            & \AnaProjSistCod   & Engenharia de Sistemas C                                           & FEN 06-04386                 \\
+        \CompParal              & \CompParalCod     & Microcomputadores e Microprocessadores I                           & FEN 06-04192                 \\
+        \Control                & \ControlCod       & Controle de Processos por Computador                               & FEN 06-05080                 \\
+        \Empre                  & \EmpreCod         & Sem equivalência                                                   & --                           \\
+        \Sredes                 & \SredesCod        & Sem equivalência                                                   & --                           \\
+        \SistEmb                & \SistEmbCod       & Sem equivalência                                                   & --                           \\
         \hline
-        \EstSup                 & \EstSupCod      & Estágio Supervisionado XI-A                                        & FEN 06-05038                 \\
-        \ProjA                  & \ProjACod       & Projeto de Graduação XI-A                                          & FEN 06-04578                 \\
+        \EstSup                 & \EstSupCod        & Estágio Supervisionado XI-A                                        & FEN 06-05038                 \\
+        \ProjA                  & \ProjACod         & Projeto de Graduação XI-A                                          & FEN 06-04578                 \\
         \hline
-        \Adm                    & \AdmCod         & Administração Aplicada à Engenharia III                            & FAF 03-04439                 \\
-        \ProjB                  & \ProjBCod       & Projeto de Graduação XI-B                                          & FEN 06-04635                 \\
+        \Adm                    & \AdmCod           & Administração Aplicada à Engenharia III                            & FAF 03-04439                 \\
+        \ProjB                  & \ProjBCod         & Projeto de Graduação XI-B                                          & FEN 06-04635                 \\
         \hline
-        Eletivas Restritas      & FEN 06-xxxx     & Tópicos Especiais em Engenharia de Sistemas e Computação A, B ou C & \parbox[t]{2cm}{FEN 06-04889 \\ FEN 06-04939 \\ FEN 06-04990} \\
+        \EletReforco            & \EletReforcoCod   & Tópicos Especiais em Engenharia de Sistemas e Computação A, B ou C & \parbox[t]{2cm}{FEN 06-04889 \\ FEN 06-04939 \\ FEN 06-04990} \\
+        \AprendProfPLN          & \AprendProfPLNCod & Tópicos Especiais em Engenharia de Sistemas e Computação A, B ou C & \parbox[t]{2cm}{FEN 06-04889 \\ FEN 06-04939 \\ FEN 06-04990} \\
+        \EletVisao              & \EletVisaoCod     & Tópicos Especiais em Engenharia de Sistemas e Computação A, B ou C & \parbox[t]{2cm}{FEN 06-04889 \\ FEN 06-04939 \\ FEN 06-04990} \\
+        \EletArq                & \EletArqCod       & Tópicos Especiais em Engenharia de Sistemas e Computação A, B ou C & \parbox[t]{2cm}{FEN 06-04889 \\ FEN 06-04939 \\ FEN 06-04990} \\
+        \AutomProcRob           & \AutomProcRobCod  & Tópicos Especiais em Engenharia de Sistemas e Computação A, B ou C & \parbox[t]{2cm}{FEN 06-04889 \\ FEN 06-04939 \\ FEN 06-04990} \\
+        \EletGeo                & \EletGeoCod       & Tópicos Especiais em Engenharia de Sistemas e Computação A, B ou C & \parbox[t]{2cm}{FEN 06-04889 \\ FEN 06-04939 \\ FEN 06-04990} \\
+        \EletRedes              & \EletRedesCod     & Tópicos Especiais em Engenharia de Sistemas e Computação A, B ou C & \parbox[t]{2cm}{FEN 06-04889 \\ FEN 06-04939 \\ FEN 06-04990} \\
+        \SistOpRobInt           & \SistOpRobIntCod  & Tópicos Especiais em Engenharia de Sistemas e Computação A, B ou C & \parbox[t]{2cm}{FEN 06-04889 \\ FEN 06-04939 \\ FEN 06-04990} \\
+        \TecProgOtim            & \TecProgOtimCod   & Tópicos Especiais em Engenharia de Sistemas e Computação A, B ou C & \parbox[t]{2cm}{FEN 06-04889 \\ FEN 06-04939 \\ FEN 06-04990} \\
+        \TopEspVisComp          & \TopEspVisCompCod & Tópicos Especiais em Engenharia de Sistemas e Computação A, B ou C & \parbox[t]{2cm}{FEN 06-04889 \\ FEN 06-04939 \\ FEN 06-04990} \\
     \end{longtable}
 \end{small}
+
+%        @        & \AprendProfPLNCH & \AprendProfPLNCred    \\ % Aprendizado Prof. p/ Proc.de Ling. Natural
+%        @           & \EletVisaoCH     & \EletVisaoCred        \\ % Aprendizado Profundo para Visão Computacional
+%        @ \EletArq              & \EletArqCH       & \EletArqCred          \\ % Arquiteturas Avançadas de Computadores 
+%        @ \AutomProcRob         & \AutomProcRobCH  & \AutomProcRobCred     \\ % Automação de Processos Robóticos
+%        @ \EletGeo              & \EletGeoCH       & \EletGeoCred          \\ % Geomática
+%        @ \EletRedes            & \EletRedesCH     & \EletRedesCred        \\ % Redes de Interconexão			
+%        @ \SistOpRobInt         & \SistOpRobIntCH  & \SistOpRobIntCred     \\ % Sistemas Operacionais p/ Robótica Inteligente
+%        @ \TecProgOtim          & \TecProgOtimCH   & \TecProgOtimCred      \\ % Técnicas de Programação em Otimização Combinatória
+%        @ \TopEspVisComp        & \TopEspVisCompCH & \TopEspVisCompCred    \\ % Tópicos Especiais em Visão Computacional
 
 
 \section{Ementário das Disciplinas}
 
-As ementas das disciplinas obrigatórias e eletivas são apresentadas no anexo \ref{ementas}.
+As ementas das disciplinas obrigatórias e eletivas restritas são apresentadas no anexo \ref{ementas}.
 
 \section{Articulação com a Pós-Graduação }
 

@@ -791,7 +791,7 @@
             \hline
             \multicolumn{1}{|c|} {\textbf{DATA} }
              & \multicolumn{1}{c|} {\textbf{{\textbf{ASSINATURA/MATRÍCULA/CARIMBO}}}} \\
-            {\today}
+            {4 de junho de 2025}
              & \ifotoprofessor          \\
             {}
              & \multicolumn{1}{c|} { \inomeprofessor\ \imatriculaprofessor}           \\
